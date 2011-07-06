@@ -386,6 +386,33 @@ $(INSTALLED_RAMDISK_TARGET): $(MKBOOTFS) $(INTERNAL_RAMDISK_FILES) | $(MINIGZIP)
 
 ifneq ($(strip $(TARGET_NO_KERNEL)),true)
 
+ifeq ($(BOARD_USES_UBOOT_MULTIIMAGE),true)
+
+# We just build this directly to the install location.
+INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
+
+INTERNAL_URAMDISKIMAGE_ARGS := -A ARM -O Linux -T multi -C none -n Image
+
+BOARD_UBOOT_ENTRY := $(strip $(BOARD_UBOOT_ENTRY))
+ifdef BOARD_UBOOT_ENTRY
+  INTERNAL_URAMDISKIMAGE_ARGS += -e $(BOARD_UBOOT_ENTRY)
+endif
+
+BOARD_UBOOT_LOAD := $(strip $(BOARD_UBOOT_LOAD))
+ifdef BOARD_UBOOT_LOAD
+  INTERNAL_URAMDISKIMAGE_ARGS += -a $(BOARD_UBOOT_LOAD)
+endif
+
+UBOOT_DATA_ARGS = $(shell echo $(INSTALLED_KERNEL_TARGET):$(INSTALLED_RAMDISK_TARGET)|sed -e 's/[[:space:]]//g')
+INTERNAL_URAMDISKIMAGE_ARGS += -d $(UBOOT_DATA_ARGS)
+
+$(INSTALLED_BOOTIMAGE_TARGET):  $(MKIMAGE) $(INSTALLED_RAMDISK_TARGET) $(INSTALLED_KERNEL_TARGET)
+	$(call pretty,"Target boot image: $@")
+	$(MKIMAGE) $(INTERNAL_URAMDISKIMAGE_ARGS) $@
+
+else ## Standard ANDROID bootimg
+
+
 # -----------------------------------------------------------------
 # the boot image, which is a collection of other images.
 INTERNAL_BOOTIMAGE_ARGS := \
@@ -431,6 +458,8 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
 endif # ifndef BOARD_CUSTOM_BOOTIMG_MK
+
+endif # standard ANDROID bootimg (not uboot multiimage)
 
 else	# TARGET_NO_KERNEL
 # HACK: The top-level targets depend on the bootimage.  Not all targets
