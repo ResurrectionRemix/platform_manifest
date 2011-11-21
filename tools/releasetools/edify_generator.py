@@ -200,7 +200,8 @@ class EdifyGenerator(object):
       args = {'device': p.device, 'fn': fn}
       if partition_type == "MTD":
         self.script.append(
-            'write_raw_image(package_extract_file("%(fn)s"), "%(device)s");'
+            'package_extract_file("%(fn)s", "/tmp/boot.img");'
+            'write_raw_image("/tmp/boot.img", "%(device)s");' % args
             % args)
       elif partition_type == "EMMC":
         self.script.append(
