@@ -247,6 +247,6 @@
   <project path="system/netd" name="platform/system/netd" remote="github"  />
   <project path="system/vold" name="platform/system/vold" remote="github"  />
   
-  <project path="device/htc/pyramid" name="device/htc/pyramid" remote="github" />
+  <project path="device_htc_pyramid" name="device/htc/pyramid" remote="github" />
 
 </manifest>
