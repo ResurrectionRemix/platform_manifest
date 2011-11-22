@@ -240,12 +240,12 @@
   <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
   <project path="prebuilt" name="platform/prebuilt" />
   <project path="sdk" name="platform/sdk" />
-  <project path="system/bluetooth" name="platform/system/bluetooth" remote="github" />
-  <project path="system/core" name="platform/system/core" remote="github" />
-  <project path="system/extras" name="platform/system/extras" remote="github" />
-  <project path="system/media" name="platform/system/media" remote="github" />
-  <project path="system/netd" name="platform/system/netd" remote="github"  />
-  <project path="system/vold" name="platform/system/vold" remote="github"  />
+  <project path="system/bluetooth" name="system_bluetooth" remote="github" />
+  <project path="system/core" name="system_core" remote="cm" />
+  <project path="system/extras" name="system_extras" remote="github" />
+  <project path="system/media" name="system_media" remote="github" />
+  <project path="system/netd" name="system_netd" remote="github"  />
+  <project path="system/vold" name="system_vold" remote="github"  />
   
   <project path="device/htc/pyramid" name="device_htc_pyramid" remote="github" />
 
