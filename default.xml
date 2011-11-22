@@ -16,11 +16,11 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" remote="cm" >
+  <project path="android_build" name="build" remote="cm" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
-  <project path="bionic" name="platform/bionic" remote="github"/>
+  <project path="bionic" name="bionic" remote="github"/>
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
   <project path="bootable/recovery" name="platform/bootable/recovery" />
