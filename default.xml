@@ -241,7 +241,7 @@
   <project path="prebuilt" name="platform/prebuilt" />
   <project path="sdk" name="platform/sdk" />
   <project path="system/bluetooth" name="system_bluetooth" remote="github" />
-  <project path="system/core" name="system_core" remote="cm" />
+  <project path="system/core" name="system_core" remote="github" />
   <project path="system/extras" name="system_extras" remote="github" />
   <project path="system/media" name="system_media" remote="github" />
   <project path="system/netd" name="system_netd" remote="github"  />
