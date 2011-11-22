@@ -7,11 +7,15 @@
   <remote name="github"
   	  fetch="git://github.com/TeamKang" /> 
   	  
+  <remote name="cm"
+  	  fetch="git://github.com/CyanogenMod" 
+  	  revision="ics" /> 
+  	  
   <default revision="master"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" remote="github">
+  <project path="build" name="platform/build" remote="cm" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
