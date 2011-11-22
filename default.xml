@@ -16,7 +16,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="android_build" name="build" remote="cm" >
+  <project path="build" name="android_build" remote="cm" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -247,6 +247,6 @@
   <project path="system/netd" name="platform/system/netd" remote="github"  />
   <project path="system/vold" name="platform/system/vold" remote="github"  />
   
-  <project path="device_htc_pyramid" name="device/htc/pyramid" remote="github" />
+  <project path="device/htc/pyramid" name="device_htc_pyramid" remote="github" />
 
 </manifest>
