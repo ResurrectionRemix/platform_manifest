@@ -5,7 +5,8 @@
            fetch="https://android.googlesource.com/" />
            
   <remote name="github"
-  	  fetch="git://github.com/TeamKang" /> 
+  	  fetch="git://github.com/TeamKang"
+      revision="master" /> 
   	  
   <remote name="cm"
   	  fetch="git://github.com/CyanogenMod" 
@@ -26,7 +27,7 @@
   <project path="cts" name="platform/cts" />
   <project path="dalvik" name="platform/dalvik" />
   <project path="development" name="platform/development" />
-  <project path="device/common" name="device/common" remote="github"/>
+  <project path="device/common" name="device/common" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
