@@ -248,5 +248,5 @@
   <project path="system/vold" name="system_vold" remote="github"  />
   
   <project path="device/htc/pyramid" name="device_htc_pyramid" remote="github" />
-  <project path="vendor/htc" name="vendor_htc"" remote="github" />
+  <project path="vendor/htc" name="vendor_htc" remote="github" />
 </manifest>
