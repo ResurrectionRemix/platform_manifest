@@ -2,8 +2,9 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".." />
-  <default revision="refs/tags/android-4.0.1_r1"
+           fetch="https://android.googlesource.com/" />
+
+  <default revision="refs/tags/android-4.0.1_r1.2"
            remote="aosp"
            sync-j="4" />
 
