@@ -16,7 +16,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="TeamKang/platform_manifest" remote="kang" revision="master">
+  <project path="build" name="CyanogenMod/android_build" remote="kang" revision="ics">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
