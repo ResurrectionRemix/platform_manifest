@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/" />
            
   <remote name="github"
-  	  fetch="git://github.com/TeamKang"
+      fetch="git://github.com/TeamKang"
       revision="master" /> 
   	  
   <remote name="cm"
@@ -16,7 +16,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="android_build" remote="github" >
+  <project path="build" name="android_build" remote="cm" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -240,12 +240,12 @@
   <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
   <project path="prebuilt" name="platform/prebuilt" />
   <project path="sdk" name="platform/sdk" />
-  <project path="system/bluetooth" name="system_bluetooth" remote="github" />
-  <project path="system/core" name="system_core" remote="github" />
-  <project path="system/extras" name="system_extras" remote="github" />
-  <project path="system/media" name="system_media" remote="github" />
-  <project path="system/netd" name="system_netd" remote="github"  />
-  <project path="system/vold" name="system_vold" remote="github"  />
+  <project path="system/bluetooth" name="platform/system/bluetooth"  />
+  <project path="system/core" name="platform/system/core" />
+  <project path="system/extras" name="platform/system/extras" />
+  <project path="system/media" name="platform/system/media"  />
+  <project path="system/netd" name="platform/system/netd"  />
+  <project path="system/vold" name="platform/system/vold"  />
   
   <project path="device/htc/pyramid" name="device_htc_pyramid" remote="github" />
   <project path="vendor/htc" name="vendor_htc" remote="github" />
