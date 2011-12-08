@@ -5,11 +5,11 @@
            fetch="https://android.googlesource.com/" />
            
   <remote  name="kang"
-           fetch="git://github.com/teamkang"
+           fetch="git://github.com/teamkang/"
            revision="master" />
            
   <remote  name="cm"
-           fetch="git://github.com/CyanogenMod"
+           fetch="git://github.com/CyanogenMod/"
            revision="ics" />
 
   <default revision="refs/tags/android-4.0.1_r1.2"
