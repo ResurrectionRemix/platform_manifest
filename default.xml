@@ -5,18 +5,18 @@
            fetch="https://android.googlesource.com/" />
            
   <remote  name="kang"
-           fetch="http://github.com/teamkang"
+           fetch="http://github.com/teamkang/"
            revision="master" />
            
   <remote  name="cm"
-           fetch="http://github.com/CyanogenMod"
+           fetch="http://github.com/CyanogenMod/"
            revision="ics" />
 
   <default revision="refs/tags/android-4.0.1_r1.2"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform_manifest" remote="kang">
+  <project path="build" name="platform_manifest" remote="kang" revision="master">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
