@@ -32,7 +32,7 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
   <project path="device/sample" name="device/sample" />
-  <project path="device/samsung/maguro" name="device/samsung/maguro" />
+  <project path="device/samsung/maguro" name="device_samsung_maguro" remote="kang" />
   <project path="device/samsung/tuna" name="device/samsung/tuna" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
@@ -239,6 +239,9 @@
   <project path="system/media" name="platform/system/media" />
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
+  
+  <project path="vendor/samsung" name="vendor_samsung" remote="kang" />
+  <project path="vendor/imgtec" name="vendor_imgtec" remote="kang" />
   
   
 
