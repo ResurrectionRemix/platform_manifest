@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/" />
            
   <remote  name="kang"
-           fetch="git://github.com/teamkang/"
+           fetch="git://github.com/"
            revision="master" />
            
   <remote  name="cm"
@@ -16,7 +16,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform_manifest" remote="kang" revision="master">
+  <project path="build" name="TeamKang/platform_manifest" remote="kang" revision="master">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
