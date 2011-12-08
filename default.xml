@@ -32,7 +32,7 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
   <project path="device/sample" name="device/sample" />
-  <project path="device/samsung/maguro" name="device_samsung_maguro" remote="kang" revision="master" />
+  <project path="device/samsung/maguro" name="TeamKang/device_samsung_maguro" remote="kang" revision="master" />
   <project path="device/samsung/tuna" name="device/samsung/tuna" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
@@ -152,10 +152,10 @@
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/yaffs2" name="platform/external/yaffs2" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/base" name="frameworks_base" remote="kang" />
+  <project path="frameworks/base" name="TeamKang/frameworks_base" remote="kang" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
-  <project path="frameworks/compile/slang" name="frameworks_compile_slang" remote="kang" revision="master" />
+  <project path="frameworks/compile/slang" name="TeamKang/frameworks_compile_slang" remote="kang" revision="master" />
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/media/libvideoeditor" name="platform/frameworks/media/libvideoeditor" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
@@ -240,8 +240,8 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
   
-  <project path="vendor/samsung" name="vendor_samsung" remote="kang" revision="master" />
-  <project path="vendor/imgtec" name="vendor_imgtec" remote="kang" revision="master" />
+  <project path="vendor/samsung" name="TeamKang/vendor_samsung" remote="kang" revision="master" />
+  <project path="vendor/imgtec" name="TeamKang/vendor_imgtec" remote="kang" revision="master" />
   
   
 
