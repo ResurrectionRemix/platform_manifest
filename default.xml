@@ -241,7 +241,6 @@
   <project path="system/vold" name="platform/system/vold" />
   
   <project path="vendor/samsung" name="TeamKang/vendor_samsung" remote="kang" revision="master" />
-  <project path="vendor/imgtec" name="TeamKang/vendor_imgtec" remote="kang" revision="master" />
   
   <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="kang" revision="ics" />
   <project path="system/su" name="CyanogenMod/android_system_su" remote="kang" revision="ics" />
