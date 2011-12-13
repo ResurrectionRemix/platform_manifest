@@ -198,11 +198,11 @@
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" />
+  <project path="packages/apps/Phone" name="TeamKang/packages_apps_Phone" remote="kang" revision="master" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="TeamKang/packages_apps_Settings" remote="kang" revision="master" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
@@ -245,5 +245,6 @@
   <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="kang" revision="ics" />
   <project path="system/su" name="TeamKang/android_system_su" remote="kang" revision="ics" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="kang" revision="ics" />
+  <project path="packages/apps/ROMControl" name="TeamKang/android_packages_apps_ROMControl" remote="kang" revision="master" />
 
 </manifest>
