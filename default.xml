@@ -116,7 +116,7 @@
   <project path="external/oauth" name="platform/external/oauth" />
   <project path="external/opencv" name="platform/external/opencv" />
   <project path="external/openssl" name="platform/external/openssl" />
-  <project path="external/oprofile" name="CyanogenMod/platform_external_oprofile" revision="ics" remote="kang" />
+  <project path="external/oprofile" name="CyanogenMod/android_external_oprofile" revision="ics" remote="kang" />
   <project path="external/pcre" name="platform/external/pcre" />
   <project path="external/ping" name="platform/external/ping" />
   <project path="external/ping6" name="platform/external/ping6" />
@@ -245,6 +245,6 @@
   <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="kang" revision="ics" />
   <project path="system/su" name="TeamKang/android_system_su" remote="kang" revision="ics" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="kang" revision="ics" />
-  <project path="packages/apps/ROMControl" name="TeamKang/android_packages_apps_ROMControl" remote="kang" revision="master" />
+  <project path="packages/apps/ROMControl" name="TeamKang/packages_apps_ROMControl" remote="kang" revision="master" />
 
 </manifest>
