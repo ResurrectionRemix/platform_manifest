@@ -4,8 +4,12 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/" />
            
-  <remote  name="kang"
+  <remote  name="gh"
            fetch="git://github.com/"
+           revision="master" />
+           
+  <remote  name="kang"
+           fetch="git@github.com:TeamKang/"
            revision="master" />
            
   <remote  name="cm"
@@ -16,7 +20,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" >
+  <project path="build" name="platform/build" remote="cm" revision="ics" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
