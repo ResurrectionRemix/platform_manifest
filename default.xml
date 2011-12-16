@@ -16,7 +16,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="CyanogenMod/android_build" remote="kang" revision="ics">
+  <project path="build" name="platform/build" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -31,8 +31,14 @@
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
+  <project path="device/moto/common" name="device/moto/common" />
+  <project path="device/moto/stingray" name="device/moto/stingray" />
+  <project path="device/moto/wingray" name="device/moto/wingray" />
   <project path="device/sample" name="device/sample" />
-  <project path="device/samsung/maguro" name="TeamKang/device_samsung_maguro" remote="kang" revision="master" />
+  <project path="device/samsung/crespo" name="device/samsung/crespo" />
+  <project path="device/samsung/crespo4g" name="device/samsung/crespo4g" />
+  <project path="device/samsung/maguro" name="device/samsung/maguro" />
+  <project path="device/samsung/toro" name="device/samsung/toro" />
   <project path="device/samsung/tuna" name="device/samsung/tuna" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
@@ -102,6 +108,7 @@
   <project path="external/libvpx" name="platform/external/libvpx" />
   <project path="external/libxml2" name="platform/external/libxml2" />
   <project path="external/libxslt" name="platform/external/libxslt" />
+  <project path="external/libyuv" name="platform/external/libyuv" />
   <project path="external/llvm" name="platform/external/llvm" />
   <project path="external/lohit-fonts" name="platform/external/lohit-fonts" />
   <project path="external/markdown" name="platform/external/markdown" />
@@ -155,7 +162,7 @@
   <project path="frameworks/base" name="TeamKang/frameworks_base" remote="kang" revision="master"/>
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
-  <project path="frameworks/compile/slang" name="TeamKang/frameworks_compile_slang" remote="kang" revision="master" />
+  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" />
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/media/libvideoeditor" name="platform/frameworks/media/libvideoeditor" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
@@ -235,7 +242,7 @@
   <project path="sdk" name="platform/sdk" />
   <project path="system/bluetooth" name="platform/system/bluetooth" />
   <project path="system/core" name="platform/system/core" />
-  <project path="system/extras" name="CyanogenMod/android_system_extras" remote="kang" revision="ics" />
+  <project path="system/extras"  name="platform/system/extras" />
   <project path="system/media" name="platform/system/media" />
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
