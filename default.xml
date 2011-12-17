@@ -16,7 +16,7 @@
            fetch="git://github.com/CyanogenMod/"
            revision="ics" />
 
-  <default revision="refs/tags/android-4.0.3_r1"
+  <default revision="master"
            remote="aosp"
            sync-j="4" />
 
