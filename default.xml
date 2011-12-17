@@ -213,7 +213,7 @@
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="TeamKang/packages_apps_Settings" remote="kang" revision="master" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="kang" revision="master" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
@@ -251,11 +251,11 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
   
-  <project path="vendor/samsung" name="TeamKang/vendor_samsung" remote="kang" revision="master" />
+  <project path="vendor/samsung" name="vendor_samsung" remote="kang" revision="master" />
   
-  <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="kang" revision="ics" />
-  <project path="system/su" name="TeamKang/android_system_su" remote="kang" revision="ics" />
-  <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="kang" revision="ics" />
-  <project path="packages/apps/ROMControl" name="TeamKang/packages_apps_ROMControl" remote="kang" revision="master" />
+  <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="cm" revision="ics" />
+  <project path="system/su" name="android_system_su" remote="cm" revision="ics" />
+  <project path="packages/apps/Superuser" name="android_packages_apps_Superuser" remote="cm" revision="ics" />
+  <project path="packages/apps/ROMControl" name="packages_apps_ROMControl" remote="kang" revision="master" />
 
 </manifest>
