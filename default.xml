@@ -20,7 +20,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="android_build" remote="cm" revision="ics" >
+  <project path="build" name="CyanogenMod/android_build" remote="gh" revision="ics" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -253,9 +253,9 @@
   
   <project path="vendor/samsung" name="TeamKang/vendor_samsung" remote="gh" revision="master" />
   
-  <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="cm" revision="ics" />
-  <project path="system/su" name="android_system_su" remote="cm" revision="ics" />
-  <project path="packages/apps/Superuser" name="android_packages_apps_Superuser" remote="cm" revision="ics" />
+  <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="gh" revision="ics" />
+  <project path="system/su" name="CyanogenMod/android_system_su" remote="gh" revision="ics" />
+  <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="gh" revision="ics" />
   <project path="packages/apps/ROMControl" name="TeamKang/packages_apps_ROMControl" remote="gh" revision="master" />
 
 </manifest>
