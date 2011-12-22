@@ -43,7 +43,7 @@
   <project path="device/samsung/crespo4g" name="peteralfonso/platform_device_samsung_crespo4g" remote="gh" revision="ics" />
   <project path="device/samsung/maguro" name="TeamKang/device_samsung_maguro" remote="gh" revision="master" />
   <project path="device/samsung/toro" name="TeamKang/device_samsung_toro" remote="gh" revision="master" />
-  <project path="device/samsung/tuna" name="TeamKang/device_samsung_tuna" remote="gh" revision="master" />
+  <project path="device/samsung/tuna" name="TeamKang/device_samsung_tuna" remote="gh" revision="ics" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
   <project path="external/android-mock" name="platform/external/android-mock" />
