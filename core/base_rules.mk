@@ -499,11 +499,11 @@ ifndef LOCAL_UNINSTALLABLE_MODULE
   # installation;  hence, LOCAL_ACP_UNAVAILABLE.
 ifneq ($(LOCAL_ACP_UNAVAILABLE),true)
 $(LOCAL_INSTALLED_MODULE): $(LOCAL_BUILT_MODULE) | $(ACP)
-	@echo "Install: $@"
+	@echo -e ${CL_INS}"Install: $@"${CL_RST}
 	$(copy-file-to-new-target)
 else
 $(LOCAL_INSTALLED_MODULE): $(LOCAL_BUILT_MODULE)
-	@echo "Install: $@"
+	@echo -e ${CL_INS}"Install: $@"${CL_RST}
 	$(copy-file-to-target-with-cp)
 endif
 
@@ -511,7 +511,7 @@ ifdef LOCAL_DEX_PREOPT
 installed_odex := $(basename $(LOCAL_INSTALLED_MODULE)).odex
 built_odex := $(basename $(LOCAL_BUILT_MODULE)).odex
 $(installed_odex) : $(built_odex) | $(ACP)
-	@echo "Install: $@"
+	@echo -e ${CL_INS}"Install: $@"${CL_RST}
 	$(copy-file-to-target)
 
 $(LOCAL_INSTALLED_MODULE) : $(installed_odex)
