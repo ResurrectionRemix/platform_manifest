@@ -2,7 +2,8 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".." />
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
   <default revision="master"
            remote="aosp"
            sync-j="4" />
