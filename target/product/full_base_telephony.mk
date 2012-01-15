@@ -24,7 +24,7 @@ PRODUCT_PACKAGES := \
 
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true
+    ro.com.android.dataroaming=false
 
 PRODUCT_COPY_FILES := \
     device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml
