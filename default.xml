@@ -42,6 +42,8 @@
   <project path="device/samsung/crespo" name="TeamKang/device_samsung_crespo" remote="gh" revision="ics" />
   <project path="device/samsung/crespo4g" name="peteralfonso/platform_device_samsung_crespo4g" remote="gh" revision="ics" />
   <project path="device/samsung/maguro" name="TeamKang/device_samsung_maguro" remote="gh" revision="master" />
+  <project path="device/samsung/p4-common" name="TeamKang/device_samsung_p4-common" remote="gh" revision="master" />
+  <project path="device/samsung/p4wifi" name="TeamKang/device_samsung_p4wifi" remote="gh" revision="master" />
   <project path="device/samsung/toro" name="TeamKang/device_samsung_toro" remote="gh" revision="master" />
   <project path="device/samsung/tuna" name="TeamKang/device_samsung_tuna" remote="gh" revision="ics" />
   <project path="device/ti/panda" name="device/ti/panda" />
@@ -175,6 +177,7 @@
   <project path="frameworks/opt/mailcommon" name="platform/frameworks/opt/mailcommon" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" />
   <project path="frameworks/support" name="platform/frameworks/support" />
+  <project path="hardware/cm" name="TeamKang/hardware_cm" remote="gh" revision="ics" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" />
   <project path="hardware/invensense" name="platform/hardware/invensense" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
