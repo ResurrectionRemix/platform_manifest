@@ -262,6 +262,6 @@
   <project path="system/su" name="TeamKang/android_system_su" remote="gh" revision="ics" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="gh" revision="ics" />
   <project path="packages/apps/ROMControl" name="TeamKang/packages_apps_ROMControl" remote="gh" revision="master" />
-  <project path="packages/apps/Trebuchet" name="CyanogenMod/packages_apps_Trebuchet" remote="gh" revision="ics" />
+  <project path="packages/apps/Trebuchet" name="CyanogenMod/android_packages_apps_Trebuchet" remote="gh" revision="ics" />
 
 </manifest>
