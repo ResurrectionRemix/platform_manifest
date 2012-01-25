@@ -52,6 +52,9 @@ Usage:  ota_from_target_files [flags] input_target_files output_ota_package
   -a  (--aslr_mode)  <on|off>
       Specify whether to turn on ASLR for the package (on by default).
 
+    --no_assert <true|false>
+	  Including this will turn device asserts off.
+
 """
 
 import sys
@@ -88,6 +91,7 @@ OPTIONS.omit_prereq = False
 OPTIONS.extra_script = None
 OPTIONS.aslr_mode = True
 OPTIONS.worker_threads = 3
+OPTIONS.no_assert = False
 
 def MostPopularKey(d, default):
   """Given a dict, return the key corresponding to the largest
@@ -385,8 +389,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
       metadata=metadata,
       info_dict=OPTIONS.info_dict)
 
-  AppendAssertions(script, OPTIONS.info_dict)
-  device_specific.FullOTA_Assertions()
+  if not OPTIONS.no_assert:
+    AppendAssertions(script, OPTIONS.info_dict)
+	device_specific.FullOTA_Assertions()
+
   device_specific.FullOTA_InstallBegin()
 
   script.ShowProgress(0.5, 0)
@@ -549,7 +555,8 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_zip):
   #  0.1 for unpacking verbatim files, symlinking, and doing the
   #      device-specific commands.
 
-  AppendAssertions(script, OPTIONS.target_info_dict)
+  if OPTIONS.no_assert:
+    AppendAssertions(script, OPTIONS.target_info_dict)
   device_specific.IncrementalOTA_Assertions()
 
   script.Print("Verifying current system...")
@@ -736,6 +743,11 @@ def main(argv):
       OPTIONS.omit_prereq = True
     elif o in ("-e", "--extra_script"):
       OPTIONS.extra_script = a
+    elif o in ("--no_assert"):
+      if a in ("on", "On", "true", "True", "yes", "Yes"):
+        OPTIONS.no_assert = True
+      else:
+        OPTIONS.no_assert = False
     elif o in ("-a", "--aslr_mode"):
       if a in ("on", "On", "true", "True", "yes", "Yes"):
         OPTIONS.aslr_mode = True
@@ -751,6 +763,7 @@ def main(argv):
                              extra_opts="b:k:i:d:wne:a:",
                              extra_long_opts=["board_config=",
                                               "package_key=",
+                                              "no_assert=",
                                               "incremental_from=",
                                               "wipe_user_data",
                                               "no_prereq",
