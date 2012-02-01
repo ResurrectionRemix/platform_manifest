@@ -1,2 +1,2 @@
-$ repo init -u https://github.com/TeamKang/platform_manifest.git -b master
+$ repo init -u https://github.com/AOKP/platform_manifest.git -b master
 $ repo sync
