@@ -259,7 +259,7 @@
   <project path="vendor/samsung" name="TeamKang/vendor_samsung" remote="gh" revision="master" />
   <project path="vendor/imgtec" name="TeamKang/vendor_imgtec" remote="gh" revision="master" />
   <project path="vendor/aokp" name="TeamKang/vendor_aokp" remote="gh" revision="ics" />
-  <project path="vendor/hp/tenderloin" name="TeamKang_vendor_hp_tenderloin" remote="gh" revision="aokp" />
+  <project path="vendor/hp/tenderloin" name="TeamKang/vendor_hp_tenderloin" remote="gh" revision="aokp" />
   
   <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="gh" revision="ics" />
   <project path="system/su" name="TeamKang/android_system_su" remote="gh" revision="ics" />
