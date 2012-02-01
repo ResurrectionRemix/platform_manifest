@@ -35,7 +35,7 @@
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
-  <project path="device/hp/tenderloin" name="TeamKang/device_hp_tenderloin" remote="gh" revision="aokp" />
+  <project path="device/hp/tenderloin" name="TeamKang/android_device_hp_tenderloin" remote="gh" revision="aokp" />
   <project path="device/moto/common" name="device/moto/common" />
   <project path="device/moto/stingray" name="device/moto/stingray" />
   <project path="device/moto/wingray" name="device/moto/wingray" />
