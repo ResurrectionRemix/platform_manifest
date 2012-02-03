@@ -30,7 +30,7 @@
   <project path="bootable/recovery" name="platform/bootable/recovery" />
   <project path="cts" name="platform/cts" />
   <project path="dalvik" name="platform/dalvik" />
-  <project path="development" name="platform/development" />
+    <project path="development" name="AOKP/platform_development" remote="gh" revision="ics-mr1-release" />
   <project path="device/common" name="device/common" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
@@ -76,7 +76,7 @@
   <project path="external/dropbear" name="platform/external/dropbear" />
   <project path="external/e2fsprogs" name="AOKP/external_e2fsprogs" remote="gh" revision="master" />
   <project path="external/easymock" name="platform/external/easymock" />
-  <project path="external/elfutils" name="platform/external/elfutils" />
+  <project path="external/elfutils" name="AOKP/external_elfutils" remote="gh" revision="ics-mr1-release" />
   <project path="external/embunit" name="platform/external/embunit" />
   <project path="external/emma" name="platform/external/emma" />
   <project path="external/esd" name="platform/external/esd" />
@@ -140,7 +140,7 @@
   <project path="external/ppp" name="platform/external/ppp" />
   <project path="external/proguard" name="platform/external/proguard" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform/external/qemu" />
+  <project path="external/qemu" name="AOKP/external_qemu" remote="gh" revision="ics-mr1-release" />
   <project path="external/qemu-pc-bios" name="platform/external/qemu-pc-bios" />
   <project path="external/quake" name="platform/external/quake" />
   <project path="external/safe-iop" name="platform/external/safe-iop" />
