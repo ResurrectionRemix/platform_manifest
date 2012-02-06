@@ -39,6 +39,13 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers
 
+PRODUCT_PACKAGES += \
+    libvideoeditor_jni \
+    libvideoeditor_core \
+    libvideoeditor_osal \
+    libvideoeditor_videofilters \
+    libvideoeditorplayer
+
 # Additional settings used in all AOSP builds
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.com.android.dateformat=MM-dd-yyyy \
