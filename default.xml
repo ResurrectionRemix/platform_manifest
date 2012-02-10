@@ -190,6 +190,7 @@
   <project path="hardware/libhardware" name="AOKP/hardware_libhardware" remote="gh" revision="master" />
   <project path="hardware/libhardware_legacy" name="CyanogenMod/android_hardware_libhardware_legacy" remote="gh" revision="ics" />
   <project path="hardware/qcom/display" name="AOKP/android_hardware_qcom_display" remote="gh" revision="ics" />
+  <project path="hardware/qcom/camera" name="AOKP/android_hardware_qcom_camera" remote="gh" revision="ics" />
   <project path="hardware/msm7k" name="AOKP/hardware_msm7k" remote="gh" revision="master" />
   <project path="hardware/qcom/gps" name="AOKP/hardware_qcom_gps" remote="gh" revision="master" />
   <project path="hardware/qcom/media" name="AOKP/hardware_qcom_media" remote="gh" revision="master" />
