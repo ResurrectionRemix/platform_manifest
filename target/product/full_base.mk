@@ -23,6 +23,7 @@ PRODUCT_PACKAGES := \
     libfwdlockengine \
     OpenWnn \
     PinyinIME \
+    libjni_pinyinime \
     libWnnEngDic \
     libWnnJpnDic \
     libwnndict \

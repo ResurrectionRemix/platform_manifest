@@ -32,6 +32,7 @@ PRODUCT_PACKAGES := \
 	libwnndict \
 	Phone \
 	PinyinIME \
+	libjni_pinyinime \
 	Protips \
 	SoftKeyboard \
 	SystemUI \
