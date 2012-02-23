@@ -27,7 +27,7 @@
   <project path="bionic" name="AOKP/bionic" remote="gh" revision="master" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" />
+  <project path="bootable/recovery" name="CyanogenMod/android_bootable_recovery" remote="gh" revision="ics" />
   <project path="cts" name="platform/cts" />
   <project path="dalvik" name="platform/dalvik" />
   <project path="development" name="AOKP/platform_development" remote="gh" revision="ics-mr1-release" />
@@ -45,6 +45,7 @@
   <project path="device/moto/stingray" name="AOKP/device_moto_stingray" remote="gh" revision="ics" />
   <project path="device/moto/wingray" name="AOKP/device_moto_wingray" remote="gh" revision="ics" />
   <project path="device/sample" name="device/sample" />
+  <project path="device/samsung/aries-common" name="AOKP/device_samsung_aries-common" remote="gh" revision="ics"
   <project path="device/samsung/crespo" name="AOKP/device_samsung_crespo" remote="gh" revision="ics" />
   <project path="device/samsung/crespo4g" name="AOKP/device_samsung_crespo4g" remote="gh" revision="ics" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="gh" revision="master" />
@@ -54,6 +55,7 @@
   <project path="device/samsung/p4wifi" name="AOKP/device_samsung_p4wifi" remote="gh" revision="ics" />
   <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="gh" revision="master" />
   <project path="device/samsung/tuna" name="AOKP/device_samsung_tuna" remote="gh" revision="ics" />
+  <project path="device/samsung/vibrantmtd" name="AOKP/device_samsung_vibrantmtd" remote="gh" revision="master" />
   <project path="device/samsung/vzwtab" name="AOKP/device_samsung_vzwtab" remote="gh" revision="AOKP" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
