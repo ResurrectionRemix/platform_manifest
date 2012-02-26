@@ -5,15 +5,15 @@
            fetch="https://android.googlesource.com/" />
            
   <remote  name="gh"
-           fetch="git://github.com/"
+           fetch="http://github.com/"
            revision="master" />
            
   <remote  name="kang"
-           fetch="git@github.com:AOKP/"
+           fetch="https://AOKP@github.com/AOKP/"
            revision="master" />
            
   <remote  name="cm"
-           fetch="git://github.com/CyanogenMod/"
+           fetch="http://github.com/CyanogenMod/"
            revision="ics" />
 
   <default revision="refs/tags/android-4.0.3_r1"
