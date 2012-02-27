@@ -277,7 +277,7 @@
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="master" />
   <project path="vendor/amazon/otter" name="AOKP/vendor_amazon_otter" remote="gh" revision="ics" />
   
-  <project path="external/busybox" name="CyanogenMod/android_external_busybox.git" remote="gh" revision="ics" />
+  <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="gh" revision="ics" />
   <project path="system/su" name="AOKP/android_system_su" remote="gh" revision="ics" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="gh" revision="ics" />
   <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="gh" revision="master" />
