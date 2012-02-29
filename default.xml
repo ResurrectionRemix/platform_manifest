@@ -198,7 +198,7 @@
   <project path="hardware/qcom/camera" name="AOKP/android_hardware_qcom_camera" remote="gh" revision="ics" />
   <project path="hardware/msm7k" name="AOKP/hardware_msm7k" remote="gh" revision="master" />
   <project path="hardware/qcom/gps" name="AOKP/hardware_qcom_gps" remote="gh" revision="master" />
-  <project path="hardware/qcom/media" name="AOKP/hardware_qcom_media" remote="gh" revision="master" />
+  <project path="hardware/qcom/media" name="AOKP/android_hardware_qcom_media" remote="gh" revision="master" />
   <project path="hardware/ril" name="AOKP/android_hardware_ril" remote="gh" revision="ics" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" />
