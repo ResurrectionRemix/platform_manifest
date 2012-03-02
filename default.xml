@@ -32,6 +32,7 @@
   <project path="dalvik" name="platform/dalvik" />
   <project path="development" name="AOKP/platform_development" remote="gh" revision="ics-mr1-release" />
   <project path="device/amazon/otter" name="AOKP/device_amazon_otter" remote="gh" revision="ics" />
+  <project path="device/acer/a500" name="AOKP/device_acer_a500" remote="gh" revision="ics" />
   <project path="device/common" name="device/common" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
@@ -278,6 +279,7 @@
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="gh" revision="master" />
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="master" />
   <project path="vendor/amazon/otter" name="AOKP/vendor_amazon_otter" remote="gh" revision="ics" />
+  <project path="vendor/acer/a500" name="AOKP/vendor_acer_a500" remote="gh" revision="ics" />
   
   <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="gh" revision="ics" />
   <project path="system/su" name="AOKP/android_system_su" remote="gh" revision="ics" />
