@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/" />
            
   <remote  name="gh"
-           fetch="https://github.com/"
+           fetch="http://github.com/"
            revision="master" />
            
   <remote  name="kang"
