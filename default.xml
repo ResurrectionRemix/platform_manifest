@@ -38,6 +38,7 @@
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
+  <project path="device/htc/bravo" name="AOKP/device_htc_bravo" remote="gh" revision="ics" />
   <project path="device/htc/inc" name="AOKP/android_device_htc_inc" remote="gh" revision="ics" />
   <project path="device/htc/supersonic" name="AOKP/android_device_htc_supersonic" remote="gh" revision="ics" />
   <project path="device/htc/vivow" name="AOKP/android_device_htc_vivow" remote="gh" revision="ics" />
