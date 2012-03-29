@@ -4,6 +4,10 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/" />
            
+  <remote  name="404" 
+           revision="refs/tags/android-4.0.4_r1.1"
+           fetch="https://android.googlesource.com/" />
+           
   <remote  name="gh"
            fetch="http://github.com/"
            revision="master" />
@@ -16,7 +20,7 @@
            fetch="http://github.com/CyanogenMod/"
            revision="ics" />
 
-  <default revision="refs/tags/android-4.0.4_r1.1"
+  <default revision="master"
            remote="aosp"
            sync-j="4" />
 
