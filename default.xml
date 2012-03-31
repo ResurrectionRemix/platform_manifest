@@ -48,6 +48,7 @@
   <project path="device/htc/vivow" name="AOKP/android_device_htc_vivow" remote="gh" revision="ics" />
   <project path="device/htc/common" name="CyanogenMod/android_device_htc_common" remote="gh" revision="gingerbread" />
   <project path="device/htc/msm7x30-common" name="AOKP/android_device_htc_msm7x30-common" remote="gh" revision="ics" />
+  <project path="device/htc/msm8660-common" name="Cyanogenmod/android_device_htc_msm8660-common" remote="gh" revision="ics" />
   <project path="device/hp/tenderloin" name="AOKP/android_device_hp_tenderloin" remote="gh" revision="ics" />
   <project path="device/lge/p990" name="AOKP/android_device_lge_p990" remote="gh" revision="ics" />
   <project path="device/lge/p999" name="AOKP/android_device_lge_p999" remote="gh" revision="ics" />
