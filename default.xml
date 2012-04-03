@@ -3,19 +3,19 @@
 
   <remote  name="aosp"
            fetch="https://android.googlesource.com/" />
-           
-  <remote  name="404" 
+
+  <remote  name="404"
            revision="refs/tags/android-4.0.4_r1.1"
            fetch="https://android.googlesource.com/" />
-           
+
   <remote  name="gh"
            fetch="http://github.com/"
            revision="ics" />
-           
+
   <remote  name="kang"
            fetch="https://AOKP@github.com/AOKP/"
            revision="master" />
-           
+
   <remote  name="cm"
            fetch="http://github.com/CyanogenMod/"
            revision="ics" />
@@ -37,7 +37,7 @@
   <project path="development" name="AOKP/platform_development" remote="gh" revision="ics" />
   <project path="device/acer/a500" name="AOKP/device_acer_a500" remote="gh" revision="ics" />
   <project path="device/amazon/otter" name="AOKP/device_amazon_otter" remote="gh" revision="ics" />
-  <project path="device/asus/tf101" name="AOKP/device_asus_tf101" remote="gh" revision="aokp" />
+  <project path="device/asus/tf101" name="AOKP/device_asus_tf101" remote="gh" revision="ics" />
   <project path="device/common" name="device/common" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
@@ -301,7 +301,7 @@
   <project path="system/media" name="platform/system/media" />
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="AOKP/system_vold" remote="gh" revision="ics" />
-  
+
   <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="gh" revision="ics" />
   <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="gh" revision="ics" />
   <project path="vendor/moto" name="AOKP/vendor_moto" remote="gh" revision="ics" />
@@ -312,10 +312,10 @@
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="master" />
   <project path="vendor/amazon/otter" name="AOKP/vendor_amazon_otter" remote="gh" revision="ics" />
   <project path="vendor/acer/a500" name="AOKP/vendor_acer_a500" remote="gh" revision="ics" />
-  <project path="vendor/asus/tf101" name="AOKP/vendor_proprietary_asus_tf101" remote="gh" revision="aokp" />
+  <project path="vendor/asus/tf101" name="AOKP/vendor_proprietary_asus_tf101" remote="gh" revision="ics" />
   <project path="vendor/qcom/opensource/omx/mm-core" name="AOKP/android_vendor_qcom_opensource_omx_mm-core" remote="gh" revision="ics" />
   <project path="vendor/qcom/opensource/omx/mm-video" name="AOKP/android_vendor_qcom_opensource_omx_mm-video" remote="gh" revision="ics" />
-  
+
   <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="gh" revision="ics" />
   <project path="system/su" name="AOKP/android_system_su" remote="gh" revision="ics" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" remote="gh" revision="ics" />
