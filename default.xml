@@ -64,16 +64,16 @@
   <project path="device/samsung/crespo4g" name="AOKP/device_samsung_crespo4g" remote="gh" revision="ics" />
   <project path="device/samsung/fascinatemtd" name="AOKP/device_samsung_fascinatemtd" remote="gh" revision="ics" />
   <project path="device/samsung/galaxysmtd" name="AOKP/device_samsung_galaxysmtd" remote="gh" revision="ics" />
-  <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="gh" revision="master" />
+  <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="gh" revision="ics" />
   <project path="device/samsung/p4" name="AOKP/device_samsung_p4" remote="gh" revision="ics" />
   <project path="device/samsung/p4-common" name="AOKP/device_samsung_p4-common" remote="gh" revision="ics" />
   <project path="device/samsung/p4vzw" name="AOKP/device_samsung_p4vzw" remote="gh" revision="ics" />
   <project path="device/samsung/p4wifi" name="AOKP/device_samsung_p4wifi" remote="gh" revision="ics" />
   <project path="device/samsung/p5-common" name="AOKP/device_samsung_p5-common" remote="gh" revision="ics" />
   <project path="device/samsung/p5wifi" name="AOKP/device_samsung_p5wifi" remote="gh" revision="ics" />
-  <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="gh" revision="master" />
+  <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="gh" revision="ics" />
   <project path="device/samsung/tuna" name="AOKP/device_samsung_tuna" remote="gh" revision="ics" />
-  <project path="device/samsung/vibrantmtd" name="AOKP/device_samsung_vibrantmtd" remote="gh" revision="master" />
+  <project path="device/samsung/vibrantmtd" name="AOKP/device_samsung_vibrantmtd" remote="gh" revision="ics" />
   <project path="device/samsung/p1c" name="AOKP/device_samsung_p1c" remote="gh" revision="ics" />
   <project path="device/samsung/p1-common" name="AOKP/device_samsung_p1-common" remote="gh" revision="ics" />
   <project path="device/ti/panda" name="device/ti/panda" />
@@ -225,7 +225,7 @@
   <project path="hardware/qcom/display" name="AOKP/android_hardware_qcom_display" remote="gh" revision="ics" />
   <project path="hardware/qcom/camera" name="AOKP/android_hardware_qcom_camera" remote="gh" revision="ics" />
   <project path="hardware/msm7k" name="AOKP/android_hardware_msm7k" remote="gh" revision="ics" />
-  <project path="hardware/qcom/gps" name="AOKP/hardware_qcom_gps" remote="gh" revision="master" />
+  <project path="hardware/qcom/gps" name="AOKP/hardware_qcom_gps" remote="gh" revision="ics" />
   <project path="hardware/qcom/media" name="AOKP/android_hardware_qcom_media" remote="gh" revision="ics" />
   <project path="hardware/ril" name="AOKP/android_hardware_ril" remote="gh" revision="ics" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
@@ -251,7 +251,7 @@
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" />
   <project path="packages/apps/Launcher2" name="AOKP/android_packages_apps_Launcher2" remote="gh" revision="ics" />
-  <project path="packages/apps/Mms" name="AOKP/packages_apps_Mms" remote="gh" revision="master" />
+  <project path="packages/apps/Mms" name="AOKP/packages_apps_Mms" remote="gh" revision="ics" />
   <project path="packages/apps/Music" name="platform/packages/apps/Music" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
@@ -307,7 +307,7 @@
   <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="gh" revision="ics" />
   <project path="vendor/moto" name="AOKP/vendor_moto" remote="gh" revision="ics" />
   <project path="vendor/hp/tenderloin" name="AOKP/vendor_hp_tenderloin" remote="gh" revision="aokp" />
-  <project path="vendor/htc" name="AOKP/vendor_htc" remote="gh" revision="master" />
+  <project path="vendor/htc" name="AOKP/vendor_htc" remote="gh" revision="ics" />
   <project path="vendor/htc/pyramid" name="AOKP/android_vendor_htc_pyramid" remote="gh" revision="ics" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="gh" revision="ics" />
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="ics" />
@@ -325,6 +325,6 @@
   <project path="packages/apps/GanOptimizer" name="CyanogenMod/android_packages_apps_GanOptimizer" remote="gh" revision="gb-release-7.2" />
   <project path="packages/apps/AppWidgetPicker" name="AOKP/packages_apps_AppWidgetPicker" remote="gh" revision="ics" />
 
-  <project path="platform_manifest" name="AOKP/platform_manifest" remote="gh" revision="master" />
+  <project path="platform_manifest" name="AOKP/platform_manifest" remote="gh" revision="ics" />
 
 </manifest>
