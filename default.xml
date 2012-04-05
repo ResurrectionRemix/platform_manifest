@@ -74,7 +74,7 @@
   <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="gh" revision="master" />
   <project path="device/samsung/tuna" name="AOKP/device_samsung_tuna" remote="gh" revision="ics" />
   <project path="device/samsung/vibrantmtd" name="AOKP/device_samsung_vibrantmtd" remote="gh" revision="master" />
-  <project path="device/samsung/p1c" name="AOKP/device_samsung_p1c" remote="gh" revision="AOKP" />
+  <project path="device/samsung/p1c" name="AOKP/device_samsung_p1c" remote="gh" revision="ics" />
   <project path="device/samsung/p1-common" name="AOKP/device_samsung_p1-common" remote="gh" revision="ics" />
   <project path="device/ti/panda" name="device/ti/panda" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
@@ -310,7 +310,7 @@
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="gh" revision="master" />
   <project path="vendor/htc/pyramid" name="AOKP/android_vendor_htc_pyramid" remote="gh" revision="ics" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="gh" revision="ics" />
-  <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="master" />
+  <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="ics" />
   <project path="vendor/amazon/otter" name="AOKP/vendor_amazon_otter" remote="gh" revision="ics" />
   <project path="vendor/acer/a500" name="AOKP/vendor_acer_a500" remote="gh" revision="ics" />
   <project path="vendor/asus/tf101" name="AOKP/vendor_proprietary_asus_tf101" remote="gh" revision="ics" />
