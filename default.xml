@@ -9,7 +9,8 @@
            fetch="https://android.googlesource.com/" />
 
   <remote  name="gh"
-           fetch="http://github.com/"
+           fetch=".."
+           review="gerrit.aokp.co"
            revision="ics" />
 
   <remote  name="kang"
