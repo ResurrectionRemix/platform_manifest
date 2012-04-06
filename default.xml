@@ -9,12 +9,9 @@
            fetch="https://android.googlesource.com/" />
 
   <remote  name="gh"
-           fetch="http://github.com/"
+           fetch=".."
+           review="gerrit.aokp.co"
            revision="ics" />
-
-  <remote  name="kang"
-           fetch="https://AOKP@github.com/AOKP/"
-           revision="master" />
 
   <remote  name="cm"
            fetch="http://github.com/CyanogenMod/"
