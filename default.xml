@@ -76,6 +76,7 @@
   <project path="external/apache-http" name="platform/external/apache-http"  remote="aosp" revision="refs/tags/android-4.0.4_r1.1" />
   <project path="external/apache-xml" name="platform/external/apache-xml"  remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/astl" name="platform/external/astl" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
+  <project path="external/bash" name="CyanogenMod/android_external_bash" remote="gh" revision="ics" />
   <project path="external/bison" name="platform/external/bison" remote="aosp" revision="refs/tags/android-4.0.4_r1.1" />
   <project path="external/blktrace" name="platform/external/blktrace" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/bluetooth/bluez" name="AOKP/external_bluetooth_bluez" remote="gh" revision="ics" />
@@ -128,6 +129,7 @@
   <project path="external/libffi" name="platform/external/libffi" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/libgsm" name="platform/external/libgsm" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/liblzf" name="platform/external/liblzf" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
+  <project path="external/libncurses" name="CyanogenMod/android_external_libncurses"  remote="gh" revision="ics" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/libnl-headers" name="platform/external/libnl-headers" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/libpcap" name="platform/external/libpcap" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
