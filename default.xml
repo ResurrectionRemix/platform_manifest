@@ -153,7 +153,7 @@
   <project path="external/oauth" name="platform/external/oauth" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/opencv" name="platform/external/opencv" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/openssl" name="platform/external/openssl" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
-  <project path="external/openvpn" name="CyanogenMod/external/openvpn" remote="gh" revision="ics" />
+  <project path="external/openvpn" name="CyanogenMod/android_external_openvpn" remote="gh" revision="ics" />
   <project path="external/oprofile" name="CyanogenMod/android_external_oprofile" remote="gh" revision="ics"  />
   <project path="external/pcre" name="platform/external/pcre" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/ping" name="platform/external/ping" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
