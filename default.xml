@@ -141,6 +141,7 @@
   <project path="external/libyuv" name="platform/external/libyuv" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/llvm" name="platform/external/llvm" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/lohit-fonts" name="platform/external/lohit-fonts" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
+  <project path="external/lzo" name="CyanogenMod/android_external_lzo" remote="gh" revision="ics" />
   <project path="external/markdown" name="platform/external/markdown" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
   <project path="external/mesa3d" name="AOKP/external_mesa3d" remote="gh" revision="ics"/>
   <project path="external/mksh" name="platform/external/mksh" remote="aosp" revision="refs/tags/android-4.0.4_r1.1"/>
