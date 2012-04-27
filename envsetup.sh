@@ -12,6 +12,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 - resgrep: Greps on all local res/*.xml files.
 - godir:   Go to the directory containing a file.
 - mka:      Builds using SCHED_BATCH on all processors
+- mbot:     Builds for all devices using the psuedo buildbot
 - reposync: Parallel repo sync using ionice and SCHED_BATCH
 
 Look at the source to view more functions. The complete list is:
@@ -1225,6 +1226,12 @@ function mka() {
             schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
             ;;
     esac
+}
+
+function mbot() {
+    unset LUNCH_MENU_CHOICES
+    croot
+    ./vendor/aokp/bot/deploy.sh
 }
 
 function reposync() {
