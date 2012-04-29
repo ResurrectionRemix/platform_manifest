@@ -95,13 +95,9 @@ ifeq ($(TARGET_ARCH),arm)
       ccache := $(ANDROID_BUILD_TOP)/prebuilt/$(HOST_PREBUILT_TAG)/ccache/ccache
       # Check that the executable is here.
       ccache := $(strip $(wildcard $(ccache)))
-      ifdef ccache
-        ARM_CROSS_COMPILE:=CROSS_COMPILE="$(ccache) $(ARM_EABI_TOOLCHAIN)/arm-eabi-"
-        ccache = 
-      else
-        ARM_CROSS_COMPILE:=CROSS_COMPILE=$(ARM_EABI_TOOLCHAIN)/arm-eabi-
-      endif
     endif
+    ARM_CROSS_COMPILE:=CROSS_COMPILE="$(ccache) $(ARM_EABI_TOOLCHAIN)/arm-eabi-"
+    ccache = 
 endif
 
 ifeq ($(TARGET_KERNEL_MODULES),)
