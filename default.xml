@@ -28,7 +28,7 @@
   <project path="dalvik" name="platform/dalvik" remote="aosp" revision="refs/tags/android-4.0.4_r1.2" />
   <project path="development" name="AOKP/platform_development" remote="gh" revision="ics" />
   <project path="device/acer/picasso" name="AOKP/android_device_acer_picasso" remote="gh" revision="ics" />
-  <project path="device/acer/t20-common" name="AOKP/android_acer_t20-common" remote="gh" revision="ics" />
+  <project path="device/acer/t20-common" name="AOKP/android_device_acer_t20-common" remote="gh" revision="ics" />
   <project path="device/amazon/otter" name="AOKP/device_amazon_otter" remote="gh" revision="ics" />
   <project path="device/asus/tf101" name="AOKP/device_asus_tf101" remote="gh" revision="ics" />
   <project path="device/common" name="device/common" remote="aosp" revision="refs/tags/android-4.0.4_r1.2" />
