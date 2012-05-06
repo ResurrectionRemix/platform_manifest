@@ -299,7 +299,7 @@
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="gh" revision="ics" />
   <project path="vendor/amazon/otter" name="AOKP/vendor_amazon_otter" remote="gh" revision="ics" />
   <project path="vendor/acer/picasso" name="AOKP/android_vendor_acer_picasso" remote="gh" revision="ics" />
-  <project path="vendor/asus/tf101" name="AOKP/vendor_proprietary_asus_tf101" remote="gh" revision="ics" />
+  <project path="vendor/asus" name="AOKP/vendor_asus" remote="gh" revision="ics" />
   <project path="vendor/qcom/opensource/omx/mm-core" name="AOKP/android_vendor_qcom_opensource_omx_mm-core" remote="gh" revision="ics" />
   <project path="vendor/qcom/opensource/omx/mm-video" name="AOKP/android_vendor_qcom_opensource_omx_mm-video" remote="gh" revision="ics" />
 
