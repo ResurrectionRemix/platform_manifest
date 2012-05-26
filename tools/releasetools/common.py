@@ -865,7 +865,8 @@ def ComputeDifferences(diffs):
 
 
 # map recovery.fstab's fs_types to mount/format "partition types"
-PARTITION_TYPES = { "ext2": "EMMC",
+PARTITION_TYPES = { "bml": "BML",
+                    "ext2": "EMMC",
                     "ext3": "EMMC",
                     "ext4": "EMMC",
                     "emmc": "EMMC",
