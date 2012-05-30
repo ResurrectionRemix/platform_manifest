@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project path="kernel/samsung/aries" name="GlitchKernel/Glitch" remote="gh" revision="V14" />
+  <project path="kernel/samsung/p1c" name="CyanogenMod/android_kernel_samsung_galaxytab-cdma" remote="gh" revision="ics" />
+  <project path="kernel/samsung/p4" name="pershoot/android_kernel_samsung_p4" remote="gh" revision="ics" />
+  <project path="kernel/lge/star" name="AOKP/lge-kernel-star" remote="gh" revision="android-tegra-2.6.32-ics" />
+  <project path="kernel/hp/tenderloin" name="CyanogenMod/hp-kernel-tenderloin" remote="gh" revision="ics" />
+  <project path="kernel/samsung/tuna" name="CyanogenMod/android_kernel_samsung_tuna" remote="gh" revision="ics" />
+</manifest>
