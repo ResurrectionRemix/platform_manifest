@@ -6,9 +6,19 @@
 echo "adding kernel repos to your build tree"
 
 if [ -f .repo/local_manifest.xml ]; then
-	echo "Your previous local_manifest.xml file has been renamed to old_local_manifest.xml"
-	echo "Please update your new one accordingly!"
-	mv .repo/local_manifest.xml .repo/old_local_manifest.xml
+        echo "local manifest already present."
+        echo "merging with kernel manifest for safety."
+        cat platform_manifest/kernel_manifest.xml | while read line
+        do
+                kernel=`grep "$line" .repo/local_manifest.xml`
+                if [ -z "$kernel" ]; then
+                        echo "  $line" >> .repo/local_manifest.xml
+                fi
+        done
+        # Cleanup
+        grep -Ev "^</manifest>" .repo/local_manifest.xml > .repo/local_manifest.new
+        echo "</manifest>" >> .repo/local_manifest.new
+        mv .repo/local_manifest.new .repo/local_manifest.xml
 fi
 
 cp platform_manifest/kernel_manifest.xml .repo/local_manifest.xml
@@ -18,8 +28,8 @@ tail -n +3 platform_manifest/kernel_manifest.xml | head -n -1 | cut -f2 -d '"' >
 . build/envsetup.sh
 
 while read line ;do
-	reposync "$line"
-	echo "$line synced successfully"
+        reposync "$line"
+        echo "$line synced successfully"
 done < .sync
 
 #cleanup
