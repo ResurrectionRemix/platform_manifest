@@ -6,7 +6,7 @@
 
   <remote  name="gh"
            fetch="https://github.com/"
-           review="gerrit.sudoservers.com"
+           review="gerrit.aokp.co"
            revision="ics" />
 
   <remote  name="cm"
