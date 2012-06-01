@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <project path="kernel/asus/tf101" name="AOKP/kernel_asus_tf101" remote="gh" revision"ics" />
   <project path="kernel/samsung/aries" name="GlitchKernel/Glitch" remote="gh" revision="V14" />
   <project path="kernel/samsung/p1c" name="CyanogenMod/android_kernel_samsung_galaxytab-cdma" remote="gh" revision="ics" />
   <project path="kernel/samsung/p4" name="pershoot/android_kernel_samsung_p4" remote="gh" revision="ics" />
