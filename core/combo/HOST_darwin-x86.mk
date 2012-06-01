@@ -137,5 +137,10 @@ endef
 
 # $(1): The file to check
 define get-file-size
-stat -f "%z" $(1)
+GSTAT=$(which gstat) \
+if [ ! -z "$GSTAT" ]; then \
+gstat -c "%z" $(1) \
+else \
+stat -f "%z" $(1) \
+fi
 endef
