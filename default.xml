@@ -92,7 +92,7 @@
   <project path="external/bsdiff" name="platform/external/bsdiff" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/bzip2" name="platform/external/bzip2" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/chromium" name="AOKP/external_chromium" remote="gh" revision="ics"/>
-  <project path="external/clang" name="platform/external/clang" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
+  <project path="external/clang" name="AOKP/external_clang" remote="gh" revision="ics" />
   <project path="external/collada" name="platform/external/collada" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/dbus" name="platform/external/dbus" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/dhcpcd" name="platform/external/dhcpcd" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
@@ -164,7 +164,7 @@
   <project path="external/oprofile" name="CyanogenMod/android_external_oprofile" remote="gh" revision="ics"  />
   <project path="external/pcre" name="platform/external/pcre" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/ping" name="AOKP/external_ping" remote="gh" revision="ics" />
-  <project path="external/ping6" name="platform/external/ping6" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
+  <project path="external/ping6" name="AOKP/external_ping6" remote="gh" revision="ics" />
   <project path="external/ppp" name="platform/external/ppp" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/proguard" name="platform/external/proguard" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/protobuf" name="platform/external/protobuf" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
