@@ -70,7 +70,7 @@
   <project path="device/samsung/p5" name="AOKP/android_device_samsung_p5" remote="gh" revision="ics" />
   <project path="device/samsung/p5-common" name="AOKP/android_device_samsung_p5-common" remote="gh" revision="ics" />
   <project path="device/samsung/p5wifi" name="AOKP/android_device_samsung_p5wifi" remote="gh" revision="ics" />
-  <project path="device/samsung/showcase" name="AOKP/android_device_samsung_showcase" remote="gh" revision="ics" />
+  <project path="device/samsung/showcasemtd" name="AOKP/android_device_samsung_showcasemtd" remote="gh" revision="ics" />
   <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="gh" revision="ics" />
   <project path="device/samsung/toroplus" name="AOKP/android_device_samsung_toroplus" remote="gh" revision="ics" />
   <project path="device/samsung/tuna" name="AOKP/device_samsung_tuna" remote="gh" revision="ics" />
