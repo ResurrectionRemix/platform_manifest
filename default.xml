@@ -128,7 +128,7 @@
   <project path="external/javassist" name="platform/external/javassist" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/jdiff" name="platform/external/jdiff" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/jhead" name="platform/external/jhead" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
-  <project path="external/jpeg" name="AOKP/android_external_jpeg-turbo" remote="gh" revision="ics" />
+  <project path="external/jpeg" name="AOKP/external_jpeg" remote="gh" revision="ics" />
   <project path="external/jsilver" name="platform/external/jsilver" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/jsr305" name="platform/external/jsr305" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/junit" name="platform/external/junit" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
