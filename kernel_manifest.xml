@@ -7,5 +7,6 @@
   <project path="kernel/samsung/smdk4210" name="CyanogenMod/android_kernel_samsung_smdk4210" remote="gh" revision="ics" />
   <project path="kernel/lge/star" name="AOKP/lge-kernel-star" remote="gh" revision="android-tegra-2.6.32-ics" />
   <project path="kernel/hp/tenderloin" name="CyanogenMod/hp-kernel-tenderloin" remote="gh" revision="ics" />
+  <project path="kernel/samsung/msm8660-common" name="CyanogenMod/android_kernel_samsung_msm8660-common" remote="gh" revision="ics" />
   <project path="kernel/samsung/tuna" name="CyanogenMod/android_kernel_samsung_tuna" remote="gh" revision="ics" />
 </manifest>
