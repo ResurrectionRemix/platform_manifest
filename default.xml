@@ -145,7 +145,7 @@
   <project path="external/libncurses" name="CyanogenMod/android_external_libncurses"  remote="gh" revision="ics" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/libnl-headers" name="platform/external/libnl-headers" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
-  <project path="external/libpcap" name="platform/external/libpcap" remote="aosp" revision="ics" />
+  <project path="external/libpcap" name="AOKP/external_libpcap" remote="gh" revision="ics" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
   <project path="external/libpng" name="AOKP/external_libpng" remote="gh" revision="ics" />
   <project path="external/libvpx" name="platform/external/libvpx" remote="aosp" revision="refs/tags/android-4.0.4_r1.2"/>
