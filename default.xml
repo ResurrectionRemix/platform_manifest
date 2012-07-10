@@ -49,6 +49,7 @@
   <project path="external/apache-http" name="platform/external/apache-http" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/apache-xml" name="platform/external/apache-xml" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/astl" name="platform/external/astl" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/bash" name="CyanogenMod/android_external_bash" remote="gh" revision="jellybean" />
   <project path="external/bison" name="platform/external/bison" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/blktrace" name="platform/external/blktrace" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
