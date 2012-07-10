@@ -104,7 +104,7 @@
   <project path="external/jhead" name="platform/external/jhead" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jmdns" name="platform/external/jmdns" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jmonkeyengine" name="platform/external/jmonkeyengine" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/jpeg" name="platform/external/jpeg" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/jpeg" name="AOKP/external_jpeg" remote="gh" revision="jb" />
   <project path="external/jsilver" name="platform/external/jsilver" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jsr305" name="platform/external/jsr305" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/junit" name="platform/external/junit" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
