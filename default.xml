@@ -303,7 +303,7 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="sdk" name="platform/sdk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/bluetooth" name="platform/system/bluetooth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="system/core" name="platform/system/core" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="system/core" name="AOKP/system_core" remote="gh" revision="jb" />
   <project path="system/extras" name="AOKP/system_extras" remote="gh" revision="jb" />
   <project path="system/media" name="platform/system/media" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/netd" name="platform/system/netd" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
