@@ -303,11 +303,14 @@
   <project path="sdk" name="platform/sdk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/bluetooth" name="platform/system/bluetooth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/core" name="platform/system/core" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="system/extras" name="platform/system/extras" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="system/extras" name="AOKP/system_extras" remote="gh" revision="jb" />
   <project path="system/media" name="platform/system/media" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/netd" name="platform/system/netd" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/security" name="platform/system/security" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/vold" name="platform/system/vold" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+
+  <project path="system/su" name="ChainsDD/su-binary" remote="gh" revision="master" />
+  <project path="packages/apps/Superuser" name="ChainsDD/Superuser" remote="gh" revision="master" />
 
   <project path="platform_manifest" name="AOKP/platform_manifest" remote="gh" revision="jb" />
 
