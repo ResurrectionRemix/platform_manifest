@@ -310,8 +310,7 @@
   <project path="system/security" name="platform/system/security" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/vold" name="platform/system/vold" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
 
-  <project path="system/su" name="ChainsDD/su-binary" remote="gh" revision="master" />
-  <project path="packages/apps/Superuser" name="ChainsDD/Superuser" remote="gh" revision="master" />
+  <project path="system/su" name="AOKP/android_system_su" remote="gh" revision="jb" />
 
   <project path="platform_manifest" name="AOKP/platform_manifest" remote="gh" revision="jb" />
 
