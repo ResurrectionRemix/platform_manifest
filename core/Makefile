@@ -1190,8 +1190,15 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   -k $(KEY_CERT_PAIR) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage
+.PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+bacon: otapackage
+ifneq ($(TARGET_CUSTOM_RELEASETOOL),)
+        @echo "Running releasetool"
+        $(hide) $(TARGET_CUSTOM_RELEASETOOL)
+else
+	$(hide) ./vendor/aokp/tools/squisher
+endif
 
 # -----------------------------------------------------------------
 # The update package
