@@ -181,7 +181,7 @@
   <project path="external/tremolo" name="platform/external/tremolo" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/v8" name="platform/external/v8" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/valgrind" name="platform/external/valgrind" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/webkit" name="platform/external/webkit" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/webkit" name="external_webkit" remote="aokp" revision="jb" />
   <project path="external/webp" name="platform/external/webp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/webrtc" name="platform/external/webrtc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
