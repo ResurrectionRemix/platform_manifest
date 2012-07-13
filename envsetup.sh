@@ -641,7 +641,7 @@ function eat()
             echo "Device Found.."
         fi
         echo "Pushing $ZIPFILE to device"
-        if adb push $ZIPPATH /mnt/sdcard/ ; then
+        if adb push $ZIPPATH /storage/sdcard0/ ; then
             cat << EOF > /tmp/command
 --update_package=/sdcard/$ZIPFILE
 EOF
