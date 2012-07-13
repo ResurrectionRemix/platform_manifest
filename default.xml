@@ -52,6 +52,7 @@
   <project path="external/apache-http" name="platform/external/apache-http" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/apache-xml" name="platform/external/apache-xml" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/astl" name="platform/external/astl" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/bash" name="android_external_bash" remote="cm" revision="jellybean" />
   <project path="external/bison" name="platform/external/bison" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/blktrace" name="platform/external/blktrace" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -117,6 +118,7 @@
   <project path="external/libgsm" name="platform/external/libgsm" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/liblzf" name="platform/external/liblzf" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/libmtp" name="platform/external/libmtp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/libncurses" name="android_external_libncurses" remote="cm" revision="jellybean" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/libnl-headers" name="platform/external/libnl-headers" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/libpcap" name="platform/external/libpcap" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
