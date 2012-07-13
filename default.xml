@@ -193,7 +193,7 @@
   <project path="external/zlib" name="platform/external/zlib" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/zxing" name="platform/external/zxing" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/av" name="platform/frameworks/av" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="frameworks/base" name="platform/frameworks/base" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="frameworks/base" name="frameworks_base" remote="aokp" revision="jb" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
