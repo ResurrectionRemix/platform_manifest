@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/" />
 
   <remote  name="aokp"
-           fetch="https://github.com/AOKP/"
+           fetch="https://github.com/"
            review="gerrit.aokp.co" />
 
   <remote  name="cm"
@@ -15,11 +15,11 @@
   <default remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="android_build" remote="aokp" revision="jb" >
+  <project path="build" name="AOKP/android_build" remote="aokp" revision="jb" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="bionic" name="bionic" remote="aokp" revision="jb" />
+  <project path="bionic" name="AOKP/bionic" remote="aokp" revision="jb" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="bootable/recovery" name="platform/bootable/recovery" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -109,7 +109,7 @@
   <project path="external/jhead" name="platform/external/jhead" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jmdns" name="platform/external/jmdns" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jmonkeyengine" name="platform/external/jmonkeyengine" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/jpeg" name="external_jpeg" remote="aokp" revision="jb" />
+  <project path="external/jpeg" name="AOKP/external_jpeg" remote="aokp" revision="jb" />
   <project path="external/jsilver" name="platform/external/jsilver" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/jsr305" name="platform/external/jsr305" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/junit" name="platform/external/junit" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -183,7 +183,7 @@
   <project path="external/tremolo" name="platform/external/tremolo" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/v8" name="platform/external/v8" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/valgrind" name="platform/external/valgrind" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/webkit" name="external_webkit" remote="aokp" revision="jb" />
+  <project path="external/webkit" name="AOKP/external_webkit" remote="aokp" revision="jb" />
   <project path="external/webp" name="platform/external/webp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/webrtc" name="platform/external/webrtc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -193,7 +193,7 @@
   <project path="external/zlib" name="platform/external/zlib" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/zxing" name="platform/external/zxing" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/av" name="platform/frameworks/av" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="frameworks/base" name="frameworks_base" remote="aokp" revision="jb" />
+  <project path="frameworks/base" name="AOKP/frameworks_base" remote="aokp" revision="jb" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -201,7 +201,7 @@
   <project path="frameworks/ex" name="platform/frameworks/ex" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/mff" name="platform/frameworks/mff" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/ml" name="platform/frameworks/ml" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="frameworks/native" name="frameworks_native" remote="aokp" revision="jb" />
+  <project path="frameworks/native" name="AOKP/frameworks_native" remote="aokp" revision="jb" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/opt/inputmethodcommon" name="platform/frameworks/opt/inputmethodcommon" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -217,7 +217,7 @@
   <project path="hardware/libhardware" name="platform/hardware/libhardware" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/msm7k" name="platform/hardware/msm7k" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="aokp" revision="jb" />
+  <project path="hardware/qcom/display" name="AOKP/android_hardware_qcom_display" remote="aokp" revision="jb" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/qcom/media" name="platform/hardware/qcom/media" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/ril" name="platform/hardware/ril" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -237,7 +237,7 @@
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="aokp" revision="jb" />
+  <project path="packages/apps/DeskClock" name="AOKP/packages_apps_DeskClock" remote="aokp" revision="jb" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -251,12 +251,12 @@
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/Phone" name="packages_apps_Phone" remote="aokp" revision="jb" />
+  <project path="packages/apps/Phone" name="AOKP/packages_apps_Phone" remote="aokp" revision="jb" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/ROMControl" name="packages_apps_ROMControl" remote="aokp" revision="jb" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="aokp" revision="jb" />
+  <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="aokp" revision="jb" />
+  <project path="packages/apps/Settings" name="AOKP/packages_apps_Settings" remote="aokp" revision="jb" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -273,7 +273,7 @@
   <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/providers/DrmProvider" name="platform/packages/providers/DrmProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="aokp" revision="jb" />
+  <project path="packages/providers/MediaProvider" name="AOKP/packages_providers_MediaProvider" remote="aokp" revision="jb" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -310,17 +310,17 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="sdk" name="platform/sdk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/bluetooth" name="platform/system/bluetooth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="system/core" name="system_core" remote="aokp" revision="jb" />
-  <project path="system/extras" name="system_extras" remote="aokp" revision="jb" />
+  <project path="system/core" name="AOKP/system_core" remote="aokp" revision="jb" />
+  <project path="system/extras" name="AOKP/system_extras" remote="aokp" revision="jb" />
   <project path="system/media" name="platform/system/media" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/netd" name="platform/system/netd" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/security" name="platform/system/security" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/vold" name="platform/system/vold" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
 
-  <project path="vendor/aokp" name="vendor_aokp" remote="aokp" revision="jb" />
+  <project path="AOKP/vendor/aokp" name="vendor_aokp" remote="aokp" revision="jb" />
 
-  <project path="system/su" name="android_system_su" remote="aokp" revision="jb" />
+  <project path="AOKP/system/su" name="android_system_su" remote="aokp" revision="jb" />
 
-  <project path="platform_manifest" name="platform_manifest" remote="aokp" revision="jb" />
+  <project path="AOKP/platform_manifest" name="platform_manifest" remote="aokp" revision="jb" />
 
 </manifest>
