@@ -40,9 +40,9 @@
   <project path="device/samsung/crespo" name="device/samsung/crespo" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="device/samsung/crespo4g" name="device/samsung/crespo4g" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="device/samsung/maguro" name="device/samsung/maguro" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="device/samsung/toro" name="device/samsung/toro" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="device/samsung/toro" name="AOKP/device_samsung_toro" remote="aokp" revision="jb" />
   <project path="device/samsung/torospr" name="device/samsung/torospr" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="device/samsung/tuna" name="device/samsung/tuna" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="device/samsung/tuna" name="AOKP/device_samsung_tuna" remote="aokp" revision="jb" />
   <project path="device/ti/panda" name="device/ti/panda" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/aac" name="platform/external/aac" remote="aosp" revision="refs/tags/android-4.1.1_r1_" />
