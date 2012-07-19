@@ -95,7 +95,7 @@
   <project path="external/google-diff-match-patch" name="platform/external/google-diff-match-patch" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/grub" name="platform/external/grub" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/gtest" name="platform/external/gtest" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/guava" name="platform/external/guava" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/guava" name="AOKP/external_guava" remote="aokp" revision="jb" />
   <project path="external/hamcrest" name="platform/external/hamcrest" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/harfbuzz" name="platform/external/harfbuzz" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/hyphenation" name="platform/external/hyphenation" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
