@@ -139,6 +139,7 @@
   <project path="external/littlemock" name="platform/external/littlemock" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/llvm" name="platform/external/llvm" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/lohit-fonts" name="platform/external/lohit-fonts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/lzo" name="android_external_lzo" remote="cm" revision="jellybean" />
   <project path="external/markdown" name="platform/external/markdown" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/mdnsresponder" name="platform/external/mdnsresponder" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/mesa3d" name="platform/external/mesa3d" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -155,6 +156,7 @@
   <project path="external/openfst" name="platform/external/openfst" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/openssh" name="platform/external/openssh" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/openssl" name="platform/external/openssl" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/openvpn" name="android_external_openvpn" remote="cm" revision="jellybean" />
   <project path="external/oprofile" name="platform/external/oprofile" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/ping" name="platform/external/ping" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/ping6" name="platform/external/ping6" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
