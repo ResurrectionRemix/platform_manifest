@@ -26,7 +26,7 @@
   <project path="cts" name="platform/cts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="dalvik" name="platform/dalvik" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="development" name="platform/development" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="device/asus/grouper" name="device/asus/grouper" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="device/asus/grouper" name="AOKP/android_device_asus_grouper" remote="aokp" revision="jb" />
   <project path="device/common" name="device/common" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="device/generic/armv7-a" name="device/generic/armv7-a" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -323,6 +323,7 @@
 
   <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="aokp" revision="jb" />
   <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb" />
+  <project path="vendor/asus/grouper" name="AOKP/vendor_asus_grouper" remote="aokp" revision="jb" />
 
   <project path="system/su" name="android_system_su" remote="cm" revision="jellybean" />
   <project path="packages/wallpapers/SwagPapers" name="AOKP/packages_wallpapers_SwagPapers" remote="aokp" revision="jb" />
