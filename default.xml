@@ -192,7 +192,7 @@
   <project path="external/webp" name="platform/external/webp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/webrtc" name="platform/external/webrtc" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/wpa_supplicant_8" name="AOKP/android_external_wpa_supplicant_8" remote="aokp" revision="jellybean" />
+  <project path="external/wpa_supplicant_8" name="AOKP/android_external_wpa_supplicant_8" remote="aokp" revision="jb" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/yaffs2" name="android_external_yaffs2" remote="cm" revision="jellybean" />
   <project path="external/zlib" name="platform/external/zlib" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -226,7 +226,7 @@
   <project path="hardware/qcom/display" name="AOKP/android_hardware_qcom_display" remote="aokp" revision="jb" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/qcom/media" name="AOKP/android_hardware_qcom_media" remote="aokp" revision="jb" />
-  <project path="hardware/ril" name="AOKP/android_hardware_ril" remote="aokp" revision="jellybean" />
+  <project path="hardware/ril" name="AOKP/android_hardware_ril" remote="aokp" revision="jb" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="hardware/ti/wlan" name="platform/hardware/ti/wlan" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
@@ -316,7 +316,7 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="sdk" name="platform/sdk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/bluetooth" name="platform/system/bluetooth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="system/core" name="AOKP/android_system_core" remote="aokp" revision="jellybean" />
+  <project path="system/core" name="AOKP/android_system_core" remote="aokp" revision="jb" />
   <project path="system/extras" name="AOKP/system_extras" remote="aokp" revision="jb" />
   <project path="system/media" name="platform/system/media" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="system/netd" name="platform/system/netd" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
