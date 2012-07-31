@@ -236,7 +236,7 @@
   <project path="ndk" name="platform/ndk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="packages/apps/Browser" name="AOKP/packages_apps_Browser" remote="aokp" revision="jb" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Camera" name="AOKP/packages_apps_Camera" remote="aokp" revision="jb" />
