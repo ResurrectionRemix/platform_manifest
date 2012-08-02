@@ -26,6 +26,7 @@
   <project path="device/generic/goldfish" name="device/generic/goldfish" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
+  <project path="device/google/phantasm" name="device/google/phantasm" groups="device" />
   <project path="device/moto/common" name="device/moto/common" groups="device" />
   <project path="device/moto/stingray" name="device/moto/stingray" groups="device" />
   <project path="device/moto/wingray" name="device/moto/wingray" groups="device" />
@@ -47,6 +48,7 @@
   <project path="external/apache-http" name="platform/external/apache-http" />
   <project path="external/apache-qp" name="platform/external/apache-qp" />
   <project path="external/apache-xml" name="platform/external/apache-xml" />
+  <project path="external/arduino" name="platform/external/arduino" />
   <project path="external/astl" name="platform/external/astl" />
   <project path="external/bison" name="platform/external/bison" />
   <project path="external/blktrace" name="platform/external/blktrace" />
@@ -142,6 +144,7 @@
   <project path="external/neven" name="platform/external/neven" />
   <project path="external/nist-sip" name="platform/external/nist-sip" />
   <project path="external/oauth" name="platform/external/oauth" />
+  <project path="external/okhttp" name="platform/external/okhttp" />
   <project path="external/opencv" name="platform/external/opencv" />
   <project path="external/openfst" name="platform/external/openfst" />
   <project path="external/openssh" name="platform/external/openssh" />
@@ -223,7 +226,6 @@
   <project path="hardware/ti/wpan" name="platform/hardware/ti/wpan" />
   <project path="libcore" name="platform/libcore2" />
   <project path="libnativehelper" name="platform/libnativehelper" />
-  <project path="motodev" name="platform/motodev" />
   <project path="ndk" name="platform/ndk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
@@ -310,5 +312,7 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/security" name="platform/system/security" />
   <project path="system/vold" name="platform/system/vold" />
+  <project path="tools/build" name="platform/tools/build" />
+  <project path="tools/motodev" name="platform/tools/motodev" />
 
 </manifest>
