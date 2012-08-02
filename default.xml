@@ -163,7 +163,7 @@
   <project path="external/ppp" name="platform/external/ppp" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/proguard" name="platform/external/proguard" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/protobuf" name="platform/external/protobuf" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/qemu" name="platform/external/qemu" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/qemu" name="AOKP/android_external_qemu" remote="aokp" revision="jb" />
   <project path="external/qemu-pc-bios" name="platform/external/qemu-pc-bios" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/quake" name="platform/external/quake" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/regex-re2" name="platform/external/regex-re2" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
