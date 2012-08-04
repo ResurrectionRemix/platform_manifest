@@ -252,7 +252,7 @@
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/Mms" name="platform/packages/apps/Mms" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="packages/apps/Mms" name="AOKP/packages_apps_Mms" remote="aokp" revision="jb" />
   <project path="packages/apps/Music" name="platform/packages/apps/Music" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/Nfc" name="AOKP/packages_apps_Nfc" remote="aokp" revision="jb" />
