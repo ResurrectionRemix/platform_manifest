@@ -47,10 +47,6 @@ PRODUCT_COPY_FILES += \
 
 #----------------- originally from core.mk ----------------
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=OnTheHunt.ogg \
-    ro.config.alarm_alert=Alarm_Classic.ogg
-
 # Please keep this list sorted alphabetically
 PRODUCT_PACKAGES += \
     ApplicationsProvider \
@@ -206,8 +202,6 @@ PRODUCT_PACKAGES += \
 # Additional settings used in all AOSP builds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.config.ringtone=Ring_Synth_04.ogg \
-    ro.config.notification_sound=pixiedust.ogg
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
