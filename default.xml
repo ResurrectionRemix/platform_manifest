@@ -58,7 +58,7 @@
   <project path="external/bash" name="android_external_bash" remote="cm" revision="jellybean" />
   <project path="external/bison" name="platform/external/bison" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/blktrace" name="platform/external/blktrace" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/bluetooth/bluez" name="AOKP/external_bluetooth_bluez" remote="aokp" revision="jb" />
   <project path="external/bluetooth/glib" name="platform/external/bluetooth/glib" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/bluetooth/hcidump" name="platform/external/bluetooth/hcidump" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
