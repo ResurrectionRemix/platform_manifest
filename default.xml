@@ -195,7 +195,7 @@
   <project path="external/wpa_supplicant_8" name="AOKP/android_external_wpa_supplicant_8" remote="aokp" revision="jb" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/yaffs2" name="android_external_yaffs2" remote="cm" revision="jellybean" />
-  <project path="external/zlib" name="platform/external/zlib" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/zlib" name="android_external_zlib" remote="cm" revision="jellybean" />
   <project path="external/zxing" name="platform/external/zxing" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="frameworks/av" name="AOKP/frameworks_av" remote="aokp" revision="jb" />
   <project path="frameworks/base" name="AOKP/frameworks_base" remote="aokp" revision="jb" />
