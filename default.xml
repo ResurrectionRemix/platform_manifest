@@ -266,7 +266,7 @@
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="packages/apps/Stk" name="AOKP/packages_apps_Stk" remote="aokp" revision="jb" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/VideoEditor" name="platform/packages/apps/VideoEditor" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
