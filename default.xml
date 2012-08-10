@@ -326,7 +326,7 @@
   <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="aokp" revision="jb" />
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="aokp" revision="jb" />
   <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb" />
-  <project path="vendor/asus/grouper" name="AOKP/vendor_asus_grouper" remote="aokp" revision="jb" />
+  <project path="vendor/asus" name="AOKP/vendor_asus" remote="aokp" revision="jb" />
 
   <project path="system/su" name="android_system_su" remote="cm" revision="jellybean" />
   <project path="packages/wallpapers/SwagPapers" name="AOKP/packages_wallpapers_SwagPapers" remote="aokp" revision="jb" />
