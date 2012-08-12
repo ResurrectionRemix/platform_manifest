@@ -499,7 +499,11 @@ ifndef LOCAL_UNINSTALLABLE_MODULE
   # installation;  hence, LOCAL_ACP_UNAVAILABLE.
 ifneq ($(LOCAL_ACP_UNAVAILABLE),true)
 $(LOCAL_INSTALLED_MODULE): $(LOCAL_BUILT_MODULE) | $(ACP)
+ifeq ($(OUT_DIR),out)
 	@echo -e ${CL_INS}"Install: $(ANDROID_BUILD_TOP)/$@"${CL_RST}
+else
+	@echo -e ${CL_INS}"Install: $@"${CL_RST}
+endif
 	$(copy-file-to-new-target)
 else
 $(LOCAL_INSTALLED_MODULE): $(LOCAL_BUILT_MODULE)
