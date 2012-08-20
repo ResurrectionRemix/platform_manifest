@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="kernel/asus/tf101" name="AOKP/kernel_asus_tf101" remote="gh" revision="ics" />
-  <project path="kernel/samsung/aries" name="GlitchKernel/Glitch" remote="gh" revision="V14" />
-  <project path="kernel/samsung/p1c" name="CyanogenMod/android_kernel_samsung_galaxytab-cdma" remote="gh" revision="ics" />
-  <project path="kernel/samsung/p4" name="pershoot/android_kernel_samsung_p4" remote="gh" revision="ics" />
-  <project path="kernel/samsung/smdk4210" name="CyanogenMod/android_kernel_samsung_smdk4210" remote="gh" revision="ics" />
-  <project path="kernel/lge/star" name="AOKP/lge-kernel-star" remote="gh" revision="android-tegra-2.6.32-ics" />
-  <project path="kernel/hp/tenderloin" name="CyanogenMod/hp-kernel-tenderloin" remote="gh" revision="ics" />
-  <project path="kernel/samsung/msm8660-common" name="AOKP/android_kernel_samsung_msm8660-common" remote="gh" revision="ics" />
-  <project path="kernel/samsung/tuna" name="CyanogenMod/android_kernel_samsung_tuna" remote="gh" revision="ics" />
+  <project path="kernel/samsung/d2" name="CyanogenMod/android_kernel_samsung_d2" remote="gh" revision="jellybean" />
 </manifest>
