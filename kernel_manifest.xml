@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="kernel/samsung/d2" name="CyanogenMod/android_kernel_samsung_d2" remote="gh" revision="jellybean" />
+  <project path="kernel/samsung/d2" name="android_kernel_samsung_d2" remote="cm" revision="jellybean" />
 </manifest>
