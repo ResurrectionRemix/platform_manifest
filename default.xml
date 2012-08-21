@@ -156,7 +156,7 @@
   <project path="external/oauth" name="platform/external/oauth" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/opencv" name="platform/external/opencv" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/openfst" name="platform/external/openfst" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/openssh" name="platform/external/openssh" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/openssh" name="android_external_openssh" remote="cm" revision="jellybean" />
   <project path="external/openssl" name="platform/external/openssl" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/openvpn" name="android_external_openvpn" remote="cm" revision="jellybean" />
   <project path="external/oprofile" name="platform/external/oprofile" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
