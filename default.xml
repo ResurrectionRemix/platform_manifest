@@ -6,7 +6,7 @@
 
   <remote  name="aokp"
            fetch="https://github.com/"
-           review="gerrit.aokp.co" />
+           review="gerrit.sudoservers.com" />
 
   <remote  name="cm"
            fetch="https://github.com/CyanogenMod/"
