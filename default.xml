@@ -99,7 +99,7 @@
   <project path="external/eyes-free" name="platform/external/eyes-free" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/fdlibm" name="platform/external/fdlibm" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/flac" name="platform/external/flac" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/freetype" name="platform/external/freetype" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/freetype" name="AOKP/external_freetype" remote="aokp" revision="jb" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/ganymed-ssh2" name="platform/external/ganymed-ssh2" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/gcc-demangle" name="platform/external/gcc-demangle" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
