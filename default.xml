@@ -76,7 +76,7 @@
   <project path="external/busybox" name="android_external_busybox" remote="cm" revision="jellybean" />
   <project path="external/bzip2" name="platform/external/bzip2" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/checkpolicy" name="platform/external/checkpolicy" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
-  <project path="external/chromium" name="platform/external/chromium" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
+  <project path="external/chromium" name="AOKP/external_chromium" remote="aokp" revision="jb" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/cibu-fonts" name="platform/external/cibu-fonts" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
   <project path="external/clang" name="platform/external/clang" remote="aosp" revision="refs/tags/android-4.1.1_r1" />
