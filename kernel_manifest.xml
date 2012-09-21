@@ -5,4 +5,5 @@
   <project path="kernel/samsung/msm8660-common" name="android_kernel_samsung_msm8660-common" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/smdk4210" name="android_kernel_samsung_smdk4210" remote="cm" revision="jellybean" />
   <project path="kernel/asus/grouper" name="faux123/Nexus-grouper" remote="aokp" revision="jb_exp" />
+  <project path="kernel/samsung/t1" name="android_kernel_samsung_t1" remote="cm" revision="jellybean" />
 </manifest>
