@@ -2,7 +2,7 @@
 <manifest>
   <project path="kernel/samsung/aries" name="android_kernel_samsung_aries" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="cm" revision="jellybean" />
-  <project path="kernel/samsung/d2" name="android_kernel_samsung_d2" remote="cm" revision="jellybean" />
+  <project path="kernel/samsung/d2" name="faux123/SGH-Krait" remote="aokp" revision="jb_cm_exp" />
   <project path="kernel/samsung/msm8660-common" name="android_kernel_samsung_msm8660-common" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/smdk4210" name="android_kernel_samsung_smdk4210" remote="cm" revision="jellybean" />
   <project path="kernel/asus/grouper" name="faux123/Nexus-grouper" remote="aokp" revision="jb_exp" />
