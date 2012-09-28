@@ -37,9 +37,6 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
   <project path="device/htc/evita" name="AOKP/android_device_htc_evita" remote="aokp" revision="jb" />
   <project path="device/htc/msm8960-common" name="AOKP/android_device_htc_msm8960-common" remote="aokp" revision="jb" />
-  <project path="device/moto/common" name="device/moto/common" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
-  <project path="device/moto/stingray" name="device/moto/stingray" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
-  <project path="device/moto/wingray" name="device/moto/wingray" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
   <project path="device/sample" name="device/sample" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
   <project path="device/samsung/aries-common" name="AOKP/device_samsung_aries-common" remote="aokp" revision="jb" />
   <project path="device/samsung/captivatemtd" name="AOKP/device_samsung_captivatemtd" remote="aokp" revision="jb" />
