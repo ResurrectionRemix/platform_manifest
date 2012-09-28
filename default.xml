@@ -27,6 +27,8 @@
   <project path="dalvik" name="AOKP/platform_dalvik" remote="aokp" revision="jb" />
   <project path="development" name="AOKP/platform_development" remote="aokp" revision="jb" />
   <project path="device/asus/grouper" name="AOKP/android_device_asus_grouper" remote="aokp" revision="jb" />
+  <project path="device/asus/tf101" name="AOKP/device_asus_tf101" remote="aokp" revision="jb" />
+  <project path="device/asus/tf-common" name="AOKP/device_asus_tf-common" remote="aokp" revision="jb" />
   <project path="device/common" name="device/common" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
   <project path="device/generic/armv7-a" name="device/generic/armv7-a" remote="aosp" revision="refs/tags/android-4.1.1_r6" />
