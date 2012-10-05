@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <project path="kernel/htc/msm8960" name="android_kernel_htc_msm8960" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/aries" name="android_kernel_samsung_aries" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="cm" revision="jellybean" />
   <project path="kernel/samsung/d2" name="faux123/SGH-Krait" remote="aokp" revision="jb_cm_exp" />
