@@ -35,7 +35,7 @@
   <project path="device/samsung/crespo4g" name="device/samsung/crespo4g" groups="device" />
   <project path="device/samsung/maguro" name="device/samsung/maguro" groups="device" />
   <project path="device/samsung/toro" name="device/samsung/toro" groups="device" />
-  <project path="device/samsung/torospr" name="device/samsung/torospr" groups="device" />
+  <project path="device/samsung/toroplus" name="device/samsung/toroplus" groups="device" />
   <project path="device/samsung/tuna" name="device/samsung/tuna" groups="device" />
   <project path="device/sony/lt26" name="device/sony/lt26" groups="device" />
   <project path="device/ti/panda" name="device/ti/panda" groups="device" />
