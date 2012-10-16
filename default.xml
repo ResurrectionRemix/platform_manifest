@@ -299,7 +299,7 @@
   <project path="packages/providers/DrmProvider" name="platform/packages/providers/DrmProvider" remote="aosp" revision="refs/tags/android-4.1.2_r1" />
   <project path="packages/providers/MediaProvider" name="AOKP/packages_providers_MediaProvider" remote="aokp" revision="jb" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" remote="aosp" revision="refs/tags/android-4.1.2_r1" />
-  <project path="packages/providers/TelephonyProvider" name="AOKP/platform/packages/providers/TelephonyProvider" remote="aokp" revision="jb" />
+  <project path="packages/providers/TelephonyProvider" name="AOKP/packages_providers_TelephonyProvider" remote="aokp" revision="jb" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" remote="aosp" revision="refs/tags/android-4.1.2_r1" />
   <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" remote="aosp" revision="refs/tags/android-4.1.2_r1" />
   <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" remote="aosp" revision="refs/tags/android-4.1.2_r1" />
