@@ -43,6 +43,7 @@
   <project path="device/samsung/crespo" name="AOKP/device_samsung_crespo" remote="aokp" revision="jb" />
   <project path="device/samsung/crespo4g" name="AOKP/device_samsung_crespo4g" remote="aokp" revision="jb" />
   <project path="device/samsung/d2-common" name="AOKP/android_device_samsung_d2-common" remote="aokp" revision="jb" />
+  <project path="device/samsung/d2att" name="AOKP/device_samsung_d2att" remote="aokp" revision="jb" />
   <project path="device/samsung/d2tmo" name="AOKP/android_device_samsung_d2tmo" remote="aokp" revision="jb" />
   <project path="device/samsung/d2usc" name="AOKP/device_samsung_d2usc" remote="aokp" revision="jb" />
   <project path="device/samsung/d2vzw" name="AOKP/device_samsung_d2vzw" remote="aokp" revision="jb" />
