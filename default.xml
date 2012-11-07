@@ -213,6 +213,7 @@
   <project path="frameworks/rs" name="platform/frameworks/rs" />
   <project path="frameworks/support" name="platform/frameworks/support" />
   <project path="frameworks/testing" name="platform/frameworks/testing" />
+  <project path="frameworks/volley" name="platform/frameworks/volley" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" />
   <project path="gdk" name="platform/gdk" />
   <project path="hardware/akm" name="platform/hardware/akm" />
