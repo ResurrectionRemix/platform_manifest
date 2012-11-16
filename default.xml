@@ -31,6 +31,8 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/google/phantasm" name="device/google/phantasm" groups="device" />
+  <project path="device/lge/mako" name="device/lge/mako" groups="device" />
+  <project path="device/lge/mako-kernel" name="device/lge/mako-kernel" groups="device" />
   <project path="device/sample" name="device/sample" />
   <project path="device/samsung/maguro" name="device/samsung/maguro" groups="device" />
   <project path="device/samsung/manta" name="device/samsung/manta" groups="device" />
@@ -229,6 +231,18 @@
   <project path="hardware/invensense" name="platform/hardware/invensense" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
+  <project path="hardware/msm7k" name="platform/hardware/msm7k" />
+  <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" />
+  <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" />
+  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" />
+  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" />
+  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" />
+  <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" />
+  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" />
+  <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" />
+  <project path="hardware/qcom/power" name="platform/hardware/qcom/power" />
+  <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" />
+  <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" />
   <project path="hardware/ril" name="platform/hardware/ril" />
   <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
