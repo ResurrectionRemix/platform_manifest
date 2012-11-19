@@ -55,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_LOCALES := en_US
 
 # Get some sounds
-$(call inherit-product-if-exists, frameworks/base/data/sounds/NewAudio.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 
 # Include video prebuilts
 $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
