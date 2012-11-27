@@ -1,2 +1,2 @@
-$ repo init -u https://github.com/AOKP/platform_manifest.git -b jb
+$ repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr1
 $ repo sync
