@@ -357,7 +357,7 @@
   <project path="system/security" name="platform/system/security" />
   <project path="system/vold" name="platform/system/vold" />
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
-  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools,toolsbuild" />
-  <project path="tools/motodev" name="platform/tools/motodev" />
+  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
+  <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
 
 </manifest>
