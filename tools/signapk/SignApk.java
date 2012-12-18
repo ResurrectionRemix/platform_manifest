@@ -498,7 +498,7 @@ class SignApk {
                 JarOutputStream outputJar = new JarOutputStream(signer);
 
                 Manifest manifest = addDigestsToManifest(inputJar);
-                writeJar(manifest, inputJar, publicKeyFile, publicKey, privateKey, outputJar);
+                signFile(manifest, inputJar, publicKeyFile, publicKey, privateKey, outputJar);
                 // Assume the certificate is valid for at least an hour.
                 long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
                 addOtacert(outputJar, publicKeyFile, timestamp, manifest);
@@ -524,7 +524,7 @@ class SignApk {
         }
     }
 
-    public static void writeJarAndSign(JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, OutputStream outputStream) throws Exception {
+    public static void signWholeFile(JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, OutputStream outputStream) throws Exception {
         CMSSigner cmsOut = new CMSSigner(inputJar, publicKeyFile, publicKey, privateKey, outputStream);
 
         ByteArrayOutputStream temp = new ByteArrayOutputStream();
@@ -589,7 +589,7 @@ class SignApk {
         temp.writeTo(outputStream);
     }
 
-    public static void writeJar(Manifest manifest, JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, JarOutputStream outputJar) throws Exception {
+    public static void signFile(Manifest manifest, JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, JarOutputStream outputJar) throws Exception {
         // Assume the certificate is valid for at least an hour.
         long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
 
@@ -652,7 +652,7 @@ class SignApk {
             outputFile = new FileOutputStream(args[argstart+3]);
 
             if (signWholeFile) {
-                writeJarAndSign(inputJar, publicKeyFile, publicKey, privateKey, outputFile);
+                SignApk.signWholeFile(inputJar, publicKeyFile, publicKey, privateKey, outputFile);
             }
             else {
                 JarOutputStream outputJar = new JarOutputStream(outputFile);
@@ -665,7 +665,7 @@ class SignApk {
                 // (~0.1% on full OTA packages I tested).
                 outputJar.setLevel(9);
 
-                writeJar(addDigestsToManifest(inputJar), inputJar, publicKeyFile, publicKey, privateKey, outputJar);
+                signFile(addDigestsToManifest(inputJar), inputJar, publicKeyFile, publicKey, privateKey, outputJar);
                 outputJar.close();
             }
         } catch (Exception e) {
