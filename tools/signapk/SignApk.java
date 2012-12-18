@@ -35,6 +35,7 @@ import org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder;
 import org.bouncycastle.util.encoders.Base64;
 
 import java.io.BufferedReader;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.File;
@@ -493,24 +494,18 @@ class SignApk {
 
         public void write(OutputStream out) throws IOException {
             try {
-              signer = new WholeFileSignerOutputStream(out, outputStream);
-              JarOutputStream outputJar = new JarOutputStream(signer);
+                signer = new WholeFileSignerOutputStream(out, outputStream);
+                JarOutputStream outputJar = new JarOutputStream(signer);
 
-              // For signing .apks, use the maximum compression to make
-              // them as small as possible (since they live forever on
-              // the system partition).  For OTA packages, use the
-              // default compression level, which is much much faster
-              // and produces output that is only a tiny bit larger
-              // (~0.1% on full OTA packages I tested).
-              outputJar.setLevel(9);
+                Manifest manifest = addDigestsToManifest(inputJar);
+                writeJar(manifest, inputJar, publicKeyFile, publicKey, privateKey, outputJar);
+                // Assume the certificate is valid for at least an hour.
+                long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
+                addOtacert(outputJar, publicKeyFile, timestamp, manifest);
 
-              Manifest manifest = addDigestsToManifest(inputJar);
-              long timestamp = writeJar(manifest, inputJar, publicKeyFile, publicKey, privateKey, outputJar);
-              addOtacert(outputJar, publicKeyFile, timestamp, manifest);
-
-              signer.notifyClosing();
-              outputJar.close();
-              signer.finish();
+                signer.notifyClosing();
+                outputJar.close();
+                signer.finish();
             }
             catch (Exception e) {
                 throw new IOException(e);
@@ -594,7 +589,7 @@ class SignApk {
         temp.writeTo(outputStream);
     }
 
-    public static long writeJar(Manifest manifest, JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, JarOutputStream outputJar) throws Exception {
+    public static void writeJar(Manifest manifest, JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, JarOutputStream outputJar) throws Exception {
         // Assume the certificate is valid for at least an hour.
         long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
 
@@ -624,8 +619,6 @@ class SignApk {
         outputJar.putNextEntry(je);
         writeSignatureBlock(new CMSProcessableByteArray(signedData),
                             publicKey, privateKey, outputJar);
-
-        return timestamp;
     }
 
     public static void main(String[] args) {
@@ -663,6 +656,15 @@ class SignApk {
             }
             else {
                 JarOutputStream outputJar = new JarOutputStream(outputFile);
+
+                // For signing .apks, use the maximum compression to make
+                // them as small as possible (since they live forever on
+                // the system partition).  For OTA packages, use the
+                // default compression level, which is much much faster
+                // and produces output that is only a tiny bit larger
+                // (~0.1% on full OTA packages I tested).
+                outputJar.setLevel(9);
+
                 writeJar(addDigestsToManifest(inputJar), inputJar, publicKeyFile, publicKey, privateKey, outputJar);
                 outputJar.close();
             }
