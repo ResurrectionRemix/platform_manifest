@@ -339,31 +339,6 @@ class SignApk {
         }
     }
 
-    private static class CMSByteArraySlice implements CMSTypedData {
-        private final ASN1ObjectIdentifier type;
-        private final byte[] data;
-        private final int offset;
-        private final int length;
-        public CMSByteArraySlice(byte[] data, int offset, int length) {
-            this.data = data;
-            this.offset = offset;
-            this.length = length;
-            this.type = new ASN1ObjectIdentifier(CMSObjectIdentifiers.data.getId());
-        }
-
-        public Object getContent() {
-            throw new UnsupportedOperationException();
-        }
-
-        public ASN1ObjectIdentifier getContentType() {
-            return type;
-        }
-
-        public void write(OutputStream out) throws IOException {
-            out.write(data, offset, length);
-        }
-    }
-
     /** Sign data and write the digital signature to 'out'. */
     private static void writeSignatureBlock(
         CMSTypedData data, X509Certificate publicKey, PrivateKey privateKey,
@@ -393,75 +368,6 @@ class SignApk {
         ASN1InputStream asn1 = new ASN1InputStream(sigData.getEncoded());
         DEROutputStream dos = new DEROutputStream(out);
         dos.writeObject(asn1.readObject());
-    }
-
-    private static void signWholeOutputFile(byte[] zipData,
-                                            OutputStream outputStream,
-                                            X509Certificate publicKey,
-                                            PrivateKey privateKey)
-        throws IOException,
-               CertificateEncodingException,
-               OperatorCreationException,
-               CMSException {
-        // For a zip with no archive comment, the
-        // end-of-central-directory record will be 22 bytes long, so
-        // we expect to find the EOCD marker 22 bytes from the end.
-        if (zipData[zipData.length-22] != 0x50 ||
-            zipData[zipData.length-21] != 0x4b ||
-            zipData[zipData.length-20] != 0x05 ||
-            zipData[zipData.length-19] != 0x06) {
-            throw new IllegalArgumentException("zip data already has an archive comment");
-        }
-
-        ByteArrayOutputStream temp = new ByteArrayOutputStream();
-
-        // put a readable message and a null char at the start of the
-        // archive comment, so that tools that display the comment
-        // (hopefully) show something sensible.
-        // TODO: anything more useful we can put in this message?
-        byte[] message = "signed by SignApk".getBytes("UTF-8");
-        temp.write(message);
-        temp.write(0);
-
-        writeSignatureBlock(new CMSByteArraySlice(zipData, 0, zipData.length-2),
-                            publicKey, privateKey, temp);
-        int total_size = temp.size() + 6;
-        if (total_size > 0xffff) {
-            throw new IllegalArgumentException("signature is too big for ZIP file comment");
-        }
-        // signature starts this many bytes from the end of the file
-        int signature_start = total_size - message.length - 1;
-        temp.write(signature_start & 0xff);
-        temp.write((signature_start >> 8) & 0xff);
-        // Why the 0xff bytes?  In a zip file with no archive comment,
-        // bytes [-6:-2] of the file are the little-endian offset from
-        // the start of the file to the central directory.  So for the
-        // two high bytes to be 0xff 0xff, the archive would have to
-        // be nearly 4GB in size.  So it's unlikely that a real
-        // commentless archive would have 0xffs here, and lets us tell
-        // an old signed archive from a new one.
-        temp.write(0xff);
-        temp.write(0xff);
-        temp.write(total_size & 0xff);
-        temp.write((total_size >> 8) & 0xff);
-        temp.flush();
-
-        // Signature verification checks that the EOCD header is the
-        // last such sequence in the file (to avoid minzip finding a
-        // fake EOCD appended after the signature in its scan).  The
-        // odds of producing this sequence by chance are very low, but
-        // let's catch it here if it does.
-        byte[] b = temp.toByteArray();
-        for (int i = 0; i < b.length-3; ++i) {
-            if (b[i] == 0x50 && b[i+1] == 0x4b && b[i+2] == 0x05 && b[i+3] == 0x06) {
-                throw new IllegalArgumentException("found spurious EOCD header at " + i);
-            }
-        }
-
-        outputStream.write(zipData, 0, zipData.length-2);
-        outputStream.write(total_size & 0xff);
-        outputStream.write((total_size >> 8) & 0xff);
-        temp.writeTo(outputStream);
     }
 
     /**
@@ -499,6 +405,229 @@ class SignApk {
         }
     }
 
+    private static class WholeFileSignerOutputStream extends FilterOutputStream {
+        private boolean closing = false;
+        private ByteArrayOutputStream footer = new ByteArrayOutputStream();
+        private OutputStream tee;
+
+        public WholeFileSignerOutputStream(OutputStream out, OutputStream tee) {
+            super(out);
+            this.tee = tee;
+        }
+
+        public void notifyClosing() {
+            closing = true;
+        }
+
+        public void finish() throws IOException {
+            closing = false;
+
+            byte[] data = footer.toByteArray();
+            if (data.length < 2)
+                throw new IOException("Less than two bytes written to footer");
+            write(data, 0, data.length - 2);
+        }
+
+        public byte[] getTail() {
+            return footer.toByteArray();
+        }
+
+        @Override
+        public void write(byte[] b) throws IOException {
+            write(b, 0, b.length);
+        }
+
+        @Override
+        public void write(byte[] b, int off, int len) throws IOException {
+            if (closing) {
+                // if the jar is about to close, save the footer that will be written
+                footer.write(b, off, len);
+            }
+            else {
+                // write to both output streams. out is the CMSTypedData signer and tee is the file.
+                out.write(b, off, len);
+                tee.write(b, off, len);
+            }
+        }
+
+        @Override
+        public void write(int b) throws IOException {
+            if (closing) {
+                // if the jar is about to close, save the footer that will be written
+                footer.write(b);
+            }
+            else {
+                // write to both output streams. out is the CMSTypedData signer and tee is the file.
+                out.write(b);
+                tee.write(b);
+            }
+        }
+    }
+
+    private static class CMSSigner implements CMSTypedData {
+        private JarFile inputJar;
+        private File publicKeyFile;
+        private X509Certificate publicKey;
+        private PrivateKey privateKey;
+        private String outputFile;
+        private OutputStream outputStream;
+        private final ASN1ObjectIdentifier type;
+        private WholeFileSignerOutputStream signer;
+
+        public CMSSigner(JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, OutputStream outputStream) {
+            this.inputJar = inputJar;
+            this.publicKeyFile = publicKeyFile;
+            this.publicKey = publicKey;
+            this.privateKey = privateKey;
+            this.outputStream = outputStream;
+            this.type = new ASN1ObjectIdentifier(CMSObjectIdentifiers.data.getId());
+        }
+
+        public Object getContent() {
+            throw new UnsupportedOperationException();
+        }
+
+        public ASN1ObjectIdentifier getContentType() {
+            return type;
+        }
+
+        public void write(OutputStream out) throws IOException {
+            try {
+              signer = new WholeFileSignerOutputStream(out, outputStream);
+              JarOutputStream outputJar = new JarOutputStream(signer);
+
+              // For signing .apks, use the maximum compression to make
+              // them as small as possible (since they live forever on
+              // the system partition).  For OTA packages, use the
+              // default compression level, which is much much faster
+              // and produces output that is only a tiny bit larger
+              // (~0.1% on full OTA packages I tested).
+              outputJar.setLevel(9);
+
+              Manifest manifest = addDigestsToManifest(inputJar);
+              long timestamp = writeJar(manifest, inputJar, publicKeyFile, publicKey, privateKey, outputJar);
+              addOtacert(outputJar, publicKeyFile, timestamp, manifest);
+
+              signer.notifyClosing();
+              outputJar.close();
+              signer.finish();
+            }
+            catch (Exception e) {
+                throw new IOException(e);
+            }
+        }
+
+        public void writeSignatureBlock(ByteArrayOutputStream temp) throws IOException,
+               CertificateEncodingException,
+               OperatorCreationException,
+               CMSException {
+            SignApk.writeSignatureBlock(this, publicKey, privateKey, temp);
+        }
+
+        public WholeFileSignerOutputStream getSigner() {
+            return signer;
+        }
+    }
+
+    public static void writeJarAndSign(JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, OutputStream outputStream) throws Exception {
+        CMSSigner cmsOut = new CMSSigner(inputJar, publicKeyFile, publicKey, privateKey, outputStream);
+
+        ByteArrayOutputStream temp = new ByteArrayOutputStream();
+
+        // put a readable message and a null char at the start of the
+        // archive comment, so that tools that display the comment
+        // (hopefully) show something sensible.
+        // TODO: anything more useful we can put in this message?
+        byte[] message = "signed by SignApk".getBytes("UTF-8");
+        temp.write(message);
+        temp.write(0);
+
+        cmsOut.writeSignatureBlock(temp);
+
+        byte[] zipData = cmsOut.getSigner().getTail();
+
+        // For a zip with no archive comment, the
+        // end-of-central-directory record will be 22 bytes long, so
+        // we expect to find the EOCD marker 22 bytes from the end.
+        if (zipData[zipData.length-22] != 0x50 ||
+            zipData[zipData.length-21] != 0x4b ||
+            zipData[zipData.length-20] != 0x05 ||
+            zipData[zipData.length-19] != 0x06) {
+            throw new IllegalArgumentException("zip data already has an archive comment");
+        }
+
+        int total_size = temp.size() + 6;
+        if (total_size > 0xffff) {
+            throw new IllegalArgumentException("signature is too big for ZIP file comment");
+        }
+        // signature starts this many bytes from the end of the file
+        int signature_start = total_size - message.length - 1;
+        temp.write(signature_start & 0xff);
+        temp.write((signature_start >> 8) & 0xff);
+        // Why the 0xff bytes?  In a zip file with no archive comment,
+        // bytes [-6:-2] of the file are the little-endian offset from
+        // the start of the file to the central directory.  So for the
+        // two high bytes to be 0xff 0xff, the archive would have to
+        // be nearly 4GB in size.  So it's unlikely that a real
+        // commentless archive would have 0xffs here, and lets us tell
+        // an old signed archive from a new one.
+        temp.write(0xff);
+        temp.write(0xff);
+        temp.write(total_size & 0xff);
+        temp.write((total_size >> 8) & 0xff);
+        temp.flush();
+
+        // Signature verification checks that the EOCD header is the
+        // last such sequence in the file (to avoid minzip finding a
+        // fake EOCD appended after the signature in its scan).  The
+        // odds of producing this sequence by chance are very low, but
+        // let's catch it here if it does.
+        byte[] b = temp.toByteArray();
+        for (int i = 0; i < b.length-3; ++i) {
+            if (b[i] == 0x50 && b[i+1] == 0x4b && b[i+2] == 0x05 && b[i+3] == 0x06) {
+                throw new IllegalArgumentException("found spurious EOCD header at " + i);
+            }
+        }
+
+        outputStream.write(total_size & 0xff);
+        outputStream.write((total_size >> 8) & 0xff);
+        temp.writeTo(outputStream);
+    }
+
+    public static long writeJar(Manifest manifest, JarFile inputJar, File publicKeyFile, X509Certificate publicKey, PrivateKey privateKey, JarOutputStream outputJar) throws Exception {
+        // Assume the certificate is valid for at least an hour.
+        long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
+
+        JarEntry je;
+
+        // Everything else
+        copyFiles(manifest, inputJar, outputJar, timestamp);
+
+        // MANIFEST.MF
+        je = new JarEntry(JarFile.MANIFEST_NAME);
+        je.setTime(timestamp);
+        outputJar.putNextEntry(je);
+        manifest.write(outputJar);
+
+        // CERT.SF
+        je = new JarEntry(CERT_SF_NAME);
+        je.setTime(timestamp);
+        outputJar.putNextEntry(je);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        writeSignatureFile(manifest, baos);
+        byte[] signedData = baos.toByteArray();
+        outputJar.write(signedData);
+
+        // CERT.RSA
+        je = new JarEntry(CERT_RSA_NAME);
+        je.setTime(timestamp);
+        outputJar.putNextEntry(je);
+        writeSignatureBlock(new CMSProcessableByteArray(signedData),
+                            publicKey, privateKey, outputJar);
+
+        return timestamp;
+    }
+
     public static void main(String[] args) {
         if (args.length != 4 && args.length != 5) {
             System.err.println("Usage: signapk [-w] " +
@@ -518,79 +647,24 @@ class SignApk {
         }
 
         JarFile inputJar = null;
-        JarOutputStream outputJar = null;
         FileOutputStream outputFile = null;
 
         try {
             File publicKeyFile = new File(args[argstart+0]);
             X509Certificate publicKey = readPublicKey(publicKeyFile);
 
-            // Assume the certificate is valid for at least an hour.
-            long timestamp = publicKey.getNotBefore().getTime() + 3600L * 1000;
-
             PrivateKey privateKey = readPrivateKey(new File(args[argstart+1]));
             inputJar = new JarFile(new File(args[argstart+2]), false);  // Don't verify.
 
-            OutputStream outputStream = null;
-            if (signWholeFile) {
-                outputStream = new ByteArrayOutputStream();
-            } else {
-                outputStream = outputFile = new FileOutputStream(args[argstart+3]);
-            }
-            outputJar = new JarOutputStream(outputStream);
-
-            // For signing .apks, use the maximum compression to make
-            // them as small as possible (since they live forever on
-            // the system partition).  For OTA packages, use the
-            // default compression level, which is much much faster
-            // and produces output that is only a tiny bit larger
-            // (~0.1% on full OTA packages I tested).
-            if (!signWholeFile) {
-                outputJar.setLevel(9);
-            }
-
-            JarEntry je;
-
-            Manifest manifest = addDigestsToManifest(inputJar);
-
-            // Everything else
-            copyFiles(manifest, inputJar, outputJar, timestamp);
-
-            // otacert
-            if (signWholeFile) {
-                addOtacert(outputJar, publicKeyFile, timestamp, manifest);
-            }
-
-            // MANIFEST.MF
-            je = new JarEntry(JarFile.MANIFEST_NAME);
-            je.setTime(timestamp);
-            outputJar.putNextEntry(je);
-            manifest.write(outputJar);
-
-            // CERT.SF
-            je = new JarEntry(CERT_SF_NAME);
-            je.setTime(timestamp);
-            outputJar.putNextEntry(je);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            writeSignatureFile(manifest, baos);
-            byte[] signedData = baos.toByteArray();
-            outputJar.write(signedData);
-
-            // CERT.RSA
-            je = new JarEntry(CERT_RSA_NAME);
-            je.setTime(timestamp);
-            outputJar.putNextEntry(je);
-            writeSignatureBlock(new CMSProcessableByteArray(signedData),
-                                publicKey, privateKey, outputJar);
-
-            outputJar.close();
-            outputJar = null;
-            outputStream.flush();
+            outputFile = new FileOutputStream(args[argstart+3]);
 
             if (signWholeFile) {
-                outputFile = new FileOutputStream(args[argstart+3]);
-                signWholeOutputFile(((ByteArrayOutputStream)outputStream).toByteArray(),
-                                    outputFile, publicKey, privateKey);
+                writeJarAndSign(inputJar, publicKeyFile, publicKey, privateKey, outputFile);
+            }
+            else {
+                JarOutputStream outputJar = new JarOutputStream(outputFile);
+                writeJar(addDigestsToManifest(inputJar), inputJar, publicKeyFile, publicKey, privateKey, outputJar);
+                outputJar.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
