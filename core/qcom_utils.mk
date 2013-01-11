@@ -1,3 +1,24 @@
+# Board platforms lists to be used for
+# TARGET_BOARD_PLATFORM specific featurization
+QCOM_BOARD_PLATFORMS := msm7627_surf
+QCOM_BOARD_PLATFORMS += msm7627_6x
+QCOM_BOARD_PLATFORMS += msm7627a
+QCOM_BOARD_PLATFORMS += msm7630_surf
+QCOM_BOARD_PLATFORMS += msm7630_fusion
+QCOM_BOARD_PLATFORMS += msm8660
+QCOM_BOARD_PLATFORMS += msm8960
+QCOM_BOARD_PLATFORMS += msm8974
+
+MSM7K_BOARD_PLATFORMS := msm7630_surf
+MSM7K_BOARD_PLATFORMS += msm7630_fusion
+MSM7K_BOARD_PLATFORMS += msm7627_surf
+MSM7K_BOARD_PLATFORMS += msm7627_6x
+MSM7K_BOARD_PLATFORMS += msm7627a
+MSM7K_BOARD_PLATFORMS += msm7k
+
+QSD8K_BOARD_PLATFORMS := qsd8k
+
+
 # vars for use by utils
 empty :=
 space := $(empty) $(empty)
