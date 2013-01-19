@@ -407,6 +407,17 @@ def WriteFullOTAPackage(input_zip, output_zip):
   if OPTIONS.wipe_user_data:
     script.FormatPartition("/data")
 
+  script.Print("****************************************");
+  script.Print("*   ______  _____   __  __   ____      *");
+  script.Print("*  /\\  _  \\/\\  __`\\/\\ \\/\\ \\ /\\  _`\    *");
+  script.Print("*  \\ \\ \\L\\ \\ \\ \\/\\ \\ \\ \\/'/'\\ \\ \\L\\ \\  *");
+  script.Print("*   \\ \\  __ \\ \\ \\ \\ \\ \\ , <  \\ \\ ,__/  *");
+  script.Print("*    \\ \\ \\/\\ \\ \\ \\_\\ \\ \\ \\\\`\\ \\ \\ \\/    *");
+  script.Print("*     \\ \\_\\ \\_\\ \\_____\\ \\_\\ \\_\\\\ \\_\\    *");
+  script.Print("*      \\/_/\\/_/\\/_____/\\/_/\\/_/ \\/_/   *");
+  script.Print("*                                      *");
+  script.Print("****************************************");
+
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
