@@ -269,7 +269,7 @@
   <project path="hardware/samsung" name="android_hardware_samsung" remote="cm" revision="cm-10.1" />
   <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
-  <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" />
+  <project path="hardware/ti/omap4xxx" name="android_hardware_ti_omap4xxx" remote="cm" revision="cm-10.1" />
   <project path="hardware/ti/wlan" name="platform/hardware/ti/wlan" />
   <project path="hardware/ti/wpan" name="platform/hardware/ti/wpan" />
   <project path="libcore" name="platform/libcore" />
