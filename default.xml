@@ -42,13 +42,16 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/lge/mako" name="AOKP/device_lge_mako" remote="aokp" revision="jb-mr1" />
   <project path="device/sample" name="device/sample" />
+  <project path="device/samsung/celox-common" name="AOKP/android_device_samsung_celox-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/d2-common" name="AOKP/android_device_samsung_d2-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/d2att" name="AOKP/device_samsung_d2att" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/d2tmo" name="AOKP/android_device_samsung_d2tmo" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/d2usc" name="AOKP/device_samsung_d2usc" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/d2vzw" name="AOKP/device_samsung_d2vzw" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/hercules" name="AOKP/device_samsung_hercules" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/manta" name="AOKP/device_samsung_manta" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/msm8660-common" name="AOKP/android_device_samsung_msm8660-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/msm8960-common" name="AOKP/android_device_samsung_msm8960-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/smdk4412-common" name="AOKP/android_device_samsung_smdk4412-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/t0lte" name="AOKP/android_device_samsung_t0lte" remote="aokp" revision="jb-mr1" />
@@ -245,7 +248,7 @@
   <project path="hardware/invensense" name="platform/hardware/invensense" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="cm" revision="cm-10.1" />
   <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="cm" revision="cm-10.1" />
-  <project path="hardware/msm7k" name="platform/hardware/msm7k" />
+  <project path="hardware/msm7k" name="android_hardware_msm7k" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/audio" name="android_hardware_qcom_audio" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/audio-caf" name="AOKP/android_hardware_qcom_audio-caf" remote="aokp" revision="jb-mr1" />
   <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" remote="cm" revision="cm-10.1" />
@@ -297,7 +300,7 @@
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
+  <project path="packages/apps/QuickSearchBox" name="AOKP/packages_apps_QuickSearchBox" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Settings" name="AOKP/packages_apps_Settings" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
