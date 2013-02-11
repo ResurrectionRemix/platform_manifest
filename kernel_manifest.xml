@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="kernel/acer/t30" name="AOKP/android_kernel_acer_t30" remote="aokp" revision="jb-mr1" />
+  <project path="kernel/acer/t30" name="AOKP/kernel_acer_t30" remote="aokp" revision="jb-mr1" />
   <!-- <project path="kernel/asus/grouper" name="faux123/Nexus-grouper" remote="aokp" revision="jb_mr1_exp" /> -->
   <project path="kernel/asus/tf101" name="AOKP/kernel_asus_tf101" remote="aokp" revision="jb" />
   <project path="kernel/htc/msm8960" name="android_kernel_htc_msm8960" remote="cm" revision="jellybean" />
