@@ -94,7 +94,8 @@ define mv-modules
     if [ "$$mdpath" != "" ];then\
         mpath=`dirname $$mdpath`;\
         ko=`find $$mpath/kernel -type f -name *.ko`;\
-        for i in $$ko; do mv $$i $(KERNEL_MODULES_OUT)/; done;\
+        for i in $$ko; do $(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-unneeded $$i;\
+        mv $$i $(KERNEL_MODULES_OUT)/; done;\
     fi
 endef
 
