@@ -212,7 +212,7 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage5.mk)
 PRODUCT_PACKAGES += \
     TestingCamera \
     Home \
-    DummySystemUI \
-    DummySettings \
+    SystemUI \
+    Settings \
     libsurfaceflinger_ddmconnection
 

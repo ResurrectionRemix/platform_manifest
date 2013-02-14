@@ -1,14 +1,14 @@
 <?cs include:"doctype.cs" ?>
 <?cs include:"macros.cs" ?>
-<html>
+<html<?cs if:devsite ?> devsite<?cs /if ?>>
 <?cs include:"head_tag.cs" ?>
 
-<body class="gc-documentation 
+<body class="gc-documentation <?cs if:(reference.gms || reference.gcm) ?>google<?cs /if ?>
   <?cs if:(guide||develop||training||reference||tools||sdk) ?>develop<?cs
   elif:design ?>design<?cs
   elif:distribute ?>distribute<?cs
   /if ?>">
-  <div id="doc-api-level" class="<?cs var:class.since ?>" style="display:none"></div>
+  <div id="doc-api-level" class="<?cs var:package.since ?>" style="display:none"></div>
   <a name="top"></a>
 <?cs include:"header.cs" ?>
 

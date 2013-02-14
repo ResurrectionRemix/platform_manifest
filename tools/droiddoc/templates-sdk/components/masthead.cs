@@ -23,7 +23,7 @@
                   es-lang="Diseñar"               
                   >Design</a></li>
                 <li class="develop"><a href="<?cs var:toroot ?>develop/index.html" <?cs
-                  if:training || guide || reference || tools || develop ?>class="selected"<?cs /if ?>
+                  if:training || guide || reference || tools || develop || google ?>class="selected"<?cs /if ?>
                   zh-TW-lang="開發"
                   zh-CN-lang="开发"
                   ru-lang="Разработка"
@@ -62,27 +62,33 @@
         <li class="active"><a>Android Developers</a></li>
         <li><a href="http://source.android.com">Android Open Source Project</a></li>
       </ul>
-      <!-- <div class="header">Support</div>
-      <ul>
-        <li><a href="<?cs var:toroot ?>support.html">Developer Support</a></li>
-      </ul> -->
-      <div class="header">Languages</div>
-        <div id="language" class="locales">
-          <select name="language" onChange="changeLangPref(this.value, true)">
-              <option value="en">English</option>
-              <option value="es">Español</option>
-              <option value="ja">日本語</option>
-              <option value="ko">한국어</option>
-              <option value="ru">Русский</option>
-              <option value="zh-CN">中文 (中国)</option>
-              <option value="zh-TW">中文 (台灣)</option>
-          </select>
-        </div>
-      <script type="text/javascript">
-        <!--  
-        loadLangPref();  
-          //-->
-      </script>
+      
+<?cs ############ TODO: Remove when we're happy with Devsite ############# ?>
+      <?cs # Use differenc lang switcher for devsite and gae server ?>
+      <?cs if:devsite ?>
+      <div class="header">Language</div>
+      <?cs elif:android.whichdoc == "online" ?>
+        <div class="header">Language</div>
+          <div id="language" class="locales">
+            <select name="language" onChange="changeLangPref(this.value, true)">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="ru">Русский</option>
+                <option value="zh-CN">中文 (中国)</option>
+                <option value="zh-TW">中文 (台灣)</option>
+            </select>
+          </div>
+        <script type="text/javascript">
+          <!--
+          loadLangPref();
+            //-->
+        </script>
+      <?cs /if ?>
+      <?cs # End of devsite vs. gae version of lang switcher ?>
+
+
       <br class="clearfix" />
     </div>
     <div class="bottom"></div>
@@ -161,8 +167,9 @@ onkeyup="return search_changed(event, false, '<?cs var:toroot ?>')" />
                           ja-lang="ツール"
                           es-lang="Herramientas"               
                           >Tools</a>
-                          <ul><li><a href="<?cs var:toroot ?>sdk/index.html">Get the
-SDK</a></li></ul>
+                          <ul><li><a href="<?cs var:toroot ?>sdk/index.html">Get the SDK</a></li></ul>
+                        </li>
+                        <li><a href="<?cs var:toroot ?>google/index.html">Google Services</a>
                         </li>
                       </ul>
                     </li>
@@ -191,11 +198,11 @@ SDK</a></li></ul>
     
     
     
-<?cs if:training || guide || reference || tools || develop ?>
+<?cs if:training || guide || reference || tools || develop || google ?>
     <!-- Secondary x-nav -->
     <div id="nav-x">
         <div class="wrap">
-            <ul class="nav-x col-9 develop" style="width:75%">
+            <ul class="nav-x col-9 develop" style="width:100%">
                 <li><a href="<?cs var:toroot ?>training/index.html" <?cs
                   if:training ?>class="selected"<?cs /if ?>
                   zh-TW-lang="訓練課程"
@@ -215,7 +222,7 @@ SDK</a></li></ul>
                   es-lang="Guías de la API"               
                   >API Guides</a></li>
                 <li><a href="<?cs var:toroot ?>reference/packages.html" <?cs
-                  if:reference ?>class="selected"<?cs /if ?>
+                  if:reference && !(reference.gcm || reference.gms) ?>class="selected"<?cs /if ?>
                   zh-TW-lang="參考資源"
                   zh-CN-lang="参考"
                   ru-lang="Справочник"
@@ -230,8 +237,12 @@ SDK</a></li></ul>
                   ru-lang="Инструменты"
                   ko-lang="도구"
                   ja-lang="ツール"
-                  es-lang="Herramientas"               
+                  es-lang="Herramientas"
                   >Tools</a></li>
+                <li><a href="<?cs var:toroot ?>google/index.html" <?cs
+                  if:google || reference.gcm || reference.gms?>class="selected"<?cs /if ?>
+                  >Google Services</a>
+                </li>
             </ul>
         </div>
         

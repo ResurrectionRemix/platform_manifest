@@ -15,6 +15,11 @@ var SITE_ROOT = toRoot + basePath.substring(1,basePath.indexOf("/",1));
 
 var navBarIsFixed = false;
 $(document).ready(function() {
+  if (devsite) {
+    // move the lang selector into the overflow menu
+    $("#moremenu .mid div.header:last").after($("#language").detach());
+  }
+
   // init the fullscreen toggle click event
   $('#nav-swap .fullscreen').click(function(){
     if ($(this).hasClass('disabled')) {
@@ -28,7 +33,7 @@ $(document).ready(function() {
   $('.scroll-pane').jScrollPane( {verticalGutter:0} );
   
   // add HRs below all H2s (except for a few other h2 variants)
-  $('h2').not('#qv h2').not('#tb h2').not('.sidebox h2').not('#devdoc-nav h2').css({marginBottom:0}).after('<hr/>');
+  $('h2').not('#qv h2').not('#tb h2').not('.sidebox h2').not('#devdoc-nav h2').not('h2.norule').css({marginBottom:0}).after('<hr/>');
   
   // set search's onkeyup handler here so we can show suggestions 
   // even while search results are visible
@@ -135,18 +140,18 @@ $(document).ready(function() {
 
   // select current page in sidenav and set up prev/next links if they exist
   var $selNavLink = $('#nav').find('a[href="' + pagePath + '"]');
+  var $selListItem;
   if ($selNavLink.length) {
     $selListItem = $selNavLink.closest('li');
 
     $selListItem.addClass('selected');
-    $selListItem.closest('li.nav-section').addClass('expanded');
-    $selListItem.closest('li.nav-section').children('ul').show();
-    $selListItem.closest('li.nav-section').parent().closest('li.nav-section').addClass('expanded');
-    $selListItem.closest('li.nav-section').parent().closest('ul').show();
     
+    // Traverse up the tree and expand all parent nav-sections
+    $selNavLink.parents('li.nav-section').each(function() {
+      $(this).addClass('expanded');
+      $(this).children('ul').show();
+    });
     
-  //  $selListItem.closest('li.nav-section').closest('li.nav-section').addClass('expanded');
-  //  $selListItem.closest('li.nav-section').closest('li.nav-section').children('ul').show();  
 
     // set up prev links
     var $prevLink = [];
@@ -156,11 +161,9 @@ $(document).ready(function() {
 false; // navigate across topic boundaries only in design docs
     if ($prevListItem.length) {
       if ($prevListItem.hasClass('nav-section')) {
-        if (crossBoundaries) {
-          // jump to last topic of previous section
-          $prevLink = $prevListItem.find('a:last');
-        }
-      } else {
+        // jump to last topic of previous section
+        $prevLink = $prevListItem.find('a:last');
+      } else if (!$selListItem.hasClass('nav-section')) {
         // jump to previous topic in this section
         $prevLink = $prevListItem.find('a:eq(0)');
       }
@@ -177,18 +180,8 @@ false; // navigate across topic boundaries only in design docs
       }
     }
 
-    if ($prevLink.length) {
-      var prevHref = $prevLink.attr('href');
-      if (prevHref == SITE_ROOT + 'index.html') {
-        // Don't show Previous when it leads to the homepage
-      } else {
-        $('.prev-page-link').attr('href', $prevLink.attr('href')).removeClass("hide");
-      }
-    } 
-
     // set up next links
     var $nextLink = [];
-    var startCourse = false;
     var startClass = false;
     var training = $(".next-class-link").length; // decides whether to provide "next class" link
     var isCrossingBoundary = false;
@@ -206,53 +199,103 @@ false; // navigate across topic boundaries only in design docs
         $('.topic-start-link').text($nextLink.text().toUpperCase());
       }
       
-      // Handle some Training specialties
-      if ($selListItem.parent().is("#nav") && $(".start-course-link").length) {
-        // this means we're at the very top of the TOC hierarchy
-        startCourse = true;
-      } else if ($(".start-class-link").length) {
-        // this means this page has children but is not at the top (it's a class, not a course)
+      // If the selected page has a description, then it's a class or article homepage
+      if ($selListItem.find('a[description]').length) {
+        // this means we're on a class landing page
         startClass = true;
       }
     } else {
       // jump to the next topic in this section (if it exists)
       $nextLink = $selListItem.next('li').find('a:eq(0)');
       if (!$nextLink.length) {
-        if (crossBoundaries || training) {
-          // no more topics in this section, jump to the first topic in the next section
-          $nextLink = $selListItem.parents('li:eq(0)').next('li.nav-section').find('a:eq(0)');
-          isCrossingBoundary = true;
+        isCrossingBoundary = true;
+        // no more topics in this section, jump to the first topic in the next section
+        $nextLink = $selListItem.parents('li:eq(0)').next('li.nav-section').find('a:eq(0)');
+        if (!$nextLink.length) {  // Go up another layer to look for next page (lesson > class > course)
+          $nextLink = $selListItem.parents('li:eq(1)').next('li.nav-section').find('a:eq(0)');
         }
       }
     }
-    if ($nextLink.length) {
-      if (startCourse || startClass) {
-        if (startCourse) {
-          $('.start-course-link').attr('href', $nextLink.attr('href')).removeClass("hide");
-        } else {
-          $('.start-class-link').attr('href', $nextLink.attr('href')).removeClass("hide");
-        }
-        // if there's no training bar (below the start button), 
-        // then we need to add a bottom border to button
-        if (!$("#tb").length) {
-          $('.start-course-link').css({'border-bottom':'1px solid #DADADA'});
-          $('.start-class-link').css({'border-bottom':'1px solid #DADADA'});
-        }
-      } else if (training && isCrossingBoundary) {
-        $('.content-footer.next-class').show();
-        $('.next-page-link').attr('href','')
-                            .removeClass("hide").addClass("disabled")
-                            .click(function() { return false; });
-       
-        $('.next-class-link').attr('href',$nextLink.attr('href'))
-                            .removeClass("hide").append($nextLink.html());
-        $('.next-class-link').find('.new').empty();
-      } else {
-        $('.next-page-link').attr('href', $nextLink.attr('href')).removeClass("hide");
+
+    if (startClass) {
+      $('.start-class-link').attr('href', $nextLink.attr('href')).removeClass("hide");
+
+      // if there's no training bar (below the start button), 
+      // then we need to add a bottom border to button
+      if (!$("#tb").length) {
+        $('.start-class-link').css({'border-bottom':'1px solid #DADADA'});
       }
+    } else if (isCrossingBoundary && !$('body.design').length) {  // Design always crosses boundaries
+      $('.content-footer.next-class').show();
+      $('.next-page-link').attr('href','')
+                          .removeClass("hide").addClass("disabled")
+                          .click(function() { return false; });
+     
+      $('.next-class-link').attr('href',$nextLink.attr('href'))
+                          .removeClass("hide").append($nextLink.html());
+      $('.next-class-link').find('.new').empty();
+    } else {
+      $('.next-page-link').attr('href', $nextLink.attr('href')).removeClass("hide");
+    }
+
+    if (!startClass && $prevLink.length) {
+      var prevHref = $prevLink.attr('href');
+      if (prevHref == SITE_ROOT + 'index.html') {
+        // Don't show Previous when it leads to the homepage
+      } else {
+        $('.prev-page-link').attr('href', $prevLink.attr('href')).removeClass("hide");
+      }
+    } 
+
+    // If this is a training 'article', there should be no prev/next nav
+    // ... if the grandparent is the "nav" ... and it has no child list items...
+    if (training && $selListItem.parents('ul').eq(1).is('[id="nav"]') &&
+        !$selListItem.find('li').length) {
+      $('.next-page-link,.prev-page-link').attr('href','').addClass("disabled")
+                          .click(function() { return false; });
     }
     
   }
+  
+  
+  
+  // Set up the course landing pages for Training with class names and descriptions
+  if ($('body.trainingcourse').length) {
+    var $classLinks = $selListItem.find('ul li a').not('#nav .nav-section .nav-section ul a');
+    var $classDescriptions = $classLinks.attr('description');
+    
+    var $olClasses  = $('<ol class="class-list"></ol>');
+    var $liClass;
+    var $imgIcon;
+    var $h2Title;
+    var $pSummary;
+    var $olLessons;
+    var $liLesson;
+    $classLinks.each(function(index) {
+      $liClass  = $('<li></li>');
+      $h2Title  = $('<a class="title" href="'+$(this).attr('href')+'"><h2>' + $(this).html()+'</h2><span></span></a>');
+      $pSummary = $('<p class="description">' + $(this).attr('description') + '</p>');
+      
+      $olLessons  = $('<ol class="lesson-list"></ol>');
+      
+      $lessons = $(this).closest('li').find('ul li a');
+      
+      if ($lessons.length) {
+        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-tutorial.png" alt=""/>');
+        $lessons.each(function(index) {
+          $olLessons.append('<li><a href="'+$(this).attr('href')+'">' + $(this).html()+'</a></li>');
+        });
+      } else {
+        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-article.png" alt=""/>');
+        $pSummary.addClass('article');
+      }
+
+      $liClass.append($h2Title).append($imgIcon).append($pSummary).append($olLessons);
+      $olClasses.append($liClass);
+    });
+    $('.jd-descr').append($olClasses);
+  }
+
 
 
 
@@ -320,7 +363,13 @@ false; // navigate across topic boundaries only in design docs
     var searchResultHeight = $('#searchResults').is(":visible") ? 
                              $('#searchResults').outerHeight() : 0;
     var totalHeaderHeight = headerHeight + subheaderHeight + searchResultHeight;
+    // we set the navbar fixed when the scroll position is beyond the height of the site header...
     var navBarShouldBeFixed = scrollTop > totalHeaderHeight;
+    // ... except if the document content is shorter than the sidenav height.
+    // (this is necessary to avoid crazy behavior on OSX Lion due to overscroll bouncing)
+    if ($("#doc-col").height() < $("#side-nav").height()) {
+      navBarShouldBeFixed = false;
+    }
    
     var scrollLeft = $(window).scrollLeft();
     // When the sidenav is fixed and user scrolls horizontally, reposition the sidenav to match
@@ -384,11 +433,11 @@ false; // navigate across topic boundaries only in design docs
 
   // Set up tooltips
   var TOOLTIP_MARGIN = 10;
-  $('acronym').each(function() {
+  $('acronym,.tooltip-link').each(function() {
     var $target = $(this);
     var $tooltip = $('<div>')
         .addClass('tooltip-box')
-        .text($target.attr('title'))
+        .append($target.attr('title'))
         .hide()
         .appendTo('body');
     $target.removeAttr('title');
@@ -445,6 +494,36 @@ false; // navigate across topic boundaries only in design docs
   
   resizeNav();
 
+  /* init the language selector based on user cookie for lang */
+  loadLangPref();
+  changeNavLang(getLangPref());
+
+  /* setup event handlers to ensure the overflow menu is visible while picking lang */
+  $("#language select")
+      .mousedown(function() {
+        $("div.morehover").addClass("hover"); })
+      .blur(function() {
+        $("div.morehover").removeClass("hover"); });
+
+  /* some global variable setup */
+  resizePackagesNav = $("#resize-packages-nav");
+  classesNav = $("#classes-nav");
+  devdocNav = $("#devdoc-nav");
+
+  var cookiePath = "";
+  if (location.href.indexOf("/reference/") != -1) {
+    cookiePath = "reference_";
+  } else if (location.href.indexOf("/guide/") != -1) {
+    cookiePath = "guide_";
+  } else if (location.href.indexOf("/tools/") != -1) {
+    cookiePath = "tools_";
+  } else if (location.href.indexOf("/training/") != -1) {
+    cookiePath = "training_";
+  } else if (location.href.indexOf("/design/") != -1) {
+    cookiePath = "design_";
+  } else if (location.href.indexOf("/distribute/") != -1) {
+    cookiePath = "distribute_";
+  }
 
 });
 
@@ -532,28 +611,6 @@ addLoadEvent( function() {
   prettyPrint();
 } );
 
-function init() {
-  //resizeNav();
-
-  resizePackagesNav = $("#resize-packages-nav");
-  classesNav = $("#classes-nav");
-  devdocNav = $("#devdoc-nav");
-
-  var cookiePath = "";
-  if (location.href.indexOf("/reference/") != -1) {
-    cookiePath = "reference_";
-  } else if (location.href.indexOf("/guide/") != -1) {
-    cookiePath = "guide_";
-  } else if (location.href.indexOf("/tools/") != -1) {
-    cookiePath = "tools_";
-  } else if (location.href.indexOf("/training/") != -1) {
-    cookiePath = "training_";
-  } else if (location.href.indexOf("/design/") != -1) {
-    cookiePath = "design_";
-  } else if (location.href.indexOf("/distribute/") != -1) {
-    cookiePath = "distribute_";
-  }
-}
 
 
 
@@ -990,20 +1047,25 @@ function changeNavLang(lang) {
   });
 }
 
-function changeDocLang(lang) {
-  changeNavLang(lang);
-}
-
-function changeLangPref(lang, refresh) {
+function changeLangPref(lang, submit) {
   var date = new Date();
   expires = date.toGMTString(date.setTime(date.getTime()+(10*365*24*60*60*1000))); 
   // keep this for 50 years
   //alert("expires: " + expires)
   writeCookie("pref_lang", lang, null, expires);
-  changeDocLang(lang);
-  if (refresh) {
-    l = getBaseUri(location.pathname);
-    window.location = l;
+
+  //  #######  TODO:  Remove this condition once we're stable on devsite #######
+  //  This condition is only needed if we still need to support legacy GAE server
+  if (devsite) {
+    // Switch language when on Devsite server
+    if (submit) {
+      $("#setlang").submit();
+    }
+  } else {
+    // Switch language when on legacy GAE server
+    if (submit) {
+      window.location = getBaseUri(location.pathname);
+    }
   }
 }
 
@@ -1052,11 +1114,27 @@ function toggleContent(obj) {
 }
 
 
+/* New version of expandable content */
+function toggleExpandable(link,id) {
+  if($(id).is(':visible')) {
+    $(id).slideUp();
+    $(link).removeClass('expanded');
+  } else {
+    $(id).slideDown();
+    $(link).addClass('expanded');
+  }
+}
+
+function hideExpandable(ids) {
+  $(ids).slideUp();
+  $(ids).prev('h4').find('a.expandable').removeClass('expanded');
+}
 
 
 
 
-/*  	
+
+/*    
  *  Slideshow 1.0
  *  Used on /index.html and /develop/index.html for carousel
  *
@@ -1084,6 +1162,7 @@ function toggleContent(obj) {
  *  Options:
  *  btnPrev:    optional identifier for previous button
  *  btnNext:    optional identifier for next button
+ *  btnPause:   optional identifier for pause button
  *  auto:       whether or not to auto-proceed
  *  speed:      animation speed
  *  autoTime:   time between auto-rotation
@@ -1101,6 +1180,7 @@ function toggleContent(obj) {
      o = $.extend({
          btnPrev:   null,
          btnNext:   null,
+         btnPause:  null,
          auto:      true,
          speed:     500,
          autoTime:  12000,
@@ -1171,6 +1251,17 @@ function toggleContent(obj) {
                  e.preventDefault();
                  return go(curr+o.scroll);
              });
+
+         //Pause button
+         if(o.btnPause)
+             $(o.btnPause).click(function(e) {
+                 e.preventDefault();
+                 if ($(this).hasClass('paused')) {
+                     startRotateTimer();
+                 } else {
+                     pauseRotateTimer();
+                 }
+             });
          
          //Auto rotation
          if(o.auto) startRotateTimer();
@@ -1184,6 +1275,12 @@ function toggleContent(obj) {
                     go(curr+o.scroll);  
                   } 
               }, o.autoTime);
+             $(o.btnPause).removeClass('paused');
+         }
+
+         function pauseRotateTimer() {
+             clearInterval(timer);
+             $(o.btnPause).addClass('paused');
          }
 
          //Go to an item
@@ -1240,7 +1337,7 @@ function toggleContent(obj) {
  })(jQuery);
 
 
-/*	
+/*  
  *  dacSlideshow 1.0
  *  Used on develop/index.html for side-sliding tabs
  *
@@ -1667,6 +1764,10 @@ function loadSearchResults() {
   referenceSearcher.setUserDefinedLabel("Reference");
   referenceSearcher.setSiteRestriction("http://developer.android.com/reference/");
 
+  googleSearcher = new google.search.WebSearch();
+  googleSearcher.setUserDefinedLabel("Google Services");
+  googleSearcher.setSiteRestriction("http://developer.android.com/google/");
+
   blogSearcher = new google.search.WebSearch();
   blogSearcher.setUserDefinedLabel("Blog");
   blogSearcher.setSiteRestriction("http://android-developers.blogspot.com");
@@ -1677,6 +1778,7 @@ function loadSearchResults() {
   searchControl.addSearcher(trainingSearcher, searchOptions);
   searchControl.addSearcher(guidesSearcher, searchOptions);
   searchControl.addSearcher(referenceSearcher, searchOptions);
+  searchControl.addSearcher(googleSearcher, searchOptions);
   searchControl.addSearcher(blogSearcher, searchOptions);
 
   // configure result options
@@ -1794,12 +1896,16 @@ function escapeHTML(string) {
 /* ######################################################## */
 
 /* Initialize some droiddoc stuff, but only if we're in the reference */
-if (location.pathname.indexOf("/reference") == 0) {
-  $(document).ready(function() {
-    // init available apis based on user pref
-    changeApiLevel();
-    initSidenavHeightResize()
-  });
+if (location.pathname.indexOf("/reference")) {
+  if(!location.pathname.indexOf("/reference-gms/packages.html")
+    && !location.pathname.indexOf("/reference-gcm/packages.html")
+    && !location.pathname.indexOf("/reference/com/google") == 0) {
+    $(document).ready(function() {
+      // init available apis based on user pref
+      changeApiLevel();
+      initSidenavHeightResize()
+      });
+  }
 }
 
 var API_LEVEL_COOKIE = "api_level";
@@ -1883,11 +1989,18 @@ function changeApiLevel() {
 
   if (selectedLevel < minLevel) {
     var thing = ($("#jd-header").html().indexOf("package") != -1) ? "package" : "class";
-    $("#naMessage").show().html("<div><p><strong>This " + thing + " is not available with API level " + selectedLevel + ".</strong></p>"
-                              + "<p>To use this " + thing + ", you must develop your app using a build target "
-                              + "that supports API level " + $("#doc-api-level").attr("class") + " or higher. To read these "
-                              + "APIs, change the value of the API level filter above.</p>"
-                              + "<p><a href='" +toRoot+ "guide/appendix/api-levels.html'>What is the API level?</a></p></div>");
+    $("#naMessage").show().html("<div><p><strong>This " + thing
+              + " requires API level " + minLevel + " or higher.</strong></p>"
+              + "<p>This document is hidden because your selected API level for the documentation is "
+              + selectedLevel + ". You can change the documentation API level with the selector "
+              + "above the left navigation.</p>"
+              + "<p>For more information about specifying the API level your app requires, "
+              + "read <a href='" + toRoot + "training/basics/supporting-devices/platforms.html'"
+              + ">Supporting Different Platform Versions</a>.</p>"
+              + "<input type='button' value='OK, make this page visible' "
+              + "title='Change the API level to " + minLevel + "' "
+              + "onclick='$(\"#apiLevelSelector\").val(\"" + minLevel + "\");changeApiLevel();' />"
+              + "</div>");
   } else {
     $("#naMessage").hide();
   }
@@ -2003,6 +2116,9 @@ function new_node(me, mom, text, link, children_data, api_level)
   return node;
 }
 
+
+
+
 function expand_node(me, node)
 {
   if (node.children_data && !node.expanded) {
@@ -2080,13 +2196,6 @@ function find_page(url, data)
   return null;
 }
 
-function load_navtree_data(toroot) {
-  var navtreeData = document.createElement("script");
-  navtreeData.setAttribute("type","text/javascript");
-  navtreeData.setAttribute("src", toroot+"navtree_data.js");
-  $("head").append($(navtreeData));
-}
-
 function init_default_navtree(toroot) {
   init_navtree("tree-list", toroot, NAVTREE_DATA);
   
@@ -2126,6 +2235,106 @@ function init_navtree(navtree_id, toroot, root_nodes)
       scrollIntoView("nav-tree");
       });
   }
+}
+
+/* TODO: eliminate redundancy with non-google functions */
+function init_google_navtree(navtree_id, toroot, root_nodes)
+{
+  var me = new Object();
+  me.toroot = toroot;
+  me.node = new Object();
+
+  me.node.li = document.getElementById(navtree_id);
+  me.node.children_data = root_nodes;
+  me.node.children = new Array();
+  me.node.children_ul = document.createElement("ul");
+  me.node.get_children_ul = function() { return me.node.children_ul; };
+  //me.node.children_ul.className = "children_ul";
+  me.node.li.appendChild(me.node.children_ul);
+  me.node.depth = 0;
+
+  get_google_node(me, me.node);
+
+}
+
+function new_google_node(me, mom, text, link, children_data, api_level)
+{
+  var node = new Object();
+  var child;
+  node.children = Array();
+  node.children_data = children_data;
+  node.depth = mom.depth + 1;
+  node.get_children_ul = function() {
+      if (!node.children_ul) {
+        node.children_ul = document.createElement("ul"); 
+        node.children_ul.className = "tree-list-children"; 
+        node.li.appendChild(node.children_ul);
+      }
+      return node.children_ul;
+    };
+  node.li = document.createElement("li");
+
+  mom.get_children_ul().appendChild(node.li);
+  
+  
+  if(link) {
+    child = document.createElement("a");
+
+  }
+  else {
+    child = document.createElement("span");
+    child.className = "tree-list-subtitle";
+
+  }
+  if (children_data != null) {
+    node.li.className="nav-section";
+    node.label_div = document.createElement("div");
+    node.label_div.className = "nav-section-header-ref";  
+    node.li.appendChild(node.label_div);
+    get_google_node(me, node);
+    node.label_div.appendChild(child);
+  }
+  else {
+    node.li.appendChild(child);
+  }
+  if(link) {
+    child.href = me.toroot + link;
+  }
+  node.label = document.createTextNode(text);
+  child.appendChild(node.label);
+
+  node.children_ul = null;
+
+  return node;
+}
+
+function get_google_node(me, mom)
+{
+  mom.children_visited = true;
+  var linkText;
+  for (var i in mom.children_data) {
+    var node_data = mom.children_data[i];
+    linkText = node_data[0];
+
+    if(linkText.match("^"+"com.google.android")=="com.google.android"){
+      linkText = linkText.substr(19, linkText.length);
+    }
+      mom.children[i] = new_google_node(me, mom, linkText, node_data[1],
+          node_data[2], node_data[3]);
+  }
+}
+function showGoogleRefTree() {
+  init_default_google_navtree(toRoot);
+  init_default_gcm_navtree(toRoot);
+  resizeNav();
+}
+
+function init_default_google_navtree(toroot) {
+  init_google_navtree("gms-tree-list", toroot, GMS_NAVTREE_DATA);
+}
+
+function init_default_gcm_navtree(toroot) {
+  init_google_navtree("gcm-tree-list", toroot, GCM_NAVTREE_DATA);
 }
 
 /* TOGGLE INHERITED MEMBERS */
@@ -2221,6 +2430,3 @@ var control = mac ? e.metaKey && !e.ctrlKey : e.ctrlKey; // get ctrl key
     ensureAllInheritedExpanded();
   }
 });
-
-
-
