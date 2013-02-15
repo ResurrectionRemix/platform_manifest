@@ -177,7 +177,7 @@ FROYO_SDK_VERSIONS   := 8
 GINGERBREAD_SDK_VERSIONS := 9 10
 HONEYCOMB_SDK_VERSIONS := 11 12 13
 ICECREAM_SANDWICH_SDK_VERSIONS := 14 15
-JELLY_BEAN_SDK_VERSIONS := 16
+JELLY_BEAN_SDK_VERSIONS := 16 17
 
 # $(call is-android-codename,codename)
 # codename is one of cupcake,donut,eclair,froyo,gingerbread,icecream
