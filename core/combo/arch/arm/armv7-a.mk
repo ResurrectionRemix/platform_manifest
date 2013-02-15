@@ -23,12 +23,21 @@ mcpu-arg = $(shell sed 's/^-mcpu=//' <<< "$(call cc-option,-mcpu=$(1),-mcpu=$(2)
 
 ifeq ($(TARGET_ARCH_VARIANT_CPU), cortex-a15)
 TARGET_ARCH_VARIANT_CPU := $(call mcpu-arg,cortex-a15,cortex-a9)
+ARCH_ARM_HAVE_NEON_UNALIGNED_ACCESS    := true
+ARCH_ARM_NEON_MEMSET_DIVIDER           := 132
+#ARCH_ARM_NEON_MEMCPY_ALIGNMENT_DIVIDER := 224
 endif
 ifeq ($(TARGET_ARCH_VARIANT_CPU), cortex-a9)
 TARGET_ARCH_VARIANT_CPU := $(call mcpu-arg,cortex-a9,cortex-a8)
+ARCH_ARM_HAVE_NEON_UNALIGNED_ACCESS    := true
+ARCH_ARM_NEON_MEMSET_DIVIDER           := 132
+ARCH_ARM_NEON_MEMCPY_ALIGNMENT_DIVIDER := 224
 endif
 ifeq ($(TARGET_ARCH_VARIANT_CPU), cortex-a8)
 TARGET_ARCH_VARIANT_CPU := $(call mcpu-arg,cortex-a8,)
+ARCH_ARM_HAVE_NEON_UNALIGNED_ACCESS    := true
+ARCH_ARM_NEON_MEMSET_DIVIDER           := 132
+ARCH_ARM_NEON_MEMCPY_ALIGNMENT_DIVIDER := 224
 endif
 
 ifneq ($(strip $(TARGET_ARCH_VARIANT_CPU)),)
