@@ -46,7 +46,11 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/htc/evita" name="AOKP/device_htc_evita" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/msm8960-common" name="AOKP/device_htc_msm8960-common" remote="aokp" revision="jb-mr1" />
+  <project path="device/lge/iprj-common" name="AOKP/device_lge_iprj-common" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/mako" name="AOKP/device_lge_mako" remote="aokp" revision="jb-mr1" />
+  <project path="device/lge/p930" name="AOKP/device_lge_p930" remote="aokp" revision="jb-mr1" />
+  <project path="device/lge/su640" name="AOKP/device_lge_su640" remote="aokp" revision="jb-mr1" />
+  <project path="device/lge/vs920" name="AOKP/device_lge_vs920" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/maserati" name="AOKP/device_motorola_maserati" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/omap4-common" name="AOKP/device_motorola_omap4-common" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/solana" name="AOKP/device_motorola_solana" remote="aokp" revision="jb-mr1" />
