@@ -755,7 +755,7 @@ $(recovery_ramdisk): $(MKBOOTFS) \
 	@echo ----- Making recovery ramdisk ------
 	$(MINIGZIP) < $(recovery_uncompressed_ramdisk) > $@
 
-ifndef ifndef BOARD_CUSTOM_BOOTIMG_MK
+ifndef BOARD_CUSTOM_BOOTIMG_MK
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
