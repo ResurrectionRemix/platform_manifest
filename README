@@ -1,2 +1,3 @@
 $ repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr1
+$ . ./platform_manifest/manual_add_kernel_manifest.sh
 $ repo sync
