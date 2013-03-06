@@ -1,19 +1,20 @@
 function hmm() {
 cat <<EOF
 Invoke ". build/envsetup.sh" from your shell to add the following functions to your environment:
-- lunch:   lunch <product_name>-<build_variant>
-- tapas:   tapas [<App1> <App2> ...] [arm|x86|mips] [eng|userdebug|user]
-- croot:   Changes directory to the top of the tree.
-- m:       Makes from the top of the tree.
-- mm:      Builds all of the modules in the current directory.
-- mmm:     Builds all of the modules in the supplied directories.
-- cgrep:   Greps on all local C/C++ files.
-- jgrep:   Greps on all local Java files.
-- resgrep: Greps on all local res/*.xml files.
-- godir:   Go to the directory containing a file.
+- lunch:    lunch <product_name>-<build_variant>
+- tapas:    tapas [<App1> <App2> ...] [arm|x86|mips] [eng|userdebug|user]
+- croot:    Changes directory to the top of the tree.
+- m:        Makes from the top of the tree.
+- mm:       Builds all of the modules in the current directory.
+- mmm:      Builds all of the modules in the supplied directories.
+- cgrep:    Greps on all local C/C++ files.
+- jgrep:    Greps on all local Java files.
+- resgrep:  Greps on all local res/*.xml files.
+- godir:    Go to the directory containing a file.
 - mka:      Builds using SCHED_BATCH on all processors
 - mbot:     Builds for all devices using the psuedo buildbot
 - mkapush:  Same as mka with the addition of adb pushing to the device.
+- taco:     Builds for a single device using the pseudo buildbot
 - reposync: Parallel repo sync using ionice and SCHED_BATCH
 
 Look at the source to view more functions. The complete list is:
@@ -1293,6 +1294,19 @@ function mkapush() {
             fi
             ;;
     esac
+}
+
+function taco() {
+    for sauce in "$@"
+    do
+        breakfast $sauce
+        if [ $? -eq 0 ]; then
+            croot
+            ./vendor/aokp/bot/build_device.sh aokp_$sauce-userdebug $sauce
+        else
+            echo "No such item in brunch menu. Try 'breakfast'"
+        fi
+    done
 }
 
 function reposync() {
