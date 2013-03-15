@@ -6,8 +6,8 @@
   <project path="kernel/htc/msm8960" name="AOKP/kernel_htc_msm8960" remote="aokp" revision="jb-mr1" />
   <project path="kernel/lge/iproj" name="lge-kernel-iproj" remote="cm" revision="cm-10.1" />
   <project path="kernel/lge/mako" name="faux123/mako" remote="aokp" revision="enhanced_stock" />
-  <project path="kernel/motorola/omap4-common" name="AOKP/kernel_motorola_omap4-common" remote="aokp" revision="jb-mr1" />
-  <project path="kernel/motorola/omap4-kexec-common" name="AOKP/kernel_motorola_omap4-kexec-common" remote="aokp" revision="jb-mr1" />
+  <project path="kernel/motorola/omap4-common" name="android_kernel_motorola_omap4-common" remote="cm" revision="cm-10.1" />
+  <project path="kernel/motorola/omap4-kexec-common" name="android_kernel_motorola_omap4-kexec-common" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/aries" name="android_kernel_samsung_aries" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/d2" name="AOKP/kernel_samsung_d2" remote="aokp" revision="jb-mr1" />
   <project path="kernel/samsung/manta" name="AOKP/kernel_samsung_manta" remote="aokp" revision="jb-mr1" />
