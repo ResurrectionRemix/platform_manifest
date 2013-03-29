@@ -421,5 +421,5 @@
 
  <project path="packages/wallpapers/SwagPapers" name="altankuruk/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
 
-  <project path="platform_manifest" name="AOKP/platform_manifest" remote="aokp" revision="jb-mr1" />
+  <project path="platform_manifest" name="altankuruk/platform_manifest" remote="aokp" revision="jb-mr1" />
 </manifest>
