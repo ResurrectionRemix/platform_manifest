@@ -21,7 +21,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="AOKP/build" remote="aokp" revision="jb-mr1" >
+  <project path="build" name="altankuruk/build" remote="aokp" revision="jb-mr1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -403,6 +403,7 @@
   <project path="tools/build" name="platform/tools/build" groups="toolsbuild" />
   <project path="tools/motodev" name="platform/tools/motodev" />
 
+  <project path="vendor/rr" name="altankuruk/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="aokp" revision="jb-mr1" />
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="aokp" revision="jb-mr1" />
