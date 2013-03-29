@@ -61,12 +61,12 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^aokp_") ; then
-       AOKP_PRODUCT=$(echo -n $1 | sed -e 's/^aokp_//g')
+    if (echo -n $1 | grep -q -e "^rr_") ; then
+       RR_PRODUCT=$(echo -n $1 | sed -e 's/^aokp_//g')
     else
-       AOKP_PRODUCT=
+       RR_PRODUCT=
     fi
-      export AOKP_PRODUCT
+      export RR_PRODUCT
 
     CALLED_FROM_SETUP=true BUILD_SYSTEM=build/core \
         TARGET_PRODUCT=$1 \
@@ -1302,7 +1302,7 @@ function taco() {
         breakfast $sauce
         if [ $? -eq 0 ]; then
             croot
-            ./vendor/aokp/bot/build_device.sh aokp_$sauce-userdebug $sauce
+            ./vendor/rr/bot/build_device.sh rr_$sauce-userdebug $sauce
         else
             echo "No such item in brunch menu. Try 'breakfast'"
         fi
