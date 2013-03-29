@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
@@ -34,7 +33,7 @@
   <project path="dalvik" name="platform/dalvik" />
   <project path="development" name="platform/development" />
   <project path="device/acer/a510" name="AOKP/device_acer_a510" remote="aokp" revision="jb-mr1" />
-  <project path="device/asus/grouper" name="AOKP/device_asus_grouper" remote="aokp" revision="jb-mr1" />
+   <project path="device/asus/grouper" name="AOKP/device_asus_grouper" remote="aokp" revision="jb-mr1" />
   <project path="device/asus/tilapia" name="AOKP/device_asus_tilapia" remote="aokp" revision="jb-mr1" />
   <project path="device/common" name="android_device_common" remote="cm" revision="cm-10.1" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" />
