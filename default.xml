@@ -404,7 +404,6 @@
   <project path="tools/motodev" name="platform/tools/motodev" />
 
   <project path="vendor/rr" name="altankuruk/vendor_resurrection" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/aokp" name="AOKP/vendor_aokp" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="altankuruk/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="aokp" revision="jb-mr1" />
