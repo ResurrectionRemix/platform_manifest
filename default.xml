@@ -21,7 +21,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="altankuruk/build" remote="aokp" revision="jb-mr1" >
+  <project path="build" name="westcripp/build" remote="aokp" revision="jb-mr1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -313,7 +313,7 @@
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
   <project path="packages/apps/Contacts" name="AOKP/packages_apps_Contacts" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/DeskClock" name="AOKP/packages_apps_DeskClock" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/LockClock" name="altankuruk/android_packages_apps_LockClock" remote="aokp" revision="cm-10.1" />
+  <project path="packages/apps/LockClock" name="westcripp/android_packages_apps_LockClock" remote="aokp" revision="cm-10.1" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
@@ -332,7 +332,7 @@
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/QuickSearchBox" name="AOKP/packages_apps_QuickSearchBox" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/Settings" name="altankuruk/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/Settings" name="westcripp/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Launcher2" name="AOKP/packages_apps_Launcher2" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
@@ -403,8 +403,8 @@
   <project path="tools/build" name="platform/tools/build" groups="toolsbuild" />
   <project path="tools/motodev" name="platform/tools/motodev" />
 
-  <project path="vendor/rr" name="altankuruk/vendor_resurrection" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/rr/bot" name="altankuruk/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/rr" name="westcripp/vendor_resurrection" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="aokp" revision="jb-mr1" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="aokp" revision="jb-mr1" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="jb-mr1" />
@@ -417,7 +417,7 @@
   <project path="vendor/tmobile/providers/ThemeManager" name="android_vendor_tmobile_providers_ThemeManager" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/products/themes" name="android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
 
- <project path="packages/wallpapers/SwagPapers" name="altankuruk/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
+ <project path="packages/wallpapers/SwagPapers" name="westcripp/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
 
-  <project path="platform_manifest" name="altankuruk/platform_manifest" remote="aokp" revision="jb-mr1" />
+  <project path="platform_manifest" name="westcripp/platform_manifest" remote="aokp" revision="jb-mr1" />
 </manifest>
