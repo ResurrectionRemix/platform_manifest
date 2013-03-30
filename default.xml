@@ -405,7 +405,6 @@
 
   <project path="vendor/rr" name="altankuruk/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="altankuruk/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/aokp/bot" name="AOKP/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="aokp" revision="jb-mr1" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="aokp" revision="jb-mr1" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="jb-mr1" />
