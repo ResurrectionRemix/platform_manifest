@@ -333,7 +333,7 @@
   <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/QuickSearchBox" name="AOKP/packages_apps_QuickSearchBox" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Settings" name="altankuruk/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/Launcher2" name="PAC-man/android_packages_apps_Trebuchet" remote="aokp" revision="cm-10.1" />
+  <project path="packages/apps/Launcher2" name="AOKP/packages_apps_Launcher2" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
