@@ -55,6 +55,9 @@ Usage:  ota_from_target_files [flags] input_target_files output_ota_package
   --override_device <device>
       Override device-specific asserts. Can be a comma-separated list.
 
+  --persist <true|false>
+      Specify whether to enable persistence across installs (on by default).
+
   --no_assert <true|false>
       Including this will turn device asserts off.
 
@@ -95,6 +98,7 @@ OPTIONS.extra_script = None
 OPTIONS.aslr_mode = True
 OPTIONS.worker_threads = 3
 OPTIONS.override_device = 'auto'
+OPTIONS.persist = True
 OPTIONS.no_assert = False
 
 def MostPopularKey(d, default):
@@ -373,6 +377,16 @@ fi
   return Item.Get("system/etc/install-recovery.sh", dir=False)
 
 
+def CopyInstallTools(output_zip):
+  oldcwd = os.getcwd()
+  os.chdir(os.getenv('OUT'))
+  for root, subdirs, files in os.walk("install"):
+    for f in files:
+      p = os.path.join(root, f)
+      output_zip.write(p, p)
+  os.chdir(oldcwd)
+
+
 def WriteFullOTAPackage(input_zip, output_zip):
   # TODO: how to determine this?  We don't know what version it will
   # be installed on top of.  For now, we expect the API just won't
@@ -402,6 +416,11 @@ def WriteFullOTAPackage(input_zip, output_zip):
 
   device_specific.FullOTA_InstallBegin()
 
+  CopyInstallTools(output_zip)
+  script.UnpackPackageDir("install", "/tmp/install")
+  script.SetPermissionsRecursive("/tmp/install", 0, 0, 0755, 0644)
+  script.SetPermissionsRecursive("/tmp/install/bin", 0, 0, 0755, 0755)
+
   script.ShowProgress(0.5, 0)
 
   if OPTIONS.wipe_user_data:
@@ -420,6 +439,11 @@ def WriteFullOTAPackage(input_zip, output_zip):
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
+  if OPTIONS.persist:
+    script.Mount("/system")
+    script.RunPersist("save")
+    script.Unmount("/system")
+
   script.FormatPartition("/system")
   script.Mount("/system")
   script.UnpackPackageDir("system", "/system")
@@ -432,6 +456,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
 
   Item.GetMetadata(input_zip)
   Item.Get("system").SetPermissions(script)
+
+  if OPTIONS.persist:
+    script.RunPersist("restore")
 
   common.CheckSize(boot_img.data, "boot.img", OPTIONS.info_dict)
   common.ZipWriteStr(output_zip, "boot.img", boot_img.data)
@@ -772,6 +799,8 @@ def main(argv):
         OPTIONS.aslr_mode = False
     elif o in ("--override_device"):
       OPTIONS.override_device = a
+    elif o in ("--persist"):
+      OPTIONS.persist = a
     elif o in ("--worker_threads"):
       OPTIONS.worker_threads = int(a)
     else:
@@ -790,6 +819,7 @@ def main(argv):
                                               "worker_threads=",
                                               "aslr_mode=",
                                               "override_device=",
+                                              "persist=",
                                               ],
                              extra_option_handler=option_handler)
 
