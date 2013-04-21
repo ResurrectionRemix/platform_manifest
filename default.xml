@@ -407,7 +407,7 @@
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="aokp" revision="jb-mr1" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="aokp" revision="jb-mr1" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/samsung" name="westcripp/vendor_samsung" remote="aokp" revision="jb-mr1" />
   <project path="vendor/acer/a510" name="AOKP/vendor_acer_a510" remote="aokp" revision="jb-mr1" />
   <project path="vendor/asus" name="AOKP/vendor_asus" remote="aokp" revision="jb-mr1" />
 
