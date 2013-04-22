@@ -15,6 +15,7 @@
 # limitations under the License.
 
 """
+
 Given a target-files zipfile, produces an OTA package that installs
 that build.  An incremental OTA is produced if -i is given, otherwise
 a full OTA is produced.

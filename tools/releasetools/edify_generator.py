@@ -17,6 +17,7 @@ import re
 
 import common
 
+
 class EdifyGenerator(object):
   """Class to generate scripts in the 'edify' recovery script language
   used from donut onwards."""

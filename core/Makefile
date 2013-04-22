@@ -1304,6 +1304,7 @@ else
     $(INTERNAL_OTA_PACKAGE_TARGET): skip_assert := false
 endif
 
+
 ifeq ($(TARGET_DISABLE_PERSIST),true)
     $(INTERNAL_OTA_PACKAGE_TARGET): persist := false
 else
