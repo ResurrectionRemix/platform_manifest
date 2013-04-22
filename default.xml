@@ -412,8 +412,10 @@
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
+ 
   <project path="device/samsung/n7100" name="westcripp/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/cm" name="westcripp/android_vendor_cm" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/aokp" name="westcripp/vendor_aokp" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Settings" name="westcripp/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="packages/wallpapers/SwagPapers" name="westcripp/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
