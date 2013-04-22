@@ -417,8 +417,8 @@
   <project path="vendor/cm" name="westcripp/android_vendor_cm" remote="aokp" revision="jb-mr1" />
   <project path="vendor/aokp" name="westcripp/vendor_aokp" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Settings" name="westcripp/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="packages/wallpapers/SwagPapers" name="westcripp/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
   <project path="vendor/rr" name="westcripp/vendor_resurrection" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="platform_manifest" name="westcripp/platform_manifest" remote="aokp" revision="jb-mr1" />
 </manifest>
