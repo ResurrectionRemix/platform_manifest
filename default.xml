@@ -68,9 +68,8 @@
   <project path="device/samsung/galaxys2-common" name="AOKP/device_samsung_galaxys2-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/hercules" name="AOKP/device_samsung_hercules" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i605" name="AOKP/device_samsung_i605" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100" name="AOKP/device_samsung_i9100" remote="aokp" revision="jb-mr1" />
+
   <project path="device/samsung/i9100g" name="AOKP/device_samsung_i9100g" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9300" name="AOKP/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/manta" name="AOKP/device_samsung_manta" remote="aokp" revision="jb-mr1" />
@@ -253,7 +252,7 @@
   <project path="external/zlib" name="CyanogenMod/android_external_zlib" remote="cm" revision="cm-10.1" />
   <project path="external/zxing" name="platform/external/zxing" />
   <project path="frameworks/av" name="AOKP/frameworks_av" remote="aokp" revision="jb-mr1" />
-  <project path="frameworks/base" name="AOKP/frameworks_base" remote="aokp" revision="jb-mr1" />
+
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
   <project path="frameworks/compile/llvm-ndk-cc" name="platform/frameworks/compile/llvm-ndk-cc" />
@@ -333,7 +332,7 @@
   <project path="packages/apps/Phone" name="AOKP/packages_apps_Phone" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/ROMControl" name="AOKP/packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
+
   <project path="packages/apps/QuickSearchBox" name="AOKP/packages_apps_QuickSearchBox" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
@@ -413,7 +412,12 @@
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
- 
+   
+  
+  <project path="frameworks/base" name="westcripp/Resurrection_frameworks_base" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/ROMControl" name="westcrpp/RR_packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9100" name="westcripp/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9300" name="westcripp/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/n7100" name="westcripp/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/cm" name="westcripp/android_vendor_cm" remote="aokp" revision="jb-mr1" />
