@@ -8,7 +8,7 @@
 
   <remote  name="aokp"
            fetch="https://github.com/"
-           review="gerrit.sudoservers.com" />
+           review="gerrit.aokp.co" />
 
   <remote  name="cm"
            fetch="https://github.com/"
