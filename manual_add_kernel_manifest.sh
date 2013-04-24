@@ -48,7 +48,7 @@ cp platform_manifest/kernel_manifest.xml $manifest
 echo "syncing kernel repos"
 tail -n +3 platform_manifest/kernel_manifest.xml | head -n -1 | cut -f2 -d '"' > .sync
 
-. build/envsetup.sh
+. build/resurrection_remix.sh
 
 while read line ;do
         reposync "$line"
