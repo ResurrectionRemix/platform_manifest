@@ -418,6 +418,7 @@
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
 
+  <project path="packages/apps/PerformanceControl" name="AOKP/packages_apps_PerformanceControl" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung" name="westcripp/vendor_samsung" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/base" name="westcripp/Resurrection_frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/ROMControl" name="westcripp/RR_packages_apps_ROMControl" remote="aokp" revision="jb-mr1" />
