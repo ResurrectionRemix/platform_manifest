@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
- <project path="kernel/samsung/d2" name="AOKP/kernel_samsung_d2" remote="aokp" revision="jb-mr1" />
+  <project path="kernel/samsung/d2" name="CyanogenMod/android_kernel_samsung_d2" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/manta" name="AOKP/kernel_samsung_manta" remote="aokp" revision="jb-mr1" />
   <project path="kernel/samsung/msm8660-common" name="CyanogenMod/android_kernel_samsung_msm8660-common" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/smdk4210" name="CyanogenMod/android_kernel_samsung_smdk4210" remote="cm" revision="cm-10.1" />
