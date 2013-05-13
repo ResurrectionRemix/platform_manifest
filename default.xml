@@ -417,7 +417,8 @@
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" remote="cm" revision="cm-10.1" />
   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
-
+  
+  <project path="packages/apps/FMRadio" name="CyanogenMod/android_packages_apps_FMRadio" remote="cm"revision="cm-10.1" />
   <project path="frameworks/native" name="westcripp/RR_framework_native" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PerformanceControl" name="AOKP/packages_apps_PerformanceControl" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung" name="westcripp/vendor_samsung" remote="aokp" revision="jb-mr1" />
