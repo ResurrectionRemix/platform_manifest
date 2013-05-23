@@ -45,6 +45,8 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/htc/evita" name="AOKP/device_htc_evita" remote="aokp" revision="jb-mr1" />
+  <project path="device/htc/m7" name="AOKP/device_htc_m7" remote="aokp" revision="jb-mr1" />
+  <project path="device/htc/m7-common" name="AOKP/device_htc_m7-common" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/msm8960-common" name="AOKP/device_htc_msm8960-common" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/s4-common" name="AOKP/device_htc_s4-common" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/iprj-common" name="AOKP/device_lge_iprj-common" remote="aokp" revision="jb-mr1" />
@@ -71,6 +73,8 @@
   <project path="device/samsung/i605" name="AOKP/device_samsung_i605" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9100g" name="AOKP/device_samsung_i9100g" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/jfltetmo" name="AOKP/device_samsung_jfltetmo" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/manta" name="AOKP/device_samsung_manta" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/msm8660-common" name="AOKP/device_samsung_msm8660-common" remote="aokp" revision="jb-mr1" />

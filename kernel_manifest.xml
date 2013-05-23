@@ -8,4 +8,5 @@
   <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/t1" name="CyanogenMod/android_kernel_samsung_t1" remote="cm" revision="cm-10.1" />
   <project path="kernel/samsung/tuna" name="imoseyon/leanKernel-galaxy-nexus" remote="aokp" revision="lk-jb-mr1" />
+  <project path="kernel/samsung/jf" name="CyanogenMod/android_kernel_samsung_jf" remote="cm" revision="cm-10.1" />
 </manifest>
