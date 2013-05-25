@@ -74,7 +74,7 @@
   <project path="device/samsung/i9100g" name="westcripp/samsung_device_i9100g" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/jfltetmo" name="AOKP/device_samsung_jfltetmo" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/jfltetmo" name="westcripp/samsung_device_galaxys4tmobile" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jflteusc" name="AOKP/device_samsung_jflteusc" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltevzw" name="AOKP/device_samsung_jfltevzw" remote="aokp" revision="jb-mr1" />
