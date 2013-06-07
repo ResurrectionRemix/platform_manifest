@@ -450,8 +450,6 @@
   <project path="packages/wallpapers/SwagPapers" name="westcripp/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
   <project path="vendor/rr" name="westcripp/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/XposedInstaller" name="westcripp/XposedInstaller" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/AppSettings" name="westcripp/XposedAppSettings" remote="aokp" revision="jb-mr1" />
     
   <project path="platform_manifest" name="westcripp/platform_manifest" remote="aokp" revision="jb-mr1" />
 
