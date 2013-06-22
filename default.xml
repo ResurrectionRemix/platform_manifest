@@ -441,6 +441,7 @@
   <project path="frameworks/base" name="westcripp/frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/ROMControl" name="westcripp/rom_control" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9100" name="westcripp/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9305" name="westcripp/device_samsung_i9305" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9300" name="westcripp/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/n7100" name="westcripp/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
