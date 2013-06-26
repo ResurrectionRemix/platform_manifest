@@ -464,7 +464,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
 
   script.ShowProgress(0.1, 0)
   script.Print("***********************************************");
-  script.Print("            installation is complated");
+  script.Print("            installation is completed");
   script.Print("***********************************************");
   device_specific.FullOTA_InstallEnd()
 
