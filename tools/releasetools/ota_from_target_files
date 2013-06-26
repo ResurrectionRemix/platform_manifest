@@ -463,6 +463,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
+  script.Print("***********************************************");
+  script.Print("            installation is complated");
+  script.Print("***********************************************");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
