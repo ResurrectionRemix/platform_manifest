@@ -21,7 +21,7 @@
            remote="aosp"
            sync-j="4" />
 
-<project path="build" name="westcripp/build" remote="aokp" revision="jb-mr1" >
+<project path="build" name="ResurrectionRemix/build" remote="aokp" revision="jb-mr1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
@@ -46,7 +46,7 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/htc/evita" name="AOKP/device_htc_evita" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7" name="AOKP/device_htc_m7" remote="aokp" revision="jb-mr1" />
-  <project path="device/htc/m7-common" name="westcripp/device_htc_m7" remote="aokp" revision="jb-mr1" />
+  <project path="device/htc/m7-common" name="ResurrectionRemix/device_htc_m7" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7ul" name="AOKP/device_htc_m7ul" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7att" name="AOKP/device_htc_m7att" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7tmo" name="AOKP/device_htc_m7tmo" remote="aokp" revision="jb-mr1" />
@@ -75,10 +75,10 @@
   <project path="device/samsung/galaxys2-common" name="AOKP/device_samsung_galaxys2-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/hercules" name="AOKP/device_samsung_hercules" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i605" name="AOKP/device_samsung_i605" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100g" name="westcripp/samsung_device_i9100g" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9100g" name="ResurrectionRemix/samsung_device_i9100g" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/jfltetmo" name="westcripp/samsung_device_galaxys4tmobile" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/jfltetmo" name="ResurrectionRemix/samsung_device_galaxys4tmobile" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jflteusc" name="AOKP/device_samsung_jflteusc" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltevzw" name="AOKP/device_samsung_jfltevzw" remote="aokp" revision="jb-mr1" />
@@ -434,24 +434,25 @@
   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
   
   <project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" remote="cm" revision="cm-10.1" />
-  <project path="packages/apps/LockClock" name="westcripp/android_packages_apps_LockClock" remote="aokp" revision="jb-mr1" />
-  <project path="frameworks/native" name="westcripp/RR_framework_native" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung/n7100" name="westcripp/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
-  <project path="frameworks/base" name="westcripp/frameworks_base" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/ROMControl" name="westcripp/rom_control" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100" name="westcripp/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9305" name="westcripp/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9300" name="westcripp/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/LockClock" name="ResurrectionRemix/android_packages_apps_LockClock" remote="aokp" revision="jb-mr1" />
+  <project path="frameworks/native" name="ResurrectionRemix/RR_framework_native" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/samsung" name="ResurrectionRemix/vendor_samsung" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/samsung/n7100" name="ResurrectionRemix/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
+  <project path="frameworks/base" name="ResurrectionRemix/frameworks_base" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/ROMControl" name="ResurrectionRemix/rom_control" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9100" name="ResurrectionRemix/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9305" name="ResurrectionRemix/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9300" name="ResurrectionRemix/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/n7100" name="westcripp/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/cm" name="westcripp/android_vendor_cm" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/aokp" name="westcripp/vendor_aokp" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/Settings" name="westcripp/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
-  <project path="packages/wallpapers/SwagPapers" name="westcripp/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
-  <project path="vendor/rr" name="westcripp/vendor_resurrection" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/rr/bot" name="westcripp/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/n7100" name="ResurrectionRemix/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/cm" name="ResurrectionRemix/android_vendor_cm" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/aokp" name="ResurrectionRemix/vendor_aokp" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/Settings" name="ResurrectionRemix/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/Halo" name="ResurrectionRemix/HALO" remote="aokp" revision="jb-mr1" />
+  <project path="packages/wallpapers/SwagPapers" name="ResurrectionRemix/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
+  <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
     
-  <project path="platform_manifest" name="westcripp/platform_manifest" remote="aokp" revision="jb-mr1" />
+  <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" />
 
 </manifest>

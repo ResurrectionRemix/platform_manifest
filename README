@@ -1,4 +1,4 @@
-$ repo init -u https://github.com/westcripp/platform_manifest.git -b jb-mr1
+$ repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b jb-mr1
 $ repo sync
 $ ./platform_manifest/manual_add_kernel_manifest.sh
 
