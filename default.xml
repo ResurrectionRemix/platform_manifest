@@ -447,7 +447,7 @@
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_cm" remote="aokp" revision="jb-mr1" />
   <project path="vendor/aokp" name="ResurrectionRemix/vendor_aokp" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Settings" name="ResurrectionRemix/Resurrection_packages_apps_Settings" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/Halo" name="ResurrectionRemix/HALO" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/Halo" name="ParanoidAndroid/HALO" remote="aokp" revision="jellybean" />
   <project path="packages/wallpapers/SwagPapers" name="ResurrectionRemix/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
   <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
