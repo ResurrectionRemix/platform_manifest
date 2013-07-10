@@ -436,7 +436,6 @@
   <project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" remote="cm" revision="cm-10.1" />
   <project path="packages/apps/LockClock" name="ResurrectionRemix/android_packages_apps_LockClock" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/native" name="ResurrectionRemix/RR_framework_native" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung" name="ResurrectionRemix/vendor_samsung" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/base" name="ResurrectionRemix/frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/ROMControl" name="ResurrectionRemix/rom_control" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9100" name="ResurrectionRemix/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
