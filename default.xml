@@ -441,8 +441,7 @@
   <project path="device/samsung/i9100" name="ResurrectionRemix/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9305" name="ResurrectionRemix/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9300" name="ResurrectionRemix/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung/n7100" name="ResurrectionRemix/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/samsung" name="ResurrectionRemix/vendor_samsung" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/n7100" name="ResurrectionRemix/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_cm" remote="aokp" revision="jb-mr1" />
