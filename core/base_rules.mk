@@ -514,7 +514,7 @@ endif
 ifdef LOCAL_DEX_PREOPT
 installed_odex := $(basename $(LOCAL_INSTALLED_MODULE)).odex
 built_odex := $(basename $(LOCAL_BUILT_MODULE)).odex
-$(installed_odex) : $(built_odex) $(LOCAL_BUILT_MODULE) | $(ACP)
+$(installed_odex) : $(built_odex) | $(ACP)
 	@echo -e ${CL_INS}"Install: $@"${CL_RST}
 	$(copy-file-to-target)
 
