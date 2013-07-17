@@ -46,7 +46,7 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/htc/evita" name="AOKP/device_htc_evita" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7" name="AOKP/device_htc_m7" remote="aokp" revision="jb-mr1" />
-  <project path="device/htc/m7-common" name="AOKP/device_htc_m7-common" remote="aokp" revision="jb-mr1" />
+  <project path="device/htc/m7-common" name="ResurrectionRemix/device_htc_m7" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7ul" name="AOKP/device_htc_m7ul" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7att" name="AOKP/device_htc_m7att" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7tmo" name="AOKP/device_htc_m7tmo" remote="aokp" revision="jb-mr1" />
@@ -54,7 +54,7 @@
   <project path="device/htc/msm8960-common" name="AOKP/device_htc_msm8960-common" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/s4-common" name="AOKP/device_htc_s4-common" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/iprj-common" name="AOKP/device_lge_iprj-common" remote="aokp" revision="jb-mr1" />
-  <project path="device/lge/mako" name="AOKP/device_lge_mako" remote="aokp" revision="jb-mr1" />
+  <project path="device/lge/mako" name="ResurrectionRemix/device_mako_nexus4" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/p930" name="AOKP/device_lge_p930" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/su640" name="AOKP/device_lge_su640" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/vs920" name="AOKP/device_lge_vs920" remote="aokp" revision="jb-mr1" />
@@ -75,7 +75,7 @@
   <project path="device/samsung/galaxys2-common" name="AOKP/device_samsung_galaxys2-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/hercules" name="AOKP/device_samsung_hercules" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i605" name="AOKP/device_samsung_i605" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100g" name="AOKP/device_samsung_i9100g" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9100g" name="ResurrectionRemix/samsung_device_i9100g" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltetmo" name="ResurrectionRemix/samsung_device_galaxys4tmobile" remote="aokp" revision="jb-mr1" />
@@ -438,9 +438,9 @@
   <project path="frameworks/native" name="ResurrectionRemix/RR_framework_native" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/base" name="ResurrectionRemix/frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/ROMControl" name="ResurrectionRemix/rom_control" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100" name="AOKP/device_samsung_i9100" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9100" name="ResurrectionRemix/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9305" name="ResurrectionRemix/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9300" name="AOKP/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/i9300" name="ResurrectionRemix/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung/n7100" name="ResurrectionRemix/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung/i9305" name="ResurrectionRemix/vendor_samsung_i9305" remote="aokp" revision="jb-mr1" />
@@ -453,25 +453,7 @@
   <project path="packages/wallpapers/SwagPapers" name="ResurrectionRemix/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
   <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
-  
-  <project path="device/samsung/i9100g/overlay/frameworks/base/core/res/res/drawable-hdpi" name="ResurrectionRemix/device_drawable_hdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100g/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" />
-  
-  <project path="device/samsung/i9100/overlay/frameworks/base/core/res/res/drawable-hdpi" name="ResurrectionRemix/device_drawable_hdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9100/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" />
-  
-  <project path="device/samsung/i9300/overlay/frameworks/base/core/res/res/drawable-xhdpi" name="ResurrectionRemix/device_drawable_xhdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/i9300/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" />
-
-  <project path="device/samsung/n7100/overlay/frameworks/base/core/res/res/drawable-xhdpi" name="ResurrectionRemix/device_drawable_xhdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/n7100/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" /> 
- 
-  <project path="device/htc/m7-common/overlay/frameworks/base/core/res/res/drawable-xhdpi" name="ResurrectionRemix/device_drawable_xhdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/htc/m7-common/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" />
-
-  <project path="device/lge/mako/overlay/frameworks/base/core/res/res/drawable-xhdpi" name="ResurrectionRemix/device_drawable_xhdpi" remote="aokp" revision="jb-mr1" />
-  <project path="device/lge/mako/overlay/frameworks/base/core/res/res/drawable-nodpi" name="ResurrectionRemix/device_drawable_nodpi" remote="aokp" revision="jb-mr1" />
- 
+    
   <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" />
 
 </manifest>
