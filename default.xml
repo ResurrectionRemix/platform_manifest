@@ -16,17 +16,26 @@
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
-  <project path="cts" name="platform/cts" />
+  <project path="cts" name="platform/cts" groups="cts" />
   <project path="dalvik" name="platform/dalvik" />
+  <project path="developers/build" name="platform/developers/build" />
+  <project path="developers/demos" name="platform/developers/demos" />
+  <project path="developers/docs" name="platform/developers/docs" />
+  <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="platform/development" />
+  <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
+  <project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
+  <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" />
   <project path="device/asus/grouper" name="device/asus/grouper" groups="device,grouper" />
   <project path="device/asus/tilapia" name="device/asus/tilapia" groups="device,grouper" />
   <project path="device/common" name="device/common" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
-  <project path="device/generic/armv7-a" name="device/generic/armv7-a" groups="pdk" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
   <project path="device/generic/mips" name="device/generic/mips" groups="pdk" />
+  <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" />
+  <project path="device/generic/mini-emulator-mips" name="device/generic/mini-emulator-mips" groups="pdk" />
+  <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="pdk" />
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
@@ -51,20 +60,18 @@
   <project path="external/apache-qp" name="platform/external/apache-qp" />
   <project path="external/apache-xml" name="platform/external/apache-xml" />
   <project path="external/arduino" name="platform/external/arduino" />
-  <project path="external/astl" name="platform/external/astl" />
-  <project path="external/bison" name="platform/external/bison" />
+  <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" />
   <project path="external/bluetooth/bluedroid" name="platform/external/bluetooth/bluedroid" groups="pdk" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
-  <project path="external/checkpolicy" name="platform/external/checkpolicy" />
+  <project path="external/ceres-solver" name="platform/external/ceres-solver" />
+  <project path="external/checkpolicy" name="platform/external/checkpolicy" groups="pdk" />
   <project path="external/chromium" name="platform/external/chromium" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" />
-  <project path="external/cibu-fonts" name="platform/external/cibu-fonts" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/dbus" name="platform/external/dbus" groups="pdk" />
   <project path="external/dexmaker" name="platform/external/dexmaker" />
   <project path="external/dhcpcd" name="platform/external/dhcpcd" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
@@ -116,7 +123,7 @@
   <project path="external/kernel-headers" name="platform/external/kernel-headers" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" />
   <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libgsm" name="platform/external/libgsm" />
+  <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
   <project path="external/libmtp" name="platform/external/libmtp" />
   <project path="external/libnfc-nci" name="platform/external/libnfc-nci" groups="pdk" />
@@ -127,23 +134,23 @@
   <project path="external/libphonenumber" name="platform/external/libphonenumber" />
   <project path="external/libpng" name="platform/external/libpng" groups="pdk" />
   <project path="external/libppp" name="platform/external/libppp" />
-  <project path="external/libselinux" name="platform/external/libselinux" />
-  <project path="external/libsepol" name="platform/external/libsepol" />
+  <project path="external/libselinux" name="platform/external/libselinux" groups="pdk" />
+  <project path="external/libsepol" name="platform/external/libsepol" groups="pdk" />
   <project path="external/libusb" name="platform/external/libusb" />
-  <project path="external/libusb_aah" name="platform/external/libusb_aah" />
+  <project path="external/libusb_aah" name="platform/external/libusb_aah" groups="libusb_aah" />
   <project path="external/libusb-compat" name="platform/external/libusb-compat" />
   <project path="external/libvorbis" name="platform/external/libvorbis" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
   <project path="external/libxml2" name="platform/external/libxml2" />
   <project path="external/libxslt" name="platform/external/libxslt" />
-  <project path="external/libyuv" name="platform/external/libyuv" />
+  <project path="external/libyuv" name="platform/external/libyuv" groups="libyuv" />
   <project path="external/linux-tools-perf" name="platform/external/linux-tools-perf" />
   <project path="external/littlemock" name="platform/external/littlemock" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
-  <project path="external/lohit-fonts" name="platform/external/lohit-fonts" />
+  <project path="external/marisa-trie" name="platform/external/marisa-trie" />
   <project path="external/markdown" name="platform/external/markdown" />
   <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" />
-  <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk" />
+  <project path="external/mesa3d" name="platform/external/mesa3d" />
   <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
   <project path="external/mockito" name="platform/external/mockito" />
   <project path="external/mockwebserver" name="platform/external/mockwebserver" />
@@ -155,9 +162,11 @@
   <project path="external/neven" name="platform/external/neven" />
   <project path="external/nist-pkits" name="platform/external/nist-pkits" />
   <project path="external/nist-sip" name="platform/external/nist-sip" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" />
   <project path="external/oauth" name="platform/external/oauth" />
   <project path="external/objenesis" name="platform/external/objenesis" />
   <project path="external/okhttp" name="platform/external/okhttp" />
+  <project path="external/open-vcdiff" name="platform/external/open-vcdiff" />
   <project path="external/opencv" name="platform/external/opencv" />
   <project path="external/openfst" name="platform/external/openfst" />
   <project path="external/openssh" name="platform/external/openssh" />
@@ -173,10 +182,12 @@
   <project path="external/quake" name="platform/external/quake" />
   <project path="external/regex-re2" name="platform/external/regex-re2" />
   <project path="external/replicaisland" name="platform/external/replicaisland" />
+  <project path="external/robolectric" name="platform/external/robolectric" />
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/scrypt" name="platform/external/scrypt" />
-  <project path="external/sepolicy" name="platform/external/sepolicy" />
+  <project path="external/sepolicy" name="platform/external/sepolicy" groups="pdk" />
   <project path="external/skia" name="platform/external/skia" />
+  <project path="external/smack" name="platform/external/smack" />
   <project path="external/smali" name="platform/external/smali" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
   <project path="external/speex" name="platform/external/speex" groups="pdk" />
@@ -189,8 +200,9 @@
   <project path="external/svox" name="platform/external/svox" />
   <project path="external/tagsoup" name="platform/external/tagsoup" />
   <project path="external/tcpdump" name="platform/external/tcpdump" />
+  <project path="external/timezonepicker-support" name="platform/external/timezonepicker-support" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" />
-  <project path="external/tinyxml" name="platform/external/tinyxml" />
+  <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" />
   <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
   <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" />
   <project path="external/v8" name="platform/external/v8" />
@@ -198,7 +210,6 @@
   <project path="external/webkit" name="platform/external/webkit" />
   <project path="external/webp" name="platform/external/webp" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" />
@@ -208,30 +219,33 @@
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
   <project path="frameworks/base" name="platform/frameworks/base" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
-  <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" groups="pdk" />
-  <project path="frameworks/compile/llvm-ndk-cc" name="platform/frameworks/compile/llvm-ndk-cc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
-  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" />
+  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/mff" name="platform/frameworks/mff" />
   <project path="frameworks/ml" name="platform/frameworks/ml" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
   <project path="frameworks/opt/carddav" name="platform/frameworks/opt/carddav" />
+  <project path="frameworks/opt/colorpicker" name="platform/frameworks/opt/colorpicker" />
+  <project path="frameworks/opt/datetimepicker" name="platform/frameworks/opt/datetimepicker" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
   <project path="frameworks/opt/inputmethodcommon" name="platform/frameworks/opt/inputmethodcommon" />
   <project path="frameworks/opt/mailcommon" name="platform/frameworks/opt/mailcommon" />
   <project path="frameworks/opt/mms" name="platform/frameworks/opt/mms" />
+  <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" />
-  <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" />
+  <project path="frameworks/opt/timezonepicker" name="platform/frameworks/opt/timezonepicker" />
+  <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="pdk" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
   <project path="frameworks/support" name="platform/frameworks/support" />
   <project path="frameworks/testing" name="platform/frameworks/testing" />
   <project path="frameworks/volley" name="platform/frameworks/volley" />
+  <project path="frameworks/webview" name="platform/frameworks/webview" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" />
-  <project path="gdk" name="platform/gdk" />
   <project path="hardware/akm" name="platform/hardware/akm" />
+  <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="broadcom_wlan" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
@@ -239,19 +253,16 @@
   <project path="hardware/msm7k" name="platform/hardware/msm7k" />
   <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
-  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom" />
   <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="qcom" />
-  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom" />
   <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom" />
   <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom" />
-  <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom" />
+  <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" groups="exynos5" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
-  <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
   <project path="hardware/ti/wlan" name="platform/hardware/ti/wlan" />
   <project path="hardware/ti/wpan" name="platform/hardware/ti/wpan" />
@@ -267,7 +278,9 @@
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
   <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
+  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" />
   <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
+  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
@@ -281,8 +294,10 @@
   <project path="packages/apps/Music" name="platform/packages/apps/Music" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
+  <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
   <project path="packages/apps/Phone" name="platform/packages/apps/Phone" />
+  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
@@ -360,6 +375,8 @@
   <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" groups="pdk,linux,x86" />
   <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" groups="pdk,linux,x86" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" groups="pdk,linux,x86" />
+  <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" />
+  <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" />
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
   <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" />
@@ -381,7 +398,7 @@
   <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
   <project path="tools/emulator" name="platform/tools/emulator" groups="notdefault,tools" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="notdefault,tools" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools" />
   <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
