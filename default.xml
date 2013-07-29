@@ -494,4 +494,3 @@
   <project path="packages/apps/FMRadio" name="CyanogenMod/android_packages_apps_FMRadio" remote="cm" revision="cm-10.1" />
 
   <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" />
-</manifest>
