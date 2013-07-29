@@ -79,6 +79,7 @@
   <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/jfltespr" name="AOKP/device_samsung_jfltespr" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltetmo" name="AOKP/device_samsung_jfltetmo" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jflteusc" name="AOKP/device_samsung_jflteusc" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltevzw" name="AOKP/device_samsung_jfltevzw" remote="aokp" revision="jb-mr1" />
@@ -147,9 +148,11 @@
   <project path="external/expat" name="platform/external/expat" />
   <project path="external/eyes-free" name="platform/external/eyes-free" />
   <project path="external/fat32lib" name="platform/external/fat32lib" />
+  <project path="external/exfat" name="CyanogenMod/android_external_exfat" remote="cm" revision="cm-10.1" />
   <project path="external/fdlibm" name="platform/external/fdlibm" />
   <project path="external/flac" name="platform/external/flac" />
   <project path="external/freetype" name="platform/external/freetype" />
+  <project path="external/fuse" name="CyanogenMod/android_external_fuse" remote="cm" revision="cm-10.1" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
   <project path="external/ganymed-ssh2" name="platform/external/ganymed-ssh2" />
   <project path="external/gcc-demangle" name="platform/external/gcc-demangle" />
@@ -163,6 +166,7 @@
   <project path="external/harfbuzz" name="platform/external/harfbuzz" />
   <project path="external/hyphenation" name="platform/external/hyphenation" />
   <project path="external/icu4c" name="platform/external/icu4c" />
+  <project path="external/ntfs-3g" name="CyanogenMod/android_external_ntfs-3g" remote="cm" revision="cm-10.1" /> 
   <project path="external/iproute2" name="platform/external/iproute2" />
   <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
   <project path="external/iptables" name="platform/external/iptables" />
