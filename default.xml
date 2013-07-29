@@ -491,6 +491,7 @@
   <project path="packages/wallpapers/SwagPapers" name="ResurrectionRemix/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
   <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/FMRadio" name="CyanogenMod/android_packages_apps_FMRadio" remote="cm" revision="cm-10.1" />
 
   <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" />
 </manifest>
