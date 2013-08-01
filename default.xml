@@ -45,12 +45,11 @@
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/htc/evita" name="AOKP/device_htc_evita" remote="aokp" revision="jb-mr1" />
-  <project path="device/htc/m7" name="AOKP/device_htc_m7" remote="aokp" revision="jb-mr1" />
-  <project path="device/htc/m7-common" name="ResurrectionRemix/device_htc_m7" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7ul" name="AOKP/device_htc_m7ul" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7att" name="AOKP/device_htc_m7att" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7tmo" name="AOKP/device_htc_m7tmo" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/m7spr" name="AOKP/device_htc_m7spr" remote="aokp" revision="jb-mr1" />
+  <project path="device/htc/m7-common" name="ResurrectionRemix/device_htc_m7" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/msm8960-common" name="AOKP/device_htc_msm8960-common" remote="aokp" revision="jb-mr1" />
   <project path="device/htc/s4-common" name="AOKP/device_htc_s4-common" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/iprj-common" name="AOKP/device_lge_iprj-common" remote="aokp" revision="jb-mr1" />
@@ -58,7 +57,7 @@
   <project path="device/lge/p930" name="AOKP/device_lge_p930" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/su640" name="AOKP/device_lge_su640" remote="aokp" revision="jb-mr1" />
   <project path="device/lge/vs920" name="AOKP/device_lge_vs920" remote="aokp" revision="jb-mr1" />
-  <project path="device/motorola/maserati" name="AOKP/device_motorola_maserati" remote="aokp" revision="jb-mr1" />  
+  <project path="device/motorola/maserati" name="AOKP/device_motorola_maserati" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/omap4-common" name="AOKP/device_motorola_omap4-common" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/solana" name="AOKP/device_motorola_solana" remote="aokp" revision="jb-mr1" />
   <project path="device/motorola/spyder" name="AOKP/device_motorola_spyder" remote="aokp" revision="jb-mr1" />
@@ -76,13 +75,13 @@
   <project path="device/samsung/hercules" name="AOKP/device_samsung_hercules" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i605" name="AOKP/device_samsung_i605" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9100g" name="ResurrectionRemix/samsung_device_i9100g" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jf-common" name="AOKP/device_samsung_jf-common" remote="aokp" revision="jb-mr1" />
-  <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltespr" name="AOKP/device_samsung_jfltespr" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltetmo" name="AOKP/device_samsung_jfltetmo" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jflteusc" name="AOKP/device_samsung_jflteusc" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/jfltevzw" name="AOKP/device_samsung_jfltevzw" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/l900" name="AOKP/device_samsung_l900" remote="aokp" revision="jb-mr1" />
+  <project path="device/samsung/maguro" name="AOKP/device_samsung_maguro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/manta" name="AOKP/device_samsung_manta" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/msm8660-common" name="AOKP/device_samsung_msm8660-common" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/msm8960-common" name="AOKP/device_samsung_msm8960-common" remote="aokp" revision="jb-mr1" />
@@ -99,13 +98,16 @@
   <project path="device/samsung/vibrantmtd" name="AOKP/device_samsung_vibrantmtd" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/hayabusa" name="AOKP/device_sony_hayabusa" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/mint" name="AOKP/device_sony_mint" remote="aokp" revision="jb-mr1" />
+  <project path="device/sony/pollux" name="AOKP/device_sony_pollux" remote="aokp" revision="jb-mr1" />
+  <project path="device/sony/pollux_windy" name="AOKP/device_sony_pollux_windy" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/odin" name="AOKP/device_sony_odin" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/tsubasa" name="AOKP/device_sony_tsubasa" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/yuga" name="AOKP/device_sony_yuga" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/blue-common" name="AOKP/device_sony_blue-common" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/fusion3-common" name="AOKP/device_sony_fusion3-common" remote="aokp" revision="jb-mr1" />
-  <project path="device/sony/common" name="AOKP/device_sony_common" remote="aokp" revision="jb-mr1" />
+  <project path="device/sony/pollux-common" name="AOKP/device_sony_pollux-common" remote="aokp" revision="jb-mr1" />
   <project path="device/sony/qcom-common" name="AOKP/device_sony_qcom-common" remote="aokp" revision="jb-mr1" />
+  <project path="device/sony/common" name="AOKP/device_sony_common" remote="aokp" revision="jb-mr1" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
   <project path="external/aac" name="platform/external/aac" />
   <project path="external/android-clat" name="platform/external/android-clat" />
@@ -135,7 +137,7 @@
   <project path="external/dexmaker" name="platform/external/dexmaker" />
   <project path="external/dhcpcd" name="platform/external/dhcpcd" />
   <project path="external/dnsmasq" name="AOKP/external_dnsmasq" remote="aokp" revision="jb-mr1" />
-  <project path="external/doclava" name="DirtyUnicorns422/external_doclava" remote="aokp" revision="jellybean" /> />
+  <project path="external/doclava" name="DirtyUnicorns422/external_doclava" remote="aokp" revision="jellybean" />
   <project path="external/dropbear" name="platform/external/dropbear" />
   <project path="external/e2fsprogs" name="AOKP/external_e2fsprogs" remote="aokp" revision="jb-mr1" />
   <project path="external/easymock" name="platform/external/easymock" />
@@ -145,15 +147,15 @@
   <project path="external/embunit" name="platform/external/embunit" />
   <project path="external/emma" name="platform/external/emma" />
   <project path="external/esd" name="platform/external/esd" />
+  <project path="external/exfat" name="CyanogenMod/android_external_exfat" remote="cm" revision="cm-10.1" />
   <project path="external/expat" name="platform/external/expat" />
   <project path="external/eyes-free" name="platform/external/eyes-free" />
   <project path="external/fat32lib" name="platform/external/fat32lib" />
-  <project path="external/exfat" name="CyanogenMod/android_external_exfat" remote="cm" revision="cm-10.1" />
   <project path="external/fdlibm" name="platform/external/fdlibm" />
   <project path="external/flac" name="platform/external/flac" />
   <project path="external/freetype" name="platform/external/freetype" />
-  <project path="external/fuse" name="CyanogenMod/android_external_fuse" remote="cm" revision="cm-10.1" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
+  <project path="external/fuse" name="CyanogenMod/android_external_fuse" remote="cm" revision="cm-10.1" />
   <project path="external/ganymed-ssh2" name="platform/external/ganymed-ssh2" />
   <project path="external/gcc-demangle" name="platform/external/gcc-demangle" />
   <project path="external/genext2fs" name="platform/external/genext2fs" />
@@ -166,7 +168,6 @@
   <project path="external/harfbuzz" name="platform/external/harfbuzz" />
   <project path="external/hyphenation" name="platform/external/hyphenation" />
   <project path="external/icu4c" name="platform/external/icu4c" />
-  <project path="external/ntfs-3g" name="CyanogenMod/android_external_ntfs-3g" remote="cm" revision="cm-10.1" /> 
   <project path="external/iproute2" name="platform/external/iproute2" />
   <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
   <project path="external/iptables" name="platform/external/iptables" />
@@ -224,6 +225,7 @@
   <project path="external/netperf" name="platform/external/netperf" />
   <project path="external/neven" name="platform/external/neven" />
   <project path="external/nist-sip" name="platform/external/nist-sip" />
+  <project path="external/ntfs-3g" name="CyanogenMod/android_external_ntfs-3g" remote="cm" revision="cm-10.1" />
   <project path="external/oauth" name="platform/external/oauth" />
   <project path="external/okhttp" name="platform/external/okhttp" />
   <project path="external/opencv" name="platform/external/opencv" />
@@ -275,6 +277,7 @@
   <project path="external/zlib" name="CyanogenMod/android_external_zlib" remote="cm" revision="cm-10.1" />
   <project path="external/zxing" name="platform/external/zxing" />
   <project path="frameworks/av" name="AOKP/frameworks_av" remote="aokp" revision="jb-mr1" />
+  <project path="frameworks/base" name="ResurrectionRemix/frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
   <project path="frameworks/compile/llvm-ndk-cc" name="platform/frameworks/compile/llvm-ndk-cc" />
@@ -283,6 +286,7 @@
   <project path="frameworks/ex" name="platform/frameworks/ex" />
   <project path="frameworks/mff" name="platform/frameworks/mff" />
   <project path="frameworks/ml" name="platform/frameworks/ml" />
+  <project path="frameworks/native" name="ResurrectionRemix/RR_framework_native" remote="aokp" revision="jb-mr1" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
   <project path="frameworks/opt/carddav" name="platform/frameworks/opt/carddav" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
@@ -310,8 +314,8 @@
   <project path="hardware/qcom/display-caf" name="CyanogenMod/android_hardware_qcom_display-caf" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/gps" name="CyanogenMod/android_hardware_qcom_gps" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" />
-  <project path="hardware/qcom/media-caf" name="CyanogenMod/android_hardware_qcom_media-caf" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/media" name="CyanogenMod/android_hardware_qcom_media" remote="cm" revision="cm-10.1" />
+  <project path="hardware/qcom/media-caf" name="CyanogenMod/android_hardware_qcom_media-caf" remote="cm" revision="cm-10.1" />
   <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" />
   <project path="hardware/qcom/power" name="AOKP/hardware_qcom_power" remote="aokp" revision="jb-mr1" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" />
@@ -343,7 +347,6 @@
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
   <project path="packages/apps/Gallery2" name="AOKP/packages_apps_Gallery2" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
-  <project path="packages/apps/ChaOSLauncher" name="ResurrectionRemix/chaos_launcher" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" />
   <project path="packages/apps/Launcher2" name="AOKP/packages_apps_Launcher2" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" />
@@ -351,6 +354,7 @@
   <project path="packages/apps/Music" name="platform/packages/apps/Music" />
   <project path="packages/apps/Nfc" name="AOKP/packages_apps_Nfc" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PackageInstaller" name="AOKP/packages_apps_PackageInstaller" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Phone" name="AOKP/packages_apps_Phone" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
@@ -434,11 +438,10 @@
   <project path="vendor/tmobile/apps/ThemeChooser" name="AOKP/themes-platform-vendor-tmobile-apps-ThemeChooser" remote="aokp" revision="jb-mr1" />
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="AOKP/vendor_tmobile_libs_com.tmobile.themes" remote="aokp" revision="jb-mr1" />
   <project path="vendor/tmobile/providers/ThemeManager" name="AOKP/vendor_tmobile_providers_ThemeManager" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" /> 
+  <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
+
   <project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" remote="cm" revision="cm-10.1" />
   <project path="packages/apps/LockClock" name="ResurrectionRemix/android_packages_apps_LockClock" remote="aokp" revision="jb-mr1" />
-  <project path="frameworks/native" name="ResurrectionRemix/RR_framework_native" remote="aokp" revision="jb-mr1" />
-  <project path="frameworks/base" name="ResurrectionRemix/frameworks_base" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/ROMControl" name="ResurrectionRemix/rom_control" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9100" name="ResurrectionRemix/RR_device_samsung_i9100" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9305" name="ResurrectionRemix/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
@@ -457,6 +460,7 @@
   <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
     
-  <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" />
+  <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="jb-mr1" /> 
+
 
 </manifest>
