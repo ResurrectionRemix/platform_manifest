@@ -428,7 +428,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" />
 
   <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" remote="cm" revision="cm-10.1" />
-  <project path="vendor/lge" name="AOKP/vendor_lge" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/lge" name=" TheMuppets/proprietary_vendor_lge" remote="cm" revision="cm-10.1" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="jb-mr1" />
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="aokp" revision="jb-mr1" />
   <project path="vendor/acer/a510" name="AOKP/vendor_acer_a510" remote="aokp" revision="jb-mr1" />
@@ -446,8 +446,6 @@
   <project path="device/samsung/i9305" name="ResurrectionRemix/samsung_device_i9305" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/i9300" name="ResurrectionRemix/device_samsung_i9300" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="cm" revision="cm-10.1" />
-  <project path="vendor/samsung/n7100" name="ResurrectionRemix/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
-  <project path="vendor/samsung/i9305" name="ResurrectionRemix/vendor_samsung_i9305" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="AOKP/packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/n7100" name="ResurrectionRemix/android_device_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_cm" remote="aokp" revision="jb-mr1" />
