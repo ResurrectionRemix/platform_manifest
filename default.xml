@@ -428,7 +428,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" />
 
   <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" remote="cm" revision="cm-10.1" />
-  <project path="vendor/lge" name=" TheMuppets/proprietary_vendor_lge" remote="cm" revision="cm-10.1" />
+  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" remote="cm" revision="cm-10.1" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="jb-mr1" />
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="aokp" revision="jb-mr1" />
   <project path="vendor/acer/a510" name="AOKP/vendor_acer_a510" remote="aokp" revision="jb-mr1" />
