@@ -143,7 +143,6 @@
   <project path="external/easymock" name="platform/external/easymock" />
   <project path="external/eclipse-basebuilder" name="platform/external/eclipse-basebuilder" />
   <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
-  <project path="external/eigen" name="platform/external/eigen" />
   <project path="external/elfutils" name="platform/external/elfutils" />
   <project path="external/embunit" name="platform/external/embunit" />
   <project path="external/emma" name="platform/external/emma" />
