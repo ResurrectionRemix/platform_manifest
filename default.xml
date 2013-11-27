@@ -508,5 +508,5 @@
 
   <!--<project path="packages/wallpapers/SwagPapers" name="AOKP/packages_wallpapers_SwagPapers_v2" remote="aokp" revision="kitkat" /> -->
 
-  <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="aokp" revision="kitkat" />
+  <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="cm" revision="kitkat" />
 </manifest>
