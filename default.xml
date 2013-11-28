@@ -498,7 +498,7 @@
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="aokp" revision="kitkat" groups="notdefault,vendor,lge" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="kitkat" groups="notdefault,vendor,motorola" />
   <!-- <project path="vendor/oppo" name="AOKP/vendor_oppo" remote="aokp" revision="kitkat" groups="notdefault,vendor,oppo" /> -->
-  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="aokp" revision="cm-11.0" groups="notdefault,vendor,samsung" />
+  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="aokp" revision="kitkat" groups="notdefault,vendor,samsung" />
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="aokp" revision="kitkat" groups="notdefault,vendor,sony" />
   <project path="vendor/asus" name="AOKP/vendor_asus" remote="aokp" revision="kitkat" groups="notdefault,vendor,asus" />
 
