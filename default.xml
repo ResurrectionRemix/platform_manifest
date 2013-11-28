@@ -19,11 +19,11 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="android_build" remote="github" revision="android-4.4" groups="pdk" >
+  <project path="build" name="android_build" remote="omnirom" revision="android-4.4" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="android" name="ResurrectionRemix/platform_manifest" remote="omnirom" revision="omni4.4" />
+  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="omni4.4" />
 
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="android_art" remote="omnirom" revision="android-4.4" />
