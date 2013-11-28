@@ -9,9 +9,16 @@
            fetch="https://github.com/"
            review="gerrit.aokp.co" />
 
+  <remote  name="github"
+           fetch="https://github.com/" />
+           
   <remote  name="cm"
            fetch="https://github.com/" />
 
+  <remote  name="omnirom"
+           review="gerrit.omnirom.org"
+           fetch="https://github.com/omnirom" />
+           
   <remote  name="omapzoom"
            fetch="git://git.omapzoom.org/"
            review="http://review.omapzoom.org/" />
@@ -499,7 +506,6 @@
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="aokp" revision="kitkat" groups="notdefault,vendor,motorola" />
   <!-- <project path="vendor/oppo" name="AOKP/vendor_oppo" remote="aokp" revision="kitkat" groups="notdefault,vendor,oppo" /> -->
 
-- <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="aokp" revision="cm-11.0"  />
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="aokp" revision="kitkat" groups="notdefault,vendor,sony" />
   <project path="vendor/asus" name="AOKP/vendor_asus" remote="aokp" revision="kitkat" groups="notdefault,vendor,asus" />
 
@@ -508,6 +514,10 @@
   <project path="vendor/tmobile/providers/ThemeManager" name="AOKP/vendor_tmobile_providers_ThemeManager" remote="aokp" revision="kitkat" /> -->
 
   <!--<project path="packages/wallpapers/SwagPapers" name="AOKP/packages_wallpapers_SwagPapers_v2" remote="aokp" revision="kitkat" /> -->
-
+  <project path="device/samsung/i9300" name="android_device_samsung_i9300" remote="omnirom" revision="android-4.4"/>
+  <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="omnirom" revision="android-4.4"/>
+  <project path="hardware/samsung" name="android_hardware_samsung" remote="omnirom" revision="android-4.4"/>
+  <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="omnirom" revision="android-4.4"/>
+  <project path="vendor/samsung" name="DonkeyCoyote/proprietary_vendor_samsung" remote="github" revision="android-4.4" />
   <project path="platform_manifest" name="ResurrectionRemix/platform_manifest" remote="cm" revision="kitkat" />
 </manifest>
