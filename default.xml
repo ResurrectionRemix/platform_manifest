@@ -26,7 +26,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="omni4.4" />
+  <project path="android" name="platform_manifest" remote="rr" revision="kitkat" />
 
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="android_art" remote="omnirom" revision="android-4.4" />
