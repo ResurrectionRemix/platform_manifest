@@ -13,6 +13,13 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="android-review.googlesource.com" />
+           
+  <remote  name="paranoid"
+           fetch="ssh://git@bitbucket.org/paranoidandroid/" />
+           
+   <remote  name="github"
+           fetch="https://github.com"
+           review="gerrit.paranoidandroid.co" />
 
   <remote  name="omnirom"
            review="gerrit.omnirom.org"
