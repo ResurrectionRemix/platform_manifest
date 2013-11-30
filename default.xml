@@ -4,9 +4,6 @@
   <remote  name="xda"
            fetch=".." />
 
-  <remote  name="github"
-           fetch="https://github.com/" />
-
   <remote  name="rr"
            fetch="https://github.com/ResurrectionRemix" />
            
