@@ -18,6 +18,17 @@
            review="gerrit.omnirom.org"
            fetch="https://github.com/omnirom" />
 
+  <remote  name="aokp"
+           fetch="https://github.com/"
+           review="gerrit.aokp.co" />
+
+  <remote  name="cm"
+           fetch="https://github.com/" />
+
+  <remote  name="omapzoom"
+           fetch="git://git.omapzoom.org/"
+           review="http://review.omapzoom.org/" />
+           
   <default revision="refs/tags/android-4.4_r1.2"
            remote="aosp"
            sync-j="4" />
