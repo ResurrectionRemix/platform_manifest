@@ -23,7 +23,8 @@
            review="gerrit.aokp.co" />
 
   <remote  name="cm"
-           fetch="https://github.com/" />
+           fetch="https://github.com/"
+           review="review.cyanogenmod.org" />
 
   <remote  name="omapzoom"
            fetch="git://git.omapzoom.org/"
