@@ -461,8 +461,8 @@
   <project path="vendor/omni" name="android_vendor_omni" remote="omnirom" revision="android-4.4" />
   <project path="packages/apps/MonthCalendarWidget" name="android_packages_apps_MonthCalendarWidget" remote="omnirom" revision="android-4.4" />
   
-  <project path="external/koush/Superuser" name="CyanogenMod/Superuser" />
-  <project path="external/koush/Widgets" name="CyanogenMod/Widgets" />
+  <project path="external/koush/Superuser" name="CyanogenMod/Superuser" remote="cm" revision="cm-11.0" />
+  <project path="external/koush/Widgets" name="CyanogenMod/Widgets" remote="cm" revision="cm-11.0" />
   <project path="device/samsung/i9300" name="android_device_samsung_i9300" remote="omnirom" revision="android-4.4"/>
   <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="omnirom" revision="android-4.4"/>
   <project path="hardware/samsung" name="android_hardware_samsung" remote="omnirom" revision="android-4.4"/>
