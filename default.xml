@@ -462,7 +462,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
-  <project path="vendor/omni" name="android_vendor_omni" remote="omnirom" revision="android-4.4" />
+  <project path="vendor/omni" name="vendor_resurrection" remote="rr" revision="kitkat" />
   <project path="packages/apps/MonthCalendarWidget" name="android_packages_apps_MonthCalendarWidget" remote="omnirom" revision="android-4.4" />
 
   <project path="device/samsung/i9300" name="android_device_samsung_i9300" remote="omnirom" revision="android-4.4"/>
