@@ -491,5 +491,4 @@
   <project path="device/samsung/n7100" name="CyanogenMod/android_device_samsung_n7100" remote="cm" revision="cm-11.0"/>
   <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>
   <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0"/>
-  <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
 </manifest>
