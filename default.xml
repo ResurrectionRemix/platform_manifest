@@ -357,7 +357,6 @@
   <project path="packages/apps/Calendar" name="CyanogenMod/android_packages_apps_Calendar" />
   <project path="packages/apps/Camera2" name="CyanogenMod/android_packages_apps_Camera2" />
   <project path="packages/apps/CellBroadcastReceiver" name="CyanogenMod/android_packages_apps_CellBroadcastReceiver" />
-  <project path="packages/apps/CMAccount" name="CyanogenMod/android_packages_apps_CMAccount" />
   <project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" />
   <project path="packages/apps/CMWallpapers" name="CyanogenMod/android_packages_apps_CMWallpapers" />
   <project path="packages/apps/Contacts" name="CyanogenMod/android_packages_apps_Contacts" />
@@ -485,7 +484,7 @@
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" />
   
   <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-11.0" />
-  <project path="device/galaxys2-common" name="CyanogenMod/android_device_samsung_galaxys2-common" remote="cm" revision="cm-11.0"/>
+  <project path="device/samsung/galaxys2-common" name="CyanogenMod/android_device_samsung_galaxys2-common" remote="cm" revision="cm-11.0"/>
   <project path="device/samsung/i9100" name="CyanogenMod/android_device_samsung_i9100" remote="cm" revision="cm-11.0"/>
   <project path="device/samsung/n7100" name="CyanogenMod/android_device_samsung_n7100" remote="cm" revision="cm-11.0"/>
   <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>

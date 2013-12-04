@@ -56,14 +56,14 @@ $ cd ~/RR
 
 Initialize the RR repo and download the manifest
 
-$repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b kitkat1
+$  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b kitkat1
 
 Sync source
 
-$ repo sync
+$  repo sync
 
 After Sync Build Resurrection Remix 
 
-$. build/envsetup.sh && brunch Device
+$  . build/envsetup.sh && brunch Device
 
 Done  Enjoy....
