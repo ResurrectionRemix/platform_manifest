@@ -484,7 +484,7 @@
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" />
 
 
- 
+  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-11.0" />
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
   <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-11.0" />
