@@ -62,6 +62,14 @@ Sync source
 
 $  repo sync
 
+
+Get prebuilt apps
+
+$ cd ~/Source/vendor/cm
+
+$ ./get-prebuilts
+
+
 After Sync Build Resurrection Remix 
 
 $  . build/envsetup.sh && brunch Device
