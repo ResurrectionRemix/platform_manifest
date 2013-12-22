@@ -490,7 +490,8 @@
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ResurrectionWallpapers" name="packages_apps_RR_Wallpapers" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat-staging" />
-  
+  <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>
+
   <project path="device/samsung/i9100" name="CyanogenMod/android_device_samsung_i9100" remote="github" revision="cm-11.0"/>
   <project path="device/samsung/galaxys2-common" name="cleartype/android_device_samsung_galaxys2-common" remote="github" revision="cm-11.0"/>
   <project path="kernel/samsung/smdk4412" name="cleartype/android_kernel_samsung_smdk4412" remote="github" revision="cm-11.0"/>
