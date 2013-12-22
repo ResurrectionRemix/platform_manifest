@@ -494,7 +494,7 @@
 
   <project path="device/samsung/i9100" name="CyanogenMod/android_device_samsung_i9100" remote="github" revision="cm-11.0"/>
   <project path="device/samsung/galaxys2-common" name="cleartype/android_device_samsung_galaxys2-common" remote="github" revision="cm-11.0"/>
-  <project path="kernel/samsung/smdk4412" name="cleartype/android_kernel_samsung_smdk4412" remote="github" revision="cm-11.0"/>
+  <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="github" revision="cm-11.0"/>
   <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="github" revision="cm-11.0"/>
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
   
