@@ -485,6 +485,8 @@
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
   <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-11.0" />
+  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" remote="github" revision="cm-11.0" />
+
   <project path="device/samsung/i9100" name="CyanFox/android_device_samsung_i9100" remote="cm" revision="cm-11.0"/>
   <project path="device/samsung/n7100" name="CyanogenMod/android_device_samsung_n7100" remote="cm" revision="cm-11.0"/>
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
