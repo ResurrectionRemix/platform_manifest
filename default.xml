@@ -287,7 +287,6 @@
   <project path="external/yaffs2" name="CyanogenMod/android_external_yaffs2" groups="pdk" />
   <project path="external/zlib" name="CyanogenMod/android_external_zlib" groups="pdk" />
   <project path="external/zxing" name="CyanogenMod/android_external_zxing" />
-  <project path="frameworks/av" name="ChameleonOS/android_frameworks_av" remote="github" revision="kitkat-staging" />
   <project path="frameworks/compile/libbcc" name="CyanogenMod/android_frameworks_compile_libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="CyanogenMod/android_frameworks_compile_mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="CyanogenMod/android_frameworks_compile_slang" groups="pdk" />
@@ -493,6 +492,7 @@
   <project path="packages/apps/ResurrectionWallpapers" name="packages_apps_RR_Wallpapers" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat-staging" />
   <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>
+  <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
 
   <project path="device/samsung/i9100" name="CyanogenMod/android_device_samsung_i9100" remote="github" revision="cm-11.0"/>
   <project path="device/samsung/galaxys2-common" name="cleartype/android_device_samsung_galaxys2-common" remote="github" revision="cm-11.0"/>
