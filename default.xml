@@ -483,7 +483,7 @@
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
 
-  <project path="device/samsung/n7100" name="CyanogenMod/android_device_samsung_n7100" remote="cm" revision="cm-11.0"/>
+  <project path="device/samsung/n7100" name="android_device_samsung_n7100" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ResurrectionWallpapers" name="packages_apps_RR_Wallpapers" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat-staging" />
@@ -499,6 +499,7 @@
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
   <project path="hardware/samsung" name="SlimRoms/hardware_samsung" remote="github" revision="kk4.4" />
   <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
+  <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
 
 
 
