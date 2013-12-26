@@ -483,8 +483,6 @@
   <project path="device/samsung/i9300" name="CyanogenMod/android_device_samsung_i9300" remote="cm" revision="cm-11.0"/>
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
-  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" remote="github" revision="cm-11.0" />
-  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" remote="github" revision="cm-11.0" />
 
   <project path="device/samsung/n7100" name="CyanogenMod/android_device_samsung_n7100" remote="cm" revision="cm-11.0"/>
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
@@ -493,11 +491,15 @@
   <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>
   <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
 
-  <project path="device/samsung/galaxys2-common" name="CyanogenMod/android_device_samsung_galaxys2-common" remote="cm" revision="cm-11.0"/>
-  <project path="device/samsung/i9100" name="CyanogenMod/android_device_samsung_i9100" remote="cm" revision="cm-11.0"/>
-  <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="github" revision="cm-11.0"/>
+  <project path="vendor/htc" name="AOKP/vendor_htc" remote="github" revision="kitkat" groups="notdefault,vendor,htc" />
+  <project path="vendor/lge" name="AOKP/vendor_lge" remote="github" revision="kitkat" groups="notdefault,vendor,lge" />
+  <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="github" revision="kitkat" groups="notdefault,vendor,motorola" />
+  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="github" revision="kitkat" groups="notdefault,vendor,samsung" />
+  <project path="vendor/sony" name="AOKP/vendor_sony" remote="github" revision="kitkat" groups="notdefault,vendor,sony" />
+  <project path="vendor/asus" name="AOKP/vendor_asus" remote="github" revision="kitkat" groups="notdefault,vendor,asus" />
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
-  <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
+  <project path="hardware/samsung" name="AOKP/hardware_samsung" remote="github" revision="kitkat" />
+
 
 
 </manifest>
