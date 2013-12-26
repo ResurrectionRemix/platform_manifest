@@ -494,11 +494,11 @@
   <project path="vendor/htc" name="AOKP/vendor_htc" remote="github" revision="kitkat" />
   <project path="vendor/lge" name="AOKP/vendor_lge" remote="github" revision="kitkat" />
   <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="github" revision="kitkat" />
-  <project path="vendor/samsung" name="AOKP/vendor_samsung" remote="github" revision="kitkat" />
+  <project path="vendor/samsung" name="SlimRoms/proprietary_vendor_samsung" remote="github" revision="kk4.4" />
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="github" revision="kitkat" />
   <project path="vendor/asus" name="AOKP/vendor_asus" remote="github" revision="kitkat" />
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
-  <project path="hardware/samsung" name="AOKP/hardware_samsung" remote="github" revision="kitkat" />
+  <project path="hardware/samsung" name="SlimRoms/hardware_samsung" remote="github" revision="kk4.4" />
   <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
 
 
