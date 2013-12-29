@@ -489,12 +489,21 @@
   <project path="device/samsung/smdk4412-common" name="CyanogenMod/android_device_samsung_smdk4412-common" remote="cm" revision="cm-11.0"/>
   <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
 
-  <project path="vendor/htc" name="AOKP/vendor_htc" remote="github" revision="kitkat" />
-  <project path="vendor/lge" name="AOKP/vendor_lge" remote="github" revision="kitkat" />
-  <project path="vendor/motorola" name="AOKP/vendor_motorola" remote="github" revision="kitkat" />
-  <project path="vendor/samsung" name="SlimRoms/proprietary_vendor_samsung" remote="github" revision="kk4.4" />
-  <project path="vendor/sony" name="AOKP/vendor_sony" remote="github" revision="kitkat" />
-  <project path="vendor/asus" name="AOKP/vendor_asus" remote="github" revision="kitkat" />
+  <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
+  <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" revision="cm-11.0" />
+  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" revision="cm-11.0" />
+  <project path="vendor/motorola" name="TheMuppets/proprietary_vendor_motorola" revision="cm-11.0" />
+  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" revision="cm-11.0" />
+  <project path="vendor/sony" name="TheMuppets/proprietary_vendor_sony" revision="cm-11.0" />
+  <project path="vendor/broadcom" name="TheMuppets/proprietary_vendor_broadcom" revision="cm-11.0" />
+  <project path="vendor/elan" name="TheMuppets/proprietary_vendor_elan" revision="cm-11.0" />
+  <project path="vendor/imgtec" name="TheMuppets/proprietary_vendor_imgtec" revision="cm-11.0" />
+  <project path="vendor/invensense" name="TheMuppets/proprietary_vendor_invensense" revision="cm-11.0" />
+  <project path="vendor/nvidia" name="TheMuppets/proprietary_vendor_nvidia" revision="cm-11.0" />
+  <project path="vendor/nxp" name="TheMuppets/proprietary_vendor_nxp" revision="cm-11.0" />
+  <project path="vendor/widevine" name="TheMuppets/proprietary_vendor_widevine" revision="cm-11.0" />
+  <project path="vendor/oppo" name="TheMuppets/proprietary_vendor_oppo" revision="cm-11.0" />
+
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
   <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0" />
   <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
