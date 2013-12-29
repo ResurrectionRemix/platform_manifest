@@ -496,7 +496,7 @@
   <project path="vendor/sony" name="AOKP/vendor_sony" remote="github" revision="kitkat" />
   <project path="vendor/asus" name="AOKP/vendor_asus" remote="github" revision="kitkat" />
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
-  <project path="hardware/samsung" name="hardware_samsung" remote="cm" revision="cm-11.0" />
+  <project path="hardware/samsung" name="android_hardware_samsung" remote="cm" revision="cm-11.0" />
   <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
   <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
 
