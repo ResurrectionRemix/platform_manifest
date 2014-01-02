@@ -475,7 +475,7 @@
   <project path="vendor/tmobile/apps/ThemeChooser" name="CyanogenMod/themes-platform-vendor-tmobile-apps-ThemeChooser" />
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" />
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" />
-
+    <!-- Resurrection Remix Stuff -->
   <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
