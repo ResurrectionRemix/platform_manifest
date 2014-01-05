@@ -508,7 +508,7 @@
   <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9300" name="device_samsung_i9300" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Halo" name="HALO" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/HALO" name="HALO" remote="rr" revision="kitkat1"/>
 
 
 
