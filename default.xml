@@ -481,7 +481,6 @@
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
 
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/ResurrectionWallpapers" name="packages_apps_RR_Wallpapers" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat-staging" />
   <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
