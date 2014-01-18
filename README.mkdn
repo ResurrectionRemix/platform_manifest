@@ -1,79 +1,81 @@
-How To Build Resurrection Remix ROM Tutorial
+Resurrection Remix ® Source
+===================
 
-[Join Resurrection Remix Team](www.resurrectionremix.com)
 
-Build Environment
-Operating system – Tested on Ubuntu 12.04 and 12.10 (64-bit)
-Terminal
-Decent hardware (minimum of at least a dual core CPU and 4 GB of RAM)
-Optimally have an SSD (standard mechanical drives work as well but slow down the process drastically)
-Must have required packages for building installed, I will list them further down
-Required Packages
+[Join Resurrection Remix Team](http://www.resurrectionremix.com)
+
+Getting Started
+---------------
+To get started with the Resurrection Remix ® sources, you'll need to get
+familiar with [Git and Repo](http://source.android.com/source/version-control.html).
+
+How To Build Resurrection Remix ® ROM - Tutorial
+--------
+
+### Build Environment
+
+- Operating system – Tested on Ubuntu 12.04, 12.10 and 13.10 (64-bit)
+- Terminal
+- Decent hardware (minimum of at least a dual core CPU and 4 GB of RAM)
+- Optimally have an SSD (standard mechanical drives work as well but slow down the process drastically)
+- Must have required packages for building installed, I will list them further down
+
+### Required Packages
 Simply copy and paste this in a terminal window:
 
-copy and paste:
-
-sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos python-markdown schedtool pngcrush libxml2-utils xsltproc zlib1g-dev:i386
+      sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos python-markdown schedtool pngcrush libxml2-utils xsltproc zlib1g-dev:i386
 
 Let that install and then proceed.
 
 More copy and paste:
 
-sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+      sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 
-Getting the Source
-Make required directories
-Obtain repo binary
-Add repo binary to your path
-Give repo binary proper permissions
-Initialize empty repo
-Sync repo
+### Getting the Source
+- Make required directories
+- Obtain repo binary
+- Add repo binary to your path
+- Give repo binary proper permissions
+- Initialize empty repo
+- Sync repo
+
 Alright, so now we’re getting there. I have outlined the basics of what we’re about to do and broke them down as I know them. This is all pretty much going to be copy/paste so it’ll be fairly difficult to screw this up :)
 
-Copy/paste:
+##### Make directory for repo binary
 
-Make directory for repo binary
+      $ mkdir ~/bin
 
-$ mkdir ~/bin
+##### Add directory for repo binary to your path
 
-Add directory for repo binary to your path
+      $ PATH=~/bin:$PATH
 
-$ PATH=~/bin:$PATH
+##### Download repo binary and place it in the proper directory
 
-Download repo binary and place it in the proper directory
+      $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
-$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+##### Give the repo binary the proper permissions
 
-Give the repo binary the proper permissions
+      $ chmod a+x ~/bin/repo
 
-$ chmod a+x ~/bin/repo
+##### Create directory for where the RR repo will be stored and synced
 
-Create directory for where the RR repo will be stored and synced
+      $ mkdir ~/RR
+      $ cd ~/RR
 
-$ mkdir ~/RR
+##### Initialize the RR repo and download the manifest
 
-Move to our new RR directory
+      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b kitkat1
 
-$ cd ~/RR
+##### Sync source
 
-Initialize the RR repo and download the manifest
+      $  repo sync
 
-$  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b kitkat1
+##### Get prebuilt apps
 
-Sync source
+      $ cd ~/Source/vendor/cm
+      $ ./get-prebuilts
 
-$  repo sync
+##### After Sync Build Resurrection Remix 
 
+      $  . build/envsetup.sh && brunch <device>
 
-Get prebuilt apps
-
-$ cd ~/Source/vendor/cm
-
-$ ./get-prebuilts
-
-
-After Sync Build Resurrection Remix 
-
-$  . build/envsetup.sh && brunch Device
-
-Done  Enjoy....
