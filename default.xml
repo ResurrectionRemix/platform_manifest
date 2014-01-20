@@ -473,7 +473,8 @@
   <project path="vendor/tmobile/apps/ThemeChooser" name="CyanogenMod/themes-platform-vendor-tmobile-apps-ThemeChooser" />
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" />
   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" />
-    <!-- Resurrection Remix Stuff -->
+
+  <!-- Resurrection Remix Stuff -->
   <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
@@ -510,6 +511,9 @@
   <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9100" name="RR_device_samsung_i9100" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
+
+  <!-- Linaro toolchain -->
+  <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
 
 
 </manifest>
