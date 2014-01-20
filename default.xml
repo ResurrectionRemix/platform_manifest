@@ -35,7 +35,7 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="build" name="ResurrectionRemix/android_build" remote="rr" revision="kitkat1" >
+  <project path="build" name="android_build" remote="rr" revision="kitkat1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
