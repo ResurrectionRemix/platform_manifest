@@ -7,9 +7,9 @@ $(call inherit-product-if-exists, vendor/__MANUFACTURER__/__DEVICE__/__DEVICE__-
 
 DEVICE_PACKAGE_OVERLAYS += device/__MANUFACTURER__/__DEVICE__/overlay
 
-
+LOCAL_PATH := device/__MANUFACTURER__/__DEVICE__
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/__MANUFACTURER__/__DEVICE__/kernel
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

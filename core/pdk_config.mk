@@ -18,12 +18,14 @@ pdk fusion: $(DEFAULT_GOAL)
 
 # if PDK_FUSION_PLATFORM_ZIP is specified, do not override.
 ifndef PDK_FUSION_PLATFORM_ZIP
-_pdk_fusion_default_platform_zip := vendor/pdk/$(TARGET_DEVICE)/$(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT)/platform/platform.zip
-ifneq (,$(wildcard $(_pdk_fusion_default_platform_zip)))
-$(info $(_pdk_fusion_default_platform_zip) found, do a PDK fusion build.)
-PDK_FUSION_PLATFORM_ZIP := $(_pdk_fusion_default_platform_zip)
+_pdk_fusion_default_platform_zip = $(wildcard \
+vendor/pdk/$(TARGET_DEVICE)/$(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT)/platform/platform.zip \
+vendor/pdk/$(TARGET_DEVICE)/$(patsubst aosp_%,full_%,$(TARGET_PRODUCT))-$(TARGET_BUILD_VARIANT)/platform/platform.zip)
+ifneq (,$(_pdk_fusion_default_platform_zip))
+PDK_FUSION_PLATFORM_ZIP := $(word 1, $(_pdk_fusion_default_platform_zip))
 TARGET_BUILD_PDK := true
-endif
+$(info $(PDK_FUSION_PLATFORM_ZIP) found, do a PDK fusion build.)
+endif # _pdk_fusion_default_platform_zip
 endif # !PDK_FUSION_PLATFORM_ZIP
 
 ifneq (,$(filter pdk fusion, $(MAKECMDGOALS)))
@@ -45,9 +47,12 @@ PDK_PLATFORM_JAVA_ZIP_JAVA_LIB_DIR := \
 	target/common/obj/JAVA_LIBRARIES/core-junit_intermediates \
 	target/common/obj/JAVA_LIBRARIES/ext_intermediates \
 	target/common/obj/JAVA_LIBRARIES/framework_intermediates \
+	target/common/obj/JAVA_LIBRARIES/framework2_intermediates \
 	target/common/obj/JAVA_LIBRARIES/android.test.runner_intermediates \
 	target/common/obj/JAVA_LIBRARIES/telephony-common_intermediates \
-	target/common/obj/JAVA_LIBRARIES/mms-common_intermediates
+	target/common/obj/JAVA_LIBRARIES/voip-common_intermediates \
+	target/common/obj/JAVA_LIBRARIES/mms-common_intermediates \
+	target/common/obj/JAVA_LIBRARIES/android-ex-camera2_intermediates
 # not java libraries
 PDK_PLATFORM_JAVA_ZIP_CONTENTS := \
 	target/common/obj/APPS/framework-res_intermediates/package-export.apk \
@@ -92,7 +97,7 @@ endif
 endif
 
 $(_pdk_fusion_stamp) : $(PDK_FUSION_PLATFORM_ZIP)
-	@echo "Unzip $(dir $@) <- $<"
+	@echo -e ${CL_YLW}"Unzip"${CL_RST}" $(dir $@) <- $<"
 	$(hide) rm -rf $(dir $@) && mkdir -p $(dir $@)
 	$(hide) unzip -qo $< -d $(dir $@)
 	$(call split-long-arguments,-touch,$(_pdk_fusion_files))
@@ -109,13 +114,19 @@ $(_pdk_fusion_files) : $(_pdk_fusion_stamp)
 # Copy with the last-modified time preserved, never follow symbolic links.
 $(PRODUCT_OUT)/% : $(_pdk_fusion_intermediates)/% $(_pdk_fusion_stamp)
 	@mkdir -p $(dir $@)
+	$(hide) rm -rf $@
 	$(hide) cp -fpPR $< $@
 
 ifeq (true,$(TARGET_BUILD_PDK_JAVA_PLATFORM))
 
+PDK_FUSION_OUT_DIR := $(OUT_DIR)
+ifeq (debug,$(TARGET_BUILD_TYPE))
+PDK_FUSION_OUT_DIR := $(DEBUG_OUT_DIR)
+endif
+
 define JAVA_dependency_template
-$(OUT_DIR)/$(strip $(1)): $(_pdk_fusion_intermediates)/$(strip $(1)) $(OUT_DIR)/$(strip $(2)) \
-  $(_pdk_fusion_stamp)
+$(PDK_FUSION_OUT_DIR)/$(strip $(1)): $(_pdk_fusion_intermediates)/$(strip $(1)) \
+  $(PDK_FUSION_OUT_DIR)/$(strip $(2)) $(_pdk_fusion_stamp)
 	@mkdir -p $$(dir $$@)
 	$(hide) cp -fpPR $$< $$@
 endef

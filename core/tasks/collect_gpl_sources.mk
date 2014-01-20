@@ -16,7 +16,7 @@ gpl_source_tgz := $(call intermediates-dir-for,PACKAGING,gpl_source,HOST,COMMON)
 
 $(gpl_source_tgz): PRIVATE_PATHS := $(sort $(patsubst %/, %, $(dir $(ALL_GPL_MODULE_LICENSE_FILES))))
 $(gpl_source_tgz) : $(ALL_GPL_MODULE_LICENSE_FILES)
-	@echo Package gpl sources: $@
+	@echo -e ${CL_GRN}"Package gpl sources:"${CL_RST}" $@"
 	@rm -rf $(dir $@) && mkdir -p $(dir $@)
 	$(hide) tar cfz $@ --exclude ".git*" $(PRIVATE_PATHS)
 

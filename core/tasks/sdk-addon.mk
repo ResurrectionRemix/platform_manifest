@@ -79,7 +79,7 @@ $(full_target): PRIVATE_DOCS_DIRS := $(addprefix $(OUT_DOCS)/, $(doc_modules))
 $(full_target): PRIVATE_STAGING_DIR := $(staging)
 
 $(full_target): $(sdk_addon_deps) | $(ACP)
-	@echo Packaging SDK Addon: $@
+	@echo -e ${CL_GRN}"Packaging SDK Addon:"${CL_RST}" $@"
 	$(hide) mkdir -p $(PRIVATE_STAGING_DIR)/docs
 	$(hide) for d in $(PRIVATE_DOCS_DIRS); do \
 	    $(ACP) -r $$d $(PRIVATE_STAGING_DIR)/docs ;\

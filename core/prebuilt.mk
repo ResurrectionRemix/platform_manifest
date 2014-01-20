@@ -16,10 +16,19 @@ ifneq ($(LOCAL_PREBUILT_JAVA_LIBRARIES),)
 $(error dont use LOCAL_PREBUILT_JAVA_LIBRARIES anymore LOCAL_PATH=$(LOCAL_PATH))
 endif
 
-ifdef LOCAL_IS_HOST_MODULE
-  my_prefix:=HOST_
+# Not much sense to check build prebuilts
+LOCAL_DONT_CHECK_MODULE := true
+
+ifdef LOCAL_PREBUILT_MODULE_FILE
+my_prebuilt_src_file := $(LOCAL_PREBUILT_MODULE_FILE)
 else
-  my_prefix:=TARGET_
+my_prebuilt_src_file := $(LOCAL_PATH)/$(LOCAL_SRC_FILES)
+endif
+
+ifdef LOCAL_IS_HOST_MODULE
+  my_prefix := HOST_
+else
+  my_prefix := TARGET_
 endif
 ifeq (SHARED_LIBRARIES,$(LOCAL_MODULE_CLASS))
   # Put the built targets of all shared libraries in a common directory
@@ -27,8 +36,6 @@ ifeq (SHARED_LIBRARIES,$(LOCAL_MODULE_CLASS))
   OVERRIDE_BUILT_MODULE_PATH := $($(my_prefix)OUT_INTERMEDIATE_LIBRARIES)
 endif
 
-# Deal with the OSX library timestamp issue when installing
-# a prebuilt simulator library.
 ifneq ($(filter STATIC_LIBRARIES SHARED_LIBRARIES,$(LOCAL_MODULE_CLASS)),)
   prebuilt_module_is_a_library := true
 else
@@ -54,19 +61,44 @@ ifeq ($(LOCAL_STRIP_MODULE),true)
   endif
   include $(BUILD_SYSTEM)/dynamic_binary.mk
   built_module := $(linked_module)
-else
+else  # LOCAL_STRIP_MODULE not true
   include $(BUILD_SYSTEM)/base_rules.mk
   built_module := $(LOCAL_BUILT_MODULE)
 
 ifdef prebuilt_module_is_a_library
-# Create a dummy export_includes.
-$(intermediates)/export_includes:
+export_includes := $(intermediates)/export_includes
+$(export_includes): PRIVATE_EXPORT_C_INCLUDE_DIRS := $(LOCAL_EXPORT_C_INCLUDE_DIRS)
+$(export_includes) : $(LOCAL_MODULE_MAKEFILE)
+	@echo Export includes file: $< -- $@
 	$(hide) mkdir -p $(dir $@) && rm -f $@
+ifdef LOCAL_EXPORT_C_INCLUDE_DIRS
+	$(hide) for d in $(PRIVATE_EXPORT_C_INCLUDE_DIRS); do \
+	        echo "-I $$d" >> $@; \
+	        done
+else
 	$(hide) touch $@
+endif
 
 $(LOCAL_BUILT_MODULE) : | $(intermediates)/export_includes
+endif  # prebuilt_module_is_a_library
+
+# The real dependency will be added after all Android.mks are loaded and the install paths
+# of the shared libraries are determined.
+ifdef LOCAL_INSTALLED_MODULE
+ifdef LOCAL_SHARED_LIBRARIES
+$(my_prefix)DEPENDENCIES_ON_SHARED_LIBRARIES += $(LOCAL_MODULE):$(LOCAL_INSTALLED_MODULE):$(subst $(space),$(comma),$(LOCAL_SHARED_LIBRARIES))
+
+# We also need the LOCAL_BUILT_MODULE dependency,
+# since we use -rpath-link which points to the built module's path.
+built_shared_libraries := \
+    $(addprefix $($(my_prefix)OUT_INTERMEDIATE_LIBRARIES)/, \
+    $(addsuffix $($(my_prefix)SHLIB_SUFFIX), \
+        $(LOCAL_SHARED_LIBRARIES)))
+$(LOCAL_BUILT_MODULE) : $(built_shared_libraries)
 endif
 endif
+
+endif  # LOCAL_STRIP_MODULE not true
 
 PACKAGES.$(LOCAL_MODULE).OVERRIDES := $(strip $(LOCAL_OVERRIDES_PACKAGES))
 
@@ -87,7 +119,7 @@ ifeq ($(LOCAL_CERTIFICATE),)
   ifneq ($(filter APPS,$(LOCAL_MODULE_CLASS)),)
     # It is now a build error to add a prebuilt .apk without
     # specifying a key for it.
-    $(error No LOCAL_CERTIFICATE specified for prebuilt "$(LOCAL_SRC_FILES)")
+    $(error No LOCAL_CERTIFICATE specified for prebuilt "$(my_prebuilt_src_file)")
   endif
 else ifeq ($(LOCAL_CERTIFICATE),PRESIGNED)
   # The magic string "PRESIGNED" means this package is already checked
@@ -115,21 +147,21 @@ endif
 ifneq ($(filter APPS,$(LOCAL_MODULE_CLASS)),)
 ifeq ($(LOCAL_CERTIFICATE),PRESIGNED)
 # Ensure that presigned .apks have been aligned.
-$(built_module) : $(LOCAL_PATH)/$(LOCAL_SRC_FILES) | $(ZIPALIGN)
+$(built_module) : $(my_prebuilt_src_file) | $(ZIPALIGN)
 	$(transform-prebuilt-to-target-with-zipalign)
 else
 # Sign and align non-presigned .apks.
-$(built_module) : $(LOCAL_PATH)/$(LOCAL_SRC_FILES) | $(ACP) $(ZIPALIGN) $(SIGNAPK_JAR)
+$(built_module) : $(my_prebuilt_src_file) | $(ACP) $(ZIPALIGN) $(SIGNAPK_JAR)
 	$(transform-prebuilt-to-target)
 	$(sign-package)
 	$(align-package)
 endif
 else
 ifneq ($(LOCAL_PREBUILT_STRIP_COMMENTS),)
-$(built_module) : $(LOCAL_PATH)/$(LOCAL_SRC_FILES)
+$(built_module) : $(my_prebuilt_src_file)
 	$(transform-prebuilt-to-target-strip-comments)
 else
-$(built_module) : $(LOCAL_PATH)/$(LOCAL_SRC_FILES) | $(ACP)
+$(built_module) : $(my_prebuilt_src_file) | $(ACP)
 	$(transform-prebuilt-to-target)
 ifneq ($(prebuilt_module_is_a_library),)
   ifneq ($(LOCAL_IS_HOST_MODULE),)
@@ -149,7 +181,7 @@ ifeq ($(LOCAL_IS_HOST_MODULE)$(LOCAL_MODULE_CLASS),JAVA_LIBRARIES)
 common_classes_jar := $(call intermediates-dir-for,JAVA_LIBRARIES,$(LOCAL_MODULE),,COMMON)/classes.jar
 common_javalib_jar := $(dir $(common_classes_jar))javalib.jar
 
-$(common_classes_jar) : $(LOCAL_PATH)/$(LOCAL_SRC_FILES) | $(ACP)
+$(common_classes_jar) : $(my_prebuilt_src_file) | $(ACP)
 	$(transform-prebuilt-to-target)
 
 $(common_javalib_jar) : $(common_classes_jar) | $(ACP)

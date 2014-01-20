@@ -15,16 +15,18 @@ endef
 
 CLANG_CONFIG_EXTRA_CFLAGS := \
   -D__compiler_offsetof=__builtin_offsetof \
-  -Dnan=__builtin_nan \
 
 CLANG_CONFIG_UNKNOWN_CFLAGS := \
   -funswitch-loops
 
 ifeq ($(TARGET_ARCH),arm)
-  CLANG_CONFIG_EXTRA_CFLAGS += \
+  RS_TRIPLE := armv7-none-linux-gnueabi
+  CLANG_CONFIG_EXTRA_ASFLAGS += \
     -target arm-linux-androideabi \
     -nostdlibinc \
-    -B$(TARGET_TOOLCHAIN_ROOT)/arm-linux-androideabi/bin \
+    -B$(TARGET_TOOLCHAIN_ROOT)/arm-linux-androideabi/bin
+  CLANG_CONFIG_EXTRA_CFLAGS += \
+    $(CLANG_CONFIG_EXTRA_ASFLAGS) \
     -mllvm -arm-enable-ehabi
   CLANG_CONFIG_EXTRA_LDFLAGS += \
     -target arm-linux-androideabi \
@@ -40,10 +42,12 @@ ifeq ($(TARGET_ARCH),arm)
     -Wa,--noexecstack
 endif
 ifeq ($(TARGET_ARCH),mips)
-  CLANG_CONFIG_EXTRA_CFLAGS += \
+  RS_TRIPLE := mipsel-unknown-linux
+  CLANG_CONFIG_EXTRA_ASFLAGS += \
     -target mipsel-linux-androideabi \
     -nostdlibinc \
     -B$(TARGET_TOOLCHAIN_ROOT)/mipsel-linux-android/bin
+  CLANG_CONFIG_EXTRA_CFLAGS += $(CLANG_CONFIG_EXTRA_ASFLAGS)
   CLANG_CONFIG_EXTRA_LDFLAGS += \
     -target mipsel-linux-androideabi \
     -B$(TARGET_TOOLCHAIN_ROOT)/mipsel-linux-android/bin
@@ -59,13 +63,17 @@ ifeq ($(TARGET_ARCH),mips)
     -march=mips32r2 \
     -mtune=mips32r2 \
     -march=mips32 \
-    -mtune=mips32
+    -mtune=mips32 \
+    -msynci \
+    -mno-fused-madd
 endif
 ifeq ($(TARGET_ARCH),x86)
-  CLANG_CONFIG_EXTRA_CFLAGS += \
+  RS_TRIPLE := i686-unknown-linux
+  CLANG_CONFIG_EXTRA_ASFLAGS += \
     -target i686-linux-android \
     -nostdlibinc \
     -B$(TARGET_TOOLCHAIN_ROOT)/i686-linux-android/bin
+  CLANG_CONFIG_EXTRA_CFLAGS += $(CLANG_CONFIG_EXTRA_ASFLAGS)
   CLANG_CONFIG_EXTRA_LDFLAGS += \
     -target i686-linux-android \
     -B$(TARGET_TOOLCHAIN_ROOT)/i686-linux-android/bin
@@ -93,11 +101,14 @@ $(call clang-flags-subst,-march=armv5e,-march=armv5)
 $(call clang-flags-subst,-Wno-psabi,)
 $(call clang-flags-subst,-Wno-unused-but-set-variable,)
 
-ADDRESS_SANITIZER_CONFIG_EXTRA_CFLAGS := -faddress-sanitizer
+# clang does not support -mcpu=cortex-a15 yet - fall back to armv7-a for now
+$(call clang-flags-subst,-mcpu=cortex-a15,-march=armv7-a)
+
+ADDRESS_SANITIZER_CONFIG_EXTRA_CFLAGS := -fsanitize=address
 ADDRESS_SANITIZER_CONFIG_EXTRA_LDFLAGS := -Wl,-u,__asan_preinit
 ADDRESS_SANITIZER_CONFIG_EXTRA_SHARED_LIBRARIES := libdl libasan_preload
 ADDRESS_SANITIZER_CONFIG_EXTRA_STATIC_LIBRARIES := libasan
 
 # This allows us to use the superset of functionality that compiler-rt
 # provides to Clang (for supporting features like -ftrapv).
-COMPILER_RT_CONFIG_EXTRA_STATIC_LIBRARIES := libcompiler-rt-extras
+COMPILER_RT_CONFIG_EXTRA_STATIC_LIBRARIES := libcompiler_rt-extras

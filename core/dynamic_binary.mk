@@ -26,12 +26,17 @@ endif
 # TODO: This duplicates logic from base_rules.mk because we need to
 #       know its results before base_rules.mk is included.
 #       Consolidate the duplicates.
-LOCAL_MODULE_STEM := $(strip $(LOCAL_MODULE_STEM))
-ifeq ($(LOCAL_MODULE_STEM),)
+ifndef LOCAL_MODULE_STEM
   LOCAL_MODULE_STEM := $(LOCAL_MODULE)
 endif
-LOCAL_INSTALLED_MODULE_STEM := $(LOCAL_MODULE_STEM)$(LOCAL_MODULE_SUFFIX)
-LOCAL_BUILT_MODULE_STEM := $(LOCAL_INSTALLED_MODULE_STEM)
+
+ifndef LOCAL_BUILT_MODULE_STEM
+  LOCAL_BUILT_MODULE_STEM := $(LOCAL_MODULE_STEM)$(LOCAL_MODULE_SUFFIX)
+endif
+
+ifndef LOCAL_INSTALLED_MODULE_STEM
+  LOCAL_INSTALLED_MODULE_STEM := $(LOCAL_MODULE_STEM)$(LOCAL_MODULE_SUFFIX)
+endif
 
 # base_rules.make defines $(intermediates), but we need its value
 # before we include base_rules.  Make a guess, and verify that
@@ -79,7 +84,7 @@ compress_output := $(intermediates)/COMPRESSED-$(LOCAL_BUILT_MODULE_STEM)
 #TODO: define a rule to build TARGET_SYMBOL_FILTER_FILE, and
 #      make it depend on ALL_ORIGINAL_DYNAMIC_BINARIES.
 $(compress_output): $(compress_input) $(TARGET_SYMBOL_FILTER_FILE) | $(ACP)
-	@echo "target Compress Symbols: $(PRIVATE_MODULE) ($@)"
+	@echo -e ${CL_GRN}"target Compress Symbols:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-target)
 else
 # Skip this step.
@@ -90,9 +95,9 @@ endif
 ## Store a copy with symbols for symbolic debugging
 ###########################################################
 symbolic_input := $(compress_output)
-symbolic_output := $(LOCAL_UNSTRIPPED_PATH)/$(LOCAL_BUILT_MODULE_STEM)
+symbolic_output := $(LOCAL_UNSTRIPPED_PATH)/$(LOCAL_INSTALLED_MODULE_STEM)
 $(symbolic_output) : $(symbolic_input) | $(ACP)
-	@echo "target Symbolic: $(PRIVATE_MODULE) ($@)"
+	@echo -e ${CL_GRN}"target Symbolic:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-target)
 
 
@@ -118,18 +123,17 @@ else
 # use cp(1) instead.
 ifneq ($(LOCAL_ACP_UNAVAILABLE),true)
 $(strip_output): $(strip_input) | $(ACP)
-	@echo "target Unstripped: $(PRIVATE_MODULE) ($@)"
+	@echo -e ${CL_GRN}"target Unstripped:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-target)
 else
 $(strip_output): $(strip_input)
-	@echo "target Unstripped: $(PRIVATE_MODULE) ($@)"
+	@echo -e ${CL_GRN}"target Unstripped:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-target-with-cp)
 endif
 endif # LOCAL_STRIP_MODULE
 
 
-$(cleantarget): PRIVATE_CLEAN_FILES := \
-			$(PRIVATE_CLEAN_FILES) \
-			$(linked_module) \
-			$(symbolic_output) \
-			$(compress_output)
+$(cleantarget): PRIVATE_CLEAN_FILES += \
+    $(linked_module) \
+    $(symbolic_output) \
+    $(compress_output)

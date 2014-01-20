@@ -23,7 +23,6 @@
 
 GRANDFATHERED_ALL_PREBUILT := \
 	akmd2 \
-	am \
 	ap_gain.bin \
 	AVRCP.kl \
 	batch \
@@ -34,11 +33,7 @@ GRANDFATHERED_ALL_PREBUILT := \
 	bypassfactory \
 	cdt.bin \
 	chat-ril \
-	content \
 	cpcap-key.kl \
-	data \
-	dbus.conf \
-	dev \
 	egl.cfg \
 	firmware_error.565 \
 	firmware_install.565 \
@@ -48,13 +43,11 @@ GRANDFATHERED_ALL_PREBUILT := \
 	gps.stingray.so \
 	gralloc.omap3.so \
 	gralloc.tegra.so \
-	hosts \
 	hwcomposer.tegra.so \
 	ime \
 	init.goldfish.rc \
 	init.goldfish.sh \
 	init.olympus.rc \
-	init.rc \
 	init.sholes.rc \
 	init.stingray.rc \
 	input \
@@ -79,23 +72,18 @@ GRANDFATHERED_ALL_PREBUILT := \
 	pm \
 	pppd-ril \
 	pppd-ril.options \
-	proc \
 	qwerty.kl \
 	radio.img \
 	rdl.bin \
 	RFFspeed_501.bmd \
 	RFFstd_501.bmd \
 	savebpver \
-	sbin \
 	sholes-keypad.kl \
 	suplcerts.bks \
 	svc \
-	sys \
-	system \
 	tcmd \
 	ueventd.goldfish.rc \
 	ueventd.olympus.rc \
-	ueventd.rc \
 	ueventd.stingray.rc \
 	vold.fstab \
 	wl1271.bin

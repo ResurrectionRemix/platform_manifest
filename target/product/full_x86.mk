@@ -23,8 +23,10 @@
 # that isn't a wifi connection. This will instruct init.rc to enable the
 # network connection so that you can use it with ADB
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
+
+include $(SRC_TARGET_DIR)/product/emulator.mk
 
 ifdef NET_ETH0_STARTONBOOT
   PRODUCT_PROPERTY_OVERRIDES += net.eth0.startonboot=1
@@ -39,4 +41,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_NAME := full_x86
 PRODUCT_DEVICE := generic_x86
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Android on x86 Emulator
+PRODUCT_MODEL := AOSP on IA Emulator

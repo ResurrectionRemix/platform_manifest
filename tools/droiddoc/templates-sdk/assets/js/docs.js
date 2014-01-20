@@ -6,19 +6,50 @@ var NAV_PREF_TREE = "tree";
 var NAV_PREF_PANELS = "panels";
 var nav_pref;
 var isMobile = false; // true if mobile, so we can adjust some layout
+var mPagePath; // initialized in ready() function
 
 var basePath = getBaseUri(location.pathname);
 var SITE_ROOT = toRoot + basePath.substring(1,basePath.indexOf("/",1));
-  
+var GOOGLE_DATA; // combined data for google service apis, used for search suggest
+
+// Ensure that all ajax getScript() requests allow caching
+$.ajaxSetup({
+  cache: true
+});
 
 /******  ON LOAD SET UP STUFF *********/
 
 var navBarIsFixed = false;
 $(document).ready(function() {
-  if (devsite) {
-    // move the lang selector into the overflow menu
-    $("#moremenu .mid div.header:last").after($("#language").detach());
-  }
+
+  // load json file for JD doc search suggestions
+  $.getScript(toRoot + 'reference/jd_lists.js');
+  // load json file for Android API search suggestions
+  $.getScript(toRoot + 'reference/lists.js');
+  // load json files for Google services API suggestions
+  $.getScript(toRoot + 'reference/gcm_lists.js', function(data, textStatus, jqxhr) {
+      // once the GCM json (GCM_DATA) is loaded, load the GMS json (GMS_DATA) and merge the data
+      if(jqxhr.status === 200) {
+          $.getScript(toRoot + 'reference/gms_lists.js', function(data, textStatus, jqxhr) {
+              if(jqxhr.status === 200) {
+                  // combine GCM and GMS data
+                  GOOGLE_DATA = GMS_DATA;
+                  var start = GOOGLE_DATA.length;
+                  for (var i=0; i<GCM_DATA.length; i++) {
+                      GOOGLE_DATA.push({id:start+i, label:GCM_DATA[i].label,
+                              link:GCM_DATA[i].link, type:GCM_DATA[i].type});
+                  }
+              }
+          });
+      }
+  });
+
+  // setup keyboard listener for search shortcut
+  $('body').keyup(function(event) {
+    if (event.which == 191) {
+      $('#search_autocomplete').focus();
+    }
+  });
 
   // init the fullscreen toggle click event
   $('#nav-swap .fullscreen').click(function(){
@@ -28,16 +59,12 @@ $(document).ready(function() {
       toggleFullscreen(false);
     }
   });
-  
+
   // initialize the divs with custom scrollbars
   $('.scroll-pane').jScrollPane( {verticalGutter:0} );
-  
+
   // add HRs below all H2s (except for a few other h2 variants)
   $('h2').not('#qv h2').not('#tb h2').not('.sidebox h2').not('#devdoc-nav h2').not('h2.norule').css({marginBottom:0}).after('<hr/>');
-  
-  // set search's onkeyup handler here so we can show suggestions 
-  // even while search results are visible
-  $("#search_autocomplete").keyup(function() {return search_changed(event, false, toRoot)});
 
   // set up the search close button
   $('.search .close').click(function() {
@@ -46,17 +73,12 @@ $(document).ready(function() {
     $(this).addClass("hide");
     $("#search-container").removeClass('active');
     $("#search_autocomplete").blur();
-    search_focus_changed($searchInput.get(), false);  // see search_autocomplete.js
-    hideResults();  // see search_autocomplete.js
-  });
-  $('.search').click(function() {
-    if (!$('#search_autocomplete').is(":focused")) {
-        $('#search_autocomplete').focus();
-    }
+    search_focus_changed($searchInput.get(), false);
+    hideResults();
   });
 
   // Set up quicknav
-  var quicknav_open = false;  
+  var quicknav_open = false;
   $("#btn-quicknav").click(function() {
     if (quicknav_open) {
       $(this).removeClass('active');
@@ -68,20 +90,20 @@ $(document).ready(function() {
       expand();
     }
   })
-  
+
   var expand = function() {
    $('#header-wrap').addClass('quicknav');
    $('#quicknav').stop().show().animate({opacity:'1'});
   }
-  
+
   var collapse = function() {
     $('#quicknav').stop().animate({opacity:'0'}, 100, function() {
       $(this).hide();
       $('#header-wrap').removeClass('quicknav');
     });
   }
-  
-  
+
+
   //Set up search
   $("#search_autocomplete").focus(function() {
     $("#search-container").addClass('active');
@@ -105,20 +127,23 @@ $(document).ready(function() {
     }
   })
 
-    
+
   // prep nav expandos
   var pagePath = document.location.pathname;
   // account for intl docs by removing the intl/*/ path
   if (pagePath.indexOf("/intl/") == 0) {
     pagePath = pagePath.substr(pagePath.indexOf("/",6)); // start after intl/ to get last /
   }
-  
+
   if (pagePath.indexOf(SITE_ROOT) == 0) {
     if (pagePath == '' || pagePath.charAt(pagePath.length - 1) == '/') {
       pagePath += 'index.html';
     }
   }
 
+  // Need a copy of the pagePath before it gets changed in the next block;
+  // it's needed to perform proper tab highlighting in offline docs (see rootDir below)
+  var pagePathOriginal = pagePath;
   if (SITE_ROOT.match(/\.\.\//) || SITE_ROOT == '') {
     // If running locally, SITE_ROOT will be a relative path, so account for that by
     // finding the relative URL to this page. This will allow us to find links on the page
@@ -138,25 +163,55 @@ $(document).ready(function() {
     // Otherwise the page path is already an absolute URL
   }
 
-  // select current page in sidenav and set up prev/next links if they exist
+  // Highlight the header tabs...
+  // highlight Design tab
+  if ($("body").hasClass("design")) {
+    $("#header li.design a").addClass("selected");
+
+  // highlight Develop tab
+  } else if ($("body").hasClass("develop") || $("body").hasClass("google")) {
+    $("#header li.develop a").addClass("selected");
+    // In Develop docs, also highlight appropriate sub-tab
+    var rootDir = pagePathOriginal.substring(1,pagePathOriginal.indexOf('/', 1));
+    if (rootDir == "training") {
+      $("#nav-x li.training a").addClass("selected");
+    } else if (rootDir == "guide") {
+      $("#nav-x li.guide a").addClass("selected");
+    } else if (rootDir == "reference") {
+      // If the root is reference, but page is also part of Google Services, select Google
+      if ($("body").hasClass("google")) {
+        $("#nav-x li.google a").addClass("selected");
+      } else {
+        $("#nav-x li.reference a").addClass("selected");
+      }
+    } else if ((rootDir == "tools") || (rootDir == "sdk")) {
+      $("#nav-x li.tools a").addClass("selected");
+    } else if ($("body").hasClass("google")) {
+      $("#nav-x li.google a").addClass("selected");
+    } else if ($("body").hasClass("samples")) {
+      $("#nav-x li.samples a").addClass("selected");
+    }
+
+  // highlight Distribute tab
+  } else if ($("body").hasClass("distribute")) {
+    $("#header li.distribute a").addClass("selected");
+  }
+
+  // set global variable so we can highlight the sidenav a bit later (such as for google reference)
+  // and highlight the sidenav
+  mPagePath = pagePath;
+  highlightSidenav();
+
+  // set up prev/next links if they exist
   var $selNavLink = $('#nav').find('a[href="' + pagePath + '"]');
   var $selListItem;
   if ($selNavLink.length) {
     $selListItem = $selNavLink.closest('li');
 
-    $selListItem.addClass('selected');
-    
-    // Traverse up the tree and expand all parent nav-sections
-    $selNavLink.parents('li.nav-section').each(function() {
-      $(this).addClass('expanded');
-      $(this).children('ul').show();
-    });
-    
-
     // set up prev links
     var $prevLink = [];
     var $prevListItem = $selListItem.prev('li');
-    
+
     var crossBoundaries = ($("body.design").length > 0) || ($("body.guide").length > 0) ? true :
 false; // navigate across topic boundaries only in design docs
     if ($prevListItem.length) {
@@ -171,10 +226,10 @@ false; // navigate across topic boundaries only in design docs
       // jump to this section's index page (if it exists)
       var $parentListItem = $selListItem.parents('li');
       $prevLink = $selListItem.parents('li').find('a');
-      
+
       // except if cross boundaries aren't allowed, and we're at the top of a section already
       // (and there's another parent)
-      if (!crossBoundaries && $parentListItem.hasClass('nav-section') 
+      if (!crossBoundaries && $parentListItem.hasClass('nav-section')
                            && $selListItem.hasClass('nav-section')) {
         $prevLink = [];
       }
@@ -185,8 +240,8 @@ false; // navigate across topic boundaries only in design docs
     var startClass = false;
     var training = $(".next-class-link").length; // decides whether to provide "next class" link
     var isCrossingBoundary = false;
-    
-    if ($selListItem.hasClass('nav-section')) {
+
+    if ($selListItem.hasClass('nav-section') && $selListItem.children('div.empty').length == 0) {
       // we're on an index page, jump to the first topic
       $nextLink = $selListItem.find('ul:eq(0)').find('a:eq(0)');
 
@@ -198,7 +253,7 @@ false; // navigate across topic boundaries only in design docs
         // then set the landing page "start link" text to be the first doc title
         $('.topic-start-link').text($nextLink.text().toUpperCase());
       }
-      
+
       // If the selected page has a description, then it's a class or article homepage
       if ($selListItem.find('a[description]').length) {
         // this means we're on a class landing page
@@ -207,12 +262,17 @@ false; // navigate across topic boundaries only in design docs
     } else {
       // jump to the next topic in this section (if it exists)
       $nextLink = $selListItem.next('li').find('a:eq(0)');
-      if (!$nextLink.length) {
+      if ($nextLink.length == 0) {
         isCrossingBoundary = true;
         // no more topics in this section, jump to the first topic in the next section
         $nextLink = $selListItem.parents('li:eq(0)').next('li.nav-section').find('a:eq(0)');
         if (!$nextLink.length) {  // Go up another layer to look for next page (lesson > class > course)
           $nextLink = $selListItem.parents('li:eq(1)').next('li.nav-section').find('a:eq(0)');
+          if ($nextLink.length == 0) {
+            // if that doesn't work, we're at the end of the list, so disable NEXT link
+            $('.next-page-link').attr('href','').addClass("disabled")
+                                .click(function() { return false; });
+          }
         }
       }
     }
@@ -220,7 +280,7 @@ false; // navigate across topic boundaries only in design docs
     if (startClass) {
       $('.start-class-link').attr('href', $nextLink.attr('href')).removeClass("hide");
 
-      // if there's no training bar (below the start button), 
+      // if there's no training bar (below the start button),
       // then we need to add a bottom border to button
       if (!$("#tb").length) {
         $('.start-class-link').css({'border-bottom':'1px solid #DADADA'});
@@ -230,10 +290,11 @@ false; // navigate across topic boundaries only in design docs
       $('.next-page-link').attr('href','')
                           .removeClass("hide").addClass("disabled")
                           .click(function() { return false; });
-     
-      $('.next-class-link').attr('href',$nextLink.attr('href'))
-                          .removeClass("hide").append($nextLink.html());
-      $('.next-class-link').find('.new').empty();
+      if ($nextLink.length) {
+        $('.next-class-link').attr('href',$nextLink.attr('href'))
+                             .removeClass("hide").append($nextLink.html());
+        $('.next-class-link').find('.new').empty();
+      }
     } else {
       $('.next-page-link').attr('href', $nextLink.attr('href')).removeClass("hide");
     }
@@ -245,7 +306,7 @@ false; // navigate across topic boundaries only in design docs
       } else {
         $('.prev-page-link').attr('href', $prevLink.attr('href')).removeClass("hide");
       }
-    } 
+    }
 
     // If this is a training 'article', there should be no prev/next nav
     // ... if the grandparent is the "nav" ... and it has no child list items...
@@ -254,16 +315,16 @@ false; // navigate across topic boundaries only in design docs
       $('.next-page-link,.prev-page-link').attr('href','').addClass("disabled")
                           .click(function() { return false; });
     }
-    
+
   }
-  
-  
-  
+
+
+
   // Set up the course landing pages for Training with class names and descriptions
   if ($('body.trainingcourse').length) {
     var $classLinks = $selListItem.find('ul li a').not('#nav .nav-section .nav-section ul a');
     var $classDescriptions = $classLinks.attr('description');
-    
+
     var $olClasses  = $('<ol class="class-list"></ol>');
     var $liClass;
     var $imgIcon;
@@ -275,18 +336,20 @@ false; // navigate across topic boundaries only in design docs
       $liClass  = $('<li></li>');
       $h2Title  = $('<a class="title" href="'+$(this).attr('href')+'"><h2>' + $(this).html()+'</h2><span></span></a>');
       $pSummary = $('<p class="description">' + $(this).attr('description') + '</p>');
-      
+
       $olLessons  = $('<ol class="lesson-list"></ol>');
-      
+
       $lessons = $(this).closest('li').find('ul li a');
-      
+
       if ($lessons.length) {
-        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-tutorial.png" alt=""/>');
+        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-tutorial.png" '
+            + ' width="64" height="64" alt=""/>');
         $lessons.each(function(index) {
           $olLessons.append('<li><a href="'+$(this).attr('href')+'">' + $(this).html()+'</a></li>');
         });
       } else {
-        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-article.png" alt=""/>');
+        $imgIcon = $('<img src="'+toRoot+'assets/images/resource-article.png" '
+            + ' width="64" height="64" alt=""/>');
         $pSummary.addClass('article');
       }
 
@@ -296,36 +359,10 @@ false; // navigate across topic boundaries only in design docs
     $('.jd-descr').append($olClasses);
   }
 
-
-
-
   // Set up expand/collapse behavior
-  $('#nav li.nav-section .nav-section-header').click(function() {
-    var section = $(this).closest('li.nav-section');
-    if (section.hasClass('expanded')) {
-    /* hide me */
-    //  if (section.hasClass('selected') || section.find('li').hasClass('selected')) {
-   //   /* but not if myself or my descendents are selected */
-   //     return;
-    //  }
-      section.children('ul').slideUp(250, function() {
-        section.closest('li').removeClass('expanded');
-        resizeNav();
-      });
-    } else {
-    /* show me */
-      // first hide all other siblings
-      var $others = $('li.nav-section.expanded', $(this).closest('ul'));
-      $others.removeClass('expanded').children('ul').slideUp(250);
-      
-      // now expand me
-      section.closest('li').addClass('expanded');
-      section.children('ul').slideDown(250, function() {
-        resizeNav();
-      });
-    }
-  });
-  
+  initExpandableNavItems("#nav");
+
+
   $(".scroll-pane").scroll(function(event) {
       event.preventDefault();
       return false;
@@ -357,10 +394,10 @@ false; // navigate across topic boundaries only in design docs
       // from a scrollable div and so there's no need to make adjustments to our layout
       return;
     }
-    var scrollTop = $(window).scrollTop();    
+    var scrollTop = $(window).scrollTop();
     var headerHeight = $('#header').outerHeight();
     var subheaderHeight = $('#nav-x').outerHeight();
-    var searchResultHeight = $('#searchResults').is(":visible") ? 
+    var searchResultHeight = $('#searchResults').is(":visible") ?
                              $('#searchResults').outerHeight() : 0;
     var totalHeaderHeight = headerHeight + subheaderHeight + searchResultHeight;
     // we set the navbar fixed when the scroll position is beyond the height of the site header...
@@ -370,20 +407,20 @@ false; // navigate across topic boundaries only in design docs
     if ($("#doc-col").height() < $("#side-nav").height()) {
       navBarShouldBeFixed = false;
     }
-   
+
     var scrollLeft = $(window).scrollLeft();
     // When the sidenav is fixed and user scrolls horizontally, reposition the sidenav to match
     if (navBarIsFixed && (scrollLeft != prevScrollLeft)) {
       updateSideNavPosition();
       prevScrollLeft = scrollLeft;
     }
-    
-    // Don't continue if the header is sufficently far away 
+
+    // Don't continue if the header is sufficently far away
     // (to avoid intensive resizing that slows scrolling)
     if (navBarIsFixed && navBarShouldBeFixed) {
       return;
     }
-    
+
     if (navBarIsFixed != navBarShouldBeFixed) {
       if (navBarShouldBeFixed) {
         // make it fixed
@@ -394,7 +431,7 @@ false; // navigate across topic boundaries only in design docs
             .prependTo('#body-content');
         // add neato "back to top" button
         $('#devdoc-nav a.totop').css({'display':'block','width':$("#nav").innerWidth()+'px'});
-        
+
         // update the sidenaav position for side scrolling
         updateSideNavPosition();
       } else {
@@ -406,24 +443,17 @@ false; // navigate across topic boundaries only in design docs
         $('#devdoc-nav a.totop').hide();
       }
       navBarIsFixed = navBarShouldBeFixed;
-    } 
-    
+    }
+
     resizeNav(250); // pass true in order to delay the scrollbar re-initialization for performance
   });
 
-  
+
   var navBarLeftPos;
   if ($('#devdoc-nav').length) {
     setNavBarLeftPos();
   }
 
-
-  // Stop expand/collapse behavior when clicking on nav section links (since we're navigating away
-  // from the page)
-  $('.nav-section-header').find('a:eq(0)').click(function(evt) {
-    window.location.href = $(this).attr('href');
-    return false;
-  });
 
   // Set up play-on-hover <video> tags.
   $('video.play-on-hover').bind('click', function(){
@@ -474,16 +504,16 @@ false; // navigate across topic boundaries only in design docs
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 
 
-  // Revise the sidenav widths to make room for the scrollbar 
+  // Revise the sidenav widths to make room for the scrollbar
   // which avoids the visible width from changing each time the bar appears
   var $sidenav = $("#side-nav");
   var sidenav_width = parseInt($sidenav.innerWidth());
-    
+
   $("#devdoc-nav  #nav").css("width", sidenav_width - 4 + "px"); // 4px is scrollbar width
 
 
   $(".scroll-pane").removeAttr("tabindex"); // get rid of tabindex added by jscroller
-  
+
   if ($(".scroll-pane").length > 1) {
     // Check if there's a user preference for the panel heights
     var cookieHeight = readCookie("reference_height");
@@ -491,7 +521,7 @@ false; // navigate across topic boundaries only in design docs
       restoreHeight(cookieHeight);
     }
   }
-  
+
   resizeNav();
 
   /* init the language selector based on user cookie for lang */
@@ -526,8 +556,75 @@ false; // navigate across topic boundaries only in design docs
   }
 
 });
+// END of the onload event
 
 
+function initExpandableNavItems(rootTag) {
+  $(rootTag + ' li.nav-section .nav-section-header').click(function() {
+    var section = $(this).closest('li.nav-section');
+    if (section.hasClass('expanded')) {
+    /* hide me and descendants */
+      section.find('ul').slideUp(250, function() {
+        // remove 'expanded' class from my section and any children
+        section.closest('li').removeClass('expanded');
+        $('li.nav-section', section).removeClass('expanded');
+        resizeNav();
+      });
+    } else {
+    /* show me */
+      // first hide all other siblings
+      var $others = $('li.nav-section.expanded', $(this).closest('ul')).not('.sticky');
+      $others.removeClass('expanded').children('ul').slideUp(250);
+
+      // now expand me
+      section.closest('li').addClass('expanded');
+      section.children('ul').slideDown(250, function() {
+        resizeNav();
+      });
+    }
+  });
+
+  // Stop expand/collapse behavior when clicking on nav section links
+  // (since we're navigating away from the page)
+  // This selector captures the first instance of <a>, but not those with "#" as the href.
+  $('.nav-section-header').find('a:eq(0)').not('a[href="#"]').click(function(evt) {
+    window.location.href = $(this).attr('href');
+    return false;
+  });
+}
+
+/** Highlight the current page in sidenav, expanding children as appropriate */
+function highlightSidenav() {
+  // if something is already highlighted, undo it. This is for dynamic navigation (Samples index)
+  if ($("ul#nav li.selected").length) {
+    unHighlightSidenav();
+  }
+  // look for URL in sidenav, including the hash
+  var $selNavLink = $('#nav').find('a[href="' + mPagePath + location.hash + '"]');
+
+  // If the selNavLink is still empty, look for it without the hash
+  if ($selNavLink.length == 0) {
+    $selNavLink = $('#nav').find('a[href="' + mPagePath + '"]');
+  }
+
+  var $selListItem;
+  if ($selNavLink.length) {
+    // Find this page's <li> in sidenav and set selected
+    $selListItem = $selNavLink.closest('li');
+    $selListItem.addClass('selected');
+
+    // Traverse up the tree and expand all parent nav-sections
+    $selNavLink.parents('li.nav-section').each(function() {
+      $(this).addClass('expanded');
+      $(this).children('ul').show();
+    });
+  }
+}
+
+function unHighlightSidenav() {
+  $("ul#nav li.selected").removeClass("selected");
+  $('ul#nav li.nav-section.expanded').removeClass('expanded').children('ul').hide();
+}
 
 function toggleFullscreen(enable) {
   var delay = 20;
@@ -565,13 +662,6 @@ function updateSideNavPosition() {
   $('#devdoc-nav').css({left: -newLeft});
   $('#devdoc-nav .totop').css({left: -(newLeft - parseInt($('#side-nav').css('margin-left')))});
 }
-  
-
-
-
-
-
-
 
 // TODO: use $(document).ready instead
 function addLoadEvent(newfun) {
@@ -596,20 +686,10 @@ if ((agent.indexOf("mobile") != -1) ||      // android, iphone, ipod
 }
 
 
-/* loads the lists.js file to the page.
-Loading this in the head was slowing page load time */
-addLoadEvent( function() {
-  var lists = document.createElement("script");
-  lists.setAttribute("type","text/javascript");
-  lists.setAttribute("src", toRoot+"reference/lists.js");
-  document.getElementsByTagName("head")[0].appendChild(lists);
-} );
-
-
-addLoadEvent( function() {
+$(document).ready(function() {
   $("pre:not(.no-pretty-print)").addClass("prettyprint");
   prettyPrint();
-} );
+});
 
 
 
@@ -620,7 +700,7 @@ function resizeNav(delay) {
   var $nav = $("#devdoc-nav");
   var $window = $(window);
   var navHeight;
-  
+
   // Get the height of entire window and the total header height.
   // Then figure out based on scroll position whether the header is visible
   var windowHeight = $window.height();
@@ -628,12 +708,12 @@ function resizeNav(delay) {
   var headerHeight = $('#header').outerHeight();
   var subheaderHeight = $('#nav-x').outerHeight();
   var headerVisible = (scrollTop < (headerHeight + subheaderHeight));
-  
-  // get the height of space between nav and top of window. 
+
+  // get the height of space between nav and top of window.
   // Could be either margin or top position, depending on whether the nav is fixed.
-  var topMargin = (parseInt($nav.css('margin-top')) || parseInt($nav.css('top'))) + 1; 
+  var topMargin = (parseInt($nav.css('margin-top')) || parseInt($nav.css('top'))) + 1;
   // add 1 for the #side-nav bottom margin
-  
+
   // Depending on whether the header is visible, set the side nav's height.
   if (headerVisible) {
     // The sidenav height grows as the header goes off screen
@@ -642,44 +722,44 @@ function resizeNav(delay) {
     // Once header is off screen, the nav height is almost full window height
     navHeight = windowHeight - topMargin;
   }
-  
-  
-  
+
+
+
   $scrollPanes = $(".scroll-pane");
   if ($scrollPanes.length > 1) {
     // subtract the height of the api level widget and nav swapper from the available nav height
     navHeight -= ($('#api-nav-header').outerHeight(true) + $('#nav-swap').outerHeight(true));
-    
+
     $("#swapper").css({height:navHeight + "px"});
     if ($("#nav-tree").is(":visible")) {
       $("#nav-tree").css({height:navHeight});
     }
-    
-    var classesHeight = navHeight - parseInt($("#resize-packages-nav").css("height")) - 10 + "px"; 
+
+    var classesHeight = navHeight - parseInt($("#resize-packages-nav").css("height")) - 10 + "px";
     //subtract 10px to account for drag bar
-    
-    // if the window becomes small enough to make the class panel height 0, 
+
+    // if the window becomes small enough to make the class panel height 0,
     // then the package panel should begin to shrink
     if (parseInt(classesHeight) <= 0) {
       $("#resize-packages-nav").css({height:navHeight - 10}); //subtract 10px for drag bar
       $("#packages-nav").css({height:navHeight - 10});
     }
-    
+
     $("#classes-nav").css({'height':classesHeight, 'margin-top':'10px'});
     $("#classes-nav .jspContainer").css({height:classesHeight});
-    
-    
+
+
   } else {
     $nav.height(navHeight);
   }
-  
+
   if (delay) {
     updateFromResize = true;
     delayedReInitScrollbars(delay);
   } else {
     reInitScrollbars();
   }
-  
+
 }
 
 var updateScrollbars = false;
@@ -698,7 +778,7 @@ function delayedReInitScrollbars(delay) {
     updateFromResize = false;
     return;
   }
-  
+
   // We're scheduled for an update and the update request came from this method's setTimeout
   if (updateScrollbars && !updateFromResize) {
     reInitScrollbars();
@@ -716,7 +796,7 @@ function reInitScrollbars() {
     var api = $(this).data('jsp');
     if (!api) { setTimeout(reInitScrollbars,300); return;}
     api.reinitialise( {verticalGutter:0} );
-  });  
+  });
   $(".scroll-pane").removeAttr("tabindex"); // get rid of tabindex added by jscroller
 }
 
@@ -747,7 +827,7 @@ function restoreHeight(packageHeight) {
 
 
 
-/** Scroll the jScrollPane to make the currently selected item visible 
+/** Scroll the jScrollPane to make the currently selected item visible
     This is called when the page finished loading. */
 function scrollIntoView(nav) {
   var $nav = $("#"+nav);
@@ -756,13 +836,17 @@ function scrollIntoView(nav) {
 
   if ($nav.is(':visible')) {
     var $selected = $(".selected", $nav);
-    if ($selected.length == 0) return;
-    
-    var selectedOffset = $selected.position().top;
-    if (selectedOffset + 90 > $nav.height()) {  // add 90 so that we scroll up even 
-                                                // if the current item is close to the bottom
-      api.scrollTo(0, selectedOffset - ($nav.height() / 4), false); // scroll the item into view
-                                                              // to be 1/4 of the way from the top
+    if ($selected.length == 0) {
+      // If no selected item found, exit
+      return;
+    }
+    // get the selected item's offset from its container nav by measuring the item's offset
+    // relative to the document then subtract the container nav's offset relative to the document
+    var selectedOffset = $selected.offset().top - $nav.offset().top;
+    if (selectedOffset > $nav.height() * .8) { // multiply nav height by .8 so we move up the item
+                                               // if it's more than 80% down the nav
+      // scroll the item up by an amount equal to 80% the container nav's height
+      api.scrollTo(0, selectedOffset - ($nav.height() * .8), false);
     }
   }
 }
@@ -811,7 +895,7 @@ function writeCookie(cookie, val, section, expiration) {
     date.setTime(date.getTime()+(10*365*24*60*60*1000)); // default expiration is one week
     expiration = date.toGMTString();
   }
-  var cookieValue = cookie_namespace + section + cookie + "=" + val 
+  var cookieValue = cookie_namespace + section + cookie + "=" + val
                     + "; expires=" + expiration+"; path=/";
   document.cookie = cookieValue;
 }
@@ -836,52 +920,7 @@ function writeCookie(cookie, val, section, expiration) {
 
 
 
-
-
-
-
-
-
-/*
-
-REMEMBER THE PREVIOUS PAGE FOR EACH TAB
-
-function loadLast(cookiePath) {
-  var location = window.location.href;
-  if (location.indexOf("/"+cookiePath+"/") != -1) {
-    return true;
-  }
-  var lastPage = readCookie(cookiePath + "_lastpage");
-  if (lastPage) {
-    window.location = lastPage;
-    return false;
-  }
-  return true;
-}
-
-
-
-$(window).unload(function(){
-  var path = getBaseUri(location.pathname);
-  if (path.indexOf("/reference/") != -1) {
-    writeCookie("lastpage", path, "reference", null);
-  } else if (path.indexOf("/guide/") != -1) {
-    writeCookie("lastpage", path, "guide", null);
-  } else if ((path.indexOf("/resources/") != -1) || (path.indexOf("/training/") != -1)) {
-    writeCookie("lastpage", path, "resources", null);
-  }
-});
-
-*/
-
-
-
-
-
-
-
-
-
+/*      MISC LIBRARY FUNCTIONS     */
 
 
 
@@ -908,9 +947,6 @@ function toggle(obj, slide) {
 }
 
 
-
-
-
 function buildToggleLists() {
   $(".toggle-list").each(
     function(i) {
@@ -921,7 +957,19 @@ function buildToggleLists() {
 
 
 
-
+function hideNestedItems(list, toggle) {
+  $list = $(list);
+  // hide nested lists
+  if($list.hasClass('showing')) {
+    $("li ol", $list).hide('fast');
+    $list.removeClass('showing');
+  // show nested lists
+  } else {
+    $("li ol", $list).show('fast');
+    $list.addClass('showing');
+  }
+  $(".more,.less",$(toggle)).toggle();
+}
 
 
 
@@ -986,7 +1034,7 @@ function swapNav() {
   $("#panel-link").toggle();
   $("#nav-tree").toggle();
   $("#tree-link").toggle();
-  
+
   resizeNav();
 
   // Gross nasty hack to make tree view show up upon first swap by setting height manually
@@ -994,7 +1042,7 @@ function swapNav() {
       .css({'height':$("#nav-tree .jspContainer .jspPane").height() +'px'});
   // Another nasty hack to make the scrollbar appear now that we have height
   resizeNav();
-  
+
   if ($("#nav-tree").is(':visible')) {
     scrollIntoView("nav-tree");
   } else {
@@ -1049,7 +1097,7 @@ function changeNavLang(lang) {
 
 function changeLangPref(lang, submit) {
   var date = new Date();
-  expires = date.toGMTString(date.setTime(date.getTime()+(10*365*24*60*60*1000))); 
+  expires = date.toGMTString(date.setTime(date.getTime()+(10*365*24*60*60*1000)));
   // keep this for 50 years
   //alert("expires: " + expires)
   writeCookie("pref_lang", lang, null, expires);
@@ -1094,19 +1142,21 @@ function getLangPref() {
 /* Used to hide and reveal supplemental content, such as long code samples.
    See the companion CSS in android-developer-docs.css */
 function toggleContent(obj) {
-  var div = $(obj.parentNode.parentNode);
-  var toggleMe = $(".toggle-content-toggleme",div);
+  var div = $(obj).closest(".toggle-content");
+  var toggleMe = $(".toggle-content-toggleme:eq(0)",div);
   if (div.hasClass("closed")) { // if it's closed, open it
     toggleMe.slideDown();
-    $(".toggle-content-text", obj).toggle();
+    $(".toggle-content-text:eq(0)", obj).toggle();
     div.removeClass("closed").addClass("open");
-    $(".toggle-content-img", div).attr("title", "hide").attr("src", toRoot 
+    $(".toggle-content-img:eq(0)", div).attr("title", "hide").attr("src", toRoot
                   + "assets/images/triangle-opened.png");
   } else { // if it's open, close it
     toggleMe.slideUp('fast', function() {  // Wait until the animation is done before closing arrow
-      $(".toggle-content-text", obj).toggle();
+      $(".toggle-content-text:eq(0)", obj).toggle();
       div.removeClass("open").addClass("closed");
-      $(".toggle-content-img", div).attr("title", "show").attr("src", toRoot 
+      div.find(".toggle-content").removeClass("open").addClass("closed")
+              .find(".toggle-content-toggleme").hide();
+      $(".toggle-content-img", div).attr("title", "show").attr("src", toRoot
                   + "assets/images/triangle-closed.png");
     });
   }
@@ -1134,7 +1184,7 @@ function hideExpandable(ids) {
 
 
 
-/*    
+/*
  *  Slideshow 1.0
  *  Used on /index.html and /develop/index.html for carousel
  *
@@ -1175,7 +1225,7 @@ function hideExpandable(ids) {
 
  (function($) {
  $.fn.dacSlideshow = function(o) {
-     
+
      //Options - see above
      o = $.extend({
          btnPrev:   null,
@@ -1190,8 +1240,8 @@ function hideExpandable(ids) {
          pagination: true
 
      }, o || {});
-     
-     //Set up a carousel for each 
+
+     //Set up a carousel for each
      return this.each(function() {
 
          var running = false;
@@ -1200,7 +1250,7 @@ function hideExpandable(ids) {
          var div = $(this);
          var ul = $("ul", div);
          var tLi = $("li", ul);
-         var tl = tLi.size(); 
+         var tl = tLi.size();
          var timer = null;
 
          var li = $("li", ul);
@@ -1219,7 +1269,7 @@ function hideExpandable(ids) {
          ul.css(sizeCss, ulSize+"px").css(animCss, -(curr*liSize));
 
          div.css(sizeCss, divSize+"px");
-         
+
          //Pagination
          if (o.pagination) {
              var pagination = $("<div class='pagination'></div>");
@@ -1237,7 +1287,7 @@ function hideExpandable(ids) {
                 div.append(pagination);
              }
          }
-         
+
          //Previous button
          if(o.btnPrev)
              $(o.btnPrev).click(function(e) {
@@ -1262,18 +1312,18 @@ function hideExpandable(ids) {
                      pauseRotateTimer();
                  }
              });
-         
+
          //Auto rotation
          if(o.auto) startRotateTimer();
-             
+
          function startRotateTimer() {
              clearInterval(timer);
              timer = setInterval(function() {
                   if (curr == tl-1) {
                     go(0);
                   } else {
-                    go(curr+o.scroll);  
-                  } 
+                    go(curr+o.scroll);
+                  }
               }, o.autoTime);
              $(o.btnPause).removeClass('paused');
          }
@@ -1311,11 +1361,11 @@ function hideExpandable(ids) {
                     []
                   ).addClass("disabled");
 
-                 
+
                  var nav_items = $('li', pagination);
                  nav_items.removeClass('active');
                  nav_items.eq(to).addClass('active');
-                 
+
 
              }
              if(o.auto) startRotateTimer();
@@ -1337,7 +1387,7 @@ function hideExpandable(ids) {
  })(jQuery);
 
 
-/*  
+/*
  *  dacSlideshow 1.0
  *  Used on develop/index.html for side-sliding tabs
  *
@@ -1376,7 +1426,7 @@ function hideExpandable(ids) {
  */
  (function($) {
  $.fn.dacTabbedList = function(o) {
-     
+
      //Options - see above
      o = $.extend({
          speed : 250,
@@ -1384,8 +1434,8 @@ function hideExpandable(ids) {
          nav_id: null,
          frame_id: null
      }, o || {});
-     
-     //Set up a carousel for each 
+
+     //Set up a carousel for each
      return this.each(function() {
 
          var curr = 0;
@@ -1393,17 +1443,17 @@ function hideExpandable(ids) {
          var animCss = "margin-left";
          var sizeCss = "width";
          var div = $(this);
-         
+
          var nav = $(o.nav_id, div);
          var nav_li = $("li", nav);
-         var nav_size = nav_li.size(); 
+         var nav_size = nav_li.size();
          var frame = div.find(o.frame_id);
          var content_width = $(frame).find('ul').width();
          //Buttons
          $(nav_li).click(function(e) {
            go($(nav_li).index($(this)));
          })
-         
+
          //Go to an item
          function go(to) {
              if(!running) {
@@ -1416,10 +1466,10 @@ function hideExpandable(ids) {
                      }
                  );
 
-                 
+
                  nav_li.removeClass('active');
                  nav_li.eq(to).addClass('active');
-                 
+
 
              }
              return false;
@@ -1448,12 +1498,30 @@ function hideExpandable(ids) {
 /* ######################################################## */
 
 
-var gSelectedIndex = -1;
-var gSelectedID = -1;
+
+var gSelectedIndex = -1;  // the index position of currently highlighted suggestion
+var gSelectedColumn = -1;  // which column of suggestion lists is currently focused
+
 var gMatches = new Array();
 var gLastText = "";
-var ROW_COUNT = 20;
 var gInitialized = false;
+var ROW_COUNT_FRAMEWORK = 20;       // max number of results in list
+var gListLength = 0;
+
+
+var gGoogleMatches = new Array();
+var ROW_COUNT_GOOGLE = 15;          // max number of results in list
+var gGoogleListLength = 0;
+
+var gDocsMatches = new Array();
+var ROW_COUNT_DOCS = 100;          // max number of results in list
+var gDocsListLength = 0;
+
+function onSuggestionClick(link) {
+  // When user clicks a suggested document, track it
+  _gaq.push(['_trackEvent', 'Suggestion Click', 'clicked: ' + $(link).text(),
+            'from: ' + $("#search_autocomplete").val()]);
+}
 
 function set_item_selected($li, selected)
 {
@@ -1471,83 +1539,173 @@ function set_item_values(toroot, $li, match)
     $link.attr('href',toroot + match.link);
 }
 
+function new_suggestion($list) {
+    var $li = $("<li class='jd-autocomplete'></li>");
+    $list.append($li);
+
+    $li.mousedown(function() {
+        window.location = this.firstChild.getAttribute("href");
+    });
+    $li.mouseover(function() {
+        $('.search_filtered_wrapper li').removeClass('jd-selected');
+        $(this).addClass('jd-selected');
+        gSelectedColumn = $(".search_filtered:visible").index($(this).closest('.search_filtered'));
+        gSelectedIndex = $("li", $(".search_filtered:visible")[gSelectedColumn]).index(this);
+    });
+    $li.append("<a onclick='onSuggestionClick(this)'></a>");
+    $li.attr('class','show-item');
+    return $li;
+}
+
 function sync_selection_table(toroot)
 {
-    var $list = $("#search_filtered");
     var $li; //list item jquery object
     var i; //list item iterator
-    gSelectedID = -1;
-    
-    //initialize the table; draw it for the first time (but not visible).
-    if (!gInitialized) {
-        for (i=0; i<ROW_COUNT; i++) {
-            var $li = $("<li class='jd-autocomplete'></li>");
-            $list.append($li);
-            
-            $li.mousedown(function() {
-                window.location = this.firstChild.getAttribute("href");
-            });
-            $li.mouseover(function() {
-                $('#search_filtered li').removeClass('jd-selected');
-                $(this).addClass('jd-selected');
-                gSelectedIndex = $('#search_filtered li').index(this);
-            });
-            $li.append('<a></a>');
-        }
-        gInitialized = true;
+
+    // if there are NO results at all, hide all columns
+    if (!(gMatches.length > 0) && !(gGoogleMatches.length > 0) && !(gDocsMatches.length > 0)) {
+        $('.suggest-card').hide(300);
+        return;
     }
-  
-    //if we have results, make the table visible and initialize result info
-    if (gMatches.length > 0) {
-        $('#search_filtered_div').removeClass('no-display');
-        var N = gMatches.length < ROW_COUNT ? gMatches.length : ROW_COUNT;
-        for (i=0; i<N; i++) {
-            $li = $('#search_filtered li:nth-child('+(i+1)+')');
-            $li.attr('class','show-item');
-            set_item_values(toroot, $li, gMatches[i]);
-            set_item_selected($li, i == gSelectedIndex);
-            if (i == gSelectedIndex) {
-                gSelectedID = gMatches[i].id;
-            }
-        }
-        //start hiding rows that are no longer matches
-        for (; i<ROW_COUNT; i++) {
-            $li = $('#search_filtered li:nth-child('+(i+1)+')');
-            $li.attr('class','no-display');
-        }
-        //if there are more results we're not showing, so say so.
-/*      if (gMatches.length > ROW_COUNT) {
-            li = list.rows[ROW_COUNT];
-            li.className = "show-item";
-            c1 = li.cells[0];
-            c1.innerHTML = "plus " + (gMatches.length-ROW_COUNT) + " more"; 
-        } else {
-            list.rows[ROW_COUNT].className = "hide-item";
-        }*/
-    //if we have no results, hide the table
+
+    // if there are api results
+    if ((gMatches.length > 0) || (gGoogleMatches.length > 0)) {
+      // reveal suggestion list
+      $('.suggest-card.dummy').show();
+      $('.suggest-card.reference').show();
+      var listIndex = 0; // list index position
+
+      // reset the lists
+      $(".search_filtered_wrapper.reference li").remove();
+
+      // ########### ANDROID RESULTS #############
+      if (gMatches.length > 0) {
+
+          // determine android results to show
+          gListLength = gMatches.length < ROW_COUNT_FRAMEWORK ?
+                        gMatches.length : ROW_COUNT_FRAMEWORK;
+          for (i=0; i<gListLength; i++) {
+              var $li = new_suggestion($(".suggest-card.reference ul"));
+              set_item_values(toroot, $li, gMatches[i]);
+              set_item_selected($li, i == gSelectedIndex);
+          }
+      }
+
+      // ########### GOOGLE RESULTS #############
+      if (gGoogleMatches.length > 0) {
+          // show header for list
+          $(".suggest-card.reference ul").append("<li class='header'>in Google Services:</li>");
+
+          // determine google results to show
+          gGoogleListLength = gGoogleMatches.length < ROW_COUNT_GOOGLE ? gGoogleMatches.length : ROW_COUNT_GOOGLE;
+          for (i=0; i<gGoogleListLength; i++) {
+              var $li = new_suggestion($(".suggest-card.reference ul"));
+              set_item_values(toroot, $li, gGoogleMatches[i]);
+              set_item_selected($li, i == gSelectedIndex);
+          }
+      }
     } else {
-        $('#search_filtered_div').addClass('no-display');
+      $('.suggest-card.reference').hide();
+      $('.suggest-card.dummy').hide();
+    }
+
+    // ########### JD DOC RESULTS #############
+    if (gDocsMatches.length > 0) {
+        // reset the lists
+        $(".search_filtered_wrapper.docs li").remove();
+
+        // determine google results to show
+        gDocsListLength = gDocsMatches.length < ROW_COUNT_DOCS ? gDocsMatches.length : ROW_COUNT_DOCS;
+        for (i=0; i<gDocsListLength; i++) {
+            var sugg = gDocsMatches[i];
+            var $li;
+            if (sugg.type == "design") {
+                $li = new_suggestion($(".suggest-card.design ul"));
+            } else
+            if (sugg.type == "distribute") {
+                $li = new_suggestion($(".suggest-card.distribute ul"));
+            } else
+            if (sugg.type == "training") {
+                $li = new_suggestion($(".suggest-card.develop .child-card.training"));
+            } else
+            if (sugg.type == "guide"||"google") {
+                $li = new_suggestion($(".suggest-card.develop .child-card.guides"));
+            } else {
+              continue;
+            }
+
+            set_item_values(toroot, $li, sugg);
+            set_item_selected($li, i == gSelectedIndex);
+        }
+
+        // add heading and show or hide card
+        if ($(".suggest-card.design li").length > 0) {
+          $(".suggest-card.design ul").prepend("<li class='header'>Design:</li>");
+          $(".suggest-card.design").show(300);
+        } else {
+          $('.suggest-card.design').hide(300);
+        }
+        if ($(".suggest-card.distribute li").length > 0) {
+          $(".suggest-card.distribute ul").prepend("<li class='header'>Distribute:</li>");
+          $(".suggest-card.distribute").show(300);
+        } else {
+          $('.suggest-card.distribute').hide(300);
+        }
+        if ($(".child-card.guides li").length > 0) {
+          $(".child-card.guides").prepend("<li class='header'>Guides:</li>");
+          $(".child-card.guides li").appendTo(".suggest-card.develop ul");
+        }
+        if ($(".child-card.training li").length > 0) {
+          $(".child-card.training").prepend("<li class='header'>Training:</li>");
+          $(".child-card.training li").appendTo(".suggest-card.develop ul");
+        }
+
+        if ($(".suggest-card.develop li").length > 0) {
+          $(".suggest-card.develop").show(300);
+        } else {
+          $('.suggest-card.develop').hide(300);
+        }
+
+    } else {
+      $('.search_filtered_wrapper.docs .suggest-card:not(.dummy)').hide(300);
     }
 }
 
+/** Called by the search input's onkeydown and onkeyup events.
+  * Handles navigation with keyboard arrows, Enter key to invoke search,
+  * otherwise invokes search suggestions on key-up event.
+  * @param e       The JS event
+  * @param kd      True if the event is key-down
+  * @param toroot  A string for the site's root path
+  * @returns       True if the event should bubble up
+  */
 function search_changed(e, kd, toroot)
 {
     var search = document.getElementById("search_autocomplete");
     var text = search.value.replace(/(^ +)|( +$)/g, '');
-    
+    // get the ul hosting the currently selected item
+    gSelectedColumn = gSelectedColumn >= 0 ? gSelectedColumn :  0;
+    var $columns = $(".search_filtered_wrapper").find(".search_filtered:visible");
+    var $selectedUl = $columns[gSelectedColumn];
+
     // show/hide the close button
     if (text != '') {
         $(".search .close").removeClass("hide");
     } else {
         $(".search .close").addClass("hide");
     }
-
+    // 27 = esc
+    if (e.keyCode == 27) {
+        // close all search results
+        if (kd) $('.search .close').trigger('click');
+        return true;
+    }
     // 13 = enter
-    if (e.keyCode == 13) {
-        $('#search_filtered_div').addClass('no-display');
-        if (!$('#search_filtered_div').hasClass('no-display') || (gSelectedIndex < 0)) {
-            if ($("#searchResults").is(":hidden")) {
-              // if results aren't showing, return true to allow search to execute
+    else if (e.keyCode == 13) {
+        if (gSelectedIndex < 0) {
+            $('.suggest-card').hide();
+            if ($("#searchResults").is(":hidden") && (search.value != "")) {
+              // if results aren't showing (and text not empty), return true to allow search to execute
               return true;
             } else {
               // otherwise, results are already showing, so allow ajax to auto refresh the results
@@ -1555,33 +1713,102 @@ function search_changed(e, kd, toroot)
               return false;
             }
         } else if (kd && gSelectedIndex >= 0) {
-            window.location = toroot + gMatches[gSelectedIndex].link;
+            // click the link corresponding to selected item
+            $("a",$("li",$selectedUl)[gSelectedIndex]).get()[0].click();
             return false;
         }
     }
-    // 38 -- arrow up
+    // Stop here if Google results are showing
+    else if ($("#searchResults").is(":visible")) {
+        return true;
+    }
+    // 38 UP ARROW
     else if (kd && (e.keyCode == 38)) {
-        if (gSelectedIndex >= 0) {
-            $('#search_filtered li').removeClass('jd-selected');
+        // if the next item is a header, skip it
+        if ($($("li", $selectedUl)[gSelectedIndex-1]).hasClass("header")) {
             gSelectedIndex--;
-            $('#search_filtered li:nth-child('+(gSelectedIndex+1)+')').addClass('jd-selected');
+        }
+        if (gSelectedIndex >= 0) {
+            $('li', $selectedUl).removeClass('jd-selected');
+            gSelectedIndex--;
+            $('li:nth-child('+(gSelectedIndex+1)+')', $selectedUl).addClass('jd-selected');
+            // If user reaches top, reset selected column
+            if (gSelectedIndex < 0) {
+              gSelectedColumn = -1;
+            }
         }
         return false;
     }
-    // 40 -- arrow down
+    // 40 DOWN ARROW
     else if (kd && (e.keyCode == 40)) {
-        if (gSelectedIndex < gMatches.length-1
-                        && gSelectedIndex < ROW_COUNT-1) {
-            $('#search_filtered li').removeClass('jd-selected');
+        // if the next item is a header, skip it
+        if ($($("li", $selectedUl)[gSelectedIndex+1]).hasClass("header")) {
             gSelectedIndex++;
-            $('#search_filtered li:nth-child('+(gSelectedIndex+1)+')').addClass('jd-selected');
+        }
+        if ((gSelectedIndex < $("li", $selectedUl).length-1) ||
+                        ($($("li", $selectedUl)[gSelectedIndex+1]).hasClass("header"))) {
+            $('li', $selectedUl).removeClass('jd-selected');
+            gSelectedIndex++;
+            $('li:nth-child('+(gSelectedIndex+1)+')', $selectedUl).addClass('jd-selected');
         }
         return false;
     }
-    else if (!kd && (e.keyCode != 40) && (e.keyCode != 38)) {
+    // Consider left/right arrow navigation
+    // NOTE: Order of suggest columns are reverse order (index position 0 is on right)
+    else if (kd && $columns.length > 1 && gSelectedColumn >= 0) {
+      // 37 LEFT ARROW
+      // go left only if current column is not left-most column (last column)
+      if (e.keyCode == 37 && gSelectedColumn < $columns.length - 1) {
+        $('li', $selectedUl).removeClass('jd-selected');
+        gSelectedColumn++;
+        $selectedUl = $columns[gSelectedColumn];
+        // keep or reset the selected item to last item as appropriate
+        gSelectedIndex = gSelectedIndex >
+                $("li", $selectedUl).length-1 ?
+                $("li", $selectedUl).length-1 : gSelectedIndex;
+        // if the corresponding item is a header, move down
+        if ($($("li", $selectedUl)[gSelectedIndex]).hasClass("header")) {
+          gSelectedIndex++;
+        }
+        // set item selected
+        $('li:nth-child('+(gSelectedIndex+1)+')', $selectedUl).addClass('jd-selected');
+        return false;
+      }
+      // 39 RIGHT ARROW
+      // go right only if current column is not the right-most column (first column)
+      else if (e.keyCode == 39 && gSelectedColumn > 0) {
+        $('li', $selectedUl).removeClass('jd-selected');
+        gSelectedColumn--;
+        $selectedUl = $columns[gSelectedColumn];
+        // keep or reset the selected item to last item as appropriate
+        gSelectedIndex = gSelectedIndex >
+                $("li", $selectedUl).length-1 ?
+                $("li", $selectedUl).length-1 : gSelectedIndex;
+        // if the corresponding item is a header, move down
+        if ($($("li", $selectedUl)[gSelectedIndex]).hasClass("header")) {
+          gSelectedIndex++;
+        }
+        // set item selected
+        $('li:nth-child('+(gSelectedIndex+1)+')', $selectedUl).addClass('jd-selected');
+        return false;
+      }
+    }
+
+    // if key-up event and not arrow down/up,
+    // read the search query and add suggestsions to gMatches
+    else if (!kd && (e.keyCode != 40)
+                 && (e.keyCode != 38)
+                 && (e.keyCode != 37)
+                 && (e.keyCode != 39)) {
+        gSelectedIndex = -1;
         gMatches = new Array();
         matchedCount = 0;
-        gSelectedIndex = -1;
+        gGoogleMatches = new Array();
+        matchedCountGoogle = 0;
+        gDocsMatches = new Array();
+        matchedCountDocs = 0;
+
+        // Search for Android matches
         for (var i=0; i<DATA.length; i++) {
             var s = DATA[i];
             if (text.length != 0 &&
@@ -1590,22 +1817,114 @@ function search_changed(e, kd, toroot)
                 matchedCount++;
             }
         }
-        rank_autocomplete_results(text);
+        rank_autocomplete_api_results(text, gMatches);
         for (var i=0; i<gMatches.length; i++) {
             var s = gMatches[i];
-            if (gSelectedID == s.id) {
-                gSelectedIndex = i;
+        }
+
+
+        // Search for Google matches
+        for (var i=0; i<GOOGLE_DATA.length; i++) {
+            var s = GOOGLE_DATA[i];
+            if (text.length != 0 &&
+                  s.label.toLowerCase().indexOf(text.toLowerCase()) != -1) {
+                gGoogleMatches[matchedCountGoogle] = s;
+                matchedCountGoogle++;
             }
         }
+        rank_autocomplete_api_results(text, gGoogleMatches);
+        for (var i=0; i<gGoogleMatches.length; i++) {
+            var s = gGoogleMatches[i];
+        }
+
         highlight_autocomplete_result_labels(text);
+
+
+
+        // Search for JD docs
+        if (text.length >= 3) {
+          for (var i=0; i<JD_DATA.length; i++) {
+            // Regex to match only the beginning of a word
+            var textRegex = new RegExp("\\b" + text.toLowerCase(), "g");
+            // current search comparison, with counters for tag and title,
+            // used later to improve ranking
+            var s = JD_DATA[i];
+            s.matched_tag = 0;
+            s.matched_title = 0;
+            var matched = false;
+
+            // Check if query matches any tags; work backwards toward 1 to assist ranking
+            for (var j = s.tags.length - 1; j >= 0; j--) {
+              // it matches a tag
+              if (s.tags[j].toLowerCase().match(textRegex)) {
+                matched = true;
+                s.matched_tag = j + 1; // add 1 to index position
+              }
+            }
+            // Don't consider doc title for lessons (only for class landing pages)
+            // ...it is not a training lesson (or is but has matched a tag)
+            if (!(s.type == "training" && s.link.indexOf("index.html") == -1) || matched) {
+              // it matches the doc title
+              if (s.label.toLowerCase().match(textRegex)) {
+                matched = true;
+                s.matched_title = 1;
+              }
+            }
+            if (matched) {
+              gDocsMatches[matchedCountDocs] = s;
+              matchedCountDocs++;
+            }
+          }
+          rank_autocomplete_doc_results(text, gDocsMatches);
+        }
+
+        // draw the suggestions
         sync_selection_table(toroot);
         return true; // allow the event to bubble up to the search api
     }
 }
 
-function rank_autocomplete_results(query) {
+/* Order the jd doc result list based on match quality */
+function rank_autocomplete_doc_results(query, matches) {
     query = query || '';
-    if (!gMatches || !gMatches.length)
+    if (!matches || !matches.length)
+      return;
+
+    var _resultScoreFn = function(match) {
+        var score = 1.0;
+
+        // if the query matched a tag
+        if (match.matched_tag > 0) {
+          // multiply score by factor relative to position in tags list (max of 3)
+          score *= 3 / match.matched_tag;
+
+          // if it also matched the title
+          if (match.matched_title > 0) {
+            score *= 2;
+          }
+        } else if (match.matched_title > 0) {
+          score *= 3;
+        }
+
+        return score;
+    };
+
+    for (var i=0; i<matches.length; i++) {
+        matches[i].__resultScore = _resultScoreFn(matches[i]);
+    }
+
+    matches.sort(function(a,b){
+        var n = b.__resultScore - a.__resultScore;
+        if (n == 0) // lexicographical sort if scores are the same
+            n = (a.label < b.label) ? -1 : 1;
+        return n;
+    });
+}
+
+/* Order the result list based on match quality */
+function rank_autocomplete_api_results(query, matches) {
+    query = query || '';
+    if (!matches || !matches.length)
       return;
 
     // helper function that gets the last occurence index of the given regex
@@ -1661,11 +1980,16 @@ function rank_autocomplete_results(query) {
         return score;
     };
 
-    for (var i=0; i<gMatches.length; i++) {
-        gMatches[i].__resultScore = _resultScoreFn(gMatches[i]);
+    for (var i=0; i<matches.length; i++) {
+        // if the API is deprecated, default score is 0; otherwise, perform scoring
+        if (matches[i].deprecated == "true") {
+          matches[i].__resultScore = 0;
+        } else {
+          matches[i].__resultScore = _resultScoreFn(matches[i]);
+        }
     }
 
-    gMatches.sort(function(a,b){
+    matches.sort(function(a,b){
         var n = b.__resultScore - a.__resultScore;
         if (n == 0) // lexicographical sort if scores are the same
             n = (a.label < b.label) ? -1 : 1;
@@ -1673,9 +1997,10 @@ function rank_autocomplete_results(query) {
     });
 }
 
+/* Add emphasis to part of string that matches query */
 function highlight_autocomplete_result_labels(query) {
     query = query || '';
-    if (!gMatches || !gMatches.length)
+    if ((!gMatches || !gMatches.length) && (!gGoogleMatches || !gGoogleMatches.length))
       return;
 
     var queryLower = query.toLowerCase();
@@ -1686,15 +2011,19 @@ function highlight_autocomplete_result_labels(query) {
         gMatches[i].__hilabel = gMatches[i].label.replace(
             queryRE, '<b>$1</b>');
     }
+    for (var i=0; i<gGoogleMatches.length; i++) {
+        gGoogleMatches[i].__hilabel = gGoogleMatches[i].label.replace(
+            queryRE, '<b>$1</b>');
+    }
 }
 
 function search_focus_changed(obj, focused)
 {
-    if (!focused) {     
+    if (!focused) {
         if(obj.value == ""){
           $(".search .close").addClass("hide");
         }
-        document.getElementById("search_filtered_div").className = "no-display";
+        $(".suggest-card").hide();
     }
 }
 
@@ -1711,11 +2040,17 @@ function hideResults() {
   $("#searchResults").slideUp();
   $(".search .close").addClass("hide");
   location.hash = '';
-  
+
   $("#search_autocomplete").val("").blur();
-  
+
   // reset the ajax search callback to nothing, so results don't appear unless ENTER
   searchControl.setSearchStartingCallback(this, function(control, searcher, query) {});
+
+  // forcefully regain key-up event control (previously jacked by search api)
+  $("#search_autocomplete").keyup(function(event) {
+    return search_changed(event, false, toRoot);
+  });
+
   return false;
 }
 
@@ -1725,13 +2060,14 @@ function hideResults() {
 /* ################  CUSTOM SEARCH ENGINE  ################## */
 /* ########################################################## */
 
-google.load('search', '1');
 var searchControl;
+google.load('search', '1', {"callback" : function() {
+            searchControl = new google.search.SearchControl();
+          } });
 
 function loadSearchResults() {
   document.getElementById("search_autocomplete").style.color = "#000";
 
-  // create search control
   searchControl = new google.search.SearchControl();
 
   // use our existing search form and use tabs when multiple searchers are used
@@ -1792,6 +2128,11 @@ function loadSearchResults() {
     updateResultTitle(query);
     var query = document.getElementById('search_autocomplete').value;
     location.hash = 'q=' + query;
+  });
+
+  // once search results load, set up click listeners
+  searchControl.setSearchCompleteCallback(this, function(control, searcher, query) {
+    addResultClickListeners();
   });
 
   // draw the search results box
@@ -1859,10 +2200,10 @@ function addTabListeners() {
       setTimeout(function() {
         // remove any residual page numbers
         $('#searchResults .gsc-tabsArea .gsc-cursor-box.gs-bidi-start-align').remove();
-        // move the page numbers to the left position; make a clone, 
+        // move the page numbers to the left position; make a clone,
         // because the element is drawn to the DOM only once
-        // and because we're going to remove it (previous line), 
-        // we need it to be available to move again as the user navigates 
+        // and because we're going to remove it (previous line),
+        // we need it to be available to move again as the user navigates
         $('#searchResults .gsc-webResult .gsc-cursor-box.gs-bidi-start-align:visible')
                         .clone().appendTo('#searchResults .gsc-tabsArea');
         }, 200);
@@ -1870,6 +2211,17 @@ function addTabListeners() {
     });
   }
   setTimeout(function(){$(tabHeaders[0]).click()},200);
+}
+
+// add analytics tracking events to each result link
+function addResultClickListeners() {
+  $("#searchResults a.gs-title").each(function(index, link) {
+    // When user clicks enter for Google search results, track it
+    $(link).click(function() {
+      _gaq.push(['_trackEvent', 'Google Click', 'clicked: ' + $(this).text(),
+                'from: ' + $("#search_autocomplete").val()]);
+    });
+  });
 }
 
 
@@ -1896,10 +2248,10 @@ function escapeHTML(string) {
 /* ######################################################## */
 
 /* Initialize some droiddoc stuff, but only if we're in the reference */
-if (location.pathname.indexOf("/reference")) {
-  if(!location.pathname.indexOf("/reference-gms/packages.html")
-    && !location.pathname.indexOf("/reference-gcm/packages.html")
-    && !location.pathname.indexOf("/reference/com/google") == 0) {
+if (location.pathname.indexOf("/reference") == 0) {
+  if(!(location.pathname.indexOf("/reference-gms/packages.html") == 0)
+    && !(location.pathname.indexOf("/reference-gcm/packages.html") == 0)
+    && !(location.pathname.indexOf("/reference/com/google") == 0)) {
     $(document).ready(function() {
       // init available apis based on user pref
       changeApiLevel();
@@ -1913,22 +2265,22 @@ var minLevel = 1;
 var maxLevel = 1;
 
 /******* SIDENAV DIMENSIONS ************/
-  
+
   function initSidenavHeightResize() {
     // Change the drag bar size to nicely fit the scrollbar positions
     var $dragBar = $(".ui-resizable-s");
     $dragBar.css({'width': $dragBar.parent().width() - 5 + "px"});
-    
-    $( "#resize-packages-nav" ).resizable({ 
+
+    $( "#resize-packages-nav" ).resizable({
       containment: "#nav-panels",
       handles: "s",
       alsoResize: "#packages-nav",
       resize: function(event, ui) { resizeNav(); }, /* resize the nav while dragging */
       stop: function(event, ui) { saveNavPanels(); } /* once stopped, save the sizes to cookie  */
       });
-          
+
   }
-  
+
 function updateSidenavFixedWidth() {
   if (!navBarIsFixed) return;
   $('#devdoc-nav').css({
@@ -1936,7 +2288,7 @@ function updateSidenavFixedWidth() {
     'margin' : $('#side-nav').css('margin')
   });
   $('#devdoc-nav a.totop').css({'display':'block','width':$("#nav").innerWidth()+'px'});
-  
+
   initSidenavHeightResize();
 }
 
@@ -1947,7 +2299,7 @@ function updateSidenavFullscreenWidth() {
     'margin' : $('#side-nav').css('margin')
   });
   $('#devdoc-nav .totop').css({'left': 'inherit'});
-  
+
   initSidenavHeightResize();
 }
 
@@ -2031,7 +2383,7 @@ function toggleVisisbleApis(selectedLevel, context) {
     if (apiLevelNum > selectedLevelNum) {
       obj.addClass("absent").attr("title","Requires API Level \""
             + apiLevel + "\" or higher");
-    } 
+    }
     else obj.removeClass("absent").removeAttr("title");
   });
 }
@@ -2100,7 +2452,7 @@ function new_node(me, mom, text, link, children_data, api_level)
       node.expanded = false;
     }
   }
-  
+
 
   node.children_ul = null;
   node.get_children_ul = function() {
@@ -2128,7 +2480,7 @@ function expand_node(me, node)
       get_node(me, node);
       if ($(node.label_div).hasClass("absent")) {
         $(node.get_children_ul()).addClass("absent");
-      } 
+      }
       $(node.get_children_ul()).slideDown("fast");
     }
     node.plus_img.src = me.toroot + "assets/images/triangle-opened-small.png";
@@ -2197,8 +2549,14 @@ function find_page(url, data)
 }
 
 function init_default_navtree(toroot) {
-  init_navtree("tree-list", toroot, NAVTREE_DATA);
-  
+  // load json file for navtree data
+  $.getScript(toRoot + 'navtree_data.js', function(data, textStatus, jqxhr) {
+      // when the file is loaded, initialize the tree
+      if(jqxhr.status === 200) {
+          init_navtree("tree-list", toroot, NAVTREE_DATA);
+      }
+  });
+
   // perform api level toggling because because the whole tree is new to the DOM
   var selectedLevel = $("#apiLevelSelector option:selected").val();
   toggleVisisbleApis(selectedLevel, "#side-nav");
@@ -2237,6 +2595,13 @@ function init_navtree(navtree_id, toroot, root_nodes)
   }
 }
 
+
+
+
+
+
+
+
 /* TODO: eliminate redundancy with non-google functions */
 function init_google_navtree(navtree_id, toroot, root_nodes)
 {
@@ -2254,7 +2619,6 @@ function init_google_navtree(navtree_id, toroot, root_nodes)
   me.node.depth = 0;
 
   get_google_node(me, me.node);
-
 }
 
 function new_google_node(me, mom, text, link, children_data, api_level)
@@ -2266,8 +2630,8 @@ function new_google_node(me, mom, text, link, children_data, api_level)
   node.depth = mom.depth + 1;
   node.get_children_ul = function() {
       if (!node.children_ul) {
-        node.children_ul = document.createElement("ul"); 
-        node.children_ul.className = "tree-list-children"; 
+        node.children_ul = document.createElement("ul");
+        node.children_ul.className = "tree-list-children";
         node.li.appendChild(node.children_ul);
       }
       return node.children_ul;
@@ -2275,8 +2639,8 @@ function new_google_node(me, mom, text, link, children_data, api_level)
   node.li = document.createElement("li");
 
   mom.get_children_ul().appendChild(node.li);
-  
-  
+
+
   if(link) {
     child = document.createElement("a");
 
@@ -2289,7 +2653,7 @@ function new_google_node(me, mom, text, link, children_data, api_level)
   if (children_data != null) {
     node.li.className="nav-section";
     node.label_div = document.createElement("div");
-    node.label_div.className = "nav-section-header-ref";  
+    node.label_div.className = "nav-section-header-ref";
     node.li.appendChild(node.label_div);
     get_google_node(me, node);
     node.label_div.appendChild(child);
@@ -2323,18 +2687,129 @@ function get_google_node(me, mom)
           node_data[2], node_data[3]);
   }
 }
+
+
+
+
+
+
+/****** NEW version of script to build google and sample navs dynamically ******/
+// TODO: update Google reference docs to tolerate this new implementation
+
+var NODE_NAME = 0;
+var NODE_HREF = 1;
+var NODE_GROUP = 2;
+var NODE_TAGS = 3;
+var NODE_CHILDREN = 4;
+
+function init_google_navtree2(navtree_id, data)
+{
+  var $containerUl = $("#"+navtree_id);
+  for (var i in data) {
+    var node_data = data[i];
+    $containerUl.append(new_google_node2(node_data));
+  }
+
+  // Make all third-generation list items 'sticky' to prevent them from collapsing
+  $containerUl.find('li li li.nav-section').addClass('sticky');
+
+  initExpandableNavItems("#"+navtree_id);
+}
+
+function new_google_node2(node_data)
+{
+  var linkText = node_data[NODE_NAME];
+  if(linkText.match("^"+"com.google.android")=="com.google.android"){
+    linkText = linkText.substr(19, linkText.length);
+  }
+  var $li = $('<li>');
+  var $a;
+  if (node_data[NODE_HREF] != null) {
+    $a = $('<a href="' + toRoot + node_data[NODE_HREF] + '" title="' + linkText + '" >'
+        + linkText + '</a>');
+  } else {
+    $a = $('<a href="#" onclick="return false;" title="' + linkText + '" >'
+        + linkText + '/</a>');
+  }
+  var $childUl = $('<ul>');
+  if (node_data[NODE_CHILDREN] != null) {
+    $li.addClass("nav-section");
+    $a = $('<div class="nav-section-header">').append($a);
+    if (node_data[NODE_HREF] == null) $a.addClass('empty');
+
+    for (var i in node_data[NODE_CHILDREN]) {
+      var child_node_data = node_data[NODE_CHILDREN][i];
+      $childUl.append(new_google_node2(child_node_data));
+    }
+    $li.append($childUl);
+  }
+  $li.prepend($a);
+
+  return $li;
+}
+
+
+
+
+
+
+
+
+
+
+
 function showGoogleRefTree() {
   init_default_google_navtree(toRoot);
   init_default_gcm_navtree(toRoot);
-  resizeNav();
 }
 
 function init_default_google_navtree(toroot) {
-  init_google_navtree("gms-tree-list", toroot, GMS_NAVTREE_DATA);
+  // load json file for navtree data
+  $.getScript(toRoot + 'gms_navtree_data.js', function(data, textStatus, jqxhr) {
+      // when the file is loaded, initialize the tree
+      if(jqxhr.status === 200) {
+          init_google_navtree("gms-tree-list", toroot, GMS_NAVTREE_DATA);
+          highlightSidenav();
+          resizeNav();
+      }
+  });
 }
 
 function init_default_gcm_navtree(toroot) {
-  init_google_navtree("gcm-tree-list", toroot, GCM_NAVTREE_DATA);
+  // load json file for navtree data
+  $.getScript(toRoot + 'gcm_navtree_data.js', function(data, textStatus, jqxhr) {
+      // when the file is loaded, initialize the tree
+      if(jqxhr.status === 200) {
+          init_google_navtree("gcm-tree-list", toroot, GCM_NAVTREE_DATA);
+          highlightSidenav();
+          resizeNav();
+      }
+  });
+}
+
+function showSamplesRefTree() {
+  init_default_samples_navtree(toRoot);
+}
+
+function init_default_samples_navtree(toroot) {
+  // load json file for navtree data
+  $.getScript(toRoot + 'samples_navtree_data.js', function(data, textStatus, jqxhr) {
+      // when the file is loaded, initialize the tree
+      if(jqxhr.status === 200) {
+          // hack to remove the "about the samples" link then put it back in
+          // after we nuke the list to remove the dummy static list of samples
+          var $firstLi = $("#nav.samples-nav > li:first-child").clone();
+          $("#nav.samples-nav").empty();
+          $("#nav.samples-nav").append($firstLi);
+
+          init_google_navtree2("nav.samples-nav", SAMPLES_NAVTREE_DATA);
+          highlightSidenav();
+          resizeNav();
+          if ($("#jd-content #samples").length) {
+            showSamples();
+          }
+      }
+  });
 }
 
 /* TOGGLE INHERITED MEMBERS */
@@ -2430,3 +2905,83 @@ var control = mac ? e.metaKey && !e.ctrlKey : e.ctrlKey; // get ctrl key
     ensureAllInheritedExpanded();
   }
 });
+
+
+
+
+
+
+/* On-demand functions */
+
+/** Move sample code line numbers out of PRE block and into non-copyable column */
+function initCodeLineNumbers() {
+  var numbers = $("#codesample-block a.number");
+  if (numbers.length) {
+    $("#codesample-line-numbers").removeClass("hidden").append(numbers);
+  }
+
+  $(document).ready(function() {
+    // select entire line when clicked
+    $("span.code-line").click(function() {
+      if (!shifted) {
+        selectText(this);
+      }
+    });
+    // invoke line link on double click
+    $(".code-line").dblclick(function() {
+      document.location.hash = $(this).attr('id');
+    });
+    // highlight the line when hovering on the number
+    $("#codesample-line-numbers a.number").mouseover(function() {
+      var id = $(this).attr('href');
+      $(id).css('background','#e7e7e7');
+    });
+    $("#codesample-line-numbers a.number").mouseout(function() {
+      var id = $(this).attr('href');
+      $(id).css('background','none');
+    });
+  });
+}
+
+// create SHIFT key binder to avoid the selectText method when selecting multiple lines
+var shifted = false;
+$(document).bind('keyup keydown', function(e){shifted = e.shiftKey; return true;} );
+
+// courtesy of jasonedelman.com
+function selectText(element) {
+    var doc = document
+        , range, selection
+    ;
+    if (doc.body.createTextRange) { //ms
+        range = doc.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) { //all others
+        selection = window.getSelection();
+        range = doc.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+
+
+
+
+/** Display links and other information about samples that match the
+    group specified by the URL */
+function showSamples() {
+  var group = $("#samples").attr('class');
+  $("#samples").html("<p>Here are some samples for <b>" + group + "</b> apps:</p>");
+
+  var $ul = $("<ul>");
+  $selectedLi = $("#nav li.selected");
+
+  $selectedLi.children("ul").children("li").each(function() {
+      var $li = $("<li>").append($(this).find("a").first().clone());
+      $ul.append($li);
+  });
+
+  $("#samples").append($ul);
+
+}

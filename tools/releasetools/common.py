@@ -20,6 +20,7 @@ import imp
 import os
 import platform
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -40,6 +41,11 @@ if not hasattr(os, "SEEK_SET"):
 class Options(object): pass
 OPTIONS = Options()
 OPTIONS.search_path = "out/host/linux-x86"
+OPTIONS.signapk_path = "framework/signapk.jar"  # Relative to search_path
+OPTIONS.extra_signapk_args = []
+OPTIONS.java_path = "java"  # Use the one on the path by default.
+OPTIONS.public_key_suffix = ".x509.pem"
+OPTIONS.private_key_suffix = ".pk8"
 OPTIONS.verbose = False
 OPTIONS.tempfiles = []
 OPTIONS.device_specific = None
@@ -117,6 +123,9 @@ def LoadInfoDict(zip):
       # ok if extensions don't exist
       pass
 
+  if "fstab_version" not in d:
+    d["fstab_version"] = "1"
+
   try:
     data = zip.read("META/imagesizes.txt")
     for line in data.split("\n"):
@@ -141,8 +150,9 @@ def LoadInfoDict(zip):
   makeint("cache_size")
   makeint("recovery_size")
   makeint("boot_size")
+  makeint("fstab_version")
 
-  d["fstab"] = LoadRecoveryFSTab(zip)
+  d["fstab"] = LoadRecoveryFSTab(zip, d["fstab_version"])
   d["build.prop"] = LoadBuildProp(zip)
   return d
 
@@ -161,7 +171,7 @@ def LoadBuildProp(zip):
     d[name] = value
   return d
 
-def LoadRecoveryFSTab(zip):
+def LoadRecoveryFSTab(zip, fstab_version):
   class Partition(object):
     pass
 
@@ -171,40 +181,76 @@ def LoadRecoveryFSTab(zip):
     print "Warning: could not find RECOVERY/RAMDISK/etc/recovery.fstab in %s." % zip
     data = ""
 
-  d = {}
-  for line in data.split("\n"):
-    line = line.strip()
-    if not line or line.startswith("#"): continue
-    pieces = line.split()
-    if not (3 <= len(pieces) <= 7):
-      raise ValueError("malformed recovery.fstab line: \"%s\"" % (line,))
+  if fstab_version == 1:
+    d = {}
+    for line in data.split("\n"):
+      line = line.strip()
+      if not line or line.startswith("#"): continue
+      pieces = line.split()
+      if not (3 <= len(pieces) <= 4):
+        raise ValueError("malformed recovery.fstab line: \"%s\"" % (line,))
 
-    p = Partition()
-    p.mount_point = pieces[0]
-    p.fs_type = pieces[1]
-    p.device = pieces[2]
-    p.length = 0
-    options = None
-    if len(pieces) >= 4 and pieces[3] != 'NULL':
-      if pieces[3].startswith("/"):
-        p.device2 = pieces[3]
-        if len(pieces) >= 5:
-          options = pieces[4]
+      p = Partition()
+      p.mount_point = pieces[0]
+      p.fs_type = pieces[1]
+      p.device = pieces[2]
+      p.length = 0
+      options = None
+      if len(pieces) >= 4:
+        if pieces[3].startswith("/"):
+          p.device2 = pieces[3]
+          if len(pieces) >= 5:
+            options = pieces[4]
+        else:
+          p.device2 = None
+          options = pieces[3]
       else:
         p.device2 = None
-        options = pieces[3]
-    else:
-      p.device2 = None
 
-    if options:
+      if options:
+        options = options.split(",")
+        for i in options:
+          if i.startswith("length="):
+            p.length = int(i[7:])
+          else:
+              print "%s: unknown option \"%s\"" % (p.mount_point, i)
+
+      d[p.mount_point] = p
+
+  elif fstab_version == 2:
+    d = {}
+    for line in data.split("\n"):
+      line = line.strip()
+      if not line or line.startswith("#"): continue
+      pieces = line.split()
+      if len(pieces) != 5:
+        raise ValueError("malformed recovery.fstab line: \"%s\"" % (line,))
+
+      # Ignore entries that are managed by vold
+      options = pieces[4]
+      if "voldmanaged=" in options: continue
+
+      # It's a good line, parse it
+      p = Partition()
+      p.device = pieces[0]
+      p.mount_point = pieces[1]
+      p.fs_type = pieces[2]
+      p.device2 = None
+      p.length = 0
+
       options = options.split(",")
       for i in options:
         if i.startswith("length="):
           p.length = int(i[7:])
         else:
-          print "%s: unknown option \"%s\"" % (p.mount_point, i)
+          # Ignore all unknown options in the unified fstab
+          continue
 
-    d[p.mount_point] = p
+      d[p.mount_point] = p
+
+  else:
+    raise ValueError("Unknown fstab_version: \"%d\"" % (fstab_version,))
+
   return d
 
 
@@ -297,7 +343,13 @@ def GetBootableImage(name, prebuilt_name, unpack_dir, tree_subdir,
   'prebuilt_name', otherwise construct it from the source files in
   'unpack_dir'/'tree_subdir'."""
 
-  prebuilt_path = os.path.join(unpack_dir, "BOOTABLE_IMAGES", prebuilt_name)
+  prebuilt_dir = os.path.join(unpack_dir, "BOOTABLE_IMAGES")
+  prebuilt_path = os.path.join(prebuilt_dir, prebuilt_name)
+  custom_bootimg_mk = os.getenv('MKBOOTIMG')
+  if custom_bootimg_mk:
+    bootimage_path = os.path.join(os.getenv('OUT'), "boot.img")
+    os.mkdir(prebuilt_dir)
+    shutil.copyfile(bootimage_path, prebuilt_path)
   if os.path.exists(prebuilt_path):
     print "using prebuilt %s..." % (prebuilt_name,)
     return File.FromLocalFile(name, prebuilt_path)
@@ -350,6 +402,7 @@ def GetKeyPasswords(keylist):
 
   no_passwords = []
   need_passwords = []
+  key_passwords = {}
   devnull = open("/dev/null", "w+b")
   for k in sorted(keylist):
     # We don't need a password for things that aren't really keys.
@@ -357,19 +410,36 @@ def GetKeyPasswords(keylist):
       no_passwords.append(k)
       continue
 
-    p = Run(["openssl", "pkcs8", "-in", k+".pk8",
+    p = Run(["openssl", "pkcs8", "-in", k+OPTIONS.private_key_suffix,
              "-inform", "DER", "-nocrypt"],
             stdin=devnull.fileno(),
             stdout=devnull.fileno(),
             stderr=subprocess.STDOUT)
     p.communicate()
     if p.returncode == 0:
+      # Definitely an unencrypted key.
       no_passwords.append(k)
     else:
-      need_passwords.append(k)
+      p = Run(["openssl", "pkcs8", "-in", k+OPTIONS.private_key_suffix,
+               "-inform", "DER", "-passin", "pass:"],
+              stdin=devnull.fileno(),
+              stdout=devnull.fileno(),
+              stderr=subprocess.PIPE)
+      stdout, stderr = p.communicate()
+      if p.returncode == 0:
+        # Encrypted key with empty string as password.
+        key_passwords[k] = ''
+      elif stderr.startswith('Error decrypting key'):
+        # Definitely encrypted key.
+        # It would have said "Error reading key" if it didn't parse correctly.
+        need_passwords.append(k)
+      else:
+        # Potentially, a type of key that openssl doesn't understand.
+        # We'll let the routines in signapk.jar handle it.
+        no_passwords.append(k)
   devnull.close()
 
-  key_passwords = PasswordManager().GetPasswords(need_passwords)
+  key_passwords.update(PasswordManager().GetPasswords(need_passwords))
   key_passwords.update(dict.fromkeys(no_passwords, None))
   return key_passwords
 
@@ -397,17 +467,13 @@ def SignFile(input_name, output_name, key, password, align=None,
   else:
     sign_name = output_name
 
-  check = (sys.maxsize > 2**32)
-  if check is True:
-    cmd = ["java", "-Xmx2048m", "-jar",
-           os.path.join(OPTIONS.search_path, "framework", "signapk.jar")]
-  else:
-    cmd = ["java", "-Xmx1024m", "-jar",
-           os.path.join(OPTIONS.search_path, "framework", "signapk.jar")]
-
+  cmd = [OPTIONS.java_path, "-Xmx2048m", "-jar",
+         os.path.join(OPTIONS.search_path, OPTIONS.signapk_path)]
+  cmd.extend(OPTIONS.extra_signapk_args)
   if whole_file:
     cmd.append("-w")
-  cmd.extend([key + ".x509.pem", key + ".pk8",
+  cmd.extend([key + OPTIONS.public_key_suffix,
+              key + OPTIONS.private_key_suffix,
               input_name, sign_name])
 
   p = Run(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -471,12 +537,14 @@ def ReadApkCerts(tf_zip):
                  r'private_key="(.*)"$', line)
     if m:
       name, cert, privkey = m.groups()
+      public_key_suffix_len = len(OPTIONS.public_key_suffix)
+      private_key_suffix_len = len(OPTIONS.private_key_suffix)
       if cert in SPECIAL_CERT_STRINGS and not privkey:
         certmap[name] = cert
-      elif (cert.endswith(".x509.pem") and
-            privkey.endswith(".pk8") and
-            cert[:-9] == privkey[:-4]):
-        certmap[name] = cert[:-9]
+      elif (cert.endswith(OPTIONS.public_key_suffix) and
+            privkey.endswith(OPTIONS.private_key_suffix) and
+            cert[:-public_key_suffix_len] == privkey[:-private_key_suffix_len]):
+        certmap[name] = cert[:-public_key_suffix_len]
       else:
         raise ValueError("failed to parse line from apkcerts.txt:\n" + line)
   return certmap
@@ -520,8 +588,10 @@ def ParseOptions(argv,
   try:
     opts, args = getopt.getopt(
         argv, "hvp:s:x:" + extra_opts,
-        ["help", "verbose", "path=", "device_specific=", "extra="] +
-          list(extra_long_opts))
+        ["help", "verbose", "path=", "signapk_path=", "extra_signapk_args=",
+         "java_path=", "public_key_suffix=", "private_key_suffix=",
+         "device_specific=", "extra="] +
+        list(extra_long_opts))
   except getopt.GetoptError, err:
     Usage(docstring)
     print "**", str(err), "**"
@@ -537,6 +607,16 @@ def ParseOptions(argv,
       OPTIONS.verbose = True
     elif o in ("-p", "--path"):
       OPTIONS.search_path = a
+    elif o in ("--signapk_path",):
+      OPTIONS.signapk_path = a
+    elif o in ("--extra_signapk_args",):
+      OPTIONS.extra_signapk_args = shlex.split(a)
+    elif o in ("--java_path",):
+      OPTIONS.java_path = a
+    elif o in ("--public_key_suffix",):
+      OPTIONS.public_key_suffix = a
+    elif o in ("--private_key_suffix",):
+      OPTIONS.private_key_suffix = a
     elif o in ("-s", "--device_specific"):
       OPTIONS.device_specific = a
     elif o in ("-x", "--extra"):
@@ -887,6 +967,7 @@ PARTITION_TYPES = { "bml": "BML",
                     "ext3": "EMMC",
                     "ext4": "EMMC",
                     "emmc": "EMMC",
+                    "f2fs": "EMMC",
                     "mtd": "MTD",
                     "yaffs2": "MTD",
                     "vfat": "EMMC" }
@@ -897,3 +978,18 @@ def GetTypeAndDevice(mount_point, info):
     return PARTITION_TYPES[fstab[mount_point].fs_type], fstab[mount_point].device
   else:
     return None
+
+
+def ParseCertificate(data):
+  """Parse a PEM-format certificate."""
+  cert = []
+  save = False
+  for line in data.split("\n"):
+    if "--END CERTIFICATE--" in line:
+      break
+    if save:
+      cert.append(line)
+    if "--BEGIN CERTIFICATE--" in line:
+      save = True
+  cert = "".join(cert).decode('base64')
+  return cert

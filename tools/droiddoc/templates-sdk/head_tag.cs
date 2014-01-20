@@ -1,8 +1,28 @@
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<?cs if:page.metaDescription ?>
-<meta name="Description" content="<?cs var:page.metaDescription ?>">
-<?cs /if ?>
+<?cs
+  ####### If building devsite, add some meta data needed for when generating the top nav ######### ?>
+<?cs
+  if:devsite ?><?cs
+    if:guide||develop||training||reference||tools||sdk||google||samples
+      ?><meta name="top_category" value="develop" /><?cs
+    elif:google
+      ?><meta name="top_category" value="google" /><?cs
+    elif:reference && !(reference.gms || reference.gcm)
+      ?><meta name="top_category" value="css-fullscreen" /><?cs
+    /if ?>
+  <?cs
+  /if
+?><?cs
+  # END if/else devsite ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<?cs
+  if:page.metaDescription ?>
+<meta name="Description" content="<?cs var:page.metaDescription ?>"><?cs
+  /if ?><?cs
+  if:page.customHeadTag ?>
+<?cs var:page.customHeadTag ?><?cs
+  /if ?>
 <link rel="shortcut icon" type="image/x-icon" href="<?cs var:toroot ?>favicon.ico" />
 <title><?cs 
   if:page.title ?><?cs 
@@ -24,25 +44,15 @@ type="text/css">
 <script src="<?cs if:android.whichdoc != 'online' ?>http:<?cs /if ?>//www.google.com/jsapi" type="text/javascript"></script>
 <?cs
 if:devsite
-  ?><script src="//android-dot-devsite.googleplex.com/_static/js/android_3p-bundle.js" type="text/javascript"></script><?cs
+  ?><script src="<?cs var:toroot ?>_static/js/android_3p-bundle.js" type="text/javascript"></script><?cs
 else
   ?><script src="<?cs var:toroot ?>assets/js/android_3p-bundle.js" type="text/javascript"></script><?cs
 /if ?>
 <script type="text/javascript">
   var toRoot = "<?cs var:toroot ?>";
-  <?cs if:devsite ?>
-  var devsite = true;
-  <?cs else ?>
-  var devsite = false;
-  <?cs /if ?>
+  var devsite = <?cs if:devsite ?>true<?cs else ?>false<?cs /if ?>;
 </script>
 <script src="<?cs var:toroot ?>assets/js/docs.js" type="text/javascript"></script>
-<?cs if:reference.gms || reference.gcm || google?>
-<script src="<?cs var:toroot ?>gms_navtree_data.js" type="text/javascript"></script>
-<script src="<?cs var:toroot ?>gcm_navtree_data.js" type="text/javascript"></script>
-<?cs else ?>
-<script src="<?cs var:toroot ?>navtree_data.js" type="text/javascript"></script>
-<?cs /if ?>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

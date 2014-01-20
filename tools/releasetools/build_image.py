@@ -77,7 +77,7 @@ def BuildImage(in_dir, prop_dict, out_file):
   if exit_code != 0:
     return False
 
-  if run_fsck:
+  if run_fsck and prop_dict.get("skip_fsck") != "true":
     # Inflate the sparse image
     unsparse_image = os.path.join(
         os.path.dirname(out_file), "unsparse_" + os.path.basename(out_file))
@@ -113,6 +113,7 @@ def ImagePropFromGlobalDict(glob_dict, mount_point):
       "extfs_sparse_flag",
       "mkyaffs2_extra_flags",
       "selinux_fc",
+      "skip_fsck",
       )
   for p in common_props:
     copy_prop(p, p)
@@ -127,6 +128,9 @@ def ImagePropFromGlobalDict(glob_dict, mount_point):
   elif mount_point == "cache":
     copy_prop("cache_fs_type", "fs_type")
     copy_prop("cache_size", "partition_size")
+  elif mount_point == "vendor":
+    copy_prop("vendor_fs_type", "fs_type")
+    copy_prop("vendor_size", "partition_size")
 
   return d
 
@@ -163,6 +167,8 @@ def main(argv):
     mount_point = "data"
   elif image_filename == "cache.img":
     mount_point = "cache"
+  elif image_filename == "vendor.img":
+    mount_point = "vendor"
   else:
     print >> sys.stderr, "error: unknown image file name ", image_filename
     exit(1)
