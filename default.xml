@@ -1,40 +1,36 @@
 <manifest>
 
-  <remote  name="aosp"
+	<remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="android-review.googlesource.com" />
            
-   <remote  name="github"
+	<remote  name="github"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
            
-  <remote  name="cm"
+	<remote  name="cm"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
                       
-    <remote  name="omnirom"
+	<remote  name="omnirom"
            review="gerrit.omnirom.org"
            fetch="https://github.com/omnirom" />
            
-   <remote  name="aokp"
+	<remote  name="aokp"
            fetch="https://github.com/"
            review="gerrit.aokp.co" />
 
-   <remote  name="cr"
-           fetch="git://github.com/"
-           review="review.carbon-rom.com"  />
-    
-      <remote  name="omapzoom"
+	<remote  name="omapzoom"
            fetch="git://git.omapzoom.org/"
            review="http://review.omapzoom.org/" />
            
-  <remote  name="rr"
+	<remote  name="rr"
            fetch="https://github.com/ResurrectionRemix" />
 
-  <remote  name="private"
+	<remote  name="private"
            fetch="ssh://git@github.com" />
 
-  <default revision="refs/heads/cm-11.0"
+	<default revision="refs/heads/cm-11.0"
            remote="github"
            sync-c="true"
            sync-j="4" />
