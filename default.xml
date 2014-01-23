@@ -500,7 +500,7 @@
   <project path="vendor/oppo" name="TheMuppets/proprietary_vendor_oppo" revision="cm-11.0" />
   <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
   <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0" />
-  <project path="kernel/samsung/smdk4412" name="CyanogenMod/android_kernel_samsung_smdk4412" remote="cm" revision="cm-11.0"/>
+  <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="rr" revision="kitkat1"/>
   <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
   <project path="device/samsung/n7100" name="android_device_samsung_n7100" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="rr" revision="kitkat1"/>
