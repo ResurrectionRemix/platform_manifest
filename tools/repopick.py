@@ -63,6 +63,7 @@ parser.add_argument('-b', '--auto-branch', action='store_true', help='shortcut t
 parser.add_argument('-q', '--quiet', action='store_true', help='print as little as possible')
 parser.add_argument('-v', '--verbose', action='store_true', help='print extra information to aid in debug')
 parser.add_argument('-f', '--force', action='store_true', help='force cherry pick even if commit has been merged')
+parser.add_argument('-p', '--pull', action='store_true', help='execute pull instead of cherry-pick')
 args = parser.parse_args()
 if args.start_branch == None and args.abandon_first:
     parser.error('if --abandon-first is set, you must also give the branch name with --start-branch')
@@ -266,7 +267,10 @@ for change in args.change_number:
     # Try fetching from GitHub first
     if args.verbose:
        print('Trying to fetch the change from GitHub')
-    cmd = 'cd %s && git fetch github %s' % (project_path, fetch_ref)
+    if args.pull:
+      cmd = 'cd %s && git pull --no-edit github %s' % (project_path, fetch_ref)
+    else:
+      cmd = 'cd %s && git fetch github %s' % (project_path, fetch_ref)
     execute_cmd(cmd)
     # Check if it worked
     FETCH_HEAD = '%s/.git/FETCH_HEAD' % project_path
@@ -274,11 +278,14 @@ for change in args.change_number:
         # That didn't work, fetch from Gerrit instead
         if args.verbose:
           print('Fetching from GitHub didn\'t work, trying to fetch the change from Gerrit')
-        cmd = 'cd %s && git fetch %s %s' % (project_path, fetch_url, fetch_ref)
+        if args.pull:
+          cmd = 'cd %s && git pull --no-edit %s %s' % (project_path, fetch_url, fetch_ref)
+        else:
+          cmd = 'cd %s && git fetch %s %s' % (project_path, fetch_url, fetch_ref)
         execute_cmd(cmd)
     # Perform the cherry-pick
     cmd = 'cd %s && git cherry-pick FETCH_HEAD' % (project_path)
-    execute_cmd(cmd)
+    if not args.pull:
+      execute_cmd(cmd)
     if not args.quiet:
         print('')
-
