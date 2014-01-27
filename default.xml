@@ -377,7 +377,6 @@
   <project path="packages/apps/Stk" name="CyanogenMod/android_packages_apps_Stk" />
   <project path="packages/apps/Tag" name="CyanogenMod/android_packages_apps_Tag" />
   <project path="packages/apps/UnifiedEmail" name="CyanogenMod/android_packages_apps_UnifiedEmail" />
-  <project path="packages/apps/Torch" name="CyanogenMod/android_packages_apps_Torch" />
   <project path="packages/apps/VideoEditor" name="CyanogenMod/android_packages_apps_VideoEditor" />
   <project path="packages/apps/VoiceDialer" name="CyanogenMod/android_packages_apps_VoiceDialer" />
   <project path="packages/apps/VoicePlus" name="CyanogenMod/android_packages_apps_VoicePlus" />
@@ -476,6 +475,8 @@
   <!-- Resurrection Remix Stuff -->
   <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
   <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
+  <project path="packages/apps/Torch" name="android_packages_apps_Torch" remote="rr" revision="kitkat1"/>
+
   <project path="vendor/cm" name="vendor_resurrection" remote="rr" revision="kitkat1" />
   <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
