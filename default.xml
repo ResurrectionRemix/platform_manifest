@@ -513,7 +513,7 @@
   <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
-
+  <project path="packages/apps/CMAccount" name="CyanogenMod/android_packages_apps_CMAccount" />
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
 
