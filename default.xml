@@ -480,6 +480,7 @@
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat" />
   <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Camera2" name="CyanogenMod/android_packages_apps_Camera2" revision="cm-11.0"/>
+  <project path="packages/apps/ResurrectionSetup" name="packages_apps_ResurrectionSetup" remote="rr" revision="kitkat1"/>
 
   <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
   <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" revision="cm-11.0" />
@@ -510,7 +511,6 @@
   <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/CMAccount" name="CyanogenMod/android_packages_apps_CMAccount" />
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
 
