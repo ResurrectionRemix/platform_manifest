@@ -72,10 +72,15 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
 ##### Get prebuilt apps
 
-      $ cd ~/Source/vendor/cm
+      $ cd ~/RR/vendor/cm
       $ ./get-prebuilts
 
-##### After Sync Build Resurrection Remix 
+##### To build Resurrection Remix ROM
+
+      $ cd ~/RR
+      $ ./build-rr.sh
+      
+##### Instead of using the script, you can manually use these commands
 
       $  . build/envsetup.sh && brunch <device>
 
