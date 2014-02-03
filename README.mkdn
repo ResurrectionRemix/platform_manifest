@@ -70,11 +70,6 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
       $  repo sync
 
-##### Get prebuilt apps
-
-      $ cd ~/RR/vendor/cm
-      $ ./get-prebuilts
-
 ##### To build Resurrection Remix ROM
 
       $ cd ~/RR
