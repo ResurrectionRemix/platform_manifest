@@ -519,9 +519,8 @@
     <copyfile src="build-rr.sh" dest="build-rr.sh" />
   </project>
   
-  <!-- Stuff from OmniROM -->
-  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="omnirom" 
-revision="android-4.4" />
+  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" 
+revision="kitkat1" />
 
 
 </manifest>
