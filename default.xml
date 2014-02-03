@@ -510,6 +510,7 @@
   <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1" />
+  
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
@@ -517,6 +518,10 @@
   <project path="scripts" name="android_scripts" remote="rr" revision="kitkat1" >
     <copyfile src="build-rr.sh" dest="build-rr.sh" />
   </project>
+  
+  <!-- Stuff from OmniROM -->
+  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="omnirom" 
+revision="android-4.4" />
 
 
 </manifest>
