@@ -458,7 +458,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
 
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-  script.Print("=-=-= RESURRECTION REMIX -=-=-=")
+  script.Print("=-=-= RESURRECTION REMIX ® -=-=")
   script.Print("=-=-=-=-=-= KITKAT -=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
