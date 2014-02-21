@@ -456,12 +456,16 @@ def WriteFullOTAPackage(input_zip, output_zip):
   device_specific.FullOTA_Assertions()
   device_specific.FullOTA_InstallBegin()
 
+  script.Print(" ")
+  script.Print(" ")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
   script.Print("=-=-= RESURRECTION REMIX -=-=-=")
   script.Print("=-=-=-=-=-= KITKAT -=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
   script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+  script.Print(" ")
+  script.Print(" ")
 
   if OPTIONS.backuptool:
     script.Mount("/system")
