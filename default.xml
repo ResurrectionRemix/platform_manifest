@@ -454,7 +454,7 @@
   <project path="packages/apps/DSPManager" name="CyanogenMod/android_packages_apps_DSPManager" remote="cm" revision="cm-10.1" />
   <project path="packages/apps/Halo" name="ResurrectionRemix/HALO" remote="aokp" revision="jb-mr1" />
   <project path="packages/wallpapers/SwagPapers" name="ResurrectionRemix/RR_packages_wallpapers_SwagPapers_v2" remote="aokp" revision="master" />
-  <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection" remote="aokp" revision="jb-mr1" />
+  <project path="vendor/rr" name="ResurrectionRemix/vendor_resurrection_jb" remote="aokp" revision="jb-mr1" />
   <project path="vendor/rr/bot" name="ResurrectionRemix/pseudo_buildbot" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung/n7100" name="ResurrectionRemix/vendor_samsung_n7100" remote="aokp" revision="jb-mr1" />
   <project path="vendor/samsung/i9305" name="ResurrectionRemix/vendor_samsung_i9305" remote="aokp" revision="jb-mr1" /> 
