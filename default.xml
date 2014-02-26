@@ -383,6 +383,7 @@
   <project path="packages/inputmethods/PinyinIME" name="CyanogenMod/android_packages_inputmethods_PinyinIME" />
   <project path="packages/providers/ApplicationsProvider" name="CyanogenMod/android_packages_providers_ApplicationsProvider" />
   <project path="packages/providers/CalendarProvider" name="CyanogenMod/android_packages_providers_CalendarProvider" />
+  <project path="packages/providers/ContactsProvider" name="CyanogenMod/android_packages_providers_ContactsProvider" />
   <project path="packages/providers/MediaProvider" name="CyanogenMod/android_packages_providers_MediaProvider" />
   <project path="packages/providers/PartnerBookmarksProvider" name="CyanogenMod/android_packages_providers_PartnerBookmarksProvider" />
   <project path="packages/providers/TelephonyProvider" name="CyanogenMod/android_packages_providers_TelephonyProvider" />
@@ -507,9 +508,8 @@
   <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="rr" revision="kitkat1"/>
-
+  <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1" />
+  
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
