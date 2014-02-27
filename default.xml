@@ -465,7 +465,7 @@
 
   <!-- Resurrection Remix Stuff -->
   <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
-  <project path="frameworks/base" name="frameworks_base" remote="rr" revision="kitkat1" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Torch" name="android_packages_apps_Torch" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Mms" name="android_packages_apps_Mms" remote="rr" revision="kitkat1" />
 
