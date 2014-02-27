@@ -471,7 +471,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print(" ")
   script.Print(" ")
   script.Print(" (           *     (        )")
-  script.Print(" )\ )      (  `    )\ )  ( /(")
+  script.Print(" )\ )      (       )\ )  ( /(")
   script.Print("(()/( (    )\))(  (()/(  )\())")
   script.Print(" /(_)))\  ((_)()\  /(_))((_)\ ")
   script.Print("(_)) ((_) (_()((_)(_))  __((_)")
