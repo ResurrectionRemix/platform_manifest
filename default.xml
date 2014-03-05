@@ -304,7 +304,6 @@
   <project path="frameworks/opt/net/voip" name="CyanogenMod/android_frameworks_opt_net_voip" />
   <project path="frameworks/opt/photoviewer" name="CyanogenMod/android_frameworks_opt_photoviewer" />
   <project path="frameworks/opt/timezonepicker" name="CyanogenMod/android_frameworks_opt_timezonepicker" />
-  <project path="frameworks/opt/telephony" name="CyanogenMod/android_frameworks_opt_telephony" groups="pdk" />
   <project path="frameworks/opt/vcard" name="CyanogenMod/android_frameworks_opt_vcard" />
   <project path="frameworks/rs" name="CyanogenMod/android_frameworks_rs" groups="pdk" />
   <project path="frameworks/support" name="CyanogenMod/android_frameworks_support" />
@@ -509,6 +508,7 @@
   <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="rr" revision="kitkat1"/>
   <project path="bootable/recovery" name="android_bootable_recovery" remote="rr" revision="kitkat1"/>
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="rr" revision="kitkat1"/>
 
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
