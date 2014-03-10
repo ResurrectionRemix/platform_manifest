@@ -222,6 +222,9 @@ def fetch_dependencies(repo_path, fallback_branch = None):
         print('Syncing dependencies')
         os.system('repo sync %s' % ' '.join(syncable_repos))
 
+    for deprepo in syncable_repos:
+        fetch_dependencies(deprepo)
+
 def has_branch(branches, revision):
     return revision in [branch['name'] for branch in branches]
 
