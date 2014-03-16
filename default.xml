@@ -468,7 +468,7 @@
   <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
   <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat" />
-  <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="test" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/ResurrectionSetup" name="packages_apps_ResurrectionSetup" remote="rr" revision="kitkat1"/>
   <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" remote="rr" revision="kitkat1"/>
