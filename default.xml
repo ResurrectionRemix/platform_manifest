@@ -24,6 +24,10 @@
            fetch="git://git.omapzoom.org/"
            review="http://review.omapzoom.org/" />
            
+    <remote  name="sf"
+ 	   fetch="git://git.code.sf.net/p/"
+ 	   sync-j="4" />    
+ 	         
 	<remote  name="rr"
            fetch="https://github.com/ResurrectionRemix" />
 
@@ -262,7 +266,6 @@
   <project path="external/sqlite" name="CyanogenMod/android_external_sqlite" groups="pdk" />
   <project path="external/srec" name="CyanogenMod/android_external_srec" />
   <project path="external/srtp" name="CyanogenMod/android_external_srtp" />
-  <project path="external/stlport" name="CyanogenMod/android_external_stlport" groups="pdk" />
   <project path="external/strace" name="CyanogenMod/android_external_strace" />
   <project path="external/stressapptest" name="CyanogenMod/android_external_stressapptest" />
   <project path="external/svox" name="CyanogenMod/android_external_svox" />
@@ -508,6 +511,7 @@
   <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" remote="rr" revision="kitkat1" />
   <project path="frameworks/opt/datetimepicker" name="android_frameworks_opt_datetimepicker" remote="rr" revision="kitkat1"/>
+  <project path="external/stlport" name="android_external_stlport" remote="rr" revision="kitkat1"/>
 
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
