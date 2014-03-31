@@ -23,7 +23,7 @@ PRODUCT_PACKAGES := \
 	Email \
 	Exchange2 \
 	FusedLocation \
-	Gallery \
+	Gallery2 \
 	Keyguard \
 	Apollo \
 	Mms \
