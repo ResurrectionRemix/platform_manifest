@@ -510,7 +510,7 @@
   <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" remote="rr" revision="kitkat1" />
   <project path="frameworks/opt/datetimepicker" name="android_frameworks_opt_datetimepicker" remote="rr" revision="kitkat1"/>
   <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="rr" revision="kitkat1"/>
-  <project path="kernel/google/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
+  <project path="kernel/lge/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
 
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
