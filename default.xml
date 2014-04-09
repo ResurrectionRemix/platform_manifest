@@ -435,6 +435,7 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" remote="aosp" revision="refs/tags/android-4.4.2_r2" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.4.2_r2" groups="pdk,tools" />
   <project path="sdk" name="CyanogenMod/android_sdk" />
+  <project path="system/core" name="CyanogenMod/android_system_core" groups="pdk" />
   <project path="system/extras" name="CyanogenMod/android_system_extras" groups="pdk" />
   <project path="system/media" name="CyanogenMod/android_system_media" groups="pdk" />
   <project path="system/netd" name="CyanogenMod/android_system_netd" groups="pdk" />
@@ -515,7 +516,7 @@
 
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
-  <project path="system/core" name="android_system_core" remote="rr" revision="kitkat1"/>
+
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
