@@ -42,7 +42,7 @@
   <project path="android" name="platform_manifest" remote="rr" revision="kitkat1" />
 
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
-  <project path="art" name="android_art" remote="rr" revision="kitkat1" />
+  <project path="art" name="CyanogenMod/android_art" />
   <project path="bionic" name="CyanogenMod/android_bionic" groups="pdk" />
   <project path="bootable/diskinstaller" name="CyanogenMod/android_bootable_diskinstaller" />
   <project path="cts" name="platform/cts" remote="aosp" revision="refs/tags/android-4.4.2_r2" groups="cts" />
