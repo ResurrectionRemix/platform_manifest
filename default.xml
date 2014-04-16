@@ -512,6 +512,12 @@
   <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="rr" revision="kitkat1"/>
   <project path="kernel/lge/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
 
+  <project path="device/htc/m7" name="android_device_htc_m7" remote="rr" revision="kitkat1"/>
+  <project path="device/htc/m7-common" name="android_device_htc_m7-common" remote="rr" revision="kitkat1"/>
+  <project path="device/htc/msm8960-common" name="android_device_htc_msm8960-common" remote="rr" revision="kitkat1"/>
+  <project path="kernel/htc/msm8960" name="CyanogenMod/android_kernel_htc_msm8960" remote="cm" revision="cm-11.0"/>
+  <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" remote="cm" revision="cm-11.0"/>
+  
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
 
