@@ -53,10 +53,10 @@ pathmap_INCL := \
     wilhelm-ut:frameworks/wilhelm/src/ut \
     speex:external/speex/include
 
-ifneq ($(WITH_SIMPLE_RECOVERY),true)
-    pathmap_INCL += recovery:bootable/recovery
+ifneq ($(RECOVERY_VARIANT),)
+    pathmap_INCL += recovery:bootable/recovery-$(RECOVERY_VARIANT)
 else
-    pathmap_INCL += recovery:bootable/simplerecovery
+    pathmap_INCL += recovery:bootable/recovery
 endif
 
 #
