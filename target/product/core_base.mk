@@ -16,10 +16,6 @@
 # Note that components added here will be also shared in PDK. Components
 # that should not be in PDK should be added in lower level like core.mk.
 
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.config.notification_sound=OnTheHunt.ogg \
-    ro.config.alarm_alert=Alarm_Classic.ogg
-
 PRODUCT_PACKAGES += \
     ContactsProvider \
     DefaultContainerService \
