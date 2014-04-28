@@ -155,8 +155,8 @@
   <project path="external/junit" name="platform/external/junit" />
   <project path="external/kernel-headers" name="platform/external/kernel-headers" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" />
-  <project path="external/libcxx" name="platform/external/libcxx_35a" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi_35a" />
+  <project path="external/libcxx" name="platform/external/libcxx" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
   <project path="external/libffi" name="platform/external/libffi" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
