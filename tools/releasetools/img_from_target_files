@@ -213,7 +213,7 @@ def AddRadio(output_zip):
     if os.path.isfile(filesmap):
       print "creating flash-radio.sh..."
       filesmap_data = open(filesmap, "r")
-      filesmap_regex = re.compile(r'^(\S+)\s.+\/by-name\/(\S+)$')
+      filesmap_regex = re.compile(r'^(\S+)\s\S+\/by-name\/(\S+).*')
       tmp_flash_radio = tempfile.NamedTemporaryFile()
       for filesmap_line in filesmap_data:
         filesmap_entry = filesmap_regex.search(filesmap_line)
