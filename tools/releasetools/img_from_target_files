@@ -218,7 +218,7 @@ def AddRadio(output_zip):
       for filesmap_line in filesmap_data:
         filesmap_entry = filesmap_regex.search(filesmap_line)
         if filesmap_entry:
-          tmp_flash_radio.write("fastboot flash %s %s" % (filesmap_entry.group(2), filesmap_entry.group(1)))
+          tmp_flash_radio.write("fastboot flash %s %s\n" % (filesmap_entry.group(2), filesmap_entry.group(1)))
       tmp_flash_radio.flush()
       if os.path.getsize(tmp_flash_radio.name) > 0:
         output_zip.write(tmp_flash_radio.name, "flash-radio.sh")
