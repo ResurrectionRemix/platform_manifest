@@ -516,7 +516,7 @@
   <project path="kernel/htc/msm8960" name="CyanogenMod/android_kernel_htc_msm8960" remote="cm" revision="cm-11.0"/>
   <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" remote="cm" revision="cm-11.0"/>
   <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" revision="kitkat1"/>  
+  <project path="packages/providers/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" revision="kitkat1"/>  
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
 
