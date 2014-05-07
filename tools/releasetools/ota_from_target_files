@@ -532,6 +532,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.AddToZip(input_zip, output_zip)
   WriteMetadata(metadata, output_zip)
 
+  common.ZipWriteStr(output_zip, "META-INF/org/cyanogenmod/releasekey",
+                     ""+input_zip.read("META/releasekey.txt"))
+
 def WritePolicyConfig(file_context, output_zip):
   f = open(file_context, 'r');
   basename = os.path.basename(file_context)
@@ -863,7 +866,6 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_zip):
 
   script.AddToZip(target_zip, output_zip)
   WriteMetadata(metadata, output_zip)
-
 
 def main(argv):
 
