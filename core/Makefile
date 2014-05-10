@@ -670,11 +670,7 @@ else
 ifeq ($(BOARD_USES_RECOVERY_CHARGEMODE),true)
   $(error BOARD_USES_RECOVERY_CHARGEMODE is deprecated. Please see http://bit.ly/opcSJZ on how to properly implement chargemode in recovery. Or just remove the BOARD_USES_RECOVERY_CHARGEMODE if you are lazy. I will hate you though. -Koush)
 else
-ifneq ($(RECOVERY_VARIANT),)
-  recovery_initrc := bootable/recovery-$(RECOVERY_VARIANT)/etc/init.rc
-else
-  recovery_initrc := bootable/recovery/etc/init.rc
-endif
+  recovery_initrc := $(call include-path-for, recovery)/etc/init.rc
 endif
 endif
 ifneq ($(TARGET_PREBUILT_RECOVERY_KERNEL),)
@@ -686,11 +682,7 @@ recovery_uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.cpio
 recovery_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.img
 recovery_build_prop := $(INSTALLED_BUILD_PROP_TARGET)
 recovery_binary := $(call intermediates-dir-for,EXECUTABLES,recovery)/recovery
-ifneq ($(RECOVERY_VARIANT),)
-  recovery_resources_common := bootable/recovery-$(RECOVERY_VARIANT)/res
-else
-  recovery_resources_common := bootable/recovery/res
-endif
+recovery_resources_common := $(call include-path-for, recovery)/res
 recovery_resources_private := $(strip $(wildcard $(TARGET_DEVICE_DIR)/recovery/res))
 recovery_root_private := $(strip $(wildcard $(TARGET_DEVICE_DIR)/recovery/root))
 recovery_resource_deps := $(shell find $(recovery_resources_common) \
