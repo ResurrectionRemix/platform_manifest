@@ -521,7 +521,7 @@
   <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" revision="kitkat1"/>  
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
-  <project path="bootable/recovery-cm" name="android_bootable_recovery-cm" remote="cm" />
+  <project path="bootable/recovery-cm" name="android_bootable_recovery-cm" remote="cm" revision="cm-11.0"/>
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
