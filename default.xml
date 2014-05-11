@@ -462,12 +462,15 @@
   <project path="device/htc/m7-common" name="android_device_htc_m7-common" remote="rr" revision="kitkat1"/>
   <project path="device/htc/msm8960-common" name="android_device_htc_msm8960-common" remote="rr" revision="kitkat1"/>
   <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/codina" name="android_device_samsung_codina" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9100" name="RR_device_samsung_i9100" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/i9300" name="device_samsung_i9300" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/janice" name="android_device_samsung_janice" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/n7100" name="android_device_samsung_n7100" remote="rr" revision="kitkat1"/>
   <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/u8500-common" name="android_device_samsung_u8500-common" remote="rr" revision="kitkat1"/>
   <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" remote="cm" revision="cm-11.0"/>
   <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" revision="kitkat1" />
@@ -475,15 +478,18 @@
   <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" revision="kitkat1"/>
   <project path="frameworks/opt/datetimepicker" name="android_frameworks_opt_datetimepicker" remote="rr" revision="kitkat1"/>
   <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="rr" revision="kitkat1"/>
+  <project path="hardware/u8500" name="TeamCanjica/android_hardware_u8500" revision="cm-11.0" />
   <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0" />
   <project path="kernel/htc/msm8960" name="CyanogenMod/android_kernel_htc_msm8960" remote="cm" revision="cm-11.0"/>
   <project path="kernel/lge/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
   <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="rr" revision="kitkat1"/>
+  <project path="kernel/samsung/u8500" name="android_kernel_samsung_u8500" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/DeviceSettings" name="TeamCanjica/android_packages_apps_DeviceSettings" revision="master" />
   <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Email" name="android_packages_apps_Email" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr" revision="kitkat1"/>
@@ -506,6 +512,10 @@
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" revision="kitkat1"/>
+  <project path="STE_patches" name="STE_patches" remote="rr" revision="kitkat1" >
+    <copyfile src="patch.sh" dest="patch.sh" />
+    <copyfile src="system_vold-swap.patch" dest="system_vold-swap.patch" />
+  </project>
   <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
   <project path="vendor/broadcom" name="TheMuppets/proprietary_vendor_broadcom" revision="cm-11.0" />
   <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" revision="kitkat1" />
@@ -522,6 +532,7 @@
   <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" revision="cm-11.0" />
   <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1"/>
   <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
+  <project path="vendor/samsung/u8500-common" name="TeamCanjica/android_vendor_samsung_u8500-common" revision="cm-11.0"/>
   <project path="vendor/widevine" name="TheMuppets/proprietary_vendor_widevine" revision="cm-11.0" />
   
   <!-- Linaro toolchain -->
