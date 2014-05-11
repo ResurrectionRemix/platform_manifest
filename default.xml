@@ -3,26 +3,26 @@
 	<remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="android-review.googlesource.com" />
-           
-	<remote  name="github"
+
+	<remote  name="aokp"
            fetch="https://github.com/"
-           review="review.cyanogenmod.org" />
+           review="gerrit.aokp.co" />
            
 	<remote  name="cm"
            fetch="https://github.com/"
            review="review.cyanogenmod.org" />
-                      
-	<remote  name="omnirom"
-           review="gerrit.omnirom.org"
-           fetch="https://github.com/omnirom" />
-           
-	<remote  name="aokp"
+
+	<remote  name="github"
            fetch="https://github.com/"
-           review="gerrit.aokp.co" />
+           review="review.cyanogenmod.org" />
 
 	<remote  name="omapzoom"
            fetch="git://git.omapzoom.org/"
            review="http://review.omapzoom.org/" />
+                      
+	<remote  name="omnirom"
+           review="gerrit.omnirom.org"
+           fetch="https://github.com/omnirom" />
            
 	<remote  name="rr"
            fetch="https://github.com/ResurrectionRemix" />
@@ -57,10 +57,10 @@
   <project path="device/generic/common" name="CyanogenMod/android_device_generic_common" groups="pdk" />
   <project path="device/generic/goldfish" name="CyanogenMod/android_device_generic_goldfish" groups="pdk" />
   <project path="device/generic/mips" name="CyanogenMod/android_device_generic_mips" groups="pdk" />
-  <project path="device/generic/x86" name="CyanogenMod/android_device_generic_x86" groups="pdk" />
   <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="device/generic/mini-emulator-mips" name="device/generic/mini-emulator-mips" groups="pdk" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="pdk" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
+  <project path="device/generic/x86" name="CyanogenMod/android_device_generic_x86" groups="pdk" />
   <project path="device/google/accessory/arduino" name="CyanogenMod/android_device_google_accessory_arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="CyanogenMod/android_device_google_accessory_demokit" groups="device" />
   <project path="device/sample" name="CyanogenMod/android_device_sample" groups="device" />
@@ -93,7 +93,6 @@
   <project path="external/chromium_org" name="CyanogenMod/android_external_chromium_org" />
   <project path="external/chromium_org/sdch/open-vcdiff" name="platform/external/chromium_org/sdch/open-vcdiff" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/testing/gtest" name="platform/external/chromium_org/testing/gtest" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
-  <project path="external/chromium_org/third_party/WebKit" name="platform/external/chromium_org/third_party/WebKit" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/third_party/angle_dx11" name="platform/external/chromium_org/third_party/angle_dx11" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" name="platform/external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/third_party/freetype" name="platform/external/chromium_org/third_party/freetype" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
@@ -111,6 +110,7 @@
   <project path="external/chromium_org/third_party/skia/src" name="platform/external/chromium_org/third_party/skia/src" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/third_party/smhasher/src" name="platform/external/chromium_org/third_party/smhasher/src" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/third_party/yasm/source/patched-yasm" name="platform/external/chromium_org/third_party/yasm/source/patched-yasm" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
+  <project path="external/chromium_org/third_party/WebKit" name="platform/external/chromium_org/third_party/WebKit" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/tools/grit" name="platform/external/chromium_org/tools/grit" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/tools/gyp" name="platform/external/chromium_org/tools/gyp" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/chromium_org/v8" name="platform/external/chromium_org/v8" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
@@ -123,8 +123,8 @@
   <project path="external/dhcpcd" name="CyanogenMod/android_external_dhcpcd" />
   <project path="external/dnsmasq" name="CyanogenMod/android_external_dnsmasq" groups="pdk" />
   <project path="external/doclava" name="CyanogenMod/android_external_doclava" />
-  <project path="external/dropbear" name="CyanogenMod/android_external_dropbear" />
   <project path="external/droiddriver" name="platform/external/droiddriver" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
+  <project path="external/dropbear" name="CyanogenMod/android_external_dropbear" />
   <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" groups="pdk" />
   <project path="external/easymock" name="CyanogenMod/android_external_easymock" />
   <project path="external/eclipse-basebuilder" name="CyanogenMod/android_external_eclipse-basebuilder" />
@@ -177,8 +177,8 @@
   <project path="external/junit" name="CyanogenMod/android_external_junit" />
   <project path="external/kernel-headers" name="CyanogenMod/android_external_kernel-headers" />
   <project path="external/kissfft" name="CyanogenMod/android_external_kissfft" />
-  <project path="external/koush/ion" name="CyanogenMod/ion" />
   <project path="external/koush/AndroidAsync" name="CyanogenMod/AndroidAsync" />
+  <project path="external/koush/ion" name="CyanogenMod/ion" />
   <project path="external/koush/Superuser" name="CyanogenMod/Superuser" />
   <project path="external/koush/Widgets" name="CyanogenMod/Widgets" />
   <project path="external/libcap-ng" name="CyanogenMod/android_external_libcap-ng" />
@@ -200,8 +200,8 @@
   <project path="external/libsepol" name="CyanogenMod/android_external_libsepol" groups="pdk" />
   <project path="external/libtar" name="CyanogenMod/android_external_libtar" />
   <project path="external/libusb" name="CyanogenMod/android_external_libusb" />
-  <project path="external/libusbx" name="CyanogenMod/android_external_libusbx" />
   <project path="external/libusb-compat" name="CyanogenMod/android_external_libusb-compat" />
+  <project path="external/libusbx" name="CyanogenMod/android_external_libusbx" />
   <project path="external/libvorbis" name="CyanogenMod/android_external_libvorbis" />
   <project path="external/libvpx" name="CyanogenMod/android_external_libvpx" groups="pdk" />
   <project path="external/libxml2" name="CyanogenMod/android_external_libxml2" />
@@ -210,8 +210,8 @@
   <project path="external/linux-tools-perf" name="CyanogenMod/android_external_linux-tools-perf" />
   <project path="external/littlemock" name="CyanogenMod/android_external_littlemock" />
   <project path="external/llvm" name="CyanogenMod/android_external_llvm" groups="pdk" />
-  <project path="external/lzma" name="platform/external/lzma" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/lsof" name="CyanogenMod/android_external_lsof" />
+  <project path="external/lzma" name="platform/external/lzma" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/lzo" name="CyanogenMod/android_external_lzo" />
   <project path="external/marisa-trie" name="platform/external/marisa-trie" remote="aosp" revision="refs/tags/android-4.4.2_r2" />
   <project path="external/markdown" name="CyanogenMod/android_external_markdown" />
@@ -247,8 +247,8 @@
   <project path="external/ppp" name="CyanogenMod/android_external_ppp" />
   <project path="external/proguard" name="CyanogenMod/android_external_proguard" groups="pdk-java" />
   <project path="external/protobuf" name="CyanogenMod/android_external_protobuf" groups="pdk" />
-  <project path="external/qemu" name="CyanogenMod/android_external_qemu" />
   <project path="external/protobuf-c" name="CyanogenMod/android_external_protobuf-c" />
+  <project path="external/qemu" name="CyanogenMod/android_external_qemu" />
   <project path="external/qemu-pc-bios" name="CyanogenMod/android_external_qemu-pc-bios" />
   <project path="external/regex-re2" name="CyanogenMod/android_external_regex-re2" />
   <project path="external/replicaisland" name="CyanogenMod/android_external_replicaisland" />
@@ -287,8 +287,8 @@
   <project path="external/webp" name="CyanogenMod/android_external_webp" />
   <project path="external/webrtc" name="CyanogenMod/android_external_webrtc" groups="pdk" />
   <project path="external/wpa_supplicant_8" name="CyanogenMod/android_external_wpa_supplicant_8" groups="pdk" />
-  <project path="external/xmlwriter" name="CyanogenMod/android_external_xmlwriter" />
   <project path="external/wpa_supplicant_8_ti" name="CyanogenMod/android_external_wpa_supplicant_8_ti" />
+  <project path="external/xmlwriter" name="CyanogenMod/android_external_xmlwriter" />
   <project path="external/xmp_toolkit" name="CyanogenMod/android_external_xmp_toolkit" />
   <project path="external/yaffs2" name="CyanogenMod/android_external_yaffs2" groups="pdk" />
   <project path="external/zlib" name="CyanogenMod/android_external_zlib" groups="pdk" />
@@ -456,72 +456,74 @@
   <project path="vendor/cyngn" name="cyngn/android_vendor_cyngn" />
 
   <!-- Resurrection Remix Stuff -->
-  <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
-  <project path="frameworks/base" name="android_frameworks_base" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/Torch" name="android_packages_apps_Torch" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/Mms" name="android_packages_apps_Mms" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/Lightbulb" name="AOSPA/android_packages_apps_Lightbulb" remote="github" revision="kitkat" />
-  <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" revision="kitkat1" />
-  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat" />
-  <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
-  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/ResurrectionSetup" name="packages_apps_ResurrectionSetup" remote="rr" revision="kitkat1"/>
-  <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" remote="rr" revision="kitkat1"/>
-  <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
-  <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" revision="cm-11.0" />
-  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" revision="cm-11.0" />
-  <project path="vendor/motorola" name="TheMuppets/proprietary_vendor_motorola" revision="cm-11.0" />
-  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" revision="cm-11.0" />
-  <project path="vendor/sony" name="TheMuppets/proprietary_vendor_sony" revision="cm-11.0" />
-  <project path="vendor/broadcom" name="TheMuppets/proprietary_vendor_broadcom" revision="cm-11.0" />
-  <project path="vendor/elan" name="TheMuppets/proprietary_vendor_elan" revision="cm-11.0" />
-  <project path="vendor/imgtec" name="TheMuppets/proprietary_vendor_imgtec" revision="cm-11.0" />
-  <project path="vendor/invensense" name="TheMuppets/proprietary_vendor_invensense" revision="cm-11.0" />
-  <project path="vendor/nvidia" name="TheMuppets/proprietary_vendor_nvidia" revision="cm-11.0" />
-  <project path="vendor/nxp" name="TheMuppets/proprietary_vendor_nxp" revision="cm-11.0" />
-  <project path="vendor/widevine" name="TheMuppets/proprietary_vendor_widevine" revision="cm-11.0" />
-  <project path="vendor/oppo" name="TheMuppets/proprietary_vendor_oppo" revision="cm-11.0" />
-  <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
-  <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0" />
-  <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="rr" revision="kitkat1"/>
-  <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
-  <project path="device/samsung/n7100" name="android_device_samsung_n7100" remote="rr" revision="kitkat1"/>
-  <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="rr" revision="kitkat1"/>
-  <project path="device/samsung/i9300" name="device_samsung_i9300" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr" revision="kitkat1"/>
-  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" revision="kitkat1"/>
-  <project path="device/samsung/i9100" name="RR_device_samsung_i9100" remote="rr" revision="kitkat1"/>
-  <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
-  <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1"/>
-  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="rr" revision="kitkat1"/>
   <project path="bootable/recovery" name="android_bootable_recovery" remote="rr" revision="kitkat1"/>
-  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="rr" revision="kitkat1"/>
-  <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Email" name="android_packages_apps_Email" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" remote="rr" revision="kitkat1" />
-  <project path="frameworks/opt/datetimepicker" name="android_frameworks_opt_datetimepicker" remote="rr" revision="kitkat1"/>
-  <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="rr" revision="kitkat1"/>
-  <project path="kernel/lge/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
-  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="rr" revision="kitkat1"/>
+  <project path="bootable/recovery-cm" name="CyanogenMod/android_bootable_recovery-cm" remote="cm" revision="cm-11.0"/>
   <project path="device/htc/m7" name="android_device_htc_m7" remote="rr" revision="kitkat1"/>
   <project path="device/htc/m7-common" name="android_device_htc_m7-common" remote="rr" revision="kitkat1"/>
   <project path="device/htc/msm8960-common" name="android_device_htc_msm8960-common" remote="rr" revision="kitkat1"/>
-  <project path="kernel/htc/msm8960" name="CyanogenMod/android_kernel_htc_msm8960" remote="cm" revision="cm-11.0"/>
+  <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/galaxys2-common" name="android_device_samsung_galaxys2-common" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/i9082" name="android_device_samsung_i9082" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/i9100" name="RR_device_samsung_i9100" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/i9300" name="device_samsung_i9300" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/n7100" name="android_device_samsung_n7100" remote="rr" revision="kitkat1"/>
+  <project path="device/samsung/smdk4412-common" name="android_device_samsung_smdk4412-common" remote="rr" revision="kitkat1"/>
   <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" remote="cm" revision="cm-11.0"/>
-  <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" revision="kitkat1"/>  
+  <project path="frameworks/av" name="android_frameworks_av" remote="rr" revision="kitkat1" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="rr" revision="kitkat1" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="rr" revision="kitkat1" />
+  <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" revision="kitkat1"/>
+  <project path="frameworks/opt/datetimepicker" name="android_frameworks_opt_datetimepicker" remote="rr" revision="kitkat1"/>
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="rr" revision="kitkat1"/>
+  <project path="hardware/samsung" name="CyanogenMod/android_hardware_samsung" remote="cm" revision="cm-11.0" />
+  <project path="kernel/htc/msm8960" name="CyanogenMod/android_kernel_htc_msm8960" remote="cm" revision="cm-11.0"/>
+  <project path="kernel/lge/hammerhead" name="CyanogenMod/android_kernel_lge_hammerhead" revision="cm-11.0" />
+  <project path="kernel/samsung/i9082" name="android_kernel_samsung_i9082" remote="rr" revision="kitkat1"/>
+  <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Email" name="android_packages_apps_Email" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Lightbulb" name="AOSPA/android_packages_apps_Lightbulb" remote="github" revision="kitkat" />
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Mms" name="android_packages_apps_Mms" remote="rr" revision="kitkat1" />
+  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" revision="kitkat1" />
+  <project path="packages/apps/ResurrectionSetup" name="packages_apps_ResurrectionSetup" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" remote="github" revision="cm-11.0"/>
+  <project path="packages/apps/ScreenRecorder" name="ChameleonOS/android_packages_apps_ScreenRecorder" remote="github" revision="kitkat" />
+  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" revision="kitkat1" />
   <project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" revision="kitkat1"/>  
+  <project path="packages/apps/Torch" name="android_packages_apps_Torch" remote="rr" revision="kitkat1" />
+  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" remote="rr" revision="kitkat1" />
+  <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" remote="rr" revision="kitkat1"/>
+  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="rr" revision="kitkat1"/>
+  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
-  <project path="bootable/recovery-cm" name="CyanogenMod/android_bootable_recovery-cm" remote="cm" revision="cm-11.0"/>
+  <project path="packages/providers/ThemesProvider" name="android_packages_providers_ThemesProvider" remote="rr" revision="kitkat1"/>
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" revision="kitkat1"/>
+  <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
+  <project path="vendor/broadcom" name="TheMuppets/proprietary_vendor_broadcom" revision="cm-11.0" />
+  <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" revision="kitkat1" />
+  <project path="vendor/elan" name="TheMuppets/proprietary_vendor_elan" revision="cm-11.0" />
+  <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" revision="cm-11.0" />
+  <project path="vendor/imgtec" name="TheMuppets/proprietary_vendor_imgtec" revision="cm-11.0" />
+  <project path="vendor/invensense" name="TheMuppets/proprietary_vendor_invensense" revision="cm-11.0" />
+  <project path="vendor/lge" name="TheMuppets/proprietary_vendor_lge" revision="cm-11.0" />
+  <project path="vendor/sony" name="TheMuppets/proprietary_vendor_sony" revision="cm-11.0" />
+  <project path="vendor/motorola" name="TheMuppets/proprietary_vendor_motorola" revision="cm-11.0" />
+  <project path="vendor/nvidia" name="TheMuppets/proprietary_vendor_nvidia" revision="cm-11.0" />
+  <project path="vendor/nxp" name="TheMuppets/proprietary_vendor_nxp" revision="cm-11.0" />
+  <project path="vendor/oppo" name="TheMuppets/proprietary_vendor_oppo" revision="cm-11.0" />
+  <project path="vendor/samsung" name="TheMuppets/proprietary_vendor_samsung" revision="cm-11.0" />
+  <project path="vendor/samsung/i9082" name="android_vendor_samsung_i9082" remote="rr" revision="kitkat1"/>
+  <project path="vendor/samsung/n7100" name="vendor_samsung_n7100" remote="rr" revision="kitkat1" />
+  <project path="vendor/widevine" name="TheMuppets/proprietary_vendor_widevine" revision="cm-11.0" />
+  
   <!-- Linaro toolchain -->
   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
@@ -529,9 +531,5 @@
   <project path="scripts" name="android_scripts" remote="rr" revision="kitkat1" >
     <copyfile src="build-rr.sh" dest="build-rr.sh" />
   </project>
-  
-  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" 
-revision="kitkat1" />
-
 
 </manifest>
