@@ -1,0 +1,23 @@
+
+******************************
+You have tried to change the API from what has been previously approved.
+
+To make these errors go away, you have two choices:
+   1) You can add "@hide" javadoc comments to the methods, etc. listed in the
+      errors above.
+
+   2) You can update current.txt by executing the following command:
+         make update-api
+      ^^^^^^^^^^^^^^^^^^
+      NO. NO. STOP BEING LAZY. SERIOUSLY.
+      DO NOT DO THIS in CM. THIS IS A LIE. IF YOU DO THIS I WILL HATE YOU.
+      USE OPTION #1.
+                    -Koush
+
+
+      To submit the revised current.txt to the main Android repository,
+      you will need approval.
+******************************
+
+
+
