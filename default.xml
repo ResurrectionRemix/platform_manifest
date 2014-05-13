@@ -487,7 +487,7 @@
   <project path="kernel/samsung/smdk4412" name="android_kernel_samsung_smdk4412" remote="rr" revision="kitkat1"/>
   <project path="kernel/samsung/u8500" name="android_kernel_samsung_u8500" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" remote="rr" revision="kitkat1"/>
-  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" remote="rr" revision="kitkat1"/>
+  <project path="packages/apps/Camera2" name="CyanogenMod/android_packages_apps_Camera2" remote="cm" revision="cm-11.0"/>
   <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" remote="rr" revision="kitkat1"/>
   <project path="packages/apps/DeviceSettings" name="TeamCanjica/android_packages_apps_DeviceSettings" revision="master" />
