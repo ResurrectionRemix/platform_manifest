@@ -532,6 +532,8 @@
   <project path="vendor/samsung/u8500-common" name="TeamCanjica/android_vendor_samsung_u8500-common" revision="cm-11.0"/>
   <project path="vendor/widevine" name="TheMuppets/proprietary_vendor_widevine" revision="cm-11.0" />
   
+   <!-- Linaro toolchain -->
+   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
   
   <!-- Build script -->
   <project path="scripts" name="android_scripts" remote="rr" revision="kitkat1" >
