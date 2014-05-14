@@ -513,7 +513,6 @@
   <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="rr" revision="kitkat1"/>
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" revision="kitkat1"/>
-  <project path="patches" name="android_patches" remote="rr" revision="kitkat1" />
   <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" revision="cm-11.0" />
   <project path="vendor/broadcom" name="TheMuppets/proprietary_vendor_broadcom" revision="cm-11.0" />
   <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" revision="kitkat1" />
