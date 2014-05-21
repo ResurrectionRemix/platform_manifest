@@ -535,6 +535,7 @@
   
    <!-- Linaro toolchain -->
    <project path="prebuilts/gcc/linux-x86/arm/linaro-4.7.4" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.7.4-2013.12" />
+   <project path="prebuilts/gcc/linux-x86/arm/linaro-4.8.3" name="android_prebuilts_linaro" remote="rr" revision="linaro-4.8.3-2014.04" />
   
   <!-- Build script -->
   <project path="scripts" name="android_scripts" remote="rr" revision="kitkat1" >
