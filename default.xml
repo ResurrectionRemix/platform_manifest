@@ -140,8 +140,7 @@
   <project path="external/harfbuzz" name="platform/external/harfbuzz" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" />
   <project path="external/hyphenation" name="platform/external/hyphenation" />
-  <project path="external/icu" name="platform/external/icu" />
-  <project path="external/icu4c" name="platform/external/icu4c" groups="pdk" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="pdk" />
   <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
   <project path="external/iptables" name="platform/external/iptables" />
