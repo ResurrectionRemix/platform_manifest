@@ -161,7 +161,6 @@
   <project path="external/libcap-ng" name="platform/external/libcap-ng" />
   <project path="external/libcxx" name="platform/external/libcxx" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" />
-  <project path="external/libcxxrt" name="platform/external/libcxxrt" />
   <project path="external/libexif" name="platform/external/libexif" />
   <project path="external/libffi" name="platform/external/libffi" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
