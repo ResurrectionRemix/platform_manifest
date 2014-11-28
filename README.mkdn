@@ -23,15 +23,14 @@ How To Build Resurrection Remix ROM - Tutorial
 ### Required Packages
 ##### Simply copy and paste this in a terminal window:
 
- $ sudo apt-get update
-
- $ sudo apt-get install openjdk-7-jdk
+     $ sudo apt-get update
+     $ sudo apt-get install openjdk-7-jdk
 
 ### Let that install and then proceed.
 
 ### More copy and paste:
 
-  $ sudo apt-get install bison g++-multilib git gperf libxml2-utils
+     $ sudo apt-get install bison g++-multilib git gperf libxml2-utils
 
 ### Getting the Source
 - Make required directories
@@ -75,5 +74,4 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 ##### To build Resurrection Remix ROM
 
       $ cd ~/RR
-
-      $  . build/envsetup.sh && brunch <device>
+      $ . build/envsetup.sh && brunch <device>
