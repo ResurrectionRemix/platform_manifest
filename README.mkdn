@@ -23,13 +23,15 @@ How To Build Resurrection Remix ® ROM - Tutorial
 ### Required Packages
 Simply copy and paste this in a terminal window:
 
-      sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos python-markdown schedtool pngcrush libxml2-utils xsltproc zlib1g-dev:i386
+sudo apt-get update
+
+sudo apt-get install openjdk-7-jdk
 
 Let that install and then proceed.
 
 More copy and paste:
 
-      sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+      sudo apt-get install bison g++-multilib git gperf libxml2-utils
 
 ### Getting the Source
 - Make required directories
@@ -64,7 +66,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
 ##### Initialize the RR repo and download the manifest
 
-      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b kitkat1
+      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 
 ##### Sync source
 
@@ -73,8 +75,5 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 ##### To build Resurrection Remix ROM
 
       $ cd ~/RR
-      $ ./build-rr.sh
-      
-##### Instead of using the script, you can manually use these commands
 
       $  . build/envsetup.sh && brunch <device>
