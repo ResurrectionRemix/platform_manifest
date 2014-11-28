@@ -21,7 +21,7 @@ How To Build Resurrection Remix ® ROM - Tutorial
 - Must have required packages for building installed, I will list them further down
 
 ### Required Packages
-Simply copy and paste this in a terminal window:
+##### Simply copy and paste this in a terminal window:
 
 sudo apt-get update
 
