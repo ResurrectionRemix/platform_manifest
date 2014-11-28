@@ -78,4 +78,3 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 ##### Instead of using the script, you can manually use these commands
 
       $  . build/envsetup.sh && brunch <device>
-
