@@ -75,3 +75,10 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
       $ cd ~/RR
       $ . build/envsetup.sh && brunch <device>
+
+##### Build Resurrection Remix ROM for other unsupported devices
+- Follow the AOSP Porting Instructions stated here: (http://xda-university.com/as-a-developer/porting-aosp-roms-using-source-code)
+- After obtaining proprietary blobs and vendor files, continue with standard build instructions:
+     
+      $ cd ~/RR
+      $ . build/envsetup.sh && brunch <device>
