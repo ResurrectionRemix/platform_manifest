@@ -2,26 +2,29 @@ Resurrection Remix Lollipop Source 2014
 ===================
 
 
-[Join Resurrection Remix Team](http://www.resurrectionremix.com)
+[Join the Resurrection Remix Team](http://www.resurrectionremix.com)
 
 Getting Started
 ---------------
-To get started with the Resurrection Remix sources, you'll need to get
+To get started with building from Resurrection Remix sources, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
-How To Build Resurrection Remix ROM - Tutorial
+How To Build Resurrection Remix ROM for your device - Tutorial
 --------
 
 ### Build Environment
 
-- Operating system – Tested on Ubuntu 12.04, 12.10 and 13.10 (64-bit)
-- Terminal
+- Tested and Working on any version of Ubuntu - 12.04, 12.10 and 13.10, 14.04 (64-bit)
+- Operating System that has problems running on: Ubuntu 14.10
+- Any other distribution based of the Ubuntu Distro such as Lubuntu, Xubuntu and etc.
+- Any form of Terminal
 - Decent hardware (minimum of at least a dual core CPU and 4 GB of RAM)
-- Optimally have an SSD (standard mechanical drives work as well but slow down the process drastically)
-- Must have required packages for building installed, I will list them further down
+- A storage unit of any kind (We recommend utilizing SSDs as Mechanical HDDs slow down the build proccess drastically and the minimum storage size is 70GB. Having more will be useful with CCache[More on that later])
+- Required Packages should have been installed
 
 ### Required Packages
 ##### Simply copy and paste this in a terminal window:
+[Hint: This command updates the Ubuntu Packages List (Install Listing) and install the required version of Java]
 
      $ sudo apt-get update
      $ sudo apt-get install openjdk-7-jdk
@@ -29,52 +32,87 @@ How To Build Resurrection Remix ROM - Tutorial
 ### Let that install and then proceed.
 
 ### More copy and paste:
+[Hint: Running this command installs the other required packages to build android]
 
      $ sudo apt-get install bison g++-multilib git gperf libxml2-utils
 
 ### Getting the Source
-- Make required directories
-- Obtain repo binary
-- Add repo binary to your path
-- Give repo binary proper permissions
-- Initialize empty repo
-- Sync repo
+- Making required directories
+- Obtaining the repo binary
+- Adding repo binary to your path
+- Giving the repo binary proper permissions
+- Initializing an empty repo
+- Syncing the repo
 
 Alright, so now we’re getting there. I have outlined the basics of what we’re about to do and broke them down as I know them. This is all pretty much going to be copy/paste so it’ll be fairly difficult to screw this up :)
 
-##### Make directory for repo binary
+##### Make directory for the repo binary
 
       $ mkdir ~/bin
 
-##### Add directory for repo binary to your path
+##### Add directory for the repo binary to its path
 
       $ PATH=~/bin:$PATH
 
-##### Download repo binary and place it in the proper directory
+##### Downloading repo binary and placing it in the proper directory
 
       $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
-##### Give the repo binary the proper permissions
+##### Giving the repo binary the proper permissions
 
       $ chmod a+x ~/bin/repo
 
-##### Create directory for where the RR repo will be stored and synced
+##### Creating directory for where the RR repo will be stored and synced
 
       $ mkdir ~/RR
       $ cd ~/RR
 
-##### Initialize the RR repo and download the manifest
+##### Initializing the RR repo and downloading the manifest
 
       $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 
-##### Sync source
+##### Syncing the source
+[Hint: This might take a long time as the source is about 13GB+]
 
       $  repo sync
 
-##### Preparing Resurrection Remix ROM for other devices
-- Follow the AOSP Porting Instructions stated here: (http://xda-university.com/as-a-developer/porting-aosp-roms-using-source-code)
+###Building the Resurrection Remix ROM
+- Preparing Required Binaries and Device Drivers
+- Setting Up CCache (Optional)
+- Building Resurrection Remix
+
+Congratulations on the succesfull build initialization! Now, we shall go ahead and prepare to build for your device!
+
+##### Preparing Resurrection Remix ROM for devices
+- Follow the AOSP Porting Instructions stated here to prepare the proprietary files for building for your device: (http://xda-university.com/as-a-developer/porting-aosp-roms-using-source-code)
+
+##### Setting Up CCache
+- CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build Resurrection Remix faster than standard build times (Able to cut-down 50% of time taken to build).
+- To set up CCache, follow the following:
+
+
+      $ sudo nano ~/.bashrc
+Doing this will open nano, a text editor for Linux. From here, navigate to the end of the file and add the following:
+
+      $ export USE_CCACHE=1
+      $ export CCACHE_DIR=~/.ccache
+After doing so, do a CTRL+X and type Y and enter. This will save the .BashRC file with the changes made. Now that is complete, do the following to activate CCache.
+
+      $ prebuilts/misc/linux-x86/ccache/ccache -M 50G
+The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
 
 ##### To build Resurrection Remix ROM
 
       $ cd ~/RR
       $ . build/envsetup.sh && brunch <device>
+
+##### Obtaining the zip created from the build process
+To get the zip file that has been built, navigate to the out directory and find for the zip file there. If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following:
+
+      $ cd ~/RR
+      $ make clean
+
+After doing so, redo everything stated from the Building Section.
+
+##### For those who successfully built Resurrection Remix
+Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors! Do come and build Resurrection Remix another time as new code is improved upon after time. If you wish to contibute, feel free to make a pull request to the Ressurection Remix Team! See you again builder!
