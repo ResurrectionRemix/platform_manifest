@@ -555,5 +555,6 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_resurrection" remote="github" revision="lollipop"/>
+  <project path="vendor/cyngn" name="cyngn/android_vendor_cyngn" />
 
 </manifest>
