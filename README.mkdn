@@ -90,8 +90,9 @@ Congratulations on the succesfull build initialization! Now, we shall go ahead a
 - To set up CCache, follow the following:
 
 
-      $ echo "export USE_CCACHE=1" >> ~/.bashrc
-      $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
+    $ echo "export USE_CCACHE=1" >> ~/.bashrc
+      
+    $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
       $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
 The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
