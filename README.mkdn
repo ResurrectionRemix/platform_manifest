@@ -90,14 +90,10 @@ Congratulations on the succesfull build initialization! Now, we shall go ahead a
 - To set up CCache, follow the following:
 
 
-      $ sudo nano ~/.bashrc
-Doing this will open nano, a text editor for Linux. From here, navigate to the end of the file and add the following:
+      $ echo "export USE_CCACHE=1" >> ~/.bashrc
+      $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
-      $ export USE_CCACHE=1
-      $ export CCACHE_DIR=~/.ccache
-After doing so, do a CTRL+X and type Y and enter. This will save the .BashRC file with the changes made. Now that is complete, do the following to activate CCache.
-
-      $ prebuilts/misc/linux-x86/ccache/ccache -M 50G
+      $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
 The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
 
 ##### To build Resurrection Remix ROM
