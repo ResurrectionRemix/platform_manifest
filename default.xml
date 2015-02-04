@@ -65,7 +65,6 @@
   <project path="external/apache-http" name="platform/external/apache-http" groups="pdk-cw-fs" />
   <project path="external/apache-qp" name="platform/external/apache-qp" groups="pdk-cw-fs" />
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk-cw-fs" />
-  <project path="external/arduino" name="platform/external/arduino" groups="pdk-cw-fs" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs" />
   <project path="external/bluetooth/bluedroid" name="platform/external/bluetooth/bluedroid" groups="pdk" />
@@ -231,7 +230,6 @@
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk-cw-fs" />
   <project path="external/opencv" name="platform/external/opencv" groups="pdk-cw-fs" />
   <project path="external/openssl" name="platform/external/openssl" groups="pdk" />
-  <project path="external/oprofile" name="platform/external/oprofile" groups="pdk-cw-fs" />
   <project path="external/owasp/sanitizer" name="platform/external/owasp/sanitizer" />
   <project path="external/pcre" name="platform/external/pcre" groups="pdk-cw-fs" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk-cw-fs" />
@@ -274,7 +272,6 @@
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" groups="pdk-cw-fs" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" groups="pdk-cw-fs" />
-  <project path="external/yaffs2" name="platform/external/yaffs2" groups="pdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs" />
