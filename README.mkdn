@@ -103,10 +103,15 @@ The number before the letter G at the end specifies the amount of space CCache c
       $ . build/envsetup.sh && brunch <device>
 
 ##### Obtaining the zip created from the build process
-To get the zip file that has been built, navigate to the out directory and find for the zip file there. If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following:
+To get the zip file that has been built, navigate to the following directory and find for the zip file:
+
+      $ cd ~/RR/out/target/product/<devicename>/
+
+If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following to make sure your next build is clean;
 
       $ cd ~/RR
       $ make clean
+      $ repo sync -j16
 
 After doing so, redo everything stated from the Building Section.
 
