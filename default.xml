@@ -204,6 +204,7 @@
   <project path="external/lldb" name="platform/external/lldb" groups="pdk-cw-fs" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/ltrace" name="platform/external/ltrace" groups="pdk-cw-fs" />
+  <project path="external/lz4" name="platform/external/lz4" groups="pdk-cw-fs" />
   <project path="external/markdown" name="platform/external/markdown" groups="pdk-cw-fs" />
   <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" />
   <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk-cw-fs" />
@@ -247,6 +248,7 @@
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
   <project path="external/speex" name="platform/external/speex" groups="pdk" />
   <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
+  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" />
   <project path="external/srec" name="platform/external/srec" groups="pdk-cw-fs" />
   <project path="external/srtp" name="platform/external/srtp" groups="pdk-cw-fs" />
   <project path="external/stlport" name="platform/external/stlport" groups="pdk" />
