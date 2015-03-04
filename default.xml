@@ -177,6 +177,7 @@
   <project path="external/libhevc" name="platform/external/libhevc" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
+  <project path="external/libmpeg2" name="platform/external/libmpeg2" />
   <project path="external/libmtp" name="platform/external/libmtp" groups="pdk-cw-fs" />
   <project path="external/libnfc-nci" name="platform/external/libnfc-nci" groups="pdk" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" groups="pdk" />
