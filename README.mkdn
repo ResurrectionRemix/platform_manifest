@@ -11,8 +11,8 @@ familiar with [Git and Repo](http://source.android.com/source/version-control.ht
 
 How To Build Resurrection Remix ROM for your device - Tutorial
 --------
-### Easiest Way to set up the Resurrection Remix Source Code to your computer
-### Required Packages
+### Automatic Setup
+The following will be utilizing a created script that will automatically set your computer to prepare and download the source code to your computer. The things that it does can be seen via the manual set up section below.
 ##### Simply copy and paste this in a terminal window:
 [Hint: This command updates the Ubuntu Packages List (Install Listing) and install the required version of Java]
 
@@ -22,6 +22,7 @@ How To Build Resurrection Remix ROM for your device - Tutorial
 
 Once done, the source code should be already set up and you can head on to the Building RR Section of this Guide.
 ---
+## Manually Setting Up
 ### Build Environment
 
 - Tested and Working on any version of Ubuntu - 12.04, 12.10 and 13.10, 14.04 (64-bit)
@@ -81,7 +82,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
       $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 
 ##### Syncing the source
-[Hint: This might take a long time as the source is about 13GB+]
+[Hint: This might take a long time as the source is about 13GB+. Increase the number after -j to increase the speed of download if your pc and network supports it]
 
       $  repo sync -j 16
 
