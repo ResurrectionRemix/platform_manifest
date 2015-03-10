@@ -205,6 +205,7 @@
   <project path="external/lld" name="platform/external/lld" />
   <project path="external/lldb" name="platform/external/lldb" groups="pdk-cw-fs" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
+  <project path="external/lohit-fonts" name="platform/external/lohit-fonts" />
   <project path="external/ltrace" name="platform/external/ltrace" groups="pdk-cw-fs" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk-cw-fs" />
   <project path="external/markdown" name="platform/external/markdown" groups="pdk-cw-fs" />
