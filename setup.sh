@@ -54,15 +54,26 @@ clear
 echo RR Source Code has been initialized!
 sleep 4
 clear
-echo Syncing/Downloading in 5 seconds...
-sleep 1
-echo Syncing/Downloading in 4 seconds...
-sleep 1
-echo Syncing/Downloading in 3 Seconds...
-sleep 1
-echo Syncing/Downloading in 2 Seconds...
-sleep 1
-echo Syncing/Downloading in 1 Seconds...
-repo sync -j 16
+echo Enter 1 to repo sync now, anything else to do it later
+read ch
+if [ $ch -eq 0 ] ; then
+        echo Enter number of jobs to repo sync with. If you\'re not sure, enter 4
+        read jobs
+        echo Syncing/Downloading in 5 seconds...
+        sleep 1
+        echo Syncing/Downloading in 4 seconds...
+        sleep 1
+        echo Syncing/Downloading in 3 Seconds...
+        sleep 1
+        echo Syncing/Downloading in 2 Seconds...
+        sleep 1
+        echo Syncing/Downloading in 1 Seconds...
+        repo sync -j $jobs
 clear
 echo Resurrection Remix Source code has been Set-Up Succesfully.
+else
+        echo repo has been initialized in ~/rr.
+        echo To sync the source, cd to ~/rr and run the following command
+        echo "repo sync"
+fi
+
