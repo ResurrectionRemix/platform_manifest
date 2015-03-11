@@ -76,8 +76,8 @@ if [ $ch -eq 0 ] ; then
 clear
 echo Resurrection Remix Source code has been Set-Up Succesfully.
 else
-        echo repo has been initialized in ~/rr.
-        echo To sync the source, cd to ~/rr and run the following command
+        echo repo has been initialized in $rrpath
+        echo To sync the source, cd to $rrpath and run the following command
         echo "repo sync"
 fi
 
