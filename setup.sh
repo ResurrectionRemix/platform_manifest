@@ -10,7 +10,6 @@ echo Installing Dependencies in 2 Seconds...
 sleep 1
 echo Installing Dependencies in 1 Seconds...
 sleep 1
-sudo apt-get update
 sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-6-jre openjdk-6-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib openjdk-7-jdk android-tools-adb android-tools-fastboot liblz4-*
 y
 clear
@@ -71,8 +70,8 @@ if [ $ch -eq 0 ] ; then
         sleep 1
         echo Syncing/Downloading in 1 Seconds...
         repo sync -j $jobs
-clear
-echo Resurrection Remix Source code has been Set-Up Succesfully.
+        clear
+        echo Resurrection Remix Source code has been Set-Up Succesfully.
 else
         echo repo has been initialized in $rrpath
         echo To sync the source, cd to $rrpath and run the following command
