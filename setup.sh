@@ -34,7 +34,7 @@ PATH=~/bin:$PATH
 curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 clear
-REPO has been Downloaded!
+echo REPO has been Downloaded!
 sleep 4
 clear
 echo Where you want to initialize RR source? Enter the full path.
