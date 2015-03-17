@@ -64,7 +64,7 @@ sleep 4
 clear
 echo Enter 1 to repo sync now, anything else to do it later
 read ch
-if [ $ch -eq 0 ] ; then
+if [ $ch -eq 1 ] ; then
         echo Enter number of jobs to repo sync with. If you are not sure, enter 6
         read jobs
         echo Syncing/Downloading in 5 seconds...
