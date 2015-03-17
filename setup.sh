@@ -38,7 +38,7 @@ echo REPO has been Downloaded!
 sleep 3
 clear
 echo Where you want to initialize RR source? Enter the desired directory name similar to this:
-echo rr (Thus the source directory will be /home/$USER/rr)
+echo "rr" As such the source directory will be /home/$USER/rr
 read rrpath
 clear
 sleep 2
