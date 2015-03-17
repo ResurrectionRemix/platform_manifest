@@ -56,6 +56,9 @@ mkdir -p /home/$USER/$rrpath
 cd /home/$USER/$rrpath
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 clear
+echo Unpacking all Resurrection Remix Resources...
+mv /home/$USER/$rrpath/android_build/build_device.sh /home/$USER/$rrpath/build_device.sh
+chmod a+x /home/$USER/$rrpath/build_device.sh
 echo RR Source Code has been initialized!
 sleep 4
 clear
@@ -80,5 +83,7 @@ else
         echo Repo has been initialized in /home/$USER/$rrpath
         echo To sync the source again, cd to /home/$USER/$rrpath and run the following command
         echo "repo sync"
+        echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
+        echo "./build_device.sh"
 fi
 
