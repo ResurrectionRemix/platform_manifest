@@ -38,34 +38,34 @@ echo REPO has been Downloaded!
 sleep 3
 clear
 echo Where do you want to initialize RR source? Enter the desired directory name similar to this:
-echo "rr" As such the source directory will be /home/$USER/rr
+echo " /home/$USER/rr or /media/$user/yourdrive/rr"
 read rrpath
 clear
 sleep 2
-echo Creating and Initializing RR Source at /home/$USER/$rrpath in 5...
+echo Creating and Initializing RR Source at $rrpath in 5...
 sleep 1
-echo Creating and Initializing RR Source at /home/$USER/$rrpath in 4...
+echo Creating and Initializing RR Source at $rrpath in 4...
 sleep 1
-echo Creating and Initializing RR Source at /home/$USER/$rrpath in 3...
+echo Creating and Initializing RR Source at $rrpath in 3...
 sleep 1
-echo Creating and Initializing RR Source at /home/$USER/$rrpath in 2...
+echo Creating and Initializing RR Source at $rrpath in 2...
 sleep 1
-echo Creating and Initializing RR Source at /home/$USER/$rrpath in 1...
+echo Creating and Initializing RR Source at $rrpath in 1...
 sleep 1
-mkdir -p /home/$USER/$rrpath
-cd /home/$USER/$rrpath
+mkdir -p $rrpath
+cd $rrpath
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 clear
 echo Unpacking all Resurrection Remix Resources...
-mv /home/$USER/$rrpath/android_build/build_device.sh /home/$USER/$rrpath/build_device.sh
-chmod a+x /home/$USER/$rrpath/build_device.sh
+mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
+chmod a+x $rrpath/build_device.sh
 echo RR Source Code has been initialized!
 sleep 4
 clear
 echo Enter 1 to repo sync now, anything else to do it later
 read ch
 if [ $ch -eq 1 ] ; then
-        echo Enter number of jobs to repo sync with. If you are not sure, enter 6
+        echo Enter number of jobs to repo sync with. If you are not sure, enter 4
         read jobs
         echo Syncing/Downloading in 5 seconds...
         sleep 1
@@ -80,8 +80,8 @@ if [ $ch -eq 1 ] ; then
 clear
 echo Resurrection Remix Source code has been Set-Up Succesfully.
 else
-        echo Repo has been initialized in /home/$USER/$rrpath
-        echo To sync the source again, cd to /home/$USER/$rrpath and run the following command
+        echo Repo has been initialized in $rrpath
+        echo To sync the source again, cd to $rrpath and run the following command
         echo "repo sync"
         echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
         echo "./build_device.sh"
