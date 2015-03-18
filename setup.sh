@@ -56,16 +56,15 @@ mkdir -p $rrpath
 cd $rrpath
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 clear
-echo Unpacking all Resurrection Remix Resources...
-mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
-chmod a+x $rrpath/build_device.sh
 echo RR Source Code has been initialized!
 sleep 4
 clear
-echo Enter 1 to repo sync now, anything else to do it later
-read ch
-if [ $ch -eq 1 ] ; then
-        echo Enter number of jobs to repo sync with. If you are not sure, enter 4
+echo Starting Source Download...
+sleep 3
+        echo Enter number of jobs to repo sync with.
+        echo Type 4 for connections lower than 15mbps
+        echo Type 6 for connections ranging from 20-50mbps
+        echo Type 16 for anything more than 100mbps
         read jobs
         echo Syncing/Downloading in 5 seconds...
         sleep 1
@@ -77,13 +76,39 @@ if [ $ch -eq 1 ] ; then
         sleep 1
         echo Syncing/Downloading in 1 Seconds...
         repo sync -j $jobs
-clear
-echo Resurrection Remix Source code has been Set-Up Succesfully.
-else
-        echo Repo has been initialized in $rrpath
-        echo To sync the source again, cd to $rrpath and run the following command
-        echo "repo sync"
-        echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
-        echo "./build_device.sh"
-fi
+        clear
+                echo Unpacking all Resurrection Remix Resources in 5 seconds...
+                sleep 1
+                echo Unpacking all Resurrection Remix Resources in 4 seconds...
+                sleep 1
+                echo Unpacking all Resurrection Remix Resources in 3 seconds...
+                sleep 1
+                echo Unpacking all Resurrection Remix Resources in 2 seconds...
+                sleep 1
+                echo Unpacking all Resurrection Remix Resources in 1 seconds...
+                sleep 1
+                mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
+                chmod a+x $rrpath/build_device.sh
+        clear
+                echo How much CCache do you want to utilize?
+                echo Recommended CCache ranges from 50 to 100 Gigabytes
+                echo HINT: CCache will help to increase build times by taking up your hard-drive space
+                echo If you dont want CCache or are not sure, type 0
+                read ccsize
+                export USE_CCACHE=1
+                export CCACHE_DIR=$rrpath/.ccache
+                prebuilts/misc/linux-x86/ccache/ccache -M $ccsize
+        sleep 3
+        clear
+echo Resurrection Remix Source code has been Set-Up Succesfully in
+echo $rrpath
+sleep 3
+echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
+echo "./build_device.sh"
+sleep 3
+echo   
+                echo Exiting the Resurrection Remix Build Wizard in 10 seconds!
+                echo To exit immediately, Press CTRL + C
+                sleep 10
+    exit
 
