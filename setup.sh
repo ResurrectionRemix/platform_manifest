@@ -90,8 +90,18 @@ sleep 3
                 mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
                 chmod a+x $rrpath/build_device.sh
         clear
-echo Resurrection Remix Source code has been Set-Up Succesfully
-echo in $rrpath
+                echo How much CCache do you want to utilize?
+                echo Recommended CCache ranges from 50 to 100 Gigabytes
+                echo HINT: CCache will help to increase build times by taking up your hard-drive space
+                echo If you dont want CCache or are not sure, type 0
+                read ccsize
+                export USE_CCACHE=1
+                export CCACHE_DIR=$rrpath/.ccache
+                prebuilts/misc/linux-x86/ccache/ccache -M $ccsize
+        sleep 3
+        clear
+echo Resurrection Remix Source code has been Set-Up Succesfully in
+echo $rrpath
 sleep 3
 echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
 echo "./build_device.sh"
