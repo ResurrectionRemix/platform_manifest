@@ -38,7 +38,7 @@ echo REPO has been Downloaded!
 sleep 3
 clear
 echo Where do you want to initialize RR source? Enter the desired directory name similar to this:
-echo " /home/$USER/rr or /media/$user/yourdrive/rr"
+echo " /home/$USER/rr or /media/$USER/yourdrive/rr"
 read rrpath
 clear
 sleep 2
