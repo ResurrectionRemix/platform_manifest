@@ -87,7 +87,7 @@ sleep 3
                 sleep 1
                 echo Unpacking all Resurrection Remix Resources in 1 seconds...
                 sleep 1
-                mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
+                mv $rrpath/build/build_device.sh $rrpath/build_device.sh
                 chmod a+x $rrpath/build_device.sh
         clear
                 echo How much CCache do you want to utilize?
@@ -100,15 +100,31 @@ sleep 3
                 prebuilts/misc/linux-x86/ccache/ccache -M $ccsize
         sleep 3
         clear
-echo Resurrection Remix Source code has been Set-Up Succesfully in
-echo $rrpath
+                echo Resurrection Remix Source code has been Set-Up Succesfully in
+                echo $rrpath
 sleep 3
-echo To build Resurrection Remix, initialize the RR Build Wizard by typing:
-echo "./build_device.sh"
+echo  
+                echo To build Resurrection Remix later, initialize the RR Build Wizard by typing:
+                echo "./build_device.sh"
+                echo in $rrpath
 sleep 3
 echo   
-                echo Exiting the Resurrection Remix Build Wizard in 10 seconds!
-                echo To exit immediately, Press CTRL + C
-                sleep 10
-    exit
+                echo Starting the Resurrection Remix Build Wizard in 10 seconds!
+                echo To exit the Build Wizard and build later, Press CTRL + C
+                sleep 5
+                echo Starting the Build Wizard in 5...
+                sleep 1
+                echo Starting the Build Wizard in 4...
+                sleep 1
+                echo Starting the Build Wizard in 3...
+                sleep 1
+                echo Starting the Build Wizard in 2...
+                sleep 1
+                echo Starting the Build Wizard in 1...
+                sleep 1
+                clear
+                cd $rrpath
+                ./build_device.sh
+                
+#Here is where the Build Wizard stats. If the user exits, then it wont continue
 
