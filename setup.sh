@@ -124,7 +124,7 @@ echo
                 sleep 1
                 clear
                 cd $rrpath
-                ./build_device.sh
+                ./build.sh
                 
 #Here is where the Build Wizard stats. If the user exits, then it wont continue
 
