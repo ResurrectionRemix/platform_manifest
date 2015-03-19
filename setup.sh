@@ -53,6 +53,8 @@ sleep 1
 echo Creating and Initializing RR Source at $rrpath in 1...
 sleep 1
 mkdir -p $rrpath
+                mv build.sh $rrpath/build_device.sh
+                chmod a+x $rrpath/build_device.sh
 cd $rrpath
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop
 clear
@@ -87,8 +89,7 @@ sleep 3
                 sleep 1
                 echo Unpacking all Resurrection Remix Resources in 1 seconds...
                 sleep 1
-                mv $rrpath/android_build/build_device.sh $rrpath/build_device.sh
-                chmod a+x $rrpath/build_device.sh
+                #Nothing here but future ones can be placed here
         clear
                 echo How much CCache do you want to utilize?
                 echo Recommended CCache ranges from 50 to 100 Gigabytes
