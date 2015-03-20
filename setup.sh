@@ -87,16 +87,17 @@ sleep 3
                 sleep 1
                 echo Unpacking all Resurrection Remix Resources in 1 seconds...
                 sleep 1
-                mv $rrpath/build/build_device.sh $rrpath/build_device.sh
-                chmod a+x $rrpath/build_device.sh
         clear
                 echo How much CCache do you want to utilize?
                 echo Recommended CCache ranges from 50 to 100 Gigabytes
                 echo HINT: CCache will help to increase build times by taking up your hard-drive space
                 echo If you dont want CCache or are not sure, type 0
                 read ccsize
+                echo Enter path to directory you want to use for ccache.
+                echo Something like /home/$USER/.ccache
+                read ccpath
                 export USE_CCACHE=1
-                export CCACHE_DIR=$rrpath/.ccache
+                export CCACHE_DIR=$ccpath/
                 prebuilts/misc/linux-x86/ccache/ccache -M $ccsize
         sleep 3
         clear
@@ -109,6 +110,20 @@ echo
                 echo in $rrpath
 sleep 3
 echo   
+                echo Starting roomservice generator in 5 seconds
+                echo Press Control+C if you want to cancel and do it later
+                sleep 5
+                cd $rrpath/build
+                javac roomservice_generator.java
+                mkdir -p $rrpath/.repo/local_manifests
+                touch $rrpath/.repo/local_manifests/roomservice.xml
+                java roomservice_generator
+                echo roomservice.xml generated succesfully, will display in 5 seconds
+                clear
+                sleep 5
+                cat $rrpath/.repo/local_manifests/roomservice.xml
+                sleep 10
+                clear
                 echo Starting the Resurrection Remix Build Wizard in 10 seconds!
                 echo To exit the Build Wizard and build later, Press CTRL + C
                 sleep 5
