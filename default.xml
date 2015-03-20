@@ -23,6 +23,7 @@
 
   <project path="build" name="CyanogenMod/android_build" groups="pdk,tradefed" >
     <copyfile src="core/root.mk" dest="Makefile" />
+    <copyfile src="build_device.sh" dest="build_device.sh" />  
   </project>
 
   <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="lollipop" />
