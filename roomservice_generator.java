@@ -1,5 +1,5 @@
 import java.io.*;
-class roomservice-generator
+class roomservice_generator
 {
 static BufferedReader stdin=new BufferedReader(new InputStreamReader(System.in));
 public static void main(String args[])
@@ -29,7 +29,7 @@ case 3:s=s.concat(rs.vendor()+"\n");break;
 default:
 try
 {
-    String filename= "roomservice.xml";
+    String filename= "../.repo/local_manifests/roomservice.xml";
     FileWriter fw = new FileWriter(filename,true); //the true will append the new data
     fw.write(s+"\n </manifest>");//appends the string to the file
     fw.close();
