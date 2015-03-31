@@ -110,16 +110,6 @@ echo
                 echo in $rrpath
 sleep 3
 echo   
-                echo Starting roomservice generator in 5 seconds
-                echo Press Control+C if you want to cancel and do it later
-                sleep 5
-                cd $rrpath/build
-                javac roomservice_generator.java
-                mkdir -p $rrpath/.repo/local_manifests
-                touch $rrpath/.repo/local_manifests/roomservice.xml
-                java roomservice_generator
-                echo roomservice.xml generated succesfully, will display in 5 seconds
-                clear
                 sleep 5
                 cat $rrpath/.repo/local_manifests/roomservice.xml
                 sleep 10
