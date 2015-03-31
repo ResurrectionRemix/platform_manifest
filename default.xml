@@ -213,6 +213,7 @@
   <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk-cw-fs" />
   <project path="external/messageformat" name="platform/external/messageformat" groups="pdk-cw-fs" />
   <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
+  <project path="external/mockftpserver" name="platform/external/mockftpserver" />
   <project path="external/mockito" name="platform/external/mockito" groups="pdk-cw-fs" />
   <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk-cw-fs" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk-cw-fs" />
