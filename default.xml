@@ -20,10 +20,11 @@
 
   <project path="build" name="CyanogenMod/android_build" groups="pdk,tradefed" >
     <copyfile src="core/root.mk" dest="Makefile" />
-    <copyfile src="build_device.sh" dest="build_device.sh" />  
   </project>
 
-  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="lollipop5.1" />
+  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="lollipop5.1" >
+  <copyfile src="build_device.sh" dest="build_device.sh" />
+  </project>
 
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
   <project path="art" name="CyanogenMod/android_art" groups="pdk" />
