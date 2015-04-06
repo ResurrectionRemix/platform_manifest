@@ -123,7 +123,7 @@ If you found it, then congratulations! If you didn't, try retrying the build pro
 
       $ cd ~/RR
       $ make clean
-      $ repo sync -j16
+      $ repo sync -j 16
 
 After doing so, redo everything stated from the Building Section.
 
