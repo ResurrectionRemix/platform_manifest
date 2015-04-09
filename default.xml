@@ -249,6 +249,7 @@
   <project path="external/skia" name="platform/external/skia" groups="pdk-cw-fs,qcom_msm8x26" />
   <project path="external/slf4j" name="platform/external/slf4j" />
   <project path="external/smali" name="platform/external/smali" groups="pdk-cw-fs" />
+  <project path="external/sonic" name="platform/external/sonic" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
   <project path="external/speex" name="platform/external/speex" groups="pdk" />
   <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
