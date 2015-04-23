@@ -23,7 +23,7 @@
   </project>
 
   <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="lollipop5.1" >
-  <copyfile src="build_device.sh" dest="build_device.sh" />
+  <copyfile src="build.sh" dest="build-rr.sh" />
   </project>
 
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
