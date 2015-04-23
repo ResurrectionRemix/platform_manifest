@@ -1,85 +1,171 @@
-#!/bin/bash
+# Build script to compile Resurrection Remix ROM
+
+
+# No scrollback buffer
+echo -e '\0033\0143'
+
+
+
+# Get intial time of script startup
+res1=$(date +%s.%N)
+
+
+
+# Specify colors for shell
+red='tput setaf 1'              # red
+green='tput setaf 2'            # green
+yellow='tput setaf 3'           # yellow
+blue='tput setaf 4'             # blue
+violet='tput setaf 5'           # violet
+cyan='tput setaf 6'             # cyan
+white='tput setaf 7'            # white
+txtbld=$(tput bold)             # Bold
+bldred=${txtbld}$(tput setaf 1) # Bold red
+bldgrn=${txtbld}$(tput setaf 2) # Bold green
+bldblu=${txtbld}$(tput setaf 4) # Bold blue
+bldcya=${txtbld}$(tput setaf 6) # Bold cyan
+normal='tput sgr0'
+
+
+tput bold
+tput setaf 1
 clear
-echo Welcome to the Resurrection Remix Build Wizard!
-echo This Wizard will be helping you to build ROMs for your device from Resurrection Remix
-echo Do note that for EVERYTHING you type, you are required to type in LOWER CASE
-echo If they are not, you may expereince some errors along the way
-sleep 10
-echo Please hold while we set up the Build Environment...
-sleep 3
+echo -e ""
+echo -e ""
+echo -e "      (         (           (    (                       (        )      )  "
+echo -e "      )\ )      )\ )        )\ ) )\ )        (     *   ) )\ )  ( /(   ( /(  "
+echo -e "     (()/( (   (()/(    (  (()/((()/( (      )\    )  /((()/(  )\())  )\()) "
+echo -e "      /(_)))\   /(_))   )\  /(_))/(_)))\   (((_)  ( )(_))/(_))((_)\  ((_)\  "
+echo -e "     (_)) ((_) (_))  _ ((_)(_)) (_)) ((_)  )\___ (_(_())(_))    ((_)  _((_) "
+echo -e "     | _ \| __|/ __|| | | || _ \| _ \| __|((/ __||_   _||_ _|  / _ \ | \| | "
+echo -e "     |   /| _| \__ \| |_| ||   /|   /| _|  | (__   | |   | |  | (_) || .  | "
+echo -e "     |_|_\|___||___/ \___/ |_|_\|_|_\|___|  \___|  |_|  |___|  \___/ |_|\_| "
+echo -e ""
+echo -e ""
+echo -e "                         (           *     (        )                       "
+echo -e "                         )\ )      (       )\ )  ( /(                       "
+echo -e "                        (()/( (    )\))(  (()/(  )\())                      "
+echo -e "                         /(_)))\  ((_)()\  /(_))((_)\                       "
+echo -e "                        (_)) ((_) (_()((_)(_))  __((_)                      "
+echo -e "                        | _ \| __||  \/  ||_ _| \ \/ /                      "
+echo -e "                        |   /| _| | |\/| | | |   >  <                       "
+echo -e "                       |_|_\|___||_|  |_||___| /_/\_\                      "
+echo -e ""
+echo -e ""
+echo -e ""
+echo -e ""
+sleep 5
+clear
+echo -e ""
+echo -e ""
+echo -e "${bldgrn}  Setting up build environment..."
+echo -e ""
+echo -e ""
 . build/envsetup.sh
-sleep 2
+echo -e "Build environment set up"
+sleep 5
+# Clear terminal
 clear
-echo Before we begin, what Device manafacturer do you want to build for?
-echo A device manafacturer is similar to sony, htc, samsung and etc
-read creator
-echo Downloading Vendor Source for $creator from TheMuppets in 5...
-sleep 1
-echo Downloading Vendor Source for $creator from TheMuppets in 4...
-sleep 1
-echo Downloading Vendor Source for $creator from TheMuppets in 3...
-sleep 1
-echo Downloading Vendor Source for $creator from TheMuppets in 2...
-sleep 1
-echo Downloading Vendor Source for $creator from TheMuppets in 1...
-sleep 1
-cd vendor 
-    git clone https://github.com/TheMuppets/proprietary_vendor_$creator.git
-    croot
-    mv vendor/proprietary_vendor_$creator vendor/$creator
-clear
-echo Now please input the device codename you want to build:
-echo A device codename is similar to the Xperia Z3 Codename from CyanogenMod, z3
-echo Find your device codename here: http://wiki.cyanogenmod.org/w/Devices#vendor=;
-read device
-echo Downloading Device Source for $device in 5...
-sleep 1
-echo Downloading Device Source for $device in 4...
-sleep 1
-echo Downloading Device Source for $device in 3...
-sleep 1
-echo Downloading Device Source for $device in 2...
-sleep 1
-echo Downloading Device Source for $device in 1...
-sleep 1
-    breakfast $device
-clear
-    repo sync -j6
-clear
-echo Device Specific Source has been Downloaded and Ready to be utilized!
-echo Do you want to build Resurrection Remix for $device now? Type 1 or 0 
-read ch
-if [ $ch -eq 1 ] ; then
-        echo Building for $device in 5 seconds...
-        sleep 1
-        echo Building for $device in 4 seconds...
-        sleep 1
-        echo Building for $device in 3 seconds...
-        sleep 1
-        echo Building for $device in 2 seconds...
-        sleep 1
-        echo Building for $device in 1 seconds...
-        brunch $device
-clear
-echo Resurrection Remix has been built succesfully! The ROM can be found in the out/product/$device folder!
-echo Exiting the Resurrection Remix Build Wizard in 10 seconds!
-echo To cancel, Press CTRL + C
-    sleep 10
-    exit
+# Confirm 'make clean'
+echo -e "\n\n${bldgrn}  Do you want to make clean?\n"
+echo ""
+echo -e "${bldblu}  1. Yes"
+echo -e "${bldblu}  2. No"
+echo ""
+echo ""
+$normal
+read askclean
+if [ "$askclean" == "1" ]
+then
+	echo ""
+	echo ""
+        echo -e "${bldgrn}  Removing files from previous compilations - Cleaning... "
+	echo ""
+	echo ""
+	$normal
+        make clobber
 else
-clear
-        echo To build next time, cd to the RR directory
-        echo and type the following command:
-        echo                    
-        echo brunch $device
-        echo                     
-        echo Or Alternatively, Run this Wizard again by typing;
-        echo ./build_device.sh
-sleep 3
-    echo     
-    echo     
-                echo Exiting the Resurrection Remix Build Wizard in 10 seconds!
-                echo To exit immediately, Press CTRL + C
-                sleep 10
-    exit
+	echo -e ""
+	echo -e ""
+	echo -e "Continuing compilation of Resurrection Remix without deleting old build files"
+	echo -e ""
+	echo -e ""
 fi
+sleep 5
+# Clear terminal
+clear
+# Lunch device
+echo -e ""
+echo -e ""
+echo -e "${bldcya}  Choose your device from the lunch menu..."
+echo -e ""
+echo -e ""
+$normal
+$green
+sleep 5
+lunch
+sleep 5
+clear
+# Start compilation
+echo -e ""
+echo -e ""
+echo -e "${bldcya}  Starting compilation of Resurrection Remix ROM..."
+echo -e ""
+echo -e ""
+echo -e "Enter number of threads you want to use for compilation"
+echo -e "If you don't know, enter 0";
+$normal
+read threads
+if [ "$threads" == "0" ]
+then
+time mka bacon
+else
+time make -j$threads
+fi
+echo -e ""
+# Get elapsed time
+$blue
+res2=$(date +%s.%N)
+echo -e ""
+echo -e ""
+echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
+echo -e ""
+echo -e ""
+
+
+# Compilation complete
+tput bold
+tput setaf 1
+clear
+echo -e " "
+echo -e "█████████████████████████████████████████████████████████████"
+echo -e "█░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░█░░░░░░░░░░░░░░█"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░█████████"
+echo -e "█░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█"
+echo -e "█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█"
+echo -e "█░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░█"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀░░▄▀▄▀░░█░░▄▀░░█████████"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█░░░░▄▀▄▀▄▀░░░░█░░▄▀░░░░░░░░░░█"
+echo -e "█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░███░░░░▄▀░░░░███░░▄▀▄▀▄▀▄▀▄▀░░█"
+echo -e "█░░░░░░██░░░░░░█░░░░░░██░░░░░░█████░░░░░░█████░░░░░░░░░░░░░░█"
+echo -e "█████████████████████████████████████████████████████████████"
+echo -e "█████████████████████████████████████████████████████████████"
+echo -e "█░░░░░░░░░░░░░░█░░░░░░██░░░░░░█░░░░░░██████████░░░░░░█░░░░░░█"
+echo -e "█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░░░░░██░░▄▀░░█░░▄▀░░█"
+echo -e "█░░▄▀░░░░░░░░░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░██░░▄▀░░█░░▄▀░░█"
+echo -e "█░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░░░░░▄▀░░██░░▄▀░░█░░▄▀░░█"
+echo -e "█░░▄▀░░░░░░░░░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░██░░▄▀░░█░░▄▀░░█"
+echo -e "█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░██░░▄▀░░█░░▄▀░░█"
+echo -e "█░░▄▀░░░░░░░░░░█░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░██░░▄▀░░█░░░░░░█"
+echo -e "█░░▄▀░░█████████░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░░░░░▄▀░░████████"
+echo -e "█░░▄▀░░█████████░░▄▀░░░░░░▄▀░░█░░▄▀░░██░░▄▀▄▀▄▀▄▀▄▀░░█░░░░░░█"
+echo -e "█░░▄▀░░█████████░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░░░░░░░░░▄▀░░█░░▄▀░░█"
+echo -e "█░░░░░░█████████░░░░░░░░░░░░░░█░░░░░░██████████░░░░░░█░░░░░░█"
+echo -e "█████████████████████████████████████████████████████████████"
+echo -e " "
+
+
+# Switch terminal back to normal
+$normal
