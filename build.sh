@@ -1,3 +1,4 @@
+#! /bin/bash
 # Build script to compile Resurrection Remix ROM
 
 
