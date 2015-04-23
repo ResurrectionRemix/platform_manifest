@@ -106,24 +106,9 @@ sleep 3
 sleep 3
 echo  
                 echo To build Resurrection Remix later, initialize the RR Build Wizard by typing:
-                echo "./build_device.sh"
+                echo "./build-rr.sh"
                 echo in $rrpath
 sleep 3
-echo   
-                echo Starting roomservice generator in 5 seconds
-                echo Press Control+C if you want to cancel and do it later
-                sleep 5
-                cd $rrpath/build
-                javac roomservice_generator.java
-                mkdir -p $rrpath/.repo/local_manifests
-                touch $rrpath/.repo/local_manifests/roomservice.xml
-                java roomservice_generator
-                echo roomservice.xml generated succesfully, will display in 5 seconds
-                clear
-                sleep 5
-                cat $rrpath/.repo/local_manifests/roomservice.xml
-                sleep 10
-                clear
                 echo Starting the Resurrection Remix Build Wizard in 10 seconds!
                 echo To exit the Build Wizard and build later, Press CTRL + C
                 sleep 5
@@ -139,7 +124,7 @@ echo
                 sleep 1
                 clear
                 cd $rrpath
-                ./build.sh
+                ./build-rr.sh
                 
 #Here is where the Build Wizard stats. If the user exits, then it wont continue
 
