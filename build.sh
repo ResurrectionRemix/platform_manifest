@@ -92,7 +92,7 @@ else
 	echo -e ""
 	echo -e ""
 
-IMPORT_CCACHE=1
+export USE_CCACHE=1
 fi
 sleep 5
 # Clear terminal
