@@ -11,7 +11,7 @@ familiar with [Git and Repo](http://source.android.com/source/version-control.ht
 
 How To Build Resurrection Remix ROM for your device - Tutorial
 --------
-### Easiest Way to set up and build Resurrection Remix.
+### New Way to set up and build Resurrection Remix.
 
 ##### Simply copy and paste this in a terminal window:
 
@@ -19,15 +19,17 @@ How To Build Resurrection Remix ROM for your device - Tutorial
      $ cd ~/platform_manifest
      $ ./setup.sh
 
-Once done, the source code should be already set up and you can head on to build RR by using the RR Wizard which will be located in the main directory of your source code.
+Once done, the source code should be already set up and you can head on to build RR by using the RR Wizard which is located in the same folder so simply copy and paste this in a terminal window:
 
-     $./build_device.sh
+     $./build.sh
 
 ---
+
+### Old Way to set up and build Resurrection Remix.
+
 ### Build Environment
 
-- Tested and Working on any version of Ubuntu - 12.04, 12.10 and 13.10, 14.04 (64-bit)
-- Operating System that has problems running on: Ubuntu 14.10
+- Tested and Working on any version of Ubuntu - 14.04,14.10,15.04 (64-bit)
 - Any other distribution based of the Ubuntu Distro such as Lubuntu, Xubuntu and etc.
 - Any form of Terminal
 - Decent hardware (minimum of at least a dual core CPU and 4 GB of RAM)
