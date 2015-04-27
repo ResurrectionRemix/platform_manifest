@@ -50,7 +50,7 @@ echo -e "                         /(_)))\  ((_)()\  /(_))((_)\                  
 echo -e "                        (_)) ((_) (_()((_)(_))  __((_)                      "
 echo -e "                        | _ \| __||  \/  ||_ _| \ \/ /                      "
 echo -e "                        |   /| _| | |\/| | | |   >  <                       "
-echo -e "                       |_|_\|___||_|  |_||___| /_/\_\                      "
+echo -e "                        |_|_\|___||_|  |_||___| /_/\_\                      "
 echo -e ""
 echo -e ""
 echo -e ""
@@ -84,13 +84,15 @@ then
 	echo ""
 	echo ""
 	$normal
-        make clobber
+        make clean
 else
 	echo -e ""
 	echo -e ""
 	echo -e "Continuing compilation of Resurrection Remix without deleting old build files"
 	echo -e ""
 	echo -e ""
+
+IMPORT_CCACHE=1
 fi
 sleep 5
 # Clear terminal
@@ -167,6 +169,7 @@ echo -e "█░░░░░░█████████░░░░░░░�
 echo -e "█████████████████████████████████████████████████████████████"
 echo -e " "
 
+EXPORT_CCACHE=1
 
 # Switch terminal back to normal
 $normal
