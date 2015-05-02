@@ -1,5 +1,5 @@
 #! /bin/bash
-# Build script to compile Resurrection Remix ROM
+# The Build script to Compile Resurrection Remix
 
 
 # No scrollback buffer
@@ -7,12 +7,12 @@ echo -e '\0033\0143'
 
 
 
-# Get intial time of script startup
+# Obtain intial time of script startup
 res1=$(date +%s.%N)
 
 
 
-# Specify colors for shell
+# Specify colors utilized in the terminal
 red='tput setaf 1'              # red
 green='tput setaf 2'            # green
 yellow='tput setaf 3'           # yellow
@@ -63,12 +63,12 @@ echo -e "${bldgrn}  Setting up build environment..."
 echo -e ""
 echo -e ""
 . build/envsetup.sh
-echo -e "Build environment set up"
+echo -e "Build environment has been set up"
 sleep 5
 # Clear terminal
 clear
-# Confirm 'make clean'
-echo -e "\n\n${bldgrn}  Do you want to make clean?\n"
+# Confirm utilizing the 'make clean' function
+echo -e "\n\n${bldgrn}  Do you want to delete the /out directory?\n"
 echo ""
 echo -e "${bldblu}  1. Yes"
 echo -e "${bldblu}  2. No"
@@ -80,7 +80,7 @@ if [ "$askclean" == "1" ]
 then
 	echo ""
 	echo ""
-        echo -e "${bldgrn}  Removing files from previous compilations - Cleaning... "
+        echo -e "${bldgrn}  Removing files compiled from previous compilations - Cleaning... "
 	echo ""
 	echo ""
 	$normal
@@ -112,11 +112,11 @@ clear
 # Start compilation
 echo -e ""
 echo -e ""
-echo -e "${bldcya}  Starting compilation of Resurrection Remix ROM..."
+echo -e "${bldcya}  Starting compilation of Resurrection Remix..."
 echo -e ""
 echo -e ""
-echo -e "Enter number of threads you want to use for compilation"
-echo -e "If you don't know, enter 0";
+echo -e "Enter the number of threads you want to use for compilation"
+echo -e "If you unsure on what to select, enter 0";
 $normal
 read threads
 if [ "$threads" == "0" ]
@@ -168,6 +168,7 @@ echo -e "█░░▄▀░░█████████░░▄▀▄▀▄�
 echo -e "█░░░░░░█████████░░░░░░░░░░░░░░█░░░░░░██████████░░░░░░█░░░░░░█"
 echo -e "█████████████████████████████████████████████████████████████"
 echo -e " "
+echo -e " Compilation Completed! Congratulations on the succesful build!"
 
 EXPORT_CCACHE=1
 
