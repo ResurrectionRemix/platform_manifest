@@ -18,7 +18,7 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="build" name="CyanogenMod/android_build" groups="pdk,tradefed" >
+  <project path="build" name="ResurrectionRemix/android_build" groups="pdk,tradefed" remote="github" revision="lollipop5.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
