@@ -15,6 +15,9 @@
            
    <remote name="bitbucket" 
           fetch="https://bitbucket.org/" />
+   
+    <remote name="vr"
+          fetch="https://github.com/VanirAOSP/" />
 
   <default revision="refs/heads/cm-12.1"
            remote="github"
