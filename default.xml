@@ -18,6 +18,9 @@
    
     <remote name="vr"
           fetch="https://github.com/VanirAOSP/" />
+          
+    <remote  name="tv"
+           fetch="https://github.com/Team-Validus/" />
 
   <default revision="refs/heads/cm-12.1"
            remote="github"
