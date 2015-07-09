@@ -220,6 +220,7 @@
   <project path="external/mockftpserver" name="platform/external/mockftpserver" />
   <project path="external/mockito" name="platform/external/mockito" groups="pdk-cw-fs" />
   <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk-cw-fs" />
+  <project path="external/modp_b64" name="platform/external/modp_b64" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk-cw-fs" />
   <project path="external/mtpd" name="platform/external/mtpd" groups="pdk-cw-fs" />
   <project path="external/nanohttpd" name="platform/external/nanohttpd" />
