@@ -173,6 +173,7 @@
   <project path="external/libavc" name="platform/external/libavc" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="pdk-cw-fs" />
   <project path="external/libchrome" name="platform/external/libchrome" />
+  <project path="external/libchromeos" name="platform/external/libchromeos" />
   <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
   <project path="external/libedit" name="platform/external/libedit" />
