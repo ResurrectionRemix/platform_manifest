@@ -25,7 +25,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="lollipop5.1" >
+  <project path="android" name="ResurrectionRemix/platform_manifest" remote="github" revision="optimized-lollipop5.1" >
   <copyfile src="build.sh" dest="build-rr.sh" />
   </project>
 
