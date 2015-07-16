@@ -54,7 +54,7 @@ echo Creating and Initializing RR Source at $rrpath in 1...
 sleep 1
 mkdir -p $rrpath
 cd $rrpath
-repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b lollipop5.1
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b optimized-lollipop5.1
 clear
 echo RR Source Code has been initialized!
 sleep 4
