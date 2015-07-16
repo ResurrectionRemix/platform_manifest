@@ -15,7 +15,7 @@ How To Build Resurrection Remix ROM for your device - Tutorial
 
 ##### Simply copy and paste this in a terminal window:
 
-     $ git clone https://github.com/ResurrectionRemix/platform_manifest.git
+     $ git clone https://github.com/ResurrectionRemix/platform_manifest.git -b optimized-lollipop5.1
      $ cd ~/platform_manifest
      $ ./setup.sh
 
