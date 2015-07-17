@@ -71,6 +71,7 @@
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
+  <project path="external/c-ares" name="platform/external/c-ares" />
   <project path="external/cblas" name="platform/external/cblas" />
   <project path="external/ceres-solver" name="platform/external/ceres-solver" groups="pdk-cw-fs" />
   <project path="external/chromium-libpac" name="platform/external/chromium-libpac" />
