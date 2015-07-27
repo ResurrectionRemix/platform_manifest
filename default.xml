@@ -484,6 +484,7 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs" />
   <project path="system/bt" name="platform/system/bt" groups="pdk" />
+  <project path="system/connectivity/shill" name="platform/system/connectivity/shill" />
   <project path="system/core" name="platform/system/core" groups="pdk" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
@@ -494,7 +495,6 @@
   <project path="system/security" name="platform/system/security" groups="pdk" />
   <project path="system/update_engine" name="platform/system/update_engine" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
-  <project path="system/wifi" name="platform/system/wifi" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" groups="notdefault,tools" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
