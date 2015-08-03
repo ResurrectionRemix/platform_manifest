@@ -123,7 +123,7 @@
   <project path="external/chromium_org/v8" name="CyanogenMod/android_external_chromium_org_v8" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" remote="aosp" />
   <project path="external/cmockery" name="platform/external/cmockery" remote="aosp" />
-  <project name="mustermaxmueller/compiler-rt" path="external/compiler-rt" remote="github" revision="clang_qcom_3.6" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" remote="aosp" />
   <project path="external/connectivity" name="CyanogenMod/android_external_connectivity" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs" remote="aosp" />
   <project path="external/curl" name="CyanogenMod/android_external_curl" />
@@ -370,7 +370,7 @@
   <project path="frameworks/opt/timezonepicker" name="CyanogenMod/android_frameworks_opt_timezonepicker" />
   <project path="frameworks/opt/vcard" name="CyanogenMod/android_frameworks_opt_vcard" />
   <project path="frameworks/opt/widget" name="platform/frameworks/opt/widget" remote="aosp" />
-  <project path="frameworks/rs" name="ResurrectionRemix/android_frameworks_rs" groups="pdk" />
+  <project path="frameworks/rs" name="CyanogenMod/android_frameworks_rs" groups="pdk" />
   <project path="frameworks/support" name="CyanogenMod/android_frameworks_support" />
   <project path="frameworks/volley" name="CyanogenMod/android_frameworks_volley" />
   <project path="frameworks/webview" name="ResurrectionRemix/android_frameworks_webview" remote="github" revision="cm-12.1" />
@@ -592,11 +592,6 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_resurrection" remote="github" revision="lollipop5.1"/> 
   <project path="vendor/cmsdk" name="CyanogenMod/cm_platform_sdk" />
-  <project name="mustermaxmueller/clanglibs" path="vendor/clanglibs" remote="github" revision="clang_qcom_3.6" />
-  <project name="varund7726/llvm-Snapdragon_LLVM_for_Android_3.5" path ="prebuilts/clang/linux-x86/host/llvm-Snapdragon_LLVM_for_Android_3.5" remote="github" revision="master"/>
-  <project name="varund7726/llvm-Snapdragon_LLVM_for_Android_3.6" path ="prebuilts/clang/linux-x86/host/llvm-Snapdragon_LLVM_for_Android_3.6" remote="github" revision="master"/>
-  <project name="varund7726/arm-linux-androideabi-snapdragonclang3.6" path ="prebuilts/clang/linux-x86/host/arm-linux-androideabi-snapdragonclang3.6" remote="github" revision="master"/>
-  <project name="varund7726/aarch64-linux-android-snapdragonclang3.6" path ="prebuilts/clang/linux-x86/host/aarch64-linux-android-snapdragonclang3.6" remote="github" revision="master"/>
   <project name="UBERTC/arm-eabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-eabi-6.0" path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0-uber" remote="bitbucket" revision="master" />
