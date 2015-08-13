@@ -602,4 +602,6 @@
   <project name="UBERTC/arm-eabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-eabi-6.0" path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0-uber" remote="bitbucket" revision="master" />
+    <project name="UBERTC/arm-eabi-5.1" path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.1" remote="bitbucket" revision="master" />
+  <project name="UBERTC/arm-linux-androideabi-5.1" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.1" remote="bitbucket" revision="master" />
 </manifest>
