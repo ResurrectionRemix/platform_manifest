@@ -29,7 +29,7 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="build" name="ResurrectionRemix/android_build" groups="pdk,tradefed" remote="github" revision="optimized" >
+  <project path="build" name="ResurrectionRemix/android_build" groups="pdk,tradefed" remote="github" revision="optimized-stable" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
