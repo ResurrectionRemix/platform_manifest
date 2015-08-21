@@ -365,7 +365,7 @@
   <project path="frameworks/opt/colorpicker" name="CyanogenMod/android_frameworks_opt_colorpicker" />
   <project path="frameworks/opt/datetimepicker" name="CyanogenMod/android_frameworks_opt_datetimepicker" />
   <project path="frameworks/opt/emoji" name="CyanogenMod/android_frameworks_opt_emoji" />
-  <project path="frameworks/opt/hardware" name="CyanogenMod/android_frameworks_opt_hardware" />
+  <project path="frameworks/opt/hardware" name="ResurrectionRemixd/android_frameworks_opt_hardware" remote="github" revision="lollipop5.1" />
   <project path="frameworks/opt/inputmethodcommon" name="CyanogenMod/android_frameworks_opt_inputmethodcommon" />
   <project path="frameworks/opt/mms" name="CyanogenMod/android_frameworks_opt_mms" />
   <project path="frameworks/opt/net/ethernet" name="CyanogenMod/android_frameworks_opt_net_ethernet" />
@@ -598,10 +598,10 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" remote="aosp" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />
   <project path="vendor/cm" name="ResurrectionRemix/android_vendor_resurrection" remote="github" revision="lollipop5.1"/> 
-  <project path="vendor/cmsdk" name="CyanogenMod/cm_platform_sdk" />
   <project name="UBERTC/arm-eabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-eabi-6.0" path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-eabi-5.1" path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.1" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-linux-androideabi-5.1" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.1" remote="bitbucket" revision="master" />
+  <project path="vendor/cmsdk" name="ResurrectionRemix/cm_platform_sdk" remote="github" revision="lollipop5.1" />
 </manifest>
