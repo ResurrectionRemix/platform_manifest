@@ -182,6 +182,7 @@
   <project path="external/ksoap2" name="platform/external/ksoap2" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/kernel-headers" name="platform/external/kernel-headers" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libavc" name="platform/external/libavc" groups="pdk" />
+  <project path="external/libcap" name="platform/external/libcap" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libchrome" name="platform/external/libchrome" />
   <project path="external/libchromeos" name="platform/external/libchromeos" />
