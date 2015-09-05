@@ -475,6 +475,7 @@
   <project path="packages/apps/Nfc" name="CyanogenMod/android_packages_apps_Nfc" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" remote="aosp" />
   <project path="packages/apps/OTACenter" name="ResurrectionRemix/packages_apps_OTACenter" remote="github" revision="lollipop5.1" />
+<project path="packages/apps/OmniSwitch" name="ResurrectionRemix/android_packages_apps_OmniSwitch" remote="github" revision="lollipop5.1" />
   <project path="packages/apps/PackageInstaller" name="CyanogenMod/android_packages_apps_PackageInstaller" />
   <project path="packages/apps/PhoneCommon" name="CyanogenMod/android_packages_apps_PhoneCommon" />
   <project path="packages/apps/Profiles" name="CyanogenMod/android_packages_apps_Profiles" />
