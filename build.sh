@@ -1,4 +1,5 @@
 #! /bin/bash
+
 # The Build script to Compile Resurrection Remix
 
 
@@ -68,15 +69,16 @@ sleep 5
 # Clear terminal
 clear
 # Confirm utilizing the 'make clean' function
-echo -e "\n\n${bldgrn}  Do you want to delete the /out directory?\n"
+echo -e "\n\n${bldgrn}  Do you want make clean or dirty or none?"
 echo ""
-echo -e "${bldblu}  1. Yes"
-echo -e "${bldblu}  2. No"
+echo -e "${bldblu}  1. clean"
+echo -e "${bldblu}  2. dirty"
+echo -e "${bldblu}  3. nothing"
 echo ""
 echo ""
 $normal
 read askclean
-if [ "$askclean" == "1" ]
+if [ "$askclean" == "1" ];
 then
 	echo ""
 	echo ""
@@ -84,15 +86,17 @@ then
 	echo ""
 	echo ""
 	$normal
-        make clean
+        mka clean
+elif [ "$askclean" == "2" ];
+then
+	echo "";echo "";echo -e "${bldgrn} Making dirty";echo "";echo "";
+	mka dirty
 else
 	echo -e ""
 	echo -e ""
 	echo -e "Continuing compilation of Resurrection Remix without deleting old build files"
 	echo -e ""
 	echo -e ""
-
-export USE_CCACHE=1
 fi
 sleep 5
 # Clear terminal
