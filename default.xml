@@ -497,6 +497,7 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
+  <project path="system/attestation" name="platform/system/attestation" />
   <project path="system/bt" name="platform/system/bt" groups="pdk" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" />
@@ -510,6 +511,8 @@
   <project path="system/netd" name="platform/system/netd" groups="pdk" />
   <project path="system/peerd" name="platform/system/peerd" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
+  <project path="system/tpm_manager" name="platform/system/tpm_manager" />
+  <project path="system/trunks" name="platform/system/trunks" />
   <project path="system/update_engine" name="platform/system/update_engine" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="system/weaved" name="platform/system/weaved" />
