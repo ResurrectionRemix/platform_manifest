@@ -116,6 +116,7 @@
   <project path="external/cmockery" name="platform/external/cmockery" groups="pdk-fs" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/cryptsetup" name="platform/external/cryptsetup" />
   <project path="external/curl" name="platform/external/curl" />
   <project path="external/dbus" name="platform/external/dbus" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" />
@@ -227,6 +228,7 @@
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/lohit-fonts" name="platform/external/lohit-fonts" />
   <project path="external/ltrace" name="platform/external/ltrace" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/lvm2" name="platform/external/lvm2" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
   <project path="external/markdown" name="platform/external/markdown" groups="pdk-cw-fs,pdk-fs" />
