@@ -119,6 +119,7 @@
   <project path="external/cmockery" name="platform/external/cmockery" groups="pdk-fs" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/cros/system_api" name="platform/external/cros/system_api" />
   <project path="external/cryptsetup" name="platform/external/cryptsetup" />
   <project path="external/curl" name="platform/external/curl" />
   <project path="external/dbus" name="platform/external/dbus" />
