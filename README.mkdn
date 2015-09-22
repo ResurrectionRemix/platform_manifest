@@ -125,7 +125,7 @@ If you found it, then congratulations! If you didn't, try retrying the build pro
 
       $ cd ~/RR
       $ make clean
-      $ repo sync -j 16
+      $ repo sync --force-sync
 
 After doing so, redo everything stated from the Building Section.
 
