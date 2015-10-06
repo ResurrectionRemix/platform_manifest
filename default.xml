@@ -39,7 +39,7 @@
   <project path="developers/demos" name="platform/developers/demos" remote="aosp" />
   <project path="developers/docs" name="platform/developers/docs" remote="aosp" />
   <project path="developers/samples/android" name="platform/developers/samples/android" remote="aosp" />
-  <project path="development" name="CyanogenMod/android_development" groups="pdk-cw-fs" />
+  <project path="development" name="ResurrectionRemix/android_development" groups="pdk-cw-fs" revision="lollipop5.1" />
   <project path="device/common" name="CyanogenMod/android_device_common" groups="pdk-cw-fs" />
   <project path="device/generic/arm64" name="CyanogenMod/android_device_generic_arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="CyanogenMod/android_device_generic_armv7-a-neon" groups="pdk" />
