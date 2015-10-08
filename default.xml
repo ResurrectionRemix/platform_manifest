@@ -461,10 +461,10 @@
   <project path="packages/apps/CMBugReport" name="CyanogenMod/android_packages_apps_CMBugreport" />
   <project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" />
   <!-- <project path="packages/apps/CMHome" name="CyanogenMod/android_packages_apps_CMHome" /> -->
-  <project path="packages/apps/Contacts" name="CyanogenMod/android_packages_apps_Contacts" />
-  <project path="packages/apps/ContactsCommon" name="CyanogenMod/android_packages_apps_ContactsCommon" />
+  <project path="packages/apps/Contacts" name="ResurrectionRemix/android_packages_apps_Contacts" revision="lollipop5.1"/>
+  <project path="packages/apps/ContactsCommon" name="ResurrectionRemix/android_packages_apps_ContactsCommon" revision="lollipop5.1"/>
   <project path="packages/apps/DeskClock" name="CyanogenMod/android_packages_apps_DeskClock" />
-  <project path="packages/apps/Dialer" name="CyanogenMod/android_packages_apps_Dialer" />
+  <project path="packages/apps/Dialer" name="ResurrectionRemix/android_packages_apps_Dialer" revision="lollipop5.1"/>
   <project path="packages/apps/Eleven" name="CyanogenMod/android_packages_apps_Eleven" />
   <project path="packages/apps/Email" name="CyanogenMod/android_packages_apps_Email" />
   <project path="packages/apps/Exchange" name="CyanogenMod/android_packages_apps_Exchange" />
@@ -474,7 +474,7 @@
   <project path="packages/apps/KeyChain" name="CyanogenMod/android_packages_apps_KeyChain" />
   <project path="packages/apps/LockClock" name="ResurrectionRemix/android_packages_apps_LockClock" revision="lollipop5.1"/>
   <project path="packages/apps/ManagedProvisioning" name="CyanogenMod/android_packages_apps_ManagedProvisioning" />
-  <project path="packages/apps/Mms" name="CyanogenMod/android_packages_apps_Mms-caf" />
+  <project path="packages/apps/Mms" name="ResurrectionRemix/android_packages_apps_Mms" revision="lollipop5.1"/>
   <project path="packages/apps/Nfc" name="CyanogenMod/android_packages_apps_Nfc" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" remote="aosp" />
   <project path="packages/apps/OTACenter" name="ResurrectionRemix/packages_apps_OTACenter" remote="github" revision="lollipop5.1" />
