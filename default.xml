@@ -502,7 +502,7 @@
   <project path="packages/screensavers/PhotoTable" name="CyanogenMod/android_packages_screensavers_PhotoTable" />
   <project path="packages/screensavers/WebView" name="CyanogenMod/android_packages_screensavers_WebView" />
   <project path="packages/services/Mms" name="CyanogenMod/android_packages_services_Mms" />
-  <project path="packages/services/Telecomm" name="CyanogenMod/android_packages_services_Telecomm" />
+  <project path="packages/services/Telecomm" name="ResurrectionRemix/android_packages_services_Telecomm" remote="github" revision="lollipop5.1"/>
   <project path="packages/services/Telephony" name="ResurrectionRemix/android_packages_services_Telephony" remote="github" revision="lollipop5.1"/>
   <project path="packages/wallpapers/Basic" name="CyanogenMod/android_packages_wallpapers_Basic" />
   <project path="packages/wallpapers/Galaxy4" name="CyanogenMod/android_packages_wallpapers_Galaxy4" />
