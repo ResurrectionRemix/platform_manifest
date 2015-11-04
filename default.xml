@@ -602,5 +602,7 @@
   <project name="UBERTC/arm-eabi-6.0" path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0-uber" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-eabi-5.2" path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.2" remote="bitbucket" revision="master" />
   <project name="UBERTC/arm-linux-androideabi-5.2" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.2" remote="bitbucket" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="UBERTC/aarch64-linux-android-4.9-kernel" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-rom" name="UBERTC/aarch64-linux-android-4.9" revision="master" />
   <project path="vendor/cmsdk" name="ResurrectionRemix/cm_platform_sdk" remote="github" revision="lollipop5.1" />
 </manifest>
