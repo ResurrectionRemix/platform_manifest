@@ -22,7 +22,8 @@
 	  revision="marshmallow" />
 
   <remote name="bucket"
-	  fetch="https://bitbucket.org" />
+	  fetch="https://bitbucket.org"
+	  revision="master" />
 
   <default revision="refs/heads/cm-13.0"
            remote="github"
