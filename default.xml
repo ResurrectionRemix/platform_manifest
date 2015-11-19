@@ -94,6 +94,7 @@
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk-fs" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" />
   <project path="external/curl" name="platform/external/curl" />
+  <project path="external/dagger2" name="platform/external/dagger2" />
   <project path="external/dbus" name="platform/external/dbus" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" />
   <project path="external/deqp" name="platform/external/deqp" groups="pdk-fs" />
