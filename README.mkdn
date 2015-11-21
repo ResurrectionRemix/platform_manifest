@@ -13,7 +13,7 @@ To initialize your local repository using the ResurrectionRemix trees, use a com
 ```
 Then to sync up:
 ```
-    repo sync -c -f -j4 --force-sync --no-clone-bundle --no-tags
+    repo sync --force-sync
 ```
 Then to build
 ```
