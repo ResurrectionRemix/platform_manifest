@@ -88,7 +88,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 ##### Syncing the source
 [Hint: This might take a long time as the source is about 13GB+]
 
-      $  repo sync -c -f -j4 --force-sync
+      $  repo sync -c -f -j4 --force-sync --no-clone-bundle
 
 ###Building the Resurrection Remix ROM
 - Preparing Required Binaries and Device Drivers
