@@ -358,7 +358,7 @@
   <project path="frameworks/ml" name="CyanogenMod/android_frameworks_ml" />
   <project path="frameworks/multidex" name="CyanogenMod/android_frameworks_multidex" groups="pdk-cw-fs" />
   <project path="frameworks/opt/cards" name="ResurrectionRemix/frameworks_opt_cards" remote="github" revision="lollipop5.1" />
-  <project path="frameworks/native" name="ResurrectionRemix/android_frameworks_native" groups="pdk" revision="lollipop5.1" remote="github" />
+  <project path="frameworks/native" name="ResurrectionRemix/frameworks_native" groups="pdk" revision="lollipop5.1" remote="github" />
   <project path="frameworks/opt/bitmap" name="CyanogenMod/android_frameworks_opt_bitmap" />
   <project path="frameworks/opt/bluetooth" name="CyanogenMod/android_frameworks_opt_bluetooth" groups="pdk-cw-fs" />
   <project path="frameworks/opt/calendar" name="CyanogenMod/android_frameworks_opt_calendar" />
