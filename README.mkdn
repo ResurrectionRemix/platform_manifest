@@ -131,5 +131,5 @@ If you found it, then congratulations! If you didn't, try retrying the build pro
 After doing so, redo everything stated from the Building Section.
 
 ##### For those who successfully built Resurrection Remix
-Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors!Also keep in mind that if an official build exists for a device, no unofficial builds should be released publicly. Do come and build Resurrection Remix another time as build should beode is improved upon after time. If you wish to contibute, feel free to make a pull request to the Ressurection Remix Team! See you again builder!
+Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors!Also keep in mind that if an official build exists for a device, no unofficial builds should be released publicly. Do come and build Resurrection Remix another time as source code is routinely being improved upon. If you wish to contibute, feel free to make a pull request to the Ressurection Remix Team! See you again builder!
 
