@@ -105,6 +105,7 @@
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" />
   <project path="external/dng_sdk" name="platform/external/dng_sdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" />
   <project path="external/doclava" name="platform/external/doclava" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/donuts" name="platform/external/donuts" groups="pdk-fs" />
   <project path="external/drm_gralloc" name="platform/external/drm_gralloc" groups="drm_gralloc" />
