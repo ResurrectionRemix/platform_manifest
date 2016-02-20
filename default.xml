@@ -271,6 +271,7 @@
   <project path="external/sepolicy" name="platform/external/sepolicy" groups="pdk" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" />
   <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" />
+  <project path="external/sl4a" name="platform/external/sl4a" />
   <project path="external/slf4j" name="platform/external/slf4j" groups="pdk-fs" />
   <project path="external/smali" name="platform/external/smali" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/sonic" name="platform/external/sonic" groups="pdk" />
@@ -430,6 +431,7 @@
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" groups="pdk-fs" />
   <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" groups="pdk-fs" />
+  <project path="packages/apps/Test/connectivity" name="platform/packages/apps/Test/connectivity" />
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="generic_fs" />
   <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" groups="pdk-fs" />
   <project path="packages/experimental" name="platform/packages/experimental" />
@@ -524,6 +526,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
+  <project path="tools/test/connectivity" name="platform/tools/test/connectivity" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
 
 </manifest>
