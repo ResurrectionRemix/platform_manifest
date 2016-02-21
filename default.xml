@@ -17,10 +17,6 @@
 	   fetch="https://github.com/ResurrectionRemix"
 	   revision="marshmallow" />
 
-  <remote  name="test"
-	   fetch="https://github.com/ResurrectionRemix"
-	   revision="bug" />
-
   <remote name="rr-d"
 	  fetch="https://github.com/ResurrectionRemix-Devices"
 	  revision="marshmallow" />
@@ -36,10 +32,10 @@
 	   sync-f="true" />
 
 <!-- BEGIN CYANOGENMOD -->
-  <project path="build" name="android_build" groups="pdk" remote="test" >
+  <project path="build" name="android_build" groups="pdk" remote="rr" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="android" name="platform_manifest" remote="test"/>
+  <project path="android" name="platform_manifest" remote="rr"/>
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
   <project path="art" name="CyanogenMod/android_art" groups="pdk" />
   <project path="bionic" name="CyanogenMod/android_bionic" groups="pdk" />
@@ -324,7 +320,7 @@
   <project path="system/qcom" name="CyanogenMod/android_system_qcom" groups="qcom" />
   <project path="system/security" name="CyanogenMod/android_system_security" groups="pdk" />
   <project path="system/vold" name="CyanogenMod/android_system_vold" groups="pdk" />
-  <project path="vendor/cm" name="android_vendor_resurrection" remote="test" />
+  <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" />
   <project path="vendor/cmsdk" name="cm_platform_sdk" remote="rr" />
   <project path="vendor/qcom/opensource/dataservices" name="CyanogenMod/android_vendor_qcom_opensource_dataservices" />
   <project path="vendor/qcom/opensource/dpm" name="CyanogenMod/android_vendor_qcom_opensource_dpm" />
