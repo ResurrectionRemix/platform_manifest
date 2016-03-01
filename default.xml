@@ -142,6 +142,7 @@
   <project path="external/google-fonts/cutive-mono" name="platform/external/google-fonts/cutive-mono" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/google-fonts/dancing-script" name="platform/external/google-fonts/dancing-script" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/google-tv-pairing-protocol" name="platform/external/google-tv-pairing-protocol" groups="pdk-fs" />
+  <project path="external/googletest" name="platform/external/googletest" groups="pdk" />
   <project path="external/gptfdisk" name="platform/external/gptfdisk" groups="pdk-fs" />
   <project path="external/gtest" name="platform/external/gtest" groups="pdk" />
   <project path="external/guava" name="platform/external/guava" groups="pdk-cw-fs,pdk-fs" />
