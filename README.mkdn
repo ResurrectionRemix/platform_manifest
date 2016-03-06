@@ -48,7 +48,7 @@ Once done, the source code should be already set up and you can head on to build
 ### More copy and paste:
 [Hint: Running this command installs the other required packages to build android]
 
-     $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib
+     $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib phablet-tools
 
 ### Getting the Source
 - Making required directories
@@ -60,21 +60,6 @@ Once done, the source code should be already set up and you can head on to build
 
 Alright, so now we’re getting there. I have outlined the basics of what we’re about to do and broke them down as I know them. This is all pretty much going to be copy/paste so it’ll be fairly difficult to screw this up :)
 
-##### Make directory for the repo binary
-
-      $ mkdir ~/bin
-
-##### Add directory for the repo binary to its path
-
-      $ PATH=~/bin:$PATH
-
-##### Downloading repo binary and placing it in the proper directory
-
-      $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-
-##### Giving the repo binary the proper permissions
-
-      $ chmod a+x ~/bin/repo
 
 ##### Creating directory for where the RR repo will be stored and synced
 
