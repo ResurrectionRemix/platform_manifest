@@ -191,6 +191,7 @@
   <project path="external/libhevc" name="platform/external/libhevc" groups="pdk-fs" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" />
+  <project path="external/libmojo" name="platform/external/libmojo" />
   <project path="external/libmpeg2" name="platform/external/libmpeg2" groups="pdk" />
   <project path="external/libmtp" name="platform/external/libmtp" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libnfc-nci" name="platform/external/libnfc-nci" groups="pdk" />
