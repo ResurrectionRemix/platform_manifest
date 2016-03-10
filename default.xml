@@ -71,6 +71,7 @@
   <project path="external/ebtables" name="CyanogenMod/android_external_ebtables" />
   <project path="external/elfutils" name="CyanogenMod/android_external_elfutils" groups="pdk" />
   <project path="external/exfat" name="CyanogenMod/android_external_exfat" />
+  <project path="external/DUtils" name="DirtyUnicorns/android_external_DUtils" remote="github" revision="m" />
   <project path="external/f2fs-tools" name="CyanogenMod/android_external_f2fs-tools" groups="pdk" />
   <project path="external/ffmpeg" name="CyanogenMod/android_external_ffmpeg" />
   <project path="external/flac" name="CyanogenMod/android_external_flac" groups="pdk" />
@@ -169,6 +170,7 @@
   <project path="frameworks/opt/telephony" name="CyanogenMod/android_frameworks_opt_telephony" groups="pdk" />
   <project path="frameworks/opt/timezonepicker" name="CyanogenMod/android_frameworks_opt_timezonepicker" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/cards" name="ResurrectionRemix/frameworks_opt_cards" remote="github" revision="marshmallow" />
+  <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
   <project path="frameworks/opt/vcard" name="CyanogenMod/android_frameworks_opt_vcard" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/rs" name="CyanogenMod/android_frameworks_rs" groups="pdk" />
   <project path="frameworks/support" name="CyanogenMod/android_frameworks_support" groups="pdk-cw-fs,pdk-fs" />
