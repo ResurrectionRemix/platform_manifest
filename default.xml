@@ -7,8 +7,12 @@
            revision="refs/tags/android-6.0.1_r22" />
 
   <remote  name="github"
-           fetch="https://github.com"
-           review="review.cyanogenmod.org" />
+                 fetch="https://github.com" />
+ 
+   <remote name="cm"
+                 fetch="git://github.com/CyanogenMod"
+                 revision="cm-13.0"
+                review="review.cyanogenmod.org" />
 
   <remote  name="private"
            fetch="ssh://git@github.com" />
@@ -151,7 +155,7 @@
   <project path="frameworks/minikin" name="CyanogenMod/android_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/ml" name="CyanogenMod/android_frameworks_ml" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/multidex" name="CyanogenMod/android_frameworks_multidex" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/native" name="frameworks_native" groups="pdk" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk"  remote="cm" />
   <project path="frameworks/opt/bitmap" name="CyanogenMod/android_frameworks_opt_bitmap" groups="pdk-fs" />
   <project path="frameworks/opt/bluetooth" name="CyanogenMod/android_frameworks_opt_bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/calendar" name="CyanogenMod/android_frameworks_opt_calendar" groups="pdk-cw-fs,pdk-fs" />
