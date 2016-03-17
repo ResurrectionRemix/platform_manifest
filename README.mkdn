@@ -16,13 +16,15 @@ How To Build Resurrection Remix ROM for your device - Tutorial
 
 ##### Simply copy and paste this in a terminal window:
 
-     $ git clone https://github.com/ResurrectionRemix/platform_manifest.git
-     $ cd ~/platform_manifest
+     $ git clone https://github.com/ResurrectionRemix/ResurrectedScripts.git -b marshmallow scripts
+     $ cd scripts
      $ ./setup.sh
 
-Once done, the source code should be already set up and you can head on to build RR by using the RR Wizard which is located in the same folder so simply copy and paste this in a terminal window:
+Once done, the source code should be already set up and you can head on to build RR by using the build script in the root of source code
+ 
+so simply copy and paste this in a terminal window:
 
-     $./build.sh
+     $ bash build.sh
 
 ---
 
@@ -48,7 +50,9 @@ Once done, the source code should be already set up and you can head on to build
 ### More copy and paste:
 [Hint: Running this command installs the other required packages to build android]
 
-     $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib maven
+     $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools 
+build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop 
+libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib maven tmux screen w3m ncftp
 
 ### Getting the Source
 - Making required directories
@@ -86,9 +90,9 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
       $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b marshmallow
 
 ##### Syncing the source
-[Hint: This might take a long time as the source is about 13GB+]
+[Hint: This might take a long time as the source is ~20GB]
 
-      $  repo sync -c -f -j4 --force-sync --no-clone-bundle
+      $  repo sync -f --force-sync --no-clone-bundle
 
 ###Building the Resurrection Remix ROM
 - Preparing Required Binaries and Device Drivers
