@@ -66,7 +66,6 @@
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/adt-infra" name="platform/external/adt-infra" groups="adt-infra,notdefault" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/android-mock" name="platform/external/android-mock" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/androidplot" name="platform/external/androidplot" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/ant-glob" name="platform/external/ant-glob" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/antlr" name="platform/external/antlr" groups="pdk-cw-fs,pdk-fs" />
@@ -118,7 +117,6 @@
   <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/eigen" name="platform/external/eigen" groups="pdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" />
-  <project path="external/embunit" name="platform/external/embunit" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/emma" name="platform/external/emma" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/esd" name="platform/external/esd" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/expat" name="platform/external/expat" groups="pdk" />
@@ -167,7 +165,6 @@
   <project path="external/jhead" name="platform/external/jhead" groups="pdk" />
   <project path="external/jline" name="platform/external/jline" groups="notdefault,tradefed" />
   <project path="external/jmdns" name="platform/external/jmdns" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/jmonkeyengine" name="platform/external/jmonkeyengine" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/jpeg" name="platform/external/jpeg" groups="pdk" />
   <project path="external/jsilver" name="platform/external/jsilver" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="pdk" />
@@ -226,7 +223,6 @@
   <project path="external/ltrace" name="platform/external/ltrace" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
-  <project path="external/marisa-trie" name="platform/external/marisa-trie" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/markdown" name="platform/external/markdown" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" />
   <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk-cw-fs,pdk-fs" />
@@ -255,8 +251,6 @@
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/opencv" name="platform/external/opencv" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/opencv3" name="platform/external/opencv3" />
-  <project path="external/openfst" name="platform/external/openfst" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/openssh" name="platform/external/openssh" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/owasp/sanitizer" name="platform/external/owasp/sanitizer" groups="pdk-fs" />
   <project path="external/parameter-framework" name="platform/external/parameter-framework" groups="pdk-fs" />
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
