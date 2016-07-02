@@ -45,7 +45,7 @@
   <project path="external/sepolicy" name="android_external_sepolicy" groups="pdk" remote="rr" />
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="rr" />
   <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="rr" />
-  <project path="frameworks/opt/cards" name="ResurrectionRemix/frameworks_opt_cards" remote="github" revision="marshmallow" />
+  <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" />
   <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
   <project path="packages/apps/CMFileManager" name="packages_apps_CMFileManager" remote="rr" />
   <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr"  />
