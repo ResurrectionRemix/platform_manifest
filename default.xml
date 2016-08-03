@@ -62,6 +62,7 @@
   <project path="system/core" name="system_core" groups="pdk" remote="rr" />
   <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" />
   <project path="vendor/cmsdk" name="cm_platform_sdk" remote="rr" />
+  <project path="packages/services/ThemeManagerService" name="android_packages_services_ThemeManagerService" remote="rr" />
 <!-- END RR -->
 
 <!-- BEGIN CYANOGENMOD -->
@@ -295,7 +296,6 @@
   <project path="packages/services/CMAudioService" name="CyanogenMod/android_packages_services_CMAudioService" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/LiveLockScreenService" name="CyanogenMod/android_packages_services_LiveLockScreenService" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/Mms" name="CyanogenMod/android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/services/ThemeManagerService" name="CyanogenMod/android_packages_services_ThemeManagerService" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/wallpapers/Basic" name="CyanogenMod/android_packages_wallpapers_Basic" groups="pdk-fs" />
   <project path="packages/wallpapers/Galaxy4" name="CyanogenMod/android_packages_wallpapers_Galaxy4" groups="pdk-fs" />
   <project path="packages/wallpapers/HoloSpiral" name="CyanogenMod/android_packages_wallpapers_HoloSpiral" groups="pdk-fs" />
