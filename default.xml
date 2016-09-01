@@ -368,6 +368,7 @@
   <project path="hardware/intel/img/psb_headers" name="platform/hardware/intel/img/psb_headers" groups="intel,pdk" />
   <project path="hardware/intel/img/psb_video" name="platform/hardware/intel/img/psb_video" groups="intel,pdk" />
   <project path="hardware/intel/sensors" name="platform/hardware/intel/sensors" groups="intel_sensors,pdk" />
+  <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
@@ -516,7 +517,10 @@
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/firewalld" name="platform/system/firewalld" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
+  <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="pdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" />
+  <project path="system/libhidl" name="platform/system/libhidl" />
+  <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
   <project path="system/nativepower" name="platform/system/nativepower" />
   <project path="system/netd" name="platform/system/netd" groups="pdk" />
@@ -524,6 +528,7 @@
   <project path="system/security" name="platform/system/security" groups="pdk" />
   <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
+  <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" />
   <project path="system/tpm" name="platform/system/tpm" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
