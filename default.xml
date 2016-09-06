@@ -513,6 +513,7 @@
   <project path="system/connectivity/dhcp_client" name="platform/system/connectivity/dhcp_client" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" />
+  <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" />
   <project path="system/core" name="platform/system/core" groups="pdk" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/firewalld" name="platform/system/firewalld" />
