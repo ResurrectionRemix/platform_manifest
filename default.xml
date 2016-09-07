@@ -10,8 +10,8 @@
                  fetch="https://github.com" />
  
    <remote name="cm"
-                 fetch="git://github.com/CyanogenMod"
-                 revision="cm-13.0"
+                fetch="git://github.com/CyanogenMod"
+                revision="cm-13.0"
                 review="review.cyanogenmod.org" />
 
   <remote  name="private"
@@ -56,7 +56,6 @@
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" groups="pdk-fs" remote="rr"/>
   <project path="packages/apps/SetupWizard" name="android_packages_apps_SetupWizard" remote="rr" />
-  <project path="packages/apps/ThemeChooser" name="android_packages_apps_ThemeChooser" remote="rr" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
   <project path="system/core" name="system_core" groups="pdk" remote="rr" />
@@ -287,6 +286,7 @@
   <project path="packages/providers/PartnerBookmarksProvider" name="CyanogenMod/android_packages_providers_PartnerBookmarksProvider" groups="pdk-fs" />
   <project path="packages/providers/TelephonyProvider" name="CyanogenMod/android_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/ThemesProvider" name="CyanogenMod/android_packages_providers_ThemesProvider" />
+  <project path="packages/apps/ThemeChooser" name="CyanogenMod/android_packages_apps_ThemeChooser" remote="cm" />
   <project path="packages/providers/TvProvider" name="CyanogenMod/android_packages_providers_TvProvider" groups="pdk-fs" />
   <project path="packages/providers/UserDictionaryProvider" name="CyanogenMod/android_packages_providers_UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/WeatherProvider" name="CyanogenMod/android_packages_providers_WeatherProvider" />
