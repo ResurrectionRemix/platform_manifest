@@ -386,7 +386,6 @@
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
-  <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3,pdk" />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
