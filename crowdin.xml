@@ -1,0 +1,12 @@
+<manifest>
+  <remote name="rr" fetch="ssh://git@github.com/ResurrectionRemix" revision="marshmallow" />
+  <default remote="rr" sync-c="true" sync-f="true" sync-j="6" />
+  <project path="rr_crowdin" name="rr_crowdin" remote="rr" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="rr" />
+  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" groups="pdk-fs" remote="rr"/>
+  <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
+  <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
+  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
+  <project path="manifest" name="platform_manifest" remote="rr" />
+</manifest>
