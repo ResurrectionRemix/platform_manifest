@@ -18,4 +18,6 @@
   <project path="frameworks/av" name="frameworks_av" remote="rr" />
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+  <project path="external/skia" name="external_skia" remote="rr" />
+  <project path="art" name="art" remote="rr" />
 </manifest>
