@@ -2,7 +2,6 @@
 <manifest>
 
   <!-- CyanogenMod additions -->
-  <project path="android" name="CyanogenMod/android" />
   <project path="external/ahbottomnavigation" name="CyanogenMod/android_external_ahbottomnavigation" />
   <project path="external/android-visualizer" name="CyanogenMod/android_external_android-visualizer" />
   <project path="external/bash" name="CyanogenMod/android_external_bash" />
