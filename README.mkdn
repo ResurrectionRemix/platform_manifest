@@ -1,20 +1,20 @@
 
-Resurrection OS Nougat Source 2016
+Resurrection Remix OS Nougat Source 2016
 ===================
 
 
-[Join the Resurrection Remix Team](http://forum.resurrectionremix.com/index.php?topic=2037.new#new)
+[Join the Resurrection Remix](https://plus.google.com/communities/109352646351468373340)
 
 Getting Started
 ---------------
 To get started with building from Resurrection Remix sources, you'll need to get
-familiar with [Git and Repo](http://source.android.com/source/version-control.html).
+familiar with [Establishing a build environment](http://source.android.com/source/initializing.html).
 
-How To Build Resurrection Remix ROM for your device - Tutorial
+How to build Resurrection Remix ROM for your device - Tutorial
 --------
-### New Way to set up and build Resurrection Remix.
+### New way to set up and build Resurrection Remix.
 
-##### refer to github.com/akhilnarang/scripts to setup build env
+##### Refer to [scripts](https://github.com/akhilnarang/scripts) to setup build env
 
 Once done, the source code should be already set up and you can head on to build RR by using the build script in the root of source code
  
@@ -24,7 +24,7 @@ so simply copy and paste this in a terminal window:
 
 ---
 
-### Old Way to set up and build Resurrection Remix.
+### Old way to set up and build Resurrection Remix.
 
 ### Build Environment
 
@@ -48,7 +48,7 @@ so simply copy and paste this in a terminal window:
 
      $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-8-jre openjdk-8-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib maven tmux screen w3m ncftp
 
-### Getting the Source
+### Getting the source
 - Making required directories
 - Obtaining the repo binary
 - Adding repo binary to your path
@@ -131,5 +131,4 @@ After doing so, redo everything stated from the Building Section.
 ##### For those who successfully built Resurrection Remix
 
 Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors!Also keep in mind that if an official build exists for a device, no unofficial builds should be released publicly. Do come and build Resurrection Remix another time as source code is routinely being improved upon. If you wish to contibute, feel free to make a pull request to the Ressurection Remix Team! See you again builder!Note:If you decide to create a thread on xda, please limit the thread to only one per device.more than one thread will not be allowed per device as it creates confusion amongst users and makes it hard for us to track bug reports.If you have unofficial builds, post them up on g+ so users can use and report issues in the post itself.
-
 
