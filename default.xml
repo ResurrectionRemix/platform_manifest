@@ -139,6 +139,7 @@
   <project path="external/fec" name="platform/external/fec" groups="pdk" />
   <project path="external/fio" name="platform/external/fio" groups="pdk" />
   <project path="external/flac" name="platform/external/flac" groups="pdk" />
+  <project path="external/fmtlib" name="platform/external/fmtlib" groups="pdk" />
   <project path="external/fonttools" name="platform/external/fonttools" groups="pdk" />
   <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" groups="pdk" />
