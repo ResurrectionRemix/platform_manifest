@@ -206,6 +206,7 @@
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
   <project path="external/libhevc" name="platform/external/libhevc" groups="pdk" />
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="pdk" />
+  <project path="external/libldac" name="platform/external/libldac" groups="pdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="pdk" />
   <project path="external/libmojo" name="platform/external/libmojo" groups="pdk" />
