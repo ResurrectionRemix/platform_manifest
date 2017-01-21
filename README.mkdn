@@ -5,6 +5,8 @@ Resurrection Remix OS Nougat Source 2017
 
 [Join the Resurrection Remix](https://plus.google.com/communities/109352646351468373340)
 
+[Crowdin for translations](https://crowdin.com/project/resurrectionremix/)
+
 Getting Started
 ---------------
 To get started with building from Resurrection Remix sources, you'll need to get
