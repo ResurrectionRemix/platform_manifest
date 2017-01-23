@@ -1,4 +1,3 @@
-
 ![](https://i.imgsafe.org/678946f7a2.png)
 
 
@@ -16,11 +15,7 @@ Rom Downloads
 Social Media
 ===================
 
-[![](https://i.imgsafe.org/67a6467421.png)](https://plus.google.com/communities/109352646351468373340)
-
-[![](https://i.imgsafe.org/67a66c8c68.png)](https://www.facebook.com/resurrectionremixrom)
-
-[![](https://i.imgsafe.org/67a6566bb5.png)](https://twitter.com/)
+[![](https://i.imgsafe.org/67ed4ee248.png)](https://plus.google.com/communities/109352646351468373340) [![](https://i.imgsafe.org/67ed3f229f.png)](https://www.facebook.com/resurrectionremixrom) [![](https://i.imgsafe.org/67ed596e9e.png)](https://twitter.com/)
 
 Getting Started
 ---------------
@@ -148,6 +143,4 @@ After doing so, redo everything stated from the Building Section.
 ##### For those who successfully built Resurrection Remix
 
 Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors!Also keep in mind that if an official build exists for a device, no unofficial builds should be released publicly. Do come and build Resurrection Remix another time as source code is routinely being improved upon. If you wish to contibute, feel free to make a pull request to the Resurrection Remix Team! See you again builder!Note:If you decide to create a thread on xda, please limit the thread to only one per device.more than one thread will not be allowed per device as it creates confusion amongst users and makes it hard for us to track bug reports.If you have unofficial builds, post them up on g+ so users can use and report issues in the post itself.
-
-
 
