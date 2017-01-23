@@ -1,4 +1,4 @@
-![](https://i.imgsafe.org/56593d8991.png)
+![](https://i.imgsafe.org/678946f7a2.png)
 
 
 Resurrection Remix OS Nougat Source 2017
@@ -8,6 +8,13 @@ Resurrection Remix OS Nougat Source 2017
 [Join the Resurrection Remix](https://plus.google.com/communities/109352646351468373340)
 
 [Crowdin for translations](https://crowdin.com/project/resurrectionremix/)
+
+
+Rom Downloads
+===================
+
+[![Download Resurrection Remix OS](https://i.imgsafe.org/675c1f407f.png)](https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
+
 
 Getting Started
 ---------------
@@ -135,4 +142,5 @@ After doing so, redo everything stated from the Building Section.
 ##### For those who successfully built Resurrection Remix
 
 Well, Congratulations on your victory! Now, you have a .zip file that flashable to your device! Share it to the internet as you wish but be sure to contribute back and also give credits to the Resurrection Remix Team and its contributors!Also keep in mind that if an official build exists for a device, no unofficial builds should be released publicly. Do come and build Resurrection Remix another time as source code is routinely being improved upon. If you wish to contibute, feel free to make a pull request to the Resurrection Remix Team! See you again builder!Note:If you decide to create a thread on xda, please limit the thread to only one per device.more than one thread will not be allowed per device as it creates confusion amongst users and makes it hard for us to track bug reports.If you have unofficial builds, post them up on g+ so users can use and report issues in the post itself.
+
 
