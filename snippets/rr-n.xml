@@ -7,6 +7,10 @@
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
   <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" />
+  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" />
+  <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" remote="rr" />
+  <project path="packages/apps/ExactCalculator" name="android_packages_apps_ExactCalculator" remote="rr" />
+  <project path="packages/apps/PhoneCommon" name="android_packages_apps_PhoneCommon" remote="rr" />
   <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" />
   <project path="packages/apps/StorageManager" name="android_packages_apps_StorageManager" remote="rr" />
   <project path="system/sepolicy" name="android_system_sepolicy" remote="rr" />
@@ -27,4 +31,8 @@
 
   <!-- OmniRom additions -->
   <project name="omnirom/android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="github" revision="android-7.1" />
+
+  <!-- masquerade -->
+  <project name="TeamSubstratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
+
 </manifest>
