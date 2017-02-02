@@ -28,6 +28,7 @@
   <project path="art" name="art" remote="rr" />
   <project path="frameworks/native" name="frameworks_native" remote="rr" />
   <project path="system/core" name="system_core" remote="rr" />
+  <project path="external/google" name="android_external_google" remote="rr" />
 
   <!-- OmniRom additions -->
   <project name="omnirom/android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="github" revision="android-7.1" />
