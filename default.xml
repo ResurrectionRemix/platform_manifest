@@ -552,7 +552,6 @@
   <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="test/vts" name="platform/test/vts" groups="vts,pdk" />
-  <project path="test/vts-testcase/hal" name="platform/test/vts-testcase/hal" groups="vts" />
   <project path="test/vts-testcase/fuzz" name="platform/test/vts-testcase/fuzz" groups="vts,pdk" />
   <project path="test/vts-testcase/kernel" name="platform/test/vts-testcase/kernel" groups="vts,pdk" />
   <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" groups="vts,pdk" />
