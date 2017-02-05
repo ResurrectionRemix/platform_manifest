@@ -31,7 +31,7 @@
   <project path="external/google" name="android_external_google" remote="rr" />
 
   <!-- OmniRom additions -->
-  <project name="omnirom/android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="github" revision="android-7.1" />
+  <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
 
   <!-- masquerade -->
   <project name="TeamSubstratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
