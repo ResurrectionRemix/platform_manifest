@@ -28,6 +28,7 @@
   <project path="art" name="art" remote="rr" />
   <project path="frameworks/native" name="frameworks_native" remote="rr" />
   <project path="system/core" name="system_core" remote="rr" />
+  <project path="system/vold" name="android_system_vold" remote="rr" />
   <project path="external/google" name="android_external_google" remote="rr" />
   <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" />
 
