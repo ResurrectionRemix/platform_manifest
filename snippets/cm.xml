@@ -34,7 +34,6 @@
   <project path="hardware/ti/wlan" name="LineageOS/android_hardware_ti_wlan" remote="github" revision="cm-14.1" />
   <project path="hardware/ti/wpan" name="LineageOS/android_hardware_ti_wpan" remote="github" revision="cm-14.1" />
   <project path="packages/apps/AudioFX" name="LineageOS/android_packages_apps_AudioFX" remote="github" revision="cm-14.1" />
-  <project path="packages/apps/Browser" name="LineageOS/android_packages_apps_Browser" remote="github" revision="cm-14.1" />
   <project path="packages/apps/CMBugReport" name="LineageOS/android_packages_apps_CMBugreport" remote="github" revision="cm-14.1" />
   <project path="packages/apps/CMFileManager" name="LineageOS/android_packages_apps_CMFileManager" remote="github" revision="cm-14.1" />
   <project path="packages/apps/CMUpdater" name="LineageOS/android_packages_apps_CMUpdater" remote="github" revision="cm-14.1" />
