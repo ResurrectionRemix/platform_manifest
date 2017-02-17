@@ -114,6 +114,7 @@
   <project path="external/dbus" name="platform/external/dbus" groups="pdk" />
   <project path="external/dbus-binding-generator" name="platform/external/dbus-binding-generator" groups="pdk" />
   <project path="external/deqp" name="platform/external/deqp" groups="pdk-fs" />
+  <project path="external/desugar" name="platform/external/desugar" groups="pdk" />
   <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk" />
   <project path="external/dhcpcd-6.8.2" name="platform/external/dhcpcd-6.8.2" groups="pdk" />
   <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" />
