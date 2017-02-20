@@ -24,7 +24,8 @@
 
  <remote   name="rygebin"
            fetch="https://github.com/Rygebin"
-
+	   revision="nougat" />
+	
   <!-- AOSP Projects -->
   <project path="build" name="android_build" remote="rr" >
     <copyfile src="core/root.mk" dest="Makefile" />
