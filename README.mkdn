@@ -28,7 +28,7 @@ so simply copy and paste this in a terminal window:
 
 ---
 
-### Old Way to set up and build Resurrection Remix.
+### Another Way to set up and build Resurrection Remix.
 
 ### Build Environment
 
