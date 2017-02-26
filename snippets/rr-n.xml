@@ -35,6 +35,6 @@
   <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
 
   <!-- masquerade -->
-  <project name="TeamSubstratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
+  <project name="substratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
 
 </manifest>
