@@ -1,5 +1,5 @@
 
-Resurrection OS Marshmallow Source 2016
+Resurrection OS Marshmallow Source 2016-2017
 ===================
 
 
@@ -28,7 +28,7 @@ so simply copy and paste this in a terminal window:
 
 ---
 
-### Old Way to set up and build Resurrection Remix.
+### Another Way to set up and build Resurrection Remix.
 
 ### Build Environment
 
@@ -92,7 +92,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 ##### Syncing the source
 [Hint: This might take a long time as the source is ~20GB]
 
-      $  repo sync -f --force-sync --no-clone-bundle
+      $  repo sync -f --force-sync --no-clone-bundle --no-tags
 
 ###Building the Resurrection Remix ROM
 - Preparing Required Binaries and Device Drivers
