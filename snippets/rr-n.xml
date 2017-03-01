@@ -33,7 +33,7 @@
 
   <!-- OmniRom additions -->
   <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
-  <project name="packages_apps_packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
+  <project name="packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
 
   <!-- masquerade -->
   <project name="substratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
