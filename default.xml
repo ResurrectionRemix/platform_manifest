@@ -539,7 +539,6 @@
   <project path="system/libufdt" name="platform/system/libufdt" groups="pdk" />
   <project path="system/libvintf" name="platform/system/libvintf" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
-  <project path="system/nativepower" name="platform/system/nativepower" />
   <project path="system/netd" name="platform/system/netd" groups="pdk" />
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" />
   <project path="system/nvram" name="platform/system/nvram" />
