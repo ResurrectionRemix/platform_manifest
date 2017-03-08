@@ -35,7 +35,7 @@
   <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
   <project name="packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
 
-  <!-- masquerade -->
-  <project name="substratum/masquerade" path="packages/apps/masquerade" remote="github" revision="n" />
+  <!-- interfacer -->
+  <project name="substratum/interfacer" path="packages/apps/ThemeInterfacer" remote="github" revision="n-rootless" />
 
 </manifest>
