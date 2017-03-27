@@ -2,6 +2,7 @@
 <manifest>
   <remote name="rr" fetch="ssh://git@github.com/ResurrectionRemix" revision="nougat" />
   <default remote="rr" sync-c="true" sync-j="8" sync-f="true" />
+  <project path="manifest" name="platform_manifest" remote="rr" />
   <project path="rr_crowdin" name="rr_crowdin" remote="rr" />
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
