@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="rr" fetch="ssh://git@github.com/ResurrectionRemix" revision="nougat" />
+  <default remote="rr" sync-c="true" sync-j="8" sync-f="true" />
+  <project path="rr_crowdin" name="rr_crowdin" remote="rr" />
+  <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
+  <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" />
+  <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
+  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+</manifest>
