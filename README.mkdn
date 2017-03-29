@@ -6,6 +6,8 @@ Resurrection Remix OS Nougat Source 2017
 
 [Crowdin for translations](https://crowdin.com/project/resurrectionremix/)
 
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/resurrectionremix/localized.svg)](https://crowdin.com/project/resurrectionremix)
+
 
 Rom Downloads
 ===================
