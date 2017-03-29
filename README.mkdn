@@ -14,6 +14,18 @@ Rom Downloads
 
 [![Download Resurrection Remix OS](https://i.imgsafe.org/675c1f407f.png)](https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
 
+[![Download Resurrection Remix 
+OS](https://img.shields.io/sourceforge/dd/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
+
+[![Download Resurrection Remix 
+OS](https://img.shields.io/sourceforge/dw/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
+
+[![Download Resurrection Remix 
+OS](https://img.shields.io/sourceforge/dm/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
+
+[![Download Resurrection Remix 
+OS](https://img.shields.io/sourceforge/dt/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
+
 Social Media
 ===================
 
