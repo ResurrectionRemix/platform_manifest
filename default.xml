@@ -188,6 +188,7 @@
   <project path="external/kmod" name="platform/external/kmod" groups="pdk" />
   <project path="external/ksoap2" name="platform/external/ksoap2" groups="pdk" />
   <project path="external/libavc" name="platform/external/libavc" groups="pdk" />
+  <project path="external/libbackup" name="platform/external/libbackup" groups="pdk" />
   <project path="external/libbrillo" name="platform/external/libbrillo" groups="pdk" />
   <project path="external/libcap" name="platform/external/libcap" groups="pdk" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="pdk" />
