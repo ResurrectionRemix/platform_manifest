@@ -276,6 +276,8 @@
   <project path="external/ppp" name="platform/external/ppp" groups="pdk" />
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
+  <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
+  <project path="external/python/cpython3" name="platform/external/python/cpython3" groups="pdk" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk" />
   <project path="external/rmi4utils" name="platform/external/rmi4utils" groups="pdk" />
