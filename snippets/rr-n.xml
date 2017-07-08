@@ -17,7 +17,6 @@
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
   <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="rr" />
   <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
-  <project path="packages/apps/MusicFX" name="packages_apps_MusicFX" remote="rr" />
   <project path="external/DUtils" name="external_DUtils" remote="rr"/>
   <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" />
   <project path="packages/apps/CMParts" name="android_packages_apps_CMParts" remote="rr"/>
