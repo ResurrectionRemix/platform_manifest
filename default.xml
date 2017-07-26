@@ -225,7 +225,6 @@
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" />
   <project path="external/libusb-compat" name="platform/external/libusb-compat" groups="pdk" />
-  <project path="external/libutf" name="platform/external/libutf" groups="pdk" />
   <project path="external/libvncserver" name="platform/external/libvncserver" groups="pdk" />
   <project path="external/libvorbis" name="platform/external/libvorbis" groups="pdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
