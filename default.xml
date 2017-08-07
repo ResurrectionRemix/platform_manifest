@@ -572,6 +572,7 @@
   <project path="test/vti/dashboard" name="platform/test/vti/dashboard" groups="vts,pdk" />
   <project path="test/vti/fuzz_test_serving" name="platform/test/vti/fuzz_test_serving" groups="vts,pdk" />
   <project path="test/vti/test_serving" name="platform/test/vti/test_serving" groups="vts,pdk" />
+  <project path="toolchain/benchmark" name="toolchain/benchmark" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
