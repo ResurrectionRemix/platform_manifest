@@ -34,7 +34,6 @@
   <project path="hardware/ti/wlan" name="LineageOS/android_hardware_ti_wlan" />
   <project path="hardware/ti/wpan" name="LineageOS/android_hardware_ti_wpan" />
   <project path="packages/apps/AudioFX" name="LineageOS/android_packages_apps_AudioFX" />
-  <project path="packages/apps/CMBugReport" name="LineageOS/android_packages_apps_CMBugreport" />
   <project path="packages/apps/CMFileManager" name="LineageOS/android_packages_apps_CMFileManager" />
   <project path="packages/apps/Eleven" name="LineageOS/android_packages_apps_Eleven" />
   <project path="packages/apps/Exchange" name="LineageOS/android_packages_apps_Exchange" />
@@ -49,7 +48,6 @@
   <project path="packages/providers/DataUsageProvider" name="LineageOS/android_packages_providers_DataUsageProvider" />
   <project path="packages/providers/WeatherProvider" name="LineageOS/android_packages_providers_WeatherProvider" />
   <project path="packages/services/CMAudioService" name="LineageOS/android_packages_services_CMAudioService" />
-  <project path="packages/services/LiveLockScreenService" name="LineageOS/android_packages_services_LiveLockScreenService" />
   <project path="packages/services/WeatherService" name="LineageOS/android_packages_services_WeatherService" />
   <project path="prebuilts/cmsdk" name="LineageOS/android_prebuilts_cmsdk" clone-depth="1" />
   <project path="system/extras/su" name="LineageOS/android_system_extras_su" />
