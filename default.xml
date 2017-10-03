@@ -549,6 +549,7 @@
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,tradefed" clone-depth="1" />
   <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
   <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk9" name="platform/prebuilts/jdk/jdk9" groups="pdk" clone-depth="1" />
   <project path="prebuilts/libs/libedit" name="platform/prebuilts/libs/libedit" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
   <project path="prebuilts/maven_repo/bumptech" name="platform/prebuilts/maven_repo/bumptech" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
