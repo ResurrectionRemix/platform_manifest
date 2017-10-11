@@ -80,7 +80,6 @@
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
-  <project path="docs/source.android.com" name="platform/docs/source.android.com" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/abi-compliance-checker" name="platform/external/abi-compliance-checker" groups="pdk" />
   <project path="external/abi-dumper" name="platform/external/abi-dumper" groups="pdk" />
