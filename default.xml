@@ -162,6 +162,7 @@
   <project path="external/google-fonts/coming-soon" name="platform/external/google-fonts/coming-soon" groups="pdk" />
   <project path="external/google-fonts/cutive-mono" name="platform/external/google-fonts/cutive-mono" groups="pdk" />
   <project path="external/google-fonts/dancing-script" name="platform/external/google-fonts/dancing-script" groups="pdk" />
+  <project path="external/google-styleguide" name="platform/external/google-styleguide" groups="pdk" />
   <project path="external/google-tv-pairing-protocol" name="platform/external/google-tv-pairing-protocol" groups="pdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="pdk" />
   <project path="external/gptfdisk" name="platform/external/gptfdisk" groups="pdk" />
