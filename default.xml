@@ -249,7 +249,6 @@
   <project path="external/libyuv" name="platform/external/libyuv" groups="libyuv,pdk-cw-fs,pdk-fs" />
   <project path="external/linux-kselftest" name="platform/external/linux-kselftest" groups="vts,pdk-fs" />
   <project path="external/lisa" name="platform/external/lisa" groups="pdk" />
-  <project path="external/lld" name="platform/external/lld" groups="pdk-fs" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/lmfit" name="platform/external/lmfit" groups="pdk" />
   <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk-fs" />
