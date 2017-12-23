@@ -295,8 +295,45 @@
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
   <project path="external/puffin" name="platform/external/puffin" groups="pdk" />
+  <project path="external/python/appdirs" name="platform/external/python/appdirs" groups="pdk" />
+  <project path="external/python/cachetools" name="platform/external/python/cachetools" groups="pdk" />
   <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
   <project path="external/python/cpython3" name="platform/external/python/cpython3" groups="pdk" />
+  <project path="external/python/dill" name="platform/external/python/dill" groups="pdk" />
+  <project path="external/python/enum" name="platform/external/python/enum" groups="pdk" />
+  <project path="external/python/enum34" name="platform/external/python/enum34" groups="pdk" />
+  <project path="external/python/future" name="platform/external/python/future" groups="pdk" />
+  <project path="external/python/futures" name="platform/external/python/futures" groups="pdk" />
+  <project path="external/python/gapic-google-cloud-pubsub-v1" name="platform/external/python/gapic-google-cloud-pubsub-v1" groups="pdk" />
+  <project path="external/python/google-api-python-client" name="platform/external/python/google-api-python-client" groups="pdk" />
+  <project path="external/python/google-auth-httplib2" name="platform/external/python/google-auth-httplib2" groups="pdk" />
+  <project path="external/python/google-auth" name="platform/external/python/google-auth" groups="pdk" />
+  <project path="external/python/google-cloud-core" name="platform/external/python/google-cloud-core" groups="pdk" />
+  <project path="external/python/google-cloud-pubsub" name="platform/external/python/google-cloud-pubsub" groups="pdk" />
+  <project path="external/python/google-gax" name="platform/external/python/google-gax" groups="pdk" />
+  <project path="external/python/googleapis" name="platform/external/python/googleapis" groups="pdk" />
+  <project path="external/python/grpc-google-iam-v1" name="platform/external/python/grpc-google-iam-v1" groups="pdk" />
+  <project path="external/python/grpcio" name="platform/external/python/grpcio" groups="pdk" />
+  <project path="external/python/httplib2" name="platform/external/python/httplib2" groups="pdk" />
+  <project path="external/python/matplotlib" name="platform/external/python/matplotlib" groups="pdk" />
+  <project path="external/python/numpy" name="platform/external/python/numpy" groups="pdk" />
+  <project path="external/python/oauth2client" name="platform/external/python/oauth2client" groups="pdk" />
+  <project path="external/python/olefile" name="platform/external/python/olefile" groups="pdk" />
+  <project path="external/python/packaging" name="platform/external/python/packaging" groups="pdk" />
+  <project path="external/python/parse" name="platform/external/python/parse" groups="pdk" />
+  <project path="external/python/Pillow" name="platform/external/python/Pillow" groups="pdk" />
+  <project path="external/python/ply" name="platform/external/python/ply" groups="pdk" />
+  <project path="external/python/proto-google-cloud-pubsub-v1" name="platform/external/python/proto-google-cloud-pubsub-v1" groups="pdk" />
+  <project path="external/python/protobuf" name="platform/external/python/protobuf" groups="pdk" />
+  <project path="external/python/pyasn1-modules" name="platform/external/python/pyasn1-modules" groups="pdk" />
+  <project path="external/python/pyasn1" name="platform/external/python/pyasn1" groups="pdk" />
+  <project path="external/python/pyparsing" name="platform/external/python/pyparsing" groups="pdk" />
+  <project path="external/python/requests" name="platform/external/python/requests" groups="pdk" />
+  <project path="external/python/rsa" name="platform/external/python/rsa" groups="pdk" />
+  <project path="external/python/scipy" name="platform/external/python/scipy" groups="pdk" />
+  <project path="external/python/setuptools" name="platform/external/python/setuptools" groups="pdk" />
+  <project path="external/python/six" name="platform/external/python/six" groups="pdk" />
+  <project path="external/python/uritemplates" name="platform/external/python/uritemplates" groups="pdk" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/rmi4utils" name="platform/external/rmi4utils" />
