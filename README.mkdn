@@ -1,7 +1,7 @@
 ![](https://i.imgsafe.org/678946f7a2.png)
 
 
-Resurrection Remix OS Nougat Source 2017
+Resurrection Remix OS Nougat Source 2018
 ===================
 
 [Crowdin for translations](https://crowdin.com/project/resurrectionremix/)
