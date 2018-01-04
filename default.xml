@@ -334,7 +334,6 @@
   <project path="external/python/setuptools" name="platform/external/python/setuptools" groups="vts,pdk" />
   <project path="external/python/six" name="platform/external/python/six" groups="vts,pdk" />
   <project path="external/python/uritemplates" name="platform/external/python/uritemplates" groups="vts,pdk" />
-  <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/rmi4utils" name="platform/external/rmi4utils" />
   <project path="external/robolectric" name="platform/external/robolectric" groups="pdk-cw-fs,pdk-fs" />
