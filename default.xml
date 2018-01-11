@@ -244,6 +244,7 @@
   <project path="external/libvorbis" name="platform/external/libvorbis" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
   <project path="external/libvterm" name="platform/external/libvterm" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/libxcam" name="platform/external/libxcam" groups="pdk" />
   <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,pdk-cw-fs,pdk-fs,libxml2" />
   <project path="external/libtextclassifier" name="platform/external/libtextclassifier" groups="pdk" />
   <project path="external/libyuv" name="platform/external/libyuv" groups="libyuv,pdk-cw-fs,pdk-fs" />
