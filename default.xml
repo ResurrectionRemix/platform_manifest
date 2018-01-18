@@ -662,6 +662,7 @@
   <project path="test/sts" name="platform/test/sts" groups="sts,pdk" />
   <project path="toolchain/benchmark" name="toolchain/benchmark" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
+  <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" />
   <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,pdk,tradefed" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
