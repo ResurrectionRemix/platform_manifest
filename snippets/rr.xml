@@ -21,6 +21,7 @@
   <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" remote="rr"/>
   <project path="frameworks/av" name="frameworks_av" remote="rr" />
   <project path="system/core" name="system_core" remote="rr" />
+  <project path="lineage-sdk" name="lineage-sdk" remote="rr" />
   <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="rr" />
   <!-- OmniRom additions -->
   <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
