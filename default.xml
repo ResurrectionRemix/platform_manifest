@@ -341,6 +341,7 @@
   <project path="external/roboto-fonts" name="platform/external/roboto-fonts" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/rootdev" name="platform/external/rootdev" />
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
+  <project path="external/scapy" name="platform/external/scapy" groups="pdk-fs" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
   <project path="external/seccomp-tests" name="platform/external/seccomp-tests" />
   <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
