@@ -361,6 +361,7 @@
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
   <project path="external/strace" name="platform/external/strace" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/stressapptest" name="platform/external/stressapptest" groups="pdk" />
+  <project path="external/subsampling-scale-image-view" name="platform/external/subsampling-scale-image-view" clone-depth="1" />
   <project path="external/swiftshader" name="platform/external/swiftshader" groups="pdk" />
   <project path="external/syslinux" name="platform/external/syslinux" groups="pdk" />
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk,pdk-cw-fs,pdk-fs" />
