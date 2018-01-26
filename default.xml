@@ -9,6 +9,10 @@
            fetch="https://github.com/ResurrectionRemix"
            revision="oreo" />
 
+  <remote  name="rr-devices"
+           fetch="https://github.com/ResurrectionRemix-Devices"
+           revision="oreo" />
+
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
