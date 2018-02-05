@@ -13,6 +13,7 @@
   <project path="vendor/rr" name="ResurrectionRemix/private_vendor_rr" remote="github" revision="oreo" />
   <project path="frameworks/base" name="ResurrectionRemix/private_frameworks_base" remote="github" revision="oreo" />
   <project path="packages/apps/Settings" name="ResurrectionRemix/private_packages_apps_Settings" remote="github" revision="oreo" />
+  <project path="packages/apps/Trebuchet" name="westcripp/android_packages_apps_Trebuchet" remote="github" revision="oreo" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
