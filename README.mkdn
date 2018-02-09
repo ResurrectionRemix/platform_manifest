@@ -13,16 +13,16 @@ Rom Downloads
 [Download Resurrection Remix OS](https://sourceforge.net/projects/resurrectionremix-oreo/files/?source=navbar)
 
 [![Download Resurrection Remix 
-OS](https://img.shields.io/sourceforge/dd/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
+OS](https://img.shields.io/sourceforge/dd/resurrectionremix-oreo.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
 
 [![Download Resurrection Remix 
-OS](https://img.shields.io/sourceforge/dw/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
+OS](https://img.shields.io/sourceforge/dw/resurrectionremix-oreo.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
 
 [![Download Resurrection Remix 
-OS](https://img.shields.io/sourceforge/dm/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
+OS](https://img.shields.io/sourceforge/dm/resurrectionremix-oreo.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
 
 [![Download Resurrection Remix 
-OS](https://img.shields.io/sourceforge/dt/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
+OS](https://img.shields.io/sourceforge/dt/resurrectionremix-oreo.svg)](https://sourceforge.net/projects/resurrectionremix-oreo/files/)
 
 Getting Started
 ---------------
