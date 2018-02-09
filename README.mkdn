@@ -12,7 +12,8 @@ Resurrection Remix OS Nougat Source 2018
 Rom Downloads
 ===================
 
-[![Download Resurrection Remix OS](https://i.imgsafe.org/675c1f407f.png)](https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
+[![Download Resurrection Remix OS]
+(https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
 
 [![Download Resurrection Remix 
 OS](https://img.shields.io/sourceforge/dd/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
@@ -25,11 +26,6 @@ OS](https://img.shields.io/sourceforge/dm/resurrectionremix.svg)](https://source
 
 [![Download Resurrection Remix 
 OS](https://img.shields.io/sourceforge/dt/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
-
-Social Media
-===================
-
-[![](https://i.imgsafe.org/67ed4ee248.png)](https://plus.google.com/communities/109352646351468373340) [![](https://i.imgsafe.org/67ed3f229f.png)](https://www.facebook.com/resurrectionremixrom) [![](https://i.imgsafe.org/67ed596e9e.png)](https://twitter.com/)
 
 Getting Started
 ---------------
@@ -107,7 +103,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
 ##### Initializing the RR repo and downloading the manifest
 
-      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
+      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b oreo
 
 ##### Syncing the source
 [Hint: This might take a long time as the source is ~20GB]
