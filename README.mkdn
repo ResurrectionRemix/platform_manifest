@@ -1,5 +1,3 @@
-![](https://i.imgsafe.org/678946f7a2.png)
-
 
 Resurrection Remix OS Nougat Source 2018
 ===================
@@ -12,8 +10,7 @@ Resurrection Remix OS Nougat Source 2018
 Rom Downloads
 ===================
 
-[![Download Resurrection Remix OS]
-(https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
+[Download Resurrection Remix OS](https://sourceforge.net/projects/resurrectionremix/files/?source=navbar)
 
 [![Download Resurrection Remix 
 OS](https://img.shields.io/sourceforge/dd/resurrectionremix.svg)](https://sourceforge.net/projects/resurrectionremix/files/)
