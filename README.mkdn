@@ -1,5 +1,5 @@
 
-Resurrection Remix OS Nougat Source 2018
+Resurrection Remix OS Oreo Source 2018
 ===================
 
 [Crowdin for translations](https://crowdin.com/project/resurrectionremix/)
