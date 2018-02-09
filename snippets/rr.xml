@@ -29,6 +29,7 @@
   <project name="packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
 
   <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
 
 </manifest>
 
