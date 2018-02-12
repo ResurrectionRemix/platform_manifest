@@ -270,7 +270,6 @@
   <project path="external/nanopb-c" name="platform/external/nanopb-c" groups="pdk" />
   <project path="external/naver-fonts" name="platform/external/naver-fonts" groups="pdk" />
   <project path="external/netcat" name="platform/external/netcat" groups="pdk" />
-  <project path="external/netperf" name="platform/external/netperf" groups="pdk" />
   <project path="external/neven" name="platform/external/neven" groups="pdk" />
   <project path="external/nfacct" name="platform/external/nfacct" groups="pdk" />
   <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" />
