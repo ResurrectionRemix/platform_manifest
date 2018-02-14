@@ -107,7 +107,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
       $  repo sync -f --force-sync --no-clone-bundle
 
-###Building the Resurrection Remix ROM
+### Building the Resurrection Remix ROM
 - Preparing Required Binaries and Device Drivers
 - Setting Up CCache (Optional)
 - Building Resurrection Remix
