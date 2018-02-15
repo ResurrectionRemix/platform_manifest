@@ -8,6 +8,9 @@
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
   <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="rr" />
+  <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
+  <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="rr" />
+  <project name="android_packages_apps_OmniStyle" path="packages/apps/OmniStyle" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
 </manifest>
