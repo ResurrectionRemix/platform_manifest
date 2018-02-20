@@ -103,7 +103,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
       $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b oreo
 
 ##### Syncing the source
-[Hint: This might take a long time as the source is ~20GB]
+[Hint: This might take a long time as the source is ~26GB]
 
       $  repo sync -f --force-sync --no-clone-bundle
 
