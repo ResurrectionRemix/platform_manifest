@@ -10,4 +10,6 @@
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="rr" />
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts" remote="rr" />
+  <project path="lineage-sdk" name="lineage-sdk" remote="rr" />
 </manifest>
