@@ -17,10 +17,6 @@
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
-  <remote  name="hs"
-           fetch="https://github.com/HridayHS"
-           revision="marshmallow" />
-
   <remote  name="rr"
 	   fetch="https://github.com/ResurrectionRemix"
 	   revision="marshmallow" />
@@ -52,21 +48,21 @@
   <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" />
   <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
   <project path="packages/apps/CMFileManager" name="packages_apps_CMFileManager" remote="rr" />
-  <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="hs"  />
-  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="hs" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="hs" />
+  <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr"  />
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="rr" />
   <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" />
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" groups="pdk-fs" remote="rr"/>
   <project path="packages/apps/SetupWizard" name="android_packages_apps_SetupWizard" remote="rr" />
-  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="hs" />
-  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="hs" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
   <project path="system/core" name="system_core" groups="pdk" remote="rr" />
   <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" />
   <project path="vendor/cmsdk" name="cm_platform_sdk" remote="rr" />
-  <project path="packages/services/ThemeManagerService" name="android_packages_services_ThemeManagerService" remote="hs" />
-  <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="hs" />
+  <project path="packages/services/ThemeManagerService" name="android_packages_services_ThemeManagerService" remote="rr" />
+  <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="rr" />
 <!-- END RR -->
 	
 <!-- BEGIN LINEAGEOS -->
