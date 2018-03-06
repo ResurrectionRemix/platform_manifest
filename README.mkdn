@@ -11,24 +11,10 @@ To get started with building from Resurrection Remix sources, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 How To Build Resurrection Remix ROM for your device - Tutorial
---------
-### New Way to set up and build Resurrection Remix.
-
-##### Simply copy and paste this in a terminal window:
-
-     $ git clone https://github.com/ResurrectionRemix/ResurrectedScripts.git -b marshmallow scripts
-     $ cd scripts
-     $ ./setup.sh
-
-Once done, the source code should be already set up and you can head on to build RR by using the build script in the root of source code
- 
-so simply copy and paste this in a terminal window:
-
-     $ bash build.sh
 
 ---
 
-### Another Way to set up and build Resurrection Remix.
+### Set up and build Resurrection Remix.
 
 ### Build Environment
 
@@ -87,7 +73,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 
 ##### Initializing the RR repo and downloading the manifest
 
-      $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b marshmallow
+      $  repo init -u https://github.com/Mbtt107/platform_manifest.git -b marshmallow
 
 ##### Syncing the source
 [Hint: This might take a long time as the source is ~20GB]
