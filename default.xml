@@ -17,6 +17,10 @@
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
+<remote  name="hirqiz"
+           fetch="https://github.com/Mbtt107"
+           revision="marshmallow" />	
+	
   <remote  name="rr"
 	   fetch="https://github.com/ResurrectionRemix"
 	   revision="marshmallow" />
@@ -46,11 +50,12 @@
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="rr" />
   <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="rr" />
   <project path="frameworks/opt/cards" name="frameworks_opt_cards" remote="rr" />
+  <project path="frameworks/ex" name="android_frameworks_ex" groups="pdk-cw-fs,pdk-fs" remote="hirqiz"/>
   <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
   <project path="packages/apps/CMFileManager" name="packages_apps_CMFileManager" remote="rr" />
   <project path="packages/apps/InCallUI" name="android_packages_apps_InCallUI" remote="rr"  />
-  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="rr" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="rr" />
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="hirqiz" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="hirqiz" />
   <project path="packages/apps/OmniSwitch" name="android_packages_apps_OmniSwitch" remote="rr" />
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
@@ -183,7 +188,6 @@
   <project path="frameworks/compile/libbcc" name="LineageOS/android_frameworks_compile_libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="LineageOS/android_frameworks_compile_mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="LineageOS/android_frameworks_compile_slang" groups="pdk" />
-  <project path="frameworks/ex" name="LineageOS/android_frameworks_ex" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/minikin" name="LineageOS/android_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/ml" name="LineageOS/android_frameworks_ml" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/multidex" name="LineageOS/android_frameworks_multidex" groups="pdk-cw-fs,pdk-fs" />
