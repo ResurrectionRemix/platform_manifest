@@ -70,7 +70,7 @@
 <!-- BEGIN HIRQIZ -->
   <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="mbtt" />
   <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="mbtt" />
-  <project path="frameworks/ex" name="android_frameworks_ex" remote="mbtt" groups="pdk-cw-fs,pdk-fs""/>	
+  <project path="frameworks/ex" name="android_frameworks_ex" remote="mbtt" groups="pdk-cw-fs,pdk-fs" />	
 <!-- END HIRQIZ -->
 
 <!-- BEGIN LINEAGEOS -->
