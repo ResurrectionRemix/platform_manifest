@@ -68,8 +68,8 @@
 <!-- END RR -->
 
 <!-- BEGIN ONELABS -->
-  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="onelabsonelabsonelabs" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="onelabsonelabs" />
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="onelabs" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="onelabs" />
   <project path="frameworks/ex" name="android_frameworks_ex" remote="onelabs" groups="pdk-cw-fs,pdk-fs" />	
 <!-- END ONELABS -->
 
