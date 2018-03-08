@@ -17,8 +17,8 @@
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
-  <remote  name="hirqiz"
-           fetch="https://github.com/Mbtt107"
+  <remote  name="onelabs"
+           fetch="https://github.com/OneLabsOrganization"
            revision="cm-13.0" />	
 	
   <remote  name="rr"
@@ -67,11 +67,11 @@
   <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="rr" />
 <!-- END RR -->
 
-<!-- BEGIN HIRQIZ -->
-  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="hirqiz" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="hirqiz" />
-  <project path="frameworks/ex" name="android_frameworks_ex" remote="hirqiz" groups="pdk-cw-fs,pdk-fs" />	
-<!-- END HIRQIZ -->
+<!-- BEGIN ONELABS -->
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" remote="onelabsonelabsonelabs" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="onelabsonelabs" />
+  <project path="frameworks/ex" name="android_frameworks_ex" remote="onelabs" groups="pdk-cw-fs,pdk-fs" />	
+<!-- END ONELABS -->
 
 <!-- BEGIN LINEAGEOS -->
   <project path="abi/cpp" name="LineageOS/android_abi_cpp" groups="pdk" />
