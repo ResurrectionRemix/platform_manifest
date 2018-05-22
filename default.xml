@@ -639,6 +639,8 @@
   <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="test/framework" name="platform/test/framework" groups="vts,pdk" />
+  <project path="test/mlts/benchmark" name="platform/test/mlts/benchmark" groups="pdk" />
+  <project path="test/mlts/models" name="platform/test/mlts/models" groups="pdk" />
   <project path="test/sts" name="platform/test/sts" groups="sts,pdk" />
   <project path="test/vti/alert" name="platform/test/vti/alert" groups="vts,pdk" />
   <project path="test/vti/dashboard" name="platform/test/vti/dashboard" groups="vts,pdk" />
