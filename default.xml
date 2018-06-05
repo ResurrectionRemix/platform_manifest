@@ -285,6 +285,7 @@
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
   <project path="external/puffin" name="platform/external/puffin" groups="pdk" />
+  <project path="external/python/apitools" name="platform/external/python/apitools" groups="pdk" />
   <project path="external/python/appdirs" name="platform/external/python/appdirs" groups="vts,pdk" />
   <project path="external/python/cachetools" name="platform/external/python/cachetools" groups="vts,pdk" />
   <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
