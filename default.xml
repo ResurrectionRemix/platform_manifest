@@ -369,7 +369,6 @@
   <project path="external/universal-tween-engine" name="platform/external/universal-tween-engine" />
   <project path="external/v4l2_codec2" name="platform/external/v4l2_codec2" groups="pdk" />
   <project path="external/v8" name="platform/external/v8" groups="pdk" />
-  <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" />
   <project path="external/vboot_reference" name="platform/external/vboot_reference" groups="vboot,pdk-fs" />
   <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
   <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
