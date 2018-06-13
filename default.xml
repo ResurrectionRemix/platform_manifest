@@ -259,6 +259,7 @@
   <project path="external/nanopb-c" name="platform/external/nanopb-c" groups="pdk" />
   <project path="external/naver-fonts" name="platform/external/naver-fonts" groups="pdk" />
   <project path="external/neven" name="platform/external/neven" groups="pdk" />
+  <project path="external/newfs_msdos" name="platform/external/newfs_msdos" groups="pdk" />
   <project path="external/nfacct" name="platform/external/nfacct" groups="pdk" />
   <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" />
   <project path="external/nist-sip" name="platform/external/nist-sip" groups="pdk" />
