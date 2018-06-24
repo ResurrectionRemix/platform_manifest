@@ -6,7 +6,7 @@
            review="review.lineageos.org" />
 
   <remote  name="rr"
-           fetch="https://github.com/ResurrectionRemix"
+           fetch="https://github.com/"
            revision="oreo"
 	   review="gerrit.resurrectionremix.com" />
 

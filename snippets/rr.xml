@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="android" name="platform_manifest" remote="rr" />
-  <project path="build/make" name="android_build" remote="rr" >
+  <project path="android" name="ResurrectionRemix/platform_manifest" remote="rr" />
+  <project path="build/make" name="ResurrectionRemix/android_build" remote="rr" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -10,34 +10,34 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="android_build_soong" remote="rr" >
+  <project path="build/soong" name="ResurrectionRemix/android_build_soong" remote="rr" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
-  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
-  <project path="external/DUtils" name="external_DUtils" remote="rr"/>
-  <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
-  <project path="frameworks/native" name="frameworks_native" remote="rr" />
-  <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="rr" />
-  <project path="lineage-sdk" name="lineage-sdk" remote="rr" />
-  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="rr" />
-  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="rr" />
-  <project path="packages/apps/DUI" name="packages_apps_DUI" remote="rr" />
-  <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="rr" />
-  <project path="packages/apps/OmniStyle" name="android_packages_apps_OmniStyle" remote="rr" />
-  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+  <project path="device/rr/sepolicy" name="ResurrectionRemix/device_rr_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy" name="ResurrectionRemix/device_qcom_sepolicy" remote="rr" />
+  <project path="external/DUtils" name="ResurrectionRemix/external_DUtils" remote="rr"/>
+  <project path="frameworks/base" name="ResurrectionRemix/android_frameworks_base" remote="rr" />
+  <project path="frameworks/native" name="ResurrectionRemix/frameworks_native" remote="rr" />
+  <project path="frameworks/opt/slimrecent" name="ResurrectionRemix/frameworks_opt_slimrecent" remote="rr" />
+  <project path="lineage-sdk" name="ResurrectionRemix/lineage-sdk" remote="rr" />
+  <project path="packages/apps/Contacts" name="ResurrectionRemix/android_packages_apps_Contacts" remote="rr" />
+  <project path="packages/apps/Dialer" name="ResurrectionRemix/android_packages_apps_Dialer" remote="rr" />
+  <project path="packages/apps/DUI" name="ResurrectionRemix/packages_apps_DUI" remote="rr" />
+  <project path="packages/apps/ResurrectionOTA" name="ResurrectionRemix/packages_apps_ResurrectionOTA" remote="rr" />
+  <project path="packages/apps/Messaging" name="ResurrectionRemix/android_packages_apps_Messaging" remote="rr" />
+  <project path="packages/apps/OmniStyle" name="ResurrectionRemix/android_packages_apps_OmniStyle" remote="rr" />
+  <project path="packages/apps/Settings" name="ResurrectionRemix/Resurrection_packages_apps_Settings" remote="rr" />
   <project path="packages/apps/SnapdragonCamera2" name="omnirom/android_packages_apps_SnapdragonCamera2" remote="github" revision="android-8.1" />
-  <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="rr" />
-  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
-  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
-  <project name="packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
-  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts" remote="rr"/>
-  <project name="android_packages_overlays_Resurrection" path="packages/overlays/Resurrection" remote="rr" />
-  <project path="system/core" name="system_core" remote="rr" />
-  <project path="system/sepolicy" name="android_system_sepolicy" remote="rr" />
-  <project path="vendor/rr" name="android_vendor_resurrection" remote="rr" />
+  <project path="packages/apps/Trebuchet" name="ResurrectionRemix/android_packages_apps_Trebuchet" remote="rr" />
+  <project path="packages/services/Telecomm" name="ResurrectionRemix/android_packages_services_Telecomm" remote="rr" />
+  <project path="packages/services/Telephony" name="ResurrectionRemix/android_packages_services_Telephony" remote="rr" />
+  <project name="ResurrectionRemix/packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
+  <project path="packages/apps/LineageParts" name="ResurrectionRemix/packages_apps_LineageParts" remote="rr"/>
+  <project name="ResurrectionRemix/android_packages_overlays_Resurrection" path="packages/overlays/Resurrection" remote="rr" />
+  <project path="system/core" name="ResurrectionRemix/system_core" remote="rr" />
+  <project path="system/sepolicy" name="ResurrectionRemix/android_system_sepolicy" remote="rr" />
+  <project path="vendor/rr" name="ResurrectionRemix/android_vendor_resurrection" remote="rr" />
 
 </manifest>
 
