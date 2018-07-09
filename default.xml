@@ -373,6 +373,7 @@
   <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
   <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
   <project path="external/volley" name="platform/external/volley" groups="pdk" />
+  <project path="external/vulkan-headers" name="platform/external/vulkan-headers" groups="pdk" />
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="pdk" />
   <project path="external/walt" name="platform/external/walt" groups="pdk" />
   <project path="external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" />
