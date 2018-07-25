@@ -333,6 +333,7 @@
   <project path="external/robolectric" name="platform/external/robolectric" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/roboto-fonts" name="platform/external/roboto-fonts" groups="pdk" />
   <project path="external/rootdev" name="platform/external/rootdev" groups="pdk" />
+  <project path="external/Reactive-Extensions/RxCpp" name="platform/external/Reactive-Extensions/RxCpp" groups="pdk" />
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/scapy" name="platform/external/scapy" groups="pdk-fs" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
