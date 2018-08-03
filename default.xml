@@ -311,6 +311,7 @@
   <project path="external/python/grpcio" name="platform/external/python/grpcio" groups="vts,pdk" />
   <project path="external/python/httplib2" name="platform/external/python/httplib2" groups="vts,pdk" />
   <project path="external/python/matplotlib" name="platform/external/python/matplotlib" groups="vts,pdk" />
+  <project path="external/python/mock" name="platform/external/python/mock" groups="pdk" />
   <project path="external/python/numpy" name="platform/external/python/numpy" groups="vts,pdk" />
   <project path="external/python/oauth2client" name="platform/external/python/oauth2client" groups="vts,pdk" />
   <project path="external/python/olefile" name="platform/external/python/olefile" groups="vts,pdk" />
