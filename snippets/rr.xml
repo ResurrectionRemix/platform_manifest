@@ -35,6 +35,7 @@
   <project name="ResurrectionRemix/packages_services_OmniJaws" path="packages/services/OmniJaws" remote="rr" />
   <project path="packages/apps/LineageParts" name="ResurrectionRemix/packages_apps_LineageParts" remote="rr"/>
   <project name="ResurrectionRemix/android_packages_overlays_Resurrection" path="packages/overlays/Resurrection" remote="rr" />
+  <project path="prebuilts/clang/host/linux-x86" name="AOSiP/platform_prebuilts_clang_host_linux-x86" clone-depth="1" remote="github" revision="oreo-mr1" />
   <project path="system/core" name="ResurrectionRemix/system_core" remote="rr" />
   <project path="system/sepolicy" name="ResurrectionRemix/android_system_sepolicy" remote="rr" />
   <project path="vendor/rr" name="ResurrectionRemix/android_vendor_resurrection" remote="rr" />
