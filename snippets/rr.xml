@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project path="android" name="ResurrectionRemix/platform_manifest" remote="rr" />
+  <project path="build/make" name="ResurrectionRemix/private_build" remote="private" revision="pie" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+<project path="frameworks/base" name="ResurrectionRemix/private_frameworks_base" remote="private" revision="pie" />
+<project path="vendor/rr" name="ResurrectionRemix/private_vendor_rr" remote="private" revision="pie" />
+<project path="packages/apps/Settings" name="ResurrectionRemix/private_packages_apps_Settings" remote="private" revision="pie" />
+<project path="lineage-sdk" name="ResurrectionRemix/android_lineage-sdk" revision="pie" />
+<project path="device/qcom/sepolicy" name="ResurrectionRemix/device_qcom_sepolicy" remote="rr" />
+<project path="hardware/qcom/bt-caf" name="ResurrectionRemix/android_hardware_bt-caf" remote="rr" />
+<project path="external/tinycompress" name="ResurrectionRemix/external_tinycompress" remote="rr" />
+<project path="device/rr/sepolicy" name="ResurrectionRemix/device_rr_sepolicy" remote="rr" />
+</manifest>
