@@ -17,6 +17,5 @@
 <project path="lineage-sdk" name="ResurrectionRemix/android_lineage-sdk" revision="pie" />
 <project path="device/qcom/sepolicy" name="ResurrectionRemix/device_qcom_sepolicy" remote="rr" />
 <project path="hardware/qcom/bt-caf" name="ResurrectionRemix/android_hardware_bt-caf" remote="rr" />
-<project path="external/tinycompress" name="ResurrectionRemix/external_tinycompress" remote="rr" />
 <project path="device/rr/sepolicy" name="ResurrectionRemix/device_rr_sepolicy" remote="rr" />
 </manifest>
