@@ -115,7 +115,7 @@ Alright, so now we’re getting there. I have outlined the basics of what we’r
 Congratulations on the succesfull build initialization! Now, we shall go ahead and prepare to build for your device!
 
 ##### Preparing Resurrection Remix ROM for devices
-- Follow the AOSP Porting Instructions stated here to prepare the proprietary files for building for your device: (http://xda-university.com/as-a-developer/porting-aosp-roms-using-source-code)
+- Follow the AOSP Porting Instructions stated here to prepare the proprietary files for building for your device: [Porting aosp roms from source code](https://web.archive.org/web/20170108105211/http://xda-university.com/as-a-developer/porting-aosp-roms-using-source-code)
 
 ##### Setting Up CCache
 - CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build Resurrection Remix faster than standard build times (Able to cut-down 50% of time taken to build).
