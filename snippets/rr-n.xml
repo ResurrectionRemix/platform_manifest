@@ -2,7 +2,7 @@
 <manifest>
   <project path="android" name="platform_manifest" remote="rr" />
   <project path="vendor/cmsdk" name="cm_platform_sdk" remote="rr" />
-  <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" />
+  <project path="vendor/cm" name="android_vendor_resurrection" remote="rr" revision="nougat1" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
   <project path="packages/apps/ResurrectionOTA" name="packages_apps_ResurrectionOTA" remote="rr" />
   <project path="packages/apps/ResurrectionStats" name="packages_apps_ResurrectionStats" remote="rr" />
