@@ -18,4 +18,5 @@
 <project path="device/qcom/sepolicy" name="ResurrectionRemix/device_qcom_sepolicy" remote="rr" />
 <project path="device/rr/sepolicy" name="ResurrectionRemix/device_rr_sepolicy" remote="rr" />
 <project path="vendor/qcom/opensource/cryptfs_hw" name="ResurrectionRemix/android_vendor_qcom_opensource_cryptfs_hw" remote="rr" />
+<project path="system/vold" name="ResurrectionRemix/android_system_vold" remote="rr" />
 </manifest>
