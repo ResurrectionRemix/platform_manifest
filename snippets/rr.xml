@@ -20,4 +20,5 @@
 <project path="vendor/qcom/opensource/cryptfs_hw" name="ResurrectionRemix/android_vendor_qcom_opensource_cryptfs_hw" remote="rr" />
 <project path="system/vold" name="ResurrectionRemix/android_system_vold" remote="rr" />
 <project path="frameworks/av" name="ResurrectionRemix/frameworks_av" remote="rr" />
+<project path="packages/services/Telephony" name="ResurrectionRemix/android_packages_services_Telephony" remote="rr" />
 </manifest>
