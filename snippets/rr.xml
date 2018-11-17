@@ -21,4 +21,6 @@
 <project path="system/vold" name="ResurrectionRemix/android_system_vold" remote="rr" />
 <project path="frameworks/av" name="ResurrectionRemix/frameworks_av" remote="rr" />
 <project path="packages/services/Telephony" name="ResurrectionRemix/android_packages_services_Telephony" remote="rr" />
+<project path="system/core" name="ResurrectionRemix/android_system_core" remote="rr" />
+<project path="bootable/recovery" name="ResurrectionRemix/android_bootable_recovery" remote="rr" />
 </manifest>
