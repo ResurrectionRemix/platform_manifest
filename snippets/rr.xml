@@ -12,6 +12,7 @@
   </project>
 
 <project path="frameworks/base" name="ResurrectionRemix/private_frameworks_base" remote="private" revision="pie" />
+<project path="prebuilts/clang/host/darwin-x86" name="ResurrectionRemix/clang-host-darwin-x86" remote="rr" />
 <project path="vendor/rr" name="ResurrectionRemix/private_vendor_rr" remote="private" revision="pie" />
 <project path="packages/apps/Settings" name="ResurrectionRemix/private_packages_apps_Settings" remote="private" revision="pie" />
 <project path="lineage-sdk" name="ResurrectionRemix/android_lineage-sdk" revision="pie" />
