@@ -25,4 +25,5 @@
 <project path="system/core" name="ResurrectionRemix/android_system_core" remote="rr" />
 <project path="bootable/recovery" name="ResurrectionRemix/android_bootable_recovery" remote="rr" />
 <project path="frameworks/support" name="ResurrectionRemix/frameworks_support" remote="rr" />
+<project path="hardware/qcom/keymaster" name="ResurrectionRemix/android_hardware_qcom_keymaster" remote="rr" />
 </manifest>
