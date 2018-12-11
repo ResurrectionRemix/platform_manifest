@@ -19,7 +19,7 @@
            sync-j="4" />
 
   <remote  name="rr"
-           fetch="https://github.com/"
+           fetch="https://github.com/ResurrectionRemix"
            revision="pie"
 	   review="gerrit.resurrectionremix.com" />
 
