@@ -26,5 +26,5 @@
 <project path="bootable/recovery" name="ResurrectionRemix/android_bootable_recovery" remote="rr" />
 <project path="frameworks/support" name="ResurrectionRemix/frameworks_support" remote="rr" />
 <project path="hardware/qcom/keymaster" name="ResurrectionRemix/android_hardware_qcom_keymaster" remote="rr" />
-<project path="external/DUI" name="android_external_DUI" remote="rr" />
+<project path="external/DUI" name="ResurrectionRemix/android_external_DUI" remote="rr" />
 </manifest>
