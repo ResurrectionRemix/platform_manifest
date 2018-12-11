@@ -23,7 +23,6 @@
 <project path="frameworks/av" name="frameworks_av" remote="rr" />
 <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="rr" />
 <project path="system/core" name="android_system_core" remote="rr" />
-<project path="bootable/recovery" name="android_bootable_recovery" remote="rr" />
 <project path="frameworks/support" name="frameworks_support" remote="rr" />
 <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="rr" />
 <project path="external/DUI" name="android_external_DUI" remote="rr" />
