@@ -11,6 +11,11 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
 
+  <project path="build/soong" name="android_build_soong" remote="rr" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+</project>
+
 <project path="frameworks/base" name="private_frameworks_base" remote="rr" />
 <project path="prebuilts/clang/host/darwin-x86" name="clang-host-darwin-x86" remote="rr" />
 <project path="vendor/rr" name="private_vendor_rr" remote="rr" />
