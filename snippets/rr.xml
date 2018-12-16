@@ -30,5 +30,5 @@
 <project path="system/core" name="android_system_core" remote="rr" />
 <project path="frameworks/support" name="frameworks_support" remote="rr" />
 <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="rr" />
-<project path="external/DUI" name="android_external_DUI" remote="rr" />
+<project path="packages/apps/SmartNav" name="packages_apps_SmartNav" remote="rr" />
 </manifest>
