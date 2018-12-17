@@ -23,6 +23,10 @@
            revision="pie"
 	   review="gerrit.resurrectionremix.com" />
 
+  <remote  name="rr-d"
+           fetch="https://github.com/ResurrectionRemix-Devices"
+           revision="pie" />
+
   <!-- AOSP Projects -->
 
   <!--project path="build/make" name="LineageOS/android_build" groups="pdk" >
