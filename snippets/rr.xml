@@ -33,4 +33,5 @@
 <project path="frameworks/support" name="frameworks_support" remote="rr" />
 <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="rr" />
 <project path="packages/apps/SmartNav" name="packages_apps_SmartNav" remote="rr" />
+<project path="system/sepolicy" name="android_system_sepolicy" remote"rr" />
 </manifest>
