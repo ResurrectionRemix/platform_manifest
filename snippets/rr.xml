@@ -34,4 +34,5 @@
 <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="rr" />
 <project path="packages/apps/SmartNav" name="packages_apps_SmartNav" remote="rr" />
 <project path="system/sepolicy" name="android_system_sepolicy" remote="rr" />
+<project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="rr" />
 </manifest>
