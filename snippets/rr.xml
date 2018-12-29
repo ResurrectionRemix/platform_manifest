@@ -15,6 +15,7 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
 </project>
+<project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="rr" />
 <project path="packages/overlays/Lineage" name="android_packages_overlays_ResurrectionRemix" remote="rr" />
 <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" remote="rr" />
 <project path="frameworks/base" name="private_frameworks_base" remote="rr" />
