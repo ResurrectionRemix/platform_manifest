@@ -23,7 +23,7 @@
            revision="pie"
 	   review="gerrit.resurrectionremix.com" />
 
-  <remote  name="rr-devices"
+  <remote  name="rr-d"
            fetch="https://github.com/ResurrectionRemix-Devices"
            revision="pie" />
 
