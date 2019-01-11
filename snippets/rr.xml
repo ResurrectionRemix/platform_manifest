@@ -28,7 +28,6 @@
 <project path="lineage-sdk" name="android_lineage-sdk" remote="rr" />
 <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
 <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
-<project path="vendor/qcom/opensource/cryptfs_hw" name="android_vendor_qcom_opensource_cryptfs_hw" remote="rr" />
 <project path="system/vold" name="android_system_vold" remote="rr" />
 <project path="frameworks/av" name="frameworks_av" remote="rr" />
 <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="rr" />
