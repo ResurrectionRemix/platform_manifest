@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project path="android" name="platform_manifest" remote="rr" />
-  <project path="build/make" name="private_build" remote="rr" >
+  <project path="build/make" name="android_build" remote="rr" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -21,11 +21,11 @@
 <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet_Pie" remote="rr" />
 <project path="packages/overlays/Lineage" name="android_packages_overlays_ResurrectionRemix" remote="rr" />
 <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" remote="rr" />
-<project path="frameworks/base" name="private_frameworks_base" remote="rr" />
+<project path="frameworks/base" name="android_frameworks_base" remote="rr" />
 <project path="prebuilts/clang/host/darwin-x86" name="clang-host-darwin-x86" remote="rr" clone-depth="1"/>
 <project path="prebuilts/clang/host/linux-x86" name="AOSIP/platform_prebuilts_clang_host_linux-x86" remote="github" revision="pie" clone-depth="1" />
-<project path="vendor/rr" name="private_vendor_rr" remote="rr"/>
-<project path="packages/apps/Settings" name="private_packages_apps_Settings" remote="rr" />
+<project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
+<project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
 <project path="lineage-sdk" name="android_lineage-sdk" remote="rr" />
 <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
 <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
