@@ -40,4 +40,5 @@
 <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="rr" />
 <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="rr" />
 <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="rr" />
+<project path="frameworks/native" name="frameworks_native" remote="rr" />
 </manifest>
