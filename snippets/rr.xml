@@ -43,4 +43,5 @@
 <project path="frameworks/native" name="frameworks_native" remote="rr" />
 <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="rr" />
 <project path="packages/apps/OmniStyle" name="android_packages_apps_OmniStyle" remote="rr" />
+<project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="rr" />
 </manifest>
