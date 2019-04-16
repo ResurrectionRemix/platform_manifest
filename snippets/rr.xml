@@ -44,7 +44,4 @@
 <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="rr" />
 <project path="packages/apps/OmniStyle" name="android_packages_apps_OmniStyle" remote="rr" />
 <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="rr" />
-<project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="rr" /> 
-<project path="system/bt" name="platform_system_bt" remote="rr" />
-<project path="system/netd" name="android_system_netd" remote="rr" />
 </manifest>
