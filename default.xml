@@ -26,7 +26,10 @@
   <remote  name="rr-d"
            fetch="https://github.com/ResurrectionRemix-Devices"
            revision="pie" />
-
+		   
+		     <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+		   
   <!-- AOSP Projects -->
 
   <!--project path="build/make" name="LineageOS/android_build" groups="pdk" >
