@@ -44,6 +44,7 @@
 <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="rr" />
 <project path="packages/apps/OmniStyle" name="android_packages_apps_OmniStyle" remote="rr" />
 <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="rr" />
+<project path="frameworks/support/lottie" name="android_frameworks_support_lottie" remote="rr" />
 
 <!--TEMP-->
 <project path="external/skia" name="android_external_skia" remote="rr" />
