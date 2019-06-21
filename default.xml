@@ -346,7 +346,7 @@
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" remote="aosp" />
   <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers" groups="pdk" remote="aosp" />
   <project path="external/shflags" name="platform/external/shflags" groups="pdk" remote="aosp" />
-  <!--project path="external/skia" name="LineageOS/android_external_skia" groups="pdk,qcom_msm8x26" /-->
+  <project path="external/skia" name="LineageOS/android_external_skia" groups="pdk,qcom_msm8x26" />
   <project path="external/skqp" name="platform/external/skqp" groups="cts" clone-depth="1" remote="aosp" />
   <project path="external/sl4a" name="platform/external/sl4a" groups="pdk" remote="aosp" />
   <project path="external/slf4j" name="platform/external/slf4j" groups="pdk" remote="aosp" />
@@ -502,7 +502,7 @@
   <project path="libcore" name="platform/libcore" groups="pdk" remote="aosp" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" />
   <project path="packages/apps/BasicSmsReceiver" name="LineageOS/android_packages_apps_BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
-  <!--project path="packages/apps/Bluetooth" name="LineageOS/android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" /-->
+  <project path="packages/apps/Bluetooth" name="LineageOS/android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <!--project path="packages/apps/Calendar" name="LineageOS/android_packages_apps_Calendar" groups="pdk-fs" /-->
   <project path="packages/apps/Camera2" name="LineageOS/android_packages_apps_Camera2" groups="pdk-fs" />
   <project path="packages/apps/Car/Dialer" name="platform/packages/apps/Car/Dialer" groups="pdk-fs" remote="aosp" />
@@ -619,7 +619,7 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/vndk/v27" name="platform/prebuilts/vndk/v27" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <!--project path="system/bt" name="LineageOS/android_system_bt" groups="pdk" /-->
+  <project path="system/bt" name="LineageOS/android_system_bt" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" />
   <project path="system/chre" name="platform/system/chre" groups="pdk" remote="aosp" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" remote="aosp" />
@@ -647,7 +647,7 @@
   <project path="system/tools/hidl" name="LineageOS/android_system_tools_hidl" groups="pdk" />
   <project path="system/tpm" name="platform/system/tpm" remote="aosp" />
   <project path="system/update_engine" name="LineageOS/android_system_update_engine" groups="pdk" />
-  <!--project path="system/vold" name="LineageOS/android_system_vold" groups="pdk" /-->
+  <project path="system/vold" name="LineageOS/android_system_vold" groups="pdk" />
   <project path="test/framework" name="platform/test/framework" groups="vts,pdk" remote="aosp" />
   <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="test/vti/alert" name="platform/test/vti/alert" groups="vts,pdk" remote="aosp" />
