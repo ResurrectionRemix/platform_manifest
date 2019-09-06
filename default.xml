@@ -2,11 +2,27 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/" />
   <default revision="refs/tags/android-10.0.0_r2"
            remote="aosp"
            sync-j="4" />
+
+  <remote  name="rr"
+           fetch="https://github.com/ResurrectionRemix"
+           revision="ten"
+	   review="gerrit.resurrectionremix.com" />
+
+  <remote  name="rr-d"
+           fetch="https://github.com/ResurrectionRemix-Devices"
+           revision="ten" />
+
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+  <remote  name="los"
+           fetch="https://github.com/LineageOS"
+           revision="lineage-17.0" />
 
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
