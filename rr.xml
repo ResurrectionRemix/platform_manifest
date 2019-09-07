@@ -18,4 +18,6 @@
 
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
 
+  <project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
+
 </manifest>
