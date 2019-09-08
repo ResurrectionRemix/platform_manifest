@@ -70,5 +70,6 @@
   <project path="packages/apps/Jelly" name="android_packages_apps_Jelly" remote="los" revision="lineage-16.0" />
 
   <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="los" revision="lineage-16.0" />
+  <project path="system/qcom" name="android_system_qcom" remote="los" revision="lineage-16.0" />
 
 </manifest>
