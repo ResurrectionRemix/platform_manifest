@@ -41,5 +41,6 @@
   <project path="external/selinux" name="android_external_selinux" remote="rr" />
   <project path="external/tinycompress" name="android_external_tinycompress" remote="rr" />
   <project path="prebuilts/tools-extras" name="android_prebuilts_tools-extras" remote="rr" />
+  <project path="prebuilts/openssl" name="android_prebuilts_openssl" remote="rr" />
 
 </manifest>
