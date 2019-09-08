@@ -62,11 +62,9 @@
   <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" groups="pdk" remote="los" revision="lineage-16.0" />
   <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" remote="los" revision="lineage-16.0" />
   <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" groups="pdk" remote="los" revision="lineage-16.0" />
-  <project path="system/bt" name="android_system_bt" groups="pdk" remote="los" revision="lineage-16.0" />
 
   <project path="external/exfat" name="android_external_exfat" remote="los" revision="lineage-16.0" />
   <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="los" revision="lineage-16.0" />
-  <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="los" revision="lineage-16.0" />
   <project path="hardware/broadcom/nfc" name="android_hardware_broadcom_nfc" remote="los" revision="lineage-16.0" />
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="los" revision="lineage-16.0" />
 
