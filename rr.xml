@@ -28,4 +28,6 @@
 
   <project path="system/core" name="android_system_core" remote="rr" />
 
+  <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" remote="rr" />
+
 </manifest>
