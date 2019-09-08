@@ -22,4 +22,6 @@
 
   <project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
 
+  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+
 </manifest>
