@@ -36,5 +36,6 @@
   <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="rr" />
   <project path="hardware/ril" name="android_hardware_ril" remote="rr" />
   <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" remote="rr" />
+  <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="rr" />
 
 </manifest>
