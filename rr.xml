@@ -43,4 +43,6 @@
   <project path="prebuilts/tools-extras" name="android_prebuilts_tools-extras" remote="rr" />
   <project path="prebuilts/openssl" name="android_prebuilts_openssl" remote="rr" />
 
+  <project path="system/bt" name="android_system_bt" remote="rr" />
+
 </manifest>
