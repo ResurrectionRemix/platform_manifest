@@ -31,5 +31,6 @@
   <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" remote="rr" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="rr" />
   <project path="hardware/qcom/audio/default" name="android_hardware_qcom_audio" remote="rr" />
+  <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="rr" />
 
 </manifest>
