@@ -26,4 +26,6 @@
 
   <project path="bootable/recovery" name="bootable_recovery" remote="rr" />
 
+  <project path="system/core" name="android_system_core" remote="rr" />
+
 </manifest>
