@@ -34,5 +34,6 @@
   <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="rr" />
   <project path="hardware/qcom/media" name="android_hardware_qcom_media" remote="rr"/>
   <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="rr" />
+  <project path="hardware/ril" name="android_hardware_ril" remote="rr" />
 
 </manifest>
