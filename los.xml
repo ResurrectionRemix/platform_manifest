@@ -77,4 +77,6 @@
   </project>
   <project path="vendor/qcom/opensource/audio" name="android_vendor_qcom_opensource_audio" remote="los" revision="lineage-16.0" />
 
+  <project path="prebuilts/tools-lineage" name="android_prebuilts_tools-lineage" remote="los" />
+
 </manifest>
