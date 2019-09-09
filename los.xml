@@ -58,7 +58,6 @@
   <project path="external/json-c" name="android_external_json-c" remote="los" groups="qcom,pdk-qcom" revision="lineage-16.0" />
 
   <project path="external/chromium-webview" name="android_external_chromium-webview" groups="pdk" clone-depth="1" remote="los" revision="lineage-16.0" />
-  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" groups="pdk" remote="los" revision="lineage-16.0" />
   <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" groups="pdk" remote="los" revision="lineage-16.0" />
   <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" remote="los" revision="lineage-16.0" />
   <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" groups="pdk" remote="los" revision="lineage-16.0" />
