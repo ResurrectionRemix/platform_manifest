@@ -37,6 +37,7 @@
   <project path="hardware/ril" name="android_hardware_ril" remote="rr" />
   <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" remote="rr" />
   <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="rr" />
+  <project path="hardware/qcom/bt-caf" name="android_hardware_qcom_bt" revision="ten-caf" remote="rr" />
 
   <project path="external/selinux" name="android_external_selinux" remote="rr" />
   <project path="external/tinycompress" name="android_external_tinycompress" remote="rr" />
