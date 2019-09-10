@@ -1,4 +1,29 @@
-Resurrection Remix OS Ten Source 2019
+# Resurrection Remix OS Ten Source 2019 #
 
+# WIP #
 
-WIP
+### Sync ###
+
+```bash
+
+# Initialize local repository
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b ten
+
+# Sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+```
+
+### Build ###
+
+```bash
+
+# Set up environment
+$ . build/envsetup.sh
+
+# Choose a target
+$ lunch rr_$device-userdebug
+
+# Build the code
+$ mka bacon -jX
+```
+
