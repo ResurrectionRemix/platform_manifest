@@ -51,4 +51,14 @@
   <project path="hardware/interfaces" name="android_hardware_interfaces" remote="rr" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="rr" />
 
+  <project path="vendor/nxp/opensource/interfaces/nfc" name="vendor_nxp_interfaces_opensource_nfc" remote="rr" />
+  <project path="vendor/nxp/opensource/commonsys/external/libnfc-nci" name="vendor_nxp_opensource_external_libnfc-nci" remote="rr" />
+  <project path="vendor/nxp/opensource/commonsys/frameworks" name="vendor_nxp_opensource_frameworks" remote="rr" />
+  <project path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" name="vendor_nxp_opensource_packages_apps_Nfc" remote="rr" />
+  <project path="vendor/nxp/opensource/halimpl" name="vendor_nxp_opensource_halimpl" remote="rr" />
+  <project path="vendor/nxp/opensource/hidlimpl" name="vendor_nxp_opensource_hidlimpl" remote="rr" />
+  <project path="external/libnfc-nxp" name="external_libnfc-nxp" remote="rr" />
+  <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="rr" />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="rr" />
+
 </manifest>
