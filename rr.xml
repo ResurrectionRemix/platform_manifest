@@ -29,6 +29,7 @@
   <project path="bootable/recovery" name="bootable_recovery" remote="rr" />
 
   <project path="system/core" name="android_system_core" remote="rr" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="rr" />
 
   <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" remote="rr" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="rr" />
