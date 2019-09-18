@@ -49,6 +49,7 @@
   <project path="system/bt" name="android_system_bt" remote="rr" />
 
   <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
 
   <project path="hardware/interfaces" name="android_hardware_interfaces" remote="rr" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="rr" />
