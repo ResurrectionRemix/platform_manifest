@@ -20,6 +20,7 @@
 
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
   <project path="frameworks/native" name="frameworks_native" remote="rr" />
+  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="rr" />
 
   <project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
 
