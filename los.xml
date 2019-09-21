@@ -61,6 +61,7 @@
   <project path="system/qcom" name="android_system_qcom" remote="los" revision="lineage-16.0" />
 
   <project path="prebuilts/r8" name="android_prebuilts_r8" remote="los" />
+  <project path="prebuilts/openssl" name="android_prebuilts_openssl" remote="los" />
 
   <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="los" />
   <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" remote="los" />
