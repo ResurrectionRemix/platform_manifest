@@ -16,6 +16,8 @@
   </project>
   <project path="build/kati" name="android_build_kati" remote="rr"/>
 
+  <project path="art" name="android_art" remote="rr"  />
+
   <project path="bionic" name="android_bionic" remote="rr" />
 
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
