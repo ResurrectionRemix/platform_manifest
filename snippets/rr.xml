@@ -16,7 +16,6 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="build/blueprint" name="platform_build_blueprint" remote="rr" />
 
 <!--VENDOR-->
 
