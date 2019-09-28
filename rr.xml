@@ -68,4 +68,7 @@
   <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="rr" />
   <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="rr" />
 
+  <project path="packages/apps/DeskClock" name="android_packages_apps_DeskClock" remote="rr" />
+
+
 </manifest>
