@@ -57,7 +57,6 @@
   <project path="packages/apps/Jelly" name="android_packages_apps_Jelly" remote="los" />
 
   <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="los" />
-  <project path="system/qcom" name="android_system_qcom" remote="los" revision="lineage-16.0" />
 
   <project path="prebuilts/r8" name="android_prebuilts_r8" remote="los" />
   <project path="prebuilts/openssl" name="android_prebuilts_openssl" remote="los" />
