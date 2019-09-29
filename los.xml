@@ -47,11 +47,11 @@
   <project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="los" revision="lineage-16.0" />
   <project path="external/json-c" name="android_external_json-c" remote="los" groups="qcom,pdk-qcom" />
 
-  <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" groups="pdk" remote="los" revision="lineage-16.0" />
+  <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" groups="pdk" remote="los" />
   <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" remote="los" revision="lineage-16.0" />
 
   <project path="external/exfat" name="android_external_exfat" remote="los" revision="lineage-16.0" />
-  <project path="hardware/broadcom/nfc" name="android_hardware_broadcom_nfc" remote="los" revision="lineage-16.0" />
+  <project path="hardware/broadcom/nfc" name="android_hardware_broadcom_nfc" remote="los" />
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="los"  />
 
   <project path="packages/apps/Jelly" name="android_packages_apps_Jelly" remote="los" />
