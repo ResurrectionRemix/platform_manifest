@@ -21,5 +21,6 @@
 <!--VENDOR-->
 
   <project path="vendor/qcom/opensource/power" name="android_vendor_qcom_opensource_power" remote="rr" />
+  <project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
 
 </manifest>
