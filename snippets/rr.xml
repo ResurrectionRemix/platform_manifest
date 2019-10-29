@@ -27,4 +27,8 @@
 
   <project path="lineage-sdk" name="android_lineage-sdk" remote="rr" />
 
+<!--Apps-->
+
+  <project path="packages/apps/ThemePicker" name="platform_packages_apps_ThemePicker" remote="rr" />
+
 </manifest>
