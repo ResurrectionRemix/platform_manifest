@@ -37,5 +37,8 @@
 <!--Device-->
 
   <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="rr" />
+  <project path="device/qcom/sepolicy-legacy-um" name="android_device_qcom_sepolicy-legacy-um" remote="rr" />
 
 </manifest>
