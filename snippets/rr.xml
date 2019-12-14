@@ -27,7 +27,6 @@
 
 <!--Apps-->
 
-  <project path="packages/apps/ThemePicker" name="platform_packages_apps_ThemePicker" remote="rr" />
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
 
 <!--Frameworks-->
