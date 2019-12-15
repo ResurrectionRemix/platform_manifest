@@ -30,5 +30,5 @@ $ . build/envsetup.sh
 $ lunch rr_$device-userdebug
 
 # Build the code
-$ mka bacon -jX
+$ mka bacon
 ```
