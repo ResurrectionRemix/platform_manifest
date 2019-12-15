@@ -5,7 +5,7 @@
 Getting started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get
+To get started with Android/RR, you'll need to get
 familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
 
 ### Sync ###
