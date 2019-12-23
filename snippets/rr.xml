@@ -32,6 +32,7 @@
 <!--Frameworks-->
 
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="rr" />
 
 <!--Device-->
 
