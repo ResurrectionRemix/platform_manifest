@@ -35,8 +35,6 @@
 
 <!--Device-->
 
-  <project path="system/vold" name="android_system_vold" remote="rr" />
-  <project path="system/netd" name="android_system_netd" remote="rr" />    
   <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
   <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
   <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="rr" />
@@ -44,6 +42,8 @@
 
 <!--System-->
 
- <project path="system/core" name="android_system_core" remote="rr" />
+  <project path="system/core" name="android_system_core" remote="rr" />
+  <project path="system/vold" name="android_system_vold" remote="rr" />
+  <project path="system/netd" name="android_system_netd" remote="rr" />  
 
 </manifest>
