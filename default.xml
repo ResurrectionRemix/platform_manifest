@@ -14,9 +14,9 @@
            revision="refs/tags/android-10.0.0_r31" />
 
   <remote  name="bt"
-           fetch="https://github.com/ResurrectionRemix"
+           fetch="https://github.com/BrianTestShit"
            revision="Q"
-	       review="gerrit.resurrectionremix.com" />
+	       review="" />
 
   <default revision="refs/heads/lineage-17.1"
            remote="github"
