@@ -18,6 +18,10 @@
            revision="Q"
 	       review="" />
 
+  <remote  name="rr-d"
+           fetch="https://github.com/ResurrectionRemix-Devices"
+           revision="Q" />
+
   <default revision="refs/heads/lineage-17.1"
            remote="github"
            sync-c="true"
