@@ -29,6 +29,7 @@
 
 <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="bt" />
   <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="bt" />
 
 <!--Device-->
@@ -41,6 +42,7 @@
 <!--System-->
 
   <project path="system/core" name="android_system_core" remote="bt" />
+  <project path="system/netd" name="android_system_netd" remote="bt" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bt" />
 
 </manifest>
