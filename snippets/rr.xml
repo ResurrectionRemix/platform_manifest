@@ -31,6 +31,7 @@
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
   <project path="frameworks/av" name="android_frameworks_av" remote="bt" />
   <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="bt" />
+  <project path="frameworks/support/lottie" name="android_frameworks_support_lottie" remote="bt" />
 
 <!--Device-->
 
