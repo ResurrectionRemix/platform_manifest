@@ -45,6 +45,7 @@
   <project path="system/core" name="android_system_core" remote="bt" />
   <project path="system/netd" name="android_system_netd" remote="bt" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bt" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
   <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bt" />
 
 </manifest>
