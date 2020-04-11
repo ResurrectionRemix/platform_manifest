@@ -23,9 +23,10 @@
 
 <!--Lineage-Sdk-->
 
-<!--Apps-->
-
+  <!--Apps-->
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="bt" />
+  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts"  remote="bt"/>
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bt" />
 
 <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
@@ -46,6 +47,5 @@
   <project path="system/netd" name="android_system_netd" remote="bt" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bt" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
-  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bt" />
 
 </manifest>
