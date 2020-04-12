@@ -18,6 +18,11 @@
            revision="Q"
 	       review="" />
 
+  <remote  name="vd"
+           fetch="https://github.com/varund7726"
+           revision="Q"
+	       review="" />
+
   <remote  name="rr-d"
            fetch="https://github.com/ResurrectionRemix-Devices"
            revision="Q" />
