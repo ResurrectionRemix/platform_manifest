@@ -49,5 +49,6 @@
 
   <!--Overlays-->
   <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
+  <project path="packages/apps/BlurView" name="BlurView" remote="bt" />
 
 </manifest>
