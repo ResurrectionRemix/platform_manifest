@@ -46,6 +46,7 @@
   <project path="external/motorola/faceunlock" name="faceunlock" remote="bt" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bt" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
+  <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
 
   <!--Overlays-->
   <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
