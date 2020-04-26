@@ -27,6 +27,7 @@
   <project path="packages/apps/LineageParts" name="packages_apps_LineageParts"  remote="bt"/>
   <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bt" />
   <project path="packages/apps/Updater" name="packages_apps_updater" remote="bt"/>
+  <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="bt"/>
 
   <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
