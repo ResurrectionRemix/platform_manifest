@@ -32,6 +32,7 @@
   <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="bt" />
   <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="bt" />
   <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="bt" />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="bt" >
 
   <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
