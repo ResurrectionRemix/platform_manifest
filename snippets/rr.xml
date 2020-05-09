@@ -54,6 +54,7 @@
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="bt" />
   <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
+  <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
 
   <!--Overlays-->
   <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
