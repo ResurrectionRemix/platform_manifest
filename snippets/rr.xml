@@ -54,7 +54,7 @@
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="bt" />
   <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
-  <project path="external/motorola/faceunlock" name="faceunlock" remote="bt" />
+  <project path="external/motorola/faceunlock" name="face_unlock" remote="bt" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
   <project path="hardware/lineage/interfaces" name="LineageOS/android_hardware_lineage_interfaces" />
 
