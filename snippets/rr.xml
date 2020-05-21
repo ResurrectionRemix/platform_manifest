@@ -56,7 +56,7 @@
   <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
   <project path="external/motorola/faceunlock" name="face_unlock" remote="bt" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
-  <project path="hardware/lineage/interfaces" name="LineageOS/android_hardware_lineage_interfaces" />
+  <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="bt"/>
 
   <!--Overlays-->
   <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
