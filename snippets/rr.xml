@@ -58,6 +58,7 @@
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="bt"/>
   <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="bt"/>
+  <project path="system/bt" name="android_system_bt" remote="bt" />
 
   <!--Overlays-->
   <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
