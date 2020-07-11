@@ -30,6 +30,7 @@
   <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="bt"/>
   <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="bt" />
   <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="bt" />
+  <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="bt" />
   <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="bt" />
   <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="bt" />
   <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="bt" />
@@ -40,6 +41,8 @@
   <project path="frameworks/av" name="android_frameworks_av" remote="bt" />
   <project path="frameworks/native" name="frameworks_native" remote="bt" />
   <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="bt" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="bt" />
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_ims" remote="bt" />
   <project path="frameworks/support/lottie" name="android_frameworks_support_lottie" remote="bt" />
 
   <!--Device-->
