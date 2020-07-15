@@ -59,6 +59,7 @@
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="bt" />
   <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
   <project path="external/motorola/faceunlock" name="face_unlock" remote="bt" />
+  <project path="external/pulse" name="external_pulse" remote="bt" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="bt"/>
   <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="bt"/>
