@@ -62,7 +62,6 @@
   <project path="external/pulse" name="external_pulse" remote="bt" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
   <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="bt"/>
-  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="bt"/>
   <project path="system/bt" name="android_system_bt" remote="bt" />
   <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="android_vendor_qcom_opensource_bluetooth_ext" remote="bt" />
   <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="bt" />
