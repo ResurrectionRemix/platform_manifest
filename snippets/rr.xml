@@ -35,6 +35,7 @@
   <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="bt" />
   <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="bt" />
   <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="bt" />
+  <project path="packages/apps/CustomDoze" name="packages_apps_CustomDoze" remote="bt" />
 
   <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
