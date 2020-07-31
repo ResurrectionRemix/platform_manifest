@@ -71,7 +71,7 @@
   <project path="packages/apps/PermissionController" name="packages_apps_PackageInstaller" remote="bt" />
 
   <!--Overlays-->
-  <project path="packages/overlays/Lineage" name="overlays" remote="bt" />
+  <project path="packages/overlays/Resurrection" name="overlays" remote="bt" />
   <project path="packages/apps/BlurView" name="BlurView" remote="bt" />
 
 </manifest>
