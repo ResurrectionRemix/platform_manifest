@@ -48,6 +48,7 @@
 
   <!--Device-->
   <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="bt" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="bt" />
   <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="bt" />
   <project path="device/qcom/sepolicy-legacy" name="device_qcom_sepolicy-legacy" remote="bt" />
   <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="bt" />
