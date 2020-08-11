@@ -2,7 +2,8 @@
 <manifest>
 
  <!--BUILD-->
-  <project path="build/make" name="android_build" remote="bt" >
+  <project path="android" name="platform_manifest" remote="rr"/>
+  <project path="build/make" name="android_build" remote="rr" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -11,68 +12,68 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="android_build_soong" remote="bt" >
+  <project path="build/soong" name="android_build_soong" remote="rr" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
  <!--VENDOR-->
-  <project path="vendor/rr" name="android_vendor_resurrection" remote="bt"/>
+  <project path="vendor/rr" name="android_vendor_resurrection" remote="rr"/>
 
  <!--Lineage-Sdk-->
-  <project path="lineage-sdk" name="lineage-sdk" remote="bt"/>
+  <project path="lineage-sdk" name="lineage-sdk" remote="rr"/>
 
   <!--Apps-->
-  <project path="packages/apps/Settings" name="private_packages_apps_Settings" remote="vd" />
-  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts"  remote="bt"/>
-  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bt" />
-  <project path="packages/apps/Updater" name="packages_apps_updater" remote="bt"/>
-  <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="bt"/>
-  <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="bt" />
-  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="bt" />
-  <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="bt" />
-  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="bt" />
-  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="bt" />
-  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="bt" />
-  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="bt" />
-  <project path="packages/apps/CustomDoze" name="packages_apps_CustomDoze" remote="bt" />
+  <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
+  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts"  remote="rr"/>
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="rr" /> 
+  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="rr"/>
+  <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="rr"/> 
+  <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="rr" /> 
+  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="rr" />
+  <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="rr" />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="rr" />
+  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="rr" />
+  <project path="packages/apps/ThemePicker" name="platform_packages_apps_ThemePicker" remote="rr" />
+  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="rr" />
+  <project path="packages/apps/CustomDoze" name="packages_apps_CustomDoze" remote="rr" />
 
   <!--Frameworks-->
-  <project path="frameworks/base" name="android_frameworks_base" remote="bt" />
-  <project path="frameworks/av" name="android_frameworks_av" remote="bt" />
-  <project path="frameworks/native" name="frameworks_native" remote="bt" />
-  <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="bt" />
-  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="bt" />
-  <project path="frameworks/opt/net/ims" name="frameworks_opt_ims" remote="bt" />
-  <project path="frameworks/support/lottie" name="android_frameworks_support_lottie" remote="bt" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
+  <project path="frameworks/av" name="frameworks_av" remote="rr" />
+  <project path="frameworks/native" name="frameworks_native" remote="rr" />
+  <project path="frameworks/opt/slimrecent" name="frameworks_opt_slimrecent" remote="rr" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="rr" /> 
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="rr" />
+  <project path="frameworks/support/lottie" name="android_frameworks_support_lottie" remote="rr" />
 
   <!--Device-->
-  <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="bt" />
-  <project path="system/sepolicy" name="system_sepolicy" remote="bt" />
-  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="bt" />
-  <project path="device/qcom/sepolicy-legacy" name="device_qcom_sepolicy-legacy" remote="bt" />
-  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="bt" />
+  <project path="device/rr/sepolicy" name="device_rr_sepolicy" remote="rr" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="rr" />
+  <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="rr" />
+  <project path="device/qcom/sepolicy-legacy-um" name="android_device_qcom_sepolicy-legacy-um" remote="rr" /> 
 
   <!--System-->
-  <project path="system/core" name="android_system_core" remote="bt" />
-  <project path="system/netd" name="android_system_netd" remote="bt" />
-  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bt" />
-  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bt" />
-  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="bt" />
-  <project path="external/sqlite" name="android_external_sqlite" remote="bt" />
-  <project path="external/motorola/faceunlock" name="face_unlock" remote="bt" />
-  <project path="external/pulse" name="external_pulse" remote="bt" />
-  <project path="packages/apps/SetupWizard" name="SetupWizard" remote="bt" />
-  <project path="hardware/lineage/interfaces" name="android_hardware_lineage_interfaces" remote="bt"/>
-  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="bt"/>
-  <project path="system/bt" name="android_system_bt" remote="bt" />
-  <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="android_vendor_qcom_opensource_bluetooth_ext" remote="bt" />
-  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="bt" />
-  <project path="vendor/qcom/opensource/commonsys/system/bt" name="android_vendor_qcom_opensource_system_bt" remote="bt" />
-  <project path="packages/apps/PermissionController" name="packages_apps_PackageInstaller" remote="bt" />
+  <project path="system/core" name="android_system_core" remote="rr" />
+  <project path="system/netd" name="android_system_netd" remote="rr" />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="rr" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="rr" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="rr" />
+  <project path="external/sqlite" name="android_external_sqlite" remote="rr" />
+  <project path="external/motorola/faceunlock" name="external_utils" remote="bb" />
+  <project path="external/pulse" name="external_pulse" remote="rr" />
+  <project path="packages/apps/SetupWizard" name="SetupWizard" remote="rr" />
+  <project path="hardware/lineage/interfaces" name="hardware_rr_interfaces" remote="rr"/>
+  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="rr"/>
+  <project path="system/bt" name="android_system_bt" remote="rr" />
+  <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="android_vendor_qcom_opensource_bluetooth_ext" remote="rr" />
+  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="rr" />
+  <project path="vendor/qcom/opensource/commonsys/system/bt" name="android_vendor_qcom_opensource_system_bt" remote="rr" />
+  <project path="packages/apps/PermissionController" name="packages_apps_PackageInstaller" remote="rr" /> 
 
   <!--Overlays-->
-  <project path="packages/overlays/Resurrection" name="overlays" remote="bt" />
-  <project path="packages/apps/BlurView" name="BlurView" remote="bt" />
+  <project path="packages/overlays/Resurrection" name="vendor_overlays_resurrection" remote="rr" />
+  <project path="packages/apps/BlurView" name="BlurView" remote="rr" />
 
 </manifest>

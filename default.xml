@@ -13,10 +13,16 @@
            review="android-review.googlesource.com"
            revision="refs/tags/android-10.0.0_r41"/>
 
-  <remote  name="bt"
-           fetch="https://github.com/BrianTestShit"
+  <remote  name="rr"
+           fetch="https://github.com/ResurrectionRemix"
            revision="Q"
 	       review="" />
+
+  <remote  name="bb"
+           fetch="https://gitlab.com/rr-os"
+           revision="Q"
+	       review="" />
+
 
   <remote  name="vd"
            fetch="https://github.com/varund7726"

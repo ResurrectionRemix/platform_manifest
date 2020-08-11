@@ -1,6 +1,5 @@
-# Resurrection Remix OS Ten Source 2019 #
+# Resurrection Remix OS Q 2020 #
 
-# WIP #
 
 Getting started
 ---------------
@@ -8,18 +7,19 @@ Getting started
 To get started with Android/RR, you'll need to get
 familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
 
-### Sync ###
-
+Sync 
+---------------
 ```bash
 
 # Initialize local repository
-repo init -u https://github.com/varund7726/platform_manifest.git -b Q
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
 
 # Sync
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
 
-### Build ###
+Build
+---------------
 
 ```bash
 
@@ -32,3 +32,179 @@ $ lunch rr_$device-userdebug
 # Build the code
 $ mka bacon
 ```
+
+
+Important for FOD devices 
+---------------
+```bash
+
+For devices with in-display fingerprint, you need to adapt your devices to FOD 1.1 for things to work properly. FOD1.1 + fod-ext value to call the HAL layer
+```
+
+For devices with hardware keys, you need to add the following
+---------------
+```bash
+
+
+Add these lines to <device_tree_path/overlay/frameworks/base/res/res/values/config.xml>
+
+    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+          1 - Home
+          2 - Back
+          4 - Menu
+          8 - Assistant (search)
+          16 - App switch
+          32 - Camera
+       For example, a device with Back, Home and AppSwitch keys would set this
+       config to 19. -->
+    <integer name="config_deviceHardwareKeys">72</integer>
+
+
+    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+          1 - Home
+          2 - Back
+          4 - Menu
+          8 - Assistant (search)
+          16 - App switch
+          32 - Camera
+       For example, a device with Back, Home and AppSwitch keys would set this
+       config to 19. -->
+    <integer name="config_deviceHardwareWakeKeys">72</integer>
+
+    <!-- Button brightness -->
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_button_brightness_default">128</integer>
+
+Numbers vary on how many hardware keys you have on your device. See the config description for how to add those.
+
+```
+Devices with alertsliders / custom key handlers
+---------------
+```bash
+ You need to update your keyhandler class and paths to 
+
+<device_tree_path/overlay/frameworks/base/res/res/values/config.xml>
+
+# Like this 
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/priv-app/LineageParts/LineageParts.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
+    </string-array>
+```
+For face unlock
+---------------
+```bash
+
+Set TARGET_FACE_UNLOCK_SUPPORTED := true to build face unlock packages. Do this if your device supports face unlock (which it mostly does).
+```
+
+Other configs and locations in device tree
+---------------
+```bash
+
+
+Use these lines in <device_tree_path/overlay/frameworks/base/res/res/values/config.xml>
+```
+    <!-- Whether the device supports Smart Pixels --> 
+    <bool name="config_supportSmartPixels">true</bool>
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
+    <!-- Enable face auth when swiping security view  
+      for popup cameras-->
+    <bool name="config_faceAuthOnSecurityView">true</bool>
+
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
+
+    <!-- Whether device has Dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
+
+    <!-- Whether device supports variable refresh rate -->
+    <bool name="config_hasVariableRefreshRate">true</bool>
+    <!-- Default setting for refresh rate
+      0 = Auto
+      1 = 60HZ
+      2 = 90Hz -->
+    <integer name="config_defaultVariableRefreshRateSetting">2</integer>
+
+    <!--Systeminfo for quick settings header -->
+    <string name="config_sysCPUTemp">/sys/class/<path_to_option></string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+    <integer name="config_sysCPUTempMultiplier"><device_specific_mulitplyer></integer>
+    <integer name="config_sysBatteryTempMultiplier"><device_specific_mulitplyer></integer>
+    Replace <path_to_option> and <device_specific_mulitplyer> with own device specific paths
+
+    <!-- If Smart charging supported by kernel and device sepolicy -->
+    <bool name="config_smartChargingAvailable">true</bool>
+
+Use these lines in <device_tree_path/overlay/packages/apps/Settings/res/values/config.xml>
+```
+    <!-- Use only if devices have variable intensity support for haptics-->
+    <bool name="config_vibration_supports_multiple_intensities">true</bool>
+
+    <!-- If device supports battery health options -->
+    <bool name="config_supportBatteryHealth">true</bool>
+    <string name="config_batChargeCycle">path</string>
+    <string name="config_batDesCap">path</string>
+    <string name="config_batCurCap">path</string>
+
+    Replace path with device specific path
+
+```
+For OTA 
+---------------
+```bash
+Once you are done with your build you can upload your ota.json file from out/product directory if you are a maintainer.
+```
+
+How can I be maintainer?
+---------------
+```bash
+
+Make a pull request at https://github.com/ResurrectionRemix/Resurrection_packages_apps_Settings/blob/Q/res/values/resurrection_device_maintainers_strings.xml
+
+With your name. Choose any device you want to maintain for but in the pull request please post with an xda thread (optional),  device source and kernel source as the commit message
+
+It will be reviewed and changes will be approved if everything is fine
+
+
+Approved maintainers will gain access to RR device repo and RR OTA server
+Credentials will be given in a separate group created for maintainers
+```
+
+Translations 
+---------------
+```bash
+
+We don't have crowdin at the moment so you can merge a pull request in our repos which require translations. Please validate your XMLs first. We will review them and merge them as soon as possible.
+```
+
+Lastly 
+---------------
+```bash
+Remember to give credits where necessary
+```
+
+
+### That's all for now. ###
+
+Happy building
+---------------
+```bash
+
+
+### - RR Team ###
+
