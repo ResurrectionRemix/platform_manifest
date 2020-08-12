@@ -164,6 +164,12 @@ Use these lines in <device_tree_path/overlay/packages/apps/Settings/res/values/c
     Replace path with device specific path
 
 ```
+
+Please maintain proper authorship for all commits for above overlays
+---------------
+```bash
+```
+
 For OTA 
 ---------------
 ```bash
