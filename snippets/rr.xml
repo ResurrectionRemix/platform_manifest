@@ -63,6 +63,7 @@
   <project path="external/sqlite" name="android_external_sqlite" remote="rr" />
   <project path="external/motorola/faceunlock" name="external_utils" remote="bb" />
   <project path="external/pulse" name="external_pulse" remote="rr" />
+  <project path="external/stitchimage" name="external_stitchimage" remote="rr" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="rr" />
   <project path="hardware/lineage/interfaces" name="hardware_rr_interfaces" remote="rr"/>
   <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="rr"/>
