@@ -39,8 +39,23 @@ Important for FOD devices
 ```bash
 
 For devices with in-display fingerprint, you need to adapt your devices to FOD 1.1 for things to work properly. FOD1.1 + fod-ext value to call the HAL layer
-```
 
+
+For Devices who don't wish to adapt to 1.1, and wish to stick to los 1.0 ext impl, please merge the following two commits in frameworks/base and packages/apps/Settings 
+
+thanks to Pavan Parmeshwar
+
+
+Base: 
+https://github.com/pavanpaps/android_frameworks_base-1/commit/0d2d521d822a2645533f043b0e02003a3dbb986b
+
+Settings
+https://github.com/pavanpaps/Resurrection_packages_apps_Settings/commit/2791929c6d60eff416b737f272f6ebe5083fc20b
+
+
+Please don't forget extenion lib
+
+```
 For devices with hardware keys, you need to add the following
 ---------------
 ```bash
