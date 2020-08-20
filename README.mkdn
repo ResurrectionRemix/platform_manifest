@@ -56,7 +56,7 @@ thanks to Pavan Parmeshwar
 
 
 Base: 
-https://github.com/pavanpaps/android_frameworks_base-1/commit/0d2d521d822a2645533f043b0e02003a3dbb986b
+https://github.com/ResurrectionRemix/android_frameworks_base/commit/59be10bc0849735fe0f37de770d6bd83cdf7a4de
 
 Settings
 https://github.com/pavanpaps/Resurrection_packages_apps_Settings/commit/2791929c6d60eff416b737f272f6ebe5083fc20b
