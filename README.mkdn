@@ -145,6 +145,14 @@ Use these lines in <device_tree_path/overlay/frameworks/base/res/res/values/conf
     <!-- Whether device has Dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
 
+    <!-- Whether device has VOOC charging support -->
+    <bool name="config_hasVoocCharger">false</bool>
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false"></string>
+    <!-- Expected value from fast charging status file  -->
+    <string name="config_oemFastChargerStatusValue" translatable="false"></string>
+
     <!-- Whether device supports variable refresh rate -->
     <bool name="config_hasVariableRefreshRate">true</bool>
     <!-- Default setting for refresh rate
