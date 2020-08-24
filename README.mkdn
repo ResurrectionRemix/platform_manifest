@@ -17,15 +17,6 @@ repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
 # Sync
 repo sync -f --force-sync --no-clone-bundle
 ```
-Setting Up CCache
----------------
-```bash
-
-# To set up CCache, follow the following:
-echo "export USE_CCACHE=1" >> ~/.bashrc
-
-~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
-```
 
 Build
 ---------------
