@@ -40,6 +40,9 @@ Important for FOD devices
 
 For devices with in-display fingerprint, you need to adapt your devices to FOD 1.1 for things to work properly. FOD1.1 + fod-ext value to call the HAL layer
 
+Also set this flag in device tree device.mk 
+
+TARGET_HAS_FOD := true
 
 For Devices who don't wish to adapt to 1.1, and wish to stick to los 1.0 ext impl, please merge the following two commits in frameworks/base and packages/apps/Settings 
 
