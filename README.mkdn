@@ -64,7 +64,7 @@ For devices with hardware keys, you need to add the following
 ```bash
 
 
-Add these lines to <device_tree_path/overlay/frameworks/base/res/res/values/config.xml>
+Add these lines to <device_tree_path/overlay/frameworks/base/core/res/res/values/config.xml>
 
     <!-- Hardware 'face' keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
