@@ -33,6 +33,9 @@
            fetch="https://github.com/ResurrectionRemix-Devices"
            revision="Q" />
 
+  <remote  name="srht"
+           fetch="https://git.sr.ht/" />
+
   <default revision="refs/heads/lineage-17.1"
            remote="github"
            sync-c="true"
