@@ -27,7 +27,7 @@
   <project path="packages/apps/Settings" name="Resurrection_packages_apps_Settings" remote="rr" />
   <project path="packages/apps/LineageParts" name="packages_apps_LineageParts"  remote="rr"/>
   <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="rr" /> 
-  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="rr"/>
+  <project path="packages/apps/Updater" name="packages_apps_updater" remote="bb"/>
   <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="rr"/> 
   <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="rr" /> 
   <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="rr" />
