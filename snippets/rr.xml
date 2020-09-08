@@ -67,7 +67,6 @@
   <project path="external/stitchimage" name="external_stitchimage" remote="rr" />
   <project path="packages/apps/SetupWizard" name="SetupWizard" remote="rr" />
   <project path="hardware/lineage/interfaces" name="hardware_rr_interfaces" remote="rr"/>
-  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="rr"/>
   <project path="system/bt" name="android_system_bt" remote="rr" />
   <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="android_vendor_qcom_opensource_bluetooth_ext" remote="rr" />
   <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="rr" />
