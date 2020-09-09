@@ -72,6 +72,8 @@
   <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="rr" />
   <project path="vendor/qcom/opensource/commonsys/system/bt" name="android_vendor_qcom_opensource_system_bt" remote="rr" />
   <project path="packages/apps/PermissionController" name="packages_apps_PackageInstaller" remote="rr" /> 
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="rr" />
+  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi"  remote="rr" />
 
   <!--Overlays-->
   <project path="packages/overlays/Resurrection" name="vendor_overlays_resurrection" remote="rr" />
