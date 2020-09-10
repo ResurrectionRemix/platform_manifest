@@ -279,9 +279,9 @@
   <project path="external/nfacct" name="platform/external/nfacct" groups="pdk" remote="aosp" />
   <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" remote="aosp" />
   <project path="external/nist-sip" name="platform/external/nist-sip" groups="pdk" remote="aosp" />
-  <project path="external/nos/host/android" name="platform/external/nos/host/android" groups="pixel" />
+  <project path="external/nos/host/android" name="platform/external/nos/host/android" groups="pixel" remote="aosp"  />
   <project path="external/nos/host/generic" name="platform/external/nos/host/generic" groups="pixel" remote="aosp" />
-  <project path="external/nos/test/system-test-harness" name="platform/external/nos/test/system-test-harness" groups="pixel" />
+  <project path="external/nos/test/system-test-harness" name="platform/external/nos/test/system-test-harness" groups="pixel" remote="aosp" />
   <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" remote="aosp" />
   <project path="external/oauth" name="platform/external/oauth" groups="pdk" remote="aosp" />
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" remote="aosp" />
@@ -427,7 +427,7 @@
   <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" remote="aosp" />
   <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="pdk,easel" remote="aosp" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" remote="aosp" />
-  <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="pixel" />
+  <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="pixel"  remote="aosp"/>
   <project path="hardware/interfaces" name="LineageOS/android_hardware_interfaces" groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" remote="aosp" />
   <project path="hardware/libhardware" name="LineageOS/android_hardware_libhardware" groups="pdk" />
@@ -444,13 +444,13 @@
   <project path="hardware/qcom/keymaster" name="LineageOS/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk-qcom" />
   <project path="hardware/qcom/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" />
   <project path="hardware/qcom/neuralnetworks/hvxservice" name="platform/hardware/qcom/neuralnetworks/hvxservice" groups="wahoo" remote="aosp" />
-  <project path="hardware/qcom/sdm845/bt" name="platform/hardware/qcom/sdm845/bt" groups="qcom_sdm845" />
-  <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="platform/hardware/qcom/sdm845/data/ipacfg-mgr" groups="vendor,qcom_sdm845" >
+  <project path="hardware/qcom/sdm845/bt" name="platform/hardware/qcom/sdm845/bt" groups="qcom_sdm845" remote="aosp" />
+  <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="platform/hardware/qcom/sdm845/data/ipacfg-mgr" groups="vendor,qcom_sdm845" remote="aosp" >
     <linkfile dest="hardware/qcom/sdm845/Android.bp" src="os_pickup.bp" />
   </project>
-  <project path="hardware/qcom/sdm845/display" name="platform/hardware/qcom/sdm845/display" groups="qcom_sdm845" />
-  <project path="hardware/qcom/sdm845/gps" name="platform/hardware/qcom/sdm845/gps" groups="qcom_sdm845" />
-  <project path="hardware/qcom/sdm845/media" name="platform/hardware/qcom/sdm845/media" groups="qcom_sdm845" />
+ <project path="hardware/qcom/sdm845/display" name="LineageOS/android_hardware_qcom_sdm845_display" groups="qcom_sdm845" />
+  <project path="hardware/qcom/sdm845/gps" name="platform/hardware/qcom/sdm845/gps" groups="qcom_sdm845" remote="aosp"/>
+  <project path="hardware/qcom/sdm845/media" name="platform/hardware/qcom/sdm845/media" groups="qcom_sdm845" remote="aosp"/>
   <project path="hardware/qcom/sdm845/thermal" name="platform/hardware/qcom/sdm845/thermal" groups="generic_fs,qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/sdm845/vr" name="platform/hardware/qcom/sdm845/vr" groups="generic_fs,qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/sm8150/data/ipacfg-mgr" name="platform/hardware/qcom/sm8150/data/ipacfg-mgr" groups="qcom_sm8150" remote="aosp" >
