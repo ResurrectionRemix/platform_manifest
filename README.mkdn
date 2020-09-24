@@ -115,7 +115,6 @@ Devices with alertsliders / custom key handlers
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-repo sync -f --force-sync --no-clone-bundle
         <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
     </string-array>
 ```
