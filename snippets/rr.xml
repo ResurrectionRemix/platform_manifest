@@ -38,6 +38,7 @@
   <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="rr" />
   <project path="packages/apps/CustomDoze" name="packages_apps_CustomDoze" remote="rr" />
   <project path="packages/apps/Plugins" name="packages_apps_Plugins" remote="rr" />
+  <project path="packages/apps/RRWallpapers" name="packages_apps_RR_Wallpapers" remote="rr" />
 
   <!--Frameworks-->
   <project path="frameworks/base" name="android_frameworks_base" remote="rr" />
