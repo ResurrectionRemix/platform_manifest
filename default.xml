@@ -5,6 +5,9 @@
            fetch=".."
            review="review.lineageos.org" />
 
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
