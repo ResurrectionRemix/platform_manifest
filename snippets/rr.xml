@@ -76,6 +76,7 @@
   <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="rr" />
   <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi"  remote="rr" />
   <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="rr"/>
+  <project path="packages/apps/Trebuchet" name="packages_apps_Trebuchet" remote="rr"/>
 
   <!--Overlays-->
   <project path="packages/overlays/Resurrection" name="vendor_overlays_resurrection" remote="rr" />
