@@ -15,7 +15,7 @@ Sync
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
 
 # Sync
-repo sync -f --force-sync --no-clone-bundle
+repo sync --force-sync --no-clone-bundle
 ```
 
 Build
