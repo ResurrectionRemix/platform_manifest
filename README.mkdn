@@ -56,7 +56,7 @@ Settings
 https://github.com/ResurrectionRemix/Resurrection_packages_apps_Settings/commit/24551c50223cbccd8fd74f053463f99e38ee93d8
 
 
-Please don't forget extenion lib
+Please don't forget extension lib
 
 ```
 For devices with hardware keys, you need to add the following
