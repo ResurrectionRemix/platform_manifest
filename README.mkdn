@@ -1,4 +1,4 @@
-# Resurrection Remix OS Q 2020 #
+# Resurrection Remix OS R 2022 #
 
 
 Getting started
@@ -11,11 +11,11 @@ Sync
 ---------------
 ```bash
 
-# Initialize local repository
-repo init -u https://github.com/Syn7ax3rror/platform_manifest.git -b Q
+Initialize local repository
+ repo init -u https://github.com/Syn7ax3rror/platform_manifest.git -b Q
 
-# Sync
-repo sync --force-sync --no-clone-bundle
+Sync
+ repo sync --force-sync --no-clone-bundle
 ```
 
 Build
@@ -24,13 +24,13 @@ Build
 ```bash
 
 # Set up environment
-$ . build/envsetup.sh
+  . build/envsetup.sh
 
 # Choose a target
-$ lunch rr_$device-userdebug
+  lunch rr_$device-userdebug
 
 # Build the code
-$ mka bacon
+  mka bacon
 ```
 
 
